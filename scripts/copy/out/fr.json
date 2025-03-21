@@ -1,0 +1,103 @@
+{
+  "country": {
+    "phone": "33"
+  },
+  "alphabet": "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ",
+  "numbers": "1234567890",
+  "symbols": "~`!@#$%^&*()_-+={[}]|\\\\:;\\\"'<,>.?/",
+  "day": "D",
+  "hour": "H",
+  "minute": "M",
+  "second": "S",
+  "meta": {
+    "title": "Coke"
+  },
+  "share": {
+    "heading": "Coke"
+  },
+  "general": {
+    "skip": "Sauter",
+    "bottles": "Bouteilles"
+  },
+  "landing": {
+    "heading": "Bienvenue chez Coca-Cola ESG",
+    "desc": "Nous travaillons à créer une entreprise plus durable qui a un impact positif sur nos collaborateurs, nos communautés et notre planète.",
+    "cta": "Commencez l'expérience"
+  },
+  "cleaning": {
+    "step": "Nettoyage",
+    "intro": {
+      "preheading": "Gare 01",
+      "heading": "Il est temps de nettoyer",
+      "desc": "Tout d’abord, toutes les bouteilles doivent être nettoyées de la saleté, des étiquettes et de tout produit résiduel.",
+      "cta": "Suivant"
+    },
+    "tutorial": {
+      "heading": "Nettoyez autant de bouteilles que possible dans le temps imparti.",
+      "cta": "Commencer"
+    },
+    "game": {
+      "cta": "Traîner"
+    },
+    "results": {
+      "preheading": "Résultats",
+      "heading": "Bien joué!",
+      "desc": "Vous avez nettoyé {{count}} bouteilles en {{duration}} s",
+      "replay": "Rejouer",
+      "next": "Suivant"
+    }
+  },
+  "bottling": {
+    "step": "Embouteillage",
+    "intro": {
+      "preheading": "Gare 02",
+      "heading": "Il est temps de remplir ces bouteilles !",
+      "desc": "Les machines assurent une distribution précise des boissons dans chaque bouteille. \r\n\r\nAttention donc à ne pas trop remplir !",
+      "cta": "Suivant"
+    },
+    "tutorial": {
+      "heading": "Mettre en bouteille le plus possible dans les délais impartis.",
+      "cta": "Commencer"
+    },
+    "game": {
+      "cta": "Traîner"
+    },
+    "results": {
+      "preheading": "Résultats",
+      "heading": "Bien joué!",
+      "desc": "Vous avez mis en bouteille {num} bouteilles en {duration}s",
+      "replay": "Rejouer",
+      "next": "Suivant"
+    }
+  },
+  "grouping": {
+    "step": "Palettisation",
+    "intro": {
+      "preheading": "Gare 03",
+      "heading": "Palettisation",
+      "desc": "Lors des dernières étapes, les bouteilles sont triées par taille, type ou saveur dans une station de regroupement.  Pouvez-vous tous les attraper ?",
+      "cta": "Suivant"
+    },
+    "tutorial": {
+      "heading": "Regroupez un maximum de bouteilles dans le temps imparti.",
+      "cta": "Commencer"
+    },
+    "game": {
+      "cta": "Traîner"
+    },
+    "results": {
+      "preheading": "Résultats",
+      "heading": "Bien joué!",
+      "desc": "Vous avez regroupé {num} bouteilles en {duration} s",
+      "replay": "Rejouer",
+      "next": "Suivant"
+    }
+  },
+  "ending": {
+    "results": {
+      "heading": "Vos résultats finaux",
+      "restart": "Redémarrage"
+    }
+  },
+  "example": "Exemple"
+}

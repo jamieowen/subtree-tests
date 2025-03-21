@@ -1,0 +1,12 @@
+{
+  "name": "compress-textures",
+  "version": "1.0.0",
+  "description": "## Texture compressor utility",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "type": "module"
+}

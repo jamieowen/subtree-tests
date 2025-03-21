@@ -1,0 +1,103 @@
+{
+  "country": {
+    "phone": "34"
+  },
+  "alphabet": "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ",
+  "numbers": "1234567890",
+  "symbols": "~`!@#$%^&*()_-+={[}]|\\\\:;\\\"'<,>.?/",
+  "day": "D",
+  "hour": "H",
+  "minute": "M",
+  "second": "S",
+  "meta": {
+    "title": "Coque"
+  },
+  "share": {
+    "heading": "Coque"
+  },
+  "general": {
+    "skip": "Saltar",
+    "bottles": "botellas"
+  },
+  "landing": {
+    "heading": "Bienvenido a Coca-Cola ESG",
+    "desc": "Estamos trabajando para crear un negocio más sostenible que tenga un impacto positivo en nuestra gente, nuestras comunidades y nuestro planeta.",
+    "cta": "Comienza la experiencia"
+  },
+  "cleaning": {
+    "step": "Limpieza",
+    "intro": {
+      "preheading": "Estación 01",
+      "heading": "Hora de limpiar",
+      "desc": "En primer lugar, es necesario limpiar todas las botellas de suciedad, etiquetas y cualquier producto residual.",
+      "cta": "Próximo"
+    },
+    "tutorial": {
+      "heading": "Limpie tantas botellas como sea posible dentro del tiempo indicado.",
+      "cta": "Comenzar"
+    },
+    "game": {
+      "cta": "Arrastrar"
+    },
+    "results": {
+      "preheading": "Resultados",
+      "heading": "¡Bien hecho!",
+      "desc": "Limpiaste {{count}} botellas en {{duration}}s",
+      "replay": "Repetición",
+      "next": "Próximo"
+    }
+  },
+  "bottling": {
+    "step": "Embotellado",
+    "intro": {
+      "preheading": "Estación 02",
+      "heading": "¡Es hora de llenar estas botellas!",
+      "desc": "Las máquinas garantizan una dispensación precisa de bebidas en cada botella. \r\n\r\n¡Así que tenga cuidado de no llenar demasiado!",
+      "cta": "Próximo"
+    },
+    "tutorial": {
+      "heading": "Envasar tantas botellas como sea posible en el tiempo indicado.",
+      "cta": "Comenzar"
+    },
+    "game": {
+      "cta": "Arrastrar"
+    },
+    "results": {
+      "preheading": "Resultados",
+      "heading": "¡Bien hecho!",
+      "desc": "Embotellaste {num} botellas en {duration}s",
+      "replay": "Repetición",
+      "next": "Próximo"
+    }
+  },
+  "grouping": {
+    "step": "paletizado",
+    "intro": {
+      "preheading": "Estación 03",
+      "heading": "paletizado",
+      "desc": "En los pasos finales, las botellas se clasifican por tamaño, tipo o sabor en una estación de agrupación.  ¿Podrás atraparlos a todos?",
+      "cta": "Próximo"
+    },
+    "tutorial": {
+      "heading": "Agrupe tantas botellas como sea posible dentro del tiempo indicado.",
+      "cta": "Comenzar"
+    },
+    "game": {
+      "cta": "Arrastrar"
+    },
+    "results": {
+      "preheading": "Resultados",
+      "heading": "¡Bien hecho!",
+      "desc": "Agrupaste {num} botellas en {duration}s",
+      "replay": "Repetición",
+      "next": "Próximo"
+    }
+  },
+  "ending": {
+    "results": {
+      "heading": "Tus resultados finales",
+      "restart": "Reanudar"
+    }
+  },
+  "example": "Ejemplo"
+}

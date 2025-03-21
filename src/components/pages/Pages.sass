@@ -1,0 +1,33 @@
+@import "@/styles/shared.sass"
+  
+.pages
+  display: contents
+
+.page
+  +full
+  +flex-col
+  gap: 4rem
+  padding: 4rem
+  text-align: center
+
+  h1
+    font-size: 2.6rem
+
+  p
+    font-size: 1.6rem
+
+  h1, h3, p
+    margin-block: var(--p1)
+
+  button
+    font-size: 2rem
+    border: 1px solid black
+    padding-block: var(--p1)
+    padding-inline: var(--p2)
+    margin-top: var(--p2)
+
+  transition: all 0.3s ease 0s
+  &:not(.show)
+    opacity: 0
+    pointer-events: none
+

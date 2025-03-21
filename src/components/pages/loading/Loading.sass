@@ -1,0 +1,14 @@
+@import "@/styles/shared.sass"
+
+.Loading
+  @include full
+  z-index: 100
+  background: black
+  color: white
+  +flex-col
+
+
+  &.hide
+    opacity: 0
+    pointer-events: none
+    transition: opacity 0.5s ease-in-out
