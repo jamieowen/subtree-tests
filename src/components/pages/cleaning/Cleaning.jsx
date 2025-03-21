@@ -20,7 +20,7 @@ export const Cleaning = ({ show, ...props }) => {
   const { completed } = useAssetProgress();
 
   return (
-    <div className={classnames(['page', 'Cleaning', { show }])}>
+    <div className={classnames(['page', 'game', 'Cleaning', { show }])}>
       <section
         className={classnames(['page', 'intro', { show: section == 'intro' }])}
       >
@@ -46,6 +46,7 @@ export const Cleaning = ({ show, ...props }) => {
       <section
         className={classnames([
           'page',
+
           'results',
           { show: section == 'results' },
         ])}

@@ -27,6 +27,7 @@ export const VideoPlayer = ({ src, onEnd, show, ...props }) => {
         ref={refVideo}
         src={src}
         onEnded={onEnd}
+        playsInline
       />
       <button
         className="btn-skip"
