@@ -25,7 +25,7 @@ export const GameCleaning = ({ show }) => {
           makeDefault
         />
 
-        <Grid
+        {/* <Grid
           cellSize={1}
           sectionSize={5}
           args={[100, 100]}
@@ -33,7 +33,7 @@ export const GameCleaning = ({ show }) => {
           side={DoubleSide}
           cellThickness={0.75}
           sectionThickness={1}
-        />
+        /> */}
 
         <ambientLight intensity={1.5} />
 

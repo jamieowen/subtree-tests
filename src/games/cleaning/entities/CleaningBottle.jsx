@@ -8,6 +8,8 @@ export const CleaningBottle = (entity) => {
 
   const texture = useAsset(urls.t_cleaning_bottle);
 
+  texture.anisotropy = 16;
+
   const aspect = 256 / 1024;
 
   const s = 1.7;
@@ -34,7 +36,10 @@ export const CleaningBottle = (entity) => {
 
             <mesh scale={[s, -s, s]}>
               <planeGeometry args={[2 * aspect, 2]} />
-              <GBufferMaterial>
+              <GBufferMaterial
+                transparent
+                alphaToCoverage={true}
+              >
                 <MaterialModuleSpriteAnimated
                   ref={refSprite}
                   map={texture}
@@ -43,11 +48,6 @@ export const CleaningBottle = (entity) => {
                   frames={47}
                   fps={12}
                 />
-                {/* <MaterialModuleColor
-                  color={0xff00ff}
-                  blend="*"
-                /> */}
-                <MaterialModuleAlphaTest />
               </GBufferMaterial>
             </mesh>
           </Billboard>
