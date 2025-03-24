@@ -7,9 +7,11 @@ import { ECS } from './state';
 import { PerspectiveCamera, Grid } from '@react-three/drei';
 
 export const GameCleaning = ({ show }) => {
-  const count = useCleaningStore((state) => state.count);
-  const setCount = useCleaningStore((state) => state.setCount);
-  const setSection = useCleaningStore((state) => state.setSection);
+  // const count = useCleaningStore((state) => state.count);
+  // const setCount = useCleaningStore((state) => state.setCount);
+  // const setSection = useCleaningStore((state) => state.setSection);
+  // const numBottles = useCleaningStore((state) => state.numBottles);
+  // const addBottle = useCleaningStore((state) => state.addBottle);
 
   return (
     <section
@@ -41,12 +43,7 @@ export const GameCleaning = ({ show }) => {
         />
 
         <CleaningConveyorBelt>
-          {Array.from({ length: 7 }).map((_, idx) => (
-            <CleaningBottle
-              key={idx}
-              idx={idx}
-            />
-          ))}
+          <CleaningBottles />
         </CleaningConveyorBelt>
 
         <mesh position-y={-1}>

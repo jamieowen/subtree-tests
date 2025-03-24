@@ -1,5 +1,5 @@
 import { getUrlBoolean } from '@/helpers/UrlParam';
-import { StatsGl, PerspectiveCamera } from '@react-three/drei';
+import { Stats, PerspectiveCamera } from '@react-three/drei';
 import { EffectComposer, Bloom } from '@react-three/postprocessing';
 import { BlurPass, Resizer, KernelSize, Resolution } from 'postprocessing';
 import { ui } from '@/tunnels';
@@ -58,7 +58,7 @@ export const Nose = () => {
       </mesh> */}
       <NoseScenes />
 
-      {stats && <StatsGl />}
+      {stats && <Stats />}
       <GsapSync />
     </>
   );

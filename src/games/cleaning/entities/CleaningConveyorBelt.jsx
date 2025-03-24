@@ -1,5 +1,6 @@
 import { ECS } from '../state';
 import { three } from '@/tunnels';
+import { useCleaningStore } from '@/stores/cleaning';
 
 export const CleaningConveyorBelt = ({ children }) => {
   return (

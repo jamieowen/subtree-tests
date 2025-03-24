@@ -79,13 +79,15 @@ export const Sprite = forwardRef(
 
     return (
       <>
-        <AnimatedSprite
-          ref={refAnimatedSprite}
-          config={config}
-          materialProps={materialProps}
-          _key={_key}
-          {...props}
-        />
+        <Suspense>
+          <AnimatedSprite
+            ref={refAnimatedSprite}
+            config={config}
+            materialProps={materialProps}
+            _key={_key}
+            {...props}
+          />
+        </Suspense>
       </>
     );
   }

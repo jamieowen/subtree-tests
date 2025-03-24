@@ -86,9 +86,9 @@ const processFile = async (filePath) => {
         `cwebp -quiet ${path} -o ${newPath}.webp`,
         `convert ${path} +profile "*" ${newPath}.png`,
         // `convert ${path} +profile "*" ${newPath}.png`,
-        `basisu -ktx2 -y_flip ${newPath}.png -output_file ${newPath}.ktx2`,
-        `basisu -ktx2 -y_flip -q 255 ${newPath}.png -output_file ${newPath}-hq.ktx2`,
-        `basisu -ktx2 -y_flip -uastc ${newPath}.png -output_file ${newPath}-uastc.ktx2`,
+        `basisu -ktx2 ${newPath}.png -output_file ${newPath}.ktx2`,
+        `basisu -ktx2 -q 255 ${newPath}.png -output_file ${newPath}-hq.ktx2`,
+        `basisu -ktx2 -uastc ${newPath}.png -output_file ${newPath}-uastc.ktx2`,
       ];
 
       for (let cmd of cmds) {

@@ -86,6 +86,9 @@ importers:
       dayjs:
         specifier: ^1.11.13
         version: 1.11.13
+      deep-clone:
+        specifier: ^4.0.0
+        version: 4.0.0
       dotenv:
         specifier: ^16.4.7
         version: 16.4.7
@@ -4690,6 +4693,9 @@ packages:
     peerDependenciesMeta:
       babel-plugin-macros:
         optional: true
+
+  deep-clone@4.0.0:
+    resolution: {integrity: sha512-bMvDVR8GiGCGHT4SgqXyXDD9Zmo3kv9YLq8aSO2xslP97A3mFkpNBg+t+fjXERvewzhmtk9efvL+V52iVkD0lg==}
 
   deep-extend@0.6.0:
     resolution: {integrity: sha512-LOHxIOaPYdHlJRtCQfDIVZtfw/ufM8+rVj649RIHzcm/vGwQRXFt6OPqIFWsm2XEMrNIEtWR64sY1LEKD2vAOA==}
@@ -14988,6 +14994,8 @@ snapshots:
   dedent@1.5.3(babel-plugin-macros@3.1.0):
     optionalDependencies:
       babel-plugin-macros: 3.1.0
+
+  deep-clone@4.0.0: {}
 
   deep-extend@0.6.0: {}
 

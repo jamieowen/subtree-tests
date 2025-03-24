@@ -44,6 +44,7 @@
     "dashjs": "^5.0.0",
     "dataobject-parser": "^1.2.25",
     "dayjs": "^1.11.13",
+    "deep-clone": "^4.0.0",
     "dotenv": "^16.4.7",
     "eslint-plugin-react-compiler": "19.0.0-beta-3229e95-20250315",
     "firebase": "^11.4.0",

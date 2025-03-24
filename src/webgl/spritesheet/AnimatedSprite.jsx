@@ -1,6 +1,8 @@
 import Spritesheet from './helpers/Spritesheet';
 import { Sphere } from '@react-three/drei';
 
+const cache = [];
+
 export const AnimatedSprite = forwardRef(
   (
     {
@@ -35,7 +37,14 @@ export const AnimatedSprite = forwardRef(
 
     // SPRITESHEET
     const spritesheet = suspend(async () => {
-      return new Spritesheet(config);
+      if (cache[config.id]) {
+        console.log('config.id', config.id, 'clone');
+        return cache[config.id].clone(config);
+      }
+      console.log('AnimatedSprite creating new', config.id);
+      let out = new Spritesheet(config);
+      cache[config.id] = out;
+      return out;
     }, [config.id, _key]);
 
     // ASPECT RATIO

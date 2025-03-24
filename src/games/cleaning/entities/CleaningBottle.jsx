@@ -1,37 +1,19 @@
+import { urls } from '@/config/assets';
 import { ECS } from '../state';
 import { three } from '@/tunnels';
 import { Billboard } from '@react-three/drei';
 
-export const CleaningBottle = ({ idx }) => {
+export const CleaningBottle = (entity) => {
   const refSprite = useRef(null);
 
-  return (
-    <ECS.Entity>
-      <ECS.Component
-        name="idx"
-        data={idx}
-      />
-      <ECS.Component
-        name="isBottle"
-        data={true}
-      />
-      <ECS.Component
-        name="position"
-        data={{ x: 0, y: 0 }}
-      />
+  const texture = useAsset(urls.t_cleaning_bottle);
 
-      <ECS.Component
-        name="progress"
-        data={0}
-      />
-      <ECS.Component
-        name="cleaning"
-        data={false}
-      />
-      <ECS.Component
-        name="cleaned"
-        data={false}
-      />
+  const aspect = 256 / 1024;
+
+  const s = 1.7;
+
+  return (
+    <ECS.Entity entity={entity}>
       <ECS.Component name="three">
         <group
           name="bottle"
@@ -43,16 +25,31 @@ export const CleaningBottle = ({ idx }) => {
           >
             {/* <mesh position={[0, 0, 0]}>
               <planeGeometry args={[0.5, 2]} />
-              <meshBasicMaterial color="red" />
+              <meshBasicMaterial
+                color="black"
+                transparent
+                opacity={0.2}
+              />
             </mesh> */}
 
-            <Sprite
-              ref={refSprite}
-              id="bottle"
-              _key={`bottle_${idx}`}
-              name="sprite"
-              scale={2}
-            />
+            <mesh scale={[s, -s, s]}>
+              <planeGeometry args={[2 * aspect, 2]} />
+              <GBufferMaterial>
+                <MaterialModuleSpriteAnimated
+                  ref={refSprite}
+                  map={texture}
+                  rows={4096 / 1024}
+                  cols={4096 / 256}
+                  frames={47}
+                  fps={12}
+                />
+                {/* <MaterialModuleColor
+                  color={0xff00ff}
+                  blend="*"
+                /> */}
+                <MaterialModuleAlphaTest />
+              </GBufferMaterial>
+            </mesh>
           </Billboard>
         </group>
       </ECS.Component>

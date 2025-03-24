@@ -2,27 +2,13 @@ import { useDrag } from '@use-gesture/react';
 import { damp, dampE, exp } from 'maath/easing';
 import { LogEase } from '@/helpers/LogEase';
 import { useAppStore } from '@/stores/app';
+import { useCleaningStore } from '@/stores/cleaning';
+import { addBottle } from '../entities/CleaningBottles';
 
 const beltEntities = ECS.world.with('belt');
 const bottleEntities = ECS.world.with('isBottle');
 
 export const SystemBottles = ({ multiplier = 0.01, oneDirection = false }) => {
-  const idx = useRef(0);
-
-  const addBottle = () => {
-    let bottle = {
-      idx,
-      isBottle: true,
-      frame: 0,
-      cleaning: false,
-      cleaned: false,
-    };
-
-    ECS.world.add(bottle);
-
-    idx.current++;
-  };
-
   const cleanBottle = async (entity) => {
     if (entity.cleaning || entity.cleaned) return;
 

@@ -1,5 +1,6 @@
 import FrameSequence from './FrameSequence';
 import { mergeSpritesheets } from './utils';
+import deepClone from 'deep-clone';
 
 export class Spritesheet {
   options = {
@@ -10,7 +11,6 @@ export class Spritesheet {
     onEnd: () => {},
   };
 
-  props = {};
   frames = [];
   currentFrame = null;
   sequence = null;
@@ -73,6 +73,13 @@ export class Spritesheet {
   goToFrame = (frame) => {
     this.sequence.goToFrame(frame);
     this.sequence.pauseAtFrame(frame);
+  };
+
+  clone = (opts) => {
+    // let cloned = Object.assign({}, this);
+    // cloned.sequence = Object.assign({}, this.sequence);
+    // Object.assign(cloned.options, opts);
+    // return cloned;
   };
 }
 

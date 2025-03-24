@@ -8,6 +8,7 @@ import {
 } from '@/helpers/UrlParam';
 
 import * as config from '@/config/games/cleaning';
+import { number } from 'prop-types';
 
 export const useCleaningStore = create((set) => ({
   config,

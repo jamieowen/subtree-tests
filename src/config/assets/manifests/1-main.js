@@ -10,8 +10,9 @@ export const fonts = {};
 export const models = {};
 
 export const textures = {
-  j_bottle_0: `/assets/spritesheets-o/cleaning_bottle/data-0.json`,
-  t_bottle_0: `/assets/spritesheets-o/cleaning_bottle/data-0.ktx2`,
+  // j_bottle_0: `/assets/spritesheets-o/cleaning_bottle/data-0.json`,
+  // t_bottle_0: `/assets/spritesheets-o/cleaning_bottle/data-0.ktx2`,
+  t_cleaning_bottle: `/assets/textures-o/1_cleaning/cleaning_bottle.ktx2`,
 };
 
 export const jsons = {};
