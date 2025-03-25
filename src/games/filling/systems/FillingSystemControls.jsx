@@ -74,9 +74,9 @@ export const FillingSystemControls = ({
     if (remainder >= 1 - within) {
       onFill(Math.ceil(pos));
     }
-    if (remainder <= within) {
-      onFill(Math.floor(pos));
-    }
+    // if (remainder <= within) {
+    //   onFill(Math.floor(pos));
+    // }
   };
 
   useEffect(() => {

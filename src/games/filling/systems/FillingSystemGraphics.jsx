@@ -6,7 +6,7 @@ import { FillingECS } from '../state';
 
 const beltEntities = FillingECS.world.with('belt', 'three');
 const bottleEntities = FillingECS.world.with('isBottle', 'three');
-const fillingEntities = FillingECS.world.with('filling', 'sprite', 'three');
+const spriteEntities = FillingECS.world.with('progress', 'sprite');
 
 export const FillingSystemGraphics = ({}) => {
   const gl = useThree((state) => state.gl);
@@ -24,8 +24,8 @@ export const FillingSystemGraphics = ({}) => {
       // ((belt + entity.idx) % numBottles) - numBottles / 2 + 0.5;
     }
 
-    for (const entity of fillingEntities) {
-      entity.sprite.current.progress = entity.progress;
+    for (const entity of spriteEntities) {
+      entity.sprite.current.progress = entity.progress % 1;
       // if (!entity.filling) continue;
     }
   });
