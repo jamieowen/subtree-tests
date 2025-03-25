@@ -1,23 +1,32 @@
-import { ECS } from '../state';
+import { urls } from '@/config/assets';
+import { FillingECS } from '../state';
 import { three } from '@/tunnels';
-import { usefillingStore } from '@/stores/filling';
+import { useFillingStore } from '@/stores/filling';
 
-export const fillingConveyorBelt = ({ children }) => {
+export const FillingConveyorBelt = ({ children }) => {
+  const refSprite = useRef(null);
+  const s = 1.7;
+
+  const aspect = 256 / 512;
+
+  const t_belt = useAsset(urls.t_filling_belt);
+  t_belt.anisotropy = 16;
+
   return (
-    <ECS.Entity>
-      <ECS.Component
+    <FillingECS.Entity>
+      <FillingECS.Component
         name="isBelt"
         data={true}
       />
-      <ECS.Component
+      <FillingECS.Component
         name="belt"
         data={0}
       />
-      <ECS.Component
+      <FillingECS.Component
         name="locked"
         data={false}
       />
-      <ECS.Component name="three">
+      <FillingECS.Component name="three">
         <group>
           {/* <mesh
             name="belt"
@@ -28,6 +37,26 @@ export const fillingConveyorBelt = ({ children }) => {
             <meshBasicMaterial color="grey" />
           </mesh> */}
 
+          <mesh
+            scale={[s, -s, s]}
+            position-y={-0.8}
+          >
+            <planeGeometry args={[2, 2 * aspect]} />
+            <GBufferMaterial
+              transparent
+              alphaToCoverage={true}
+            >
+              <MaterialModuleSpriteAnimated
+                ref={refSprite}
+                map={t_belt}
+                rows={4096 / 256}
+                cols={2048 / 512}
+                frames={47}
+                fps={12}
+              />
+            </GBufferMaterial>
+          </mesh>
+
           <group
             name="bottles"
             position-y={1}
@@ -35,7 +64,12 @@ export const fillingConveyorBelt = ({ children }) => {
             {children}
           </group>
         </group>
-      </ECS.Component>
-    </ECS.Entity>
+      </FillingECS.Component>
+
+      <FillingECS.Component
+        name="sprite"
+        data={refSprite}
+      />
+    </FillingECS.Entity>
   );
 };

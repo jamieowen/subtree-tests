@@ -113,8 +113,8 @@ export const MaterialModuleSpriteAnimated = forwardRef(
 
           pc_fragColor.a = frameColor.a;
           // pc_fragColor.rgb = blendHardLight(vec3(1.0, 0.0, 0.0), frameColor.rgb);
-          pc_fragColor.rgb = blendLinearLight(vec3(1.0, 0.0, 0.0), frameColor.rgb);
-
+          // pc_fragColor.rgb = blendLinearLight(vec3(1.0, 0.0, 0.0), frameColor.rgb);
+          pc_fragColor.rgb = frameColor.rgb;
         `,
       },
     });
@@ -152,7 +152,7 @@ export const MaterialModuleSpriteAnimated = forwardRef(
         },
         set progress(val) {
           let f = Math.floor(val * frames);
-          console.log('MaterialModuleSpriteAnimated.set progress', f);
+          // console.log('MaterialModuleSpriteAnimated.set progress', f);
           material.uniforms['uSprite_Frame'].value = f;
         },
       }),

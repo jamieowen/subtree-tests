@@ -1,17 +1,20 @@
-import './fillingGame.sass';
+import { urls } from '@/config/assets';
+import './FillingGame.sass';
 import classnames from 'classnames';
 import { three } from '@/tunnels';
-import { usefillingStore } from '@/stores/filling';
+import { useFillingStore } from '@/stores/filling';
 import { Box } from '@react-three/drei';
 import { FillingECS } from './state';
 import { PerspectiveCamera, Grid } from '@react-three/drei';
 
-export const fillingGame = ({ show }) => {
-  // const count = usefillingStore((state) => state.count);
-  // const setCount = usefillingStore((state) => state.setCount);
-  // const setSection = usefillingStore((state) => state.setSection);
-  // const numBottles = usefillingStore((state) => state.numBottles);
-  // const addBottle = usefillingStore((state) => state.addBottle);
+export const FillingGame = ({ show }) => {
+  // const count = useFillingStore((state) => state.count);
+  // const setCount = useFillingStore((state) => state.setCount);
+  // const setSection = useFillingStore((state) => state.setSection);
+  // const numBottles = useFillingStore((state) => state.numBottles);
+  // const addBottle = useFillingStore((state) => state.addBottle);
+
+  const t_filling_nozzle = useAsset(urls.t_filling_nozzle);
 
   return (
     <section className={classnames(['page', 'game', 'game-filling', { show }])}>
@@ -44,9 +47,17 @@ export const fillingGame = ({ show }) => {
           <FillingBottles />
         </FillingConveyorBelt>
 
-        <mesh position-y={-1}>
-          <coneGeometry args={[0.3, 1, 32]} />
-          <meshBasicMaterial color="green" />
+        <mesh
+          position-y={2.73}
+          position-z={0.0}
+          scale={[2, -2, 2]}
+        >
+          <planeGeometry args={[0.5, 1, 32]} />
+          <meshBasicMaterial
+            map={t_filling_nozzle}
+            transparent
+            alphaTest={0.5}
+          />
         </mesh>
 
         <FillingSystemControls />

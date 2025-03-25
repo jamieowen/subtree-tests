@@ -25,8 +25,8 @@ export const FillingSystemGraphics = ({}) => {
     }
 
     for (const entity of fillingEntities) {
-      if (!entity.filling) continue;
       entity.sprite.current.progress = entity.progress;
+      // if (!entity.filling) continue;
     }
   });
 

@@ -2,8 +2,8 @@ import { useDrag } from '@use-gesture/react';
 import { damp, dampE, exp } from 'maath/easing';
 import { LogEase } from '@/helpers/LogEase';
 import { useAppStore } from '@/stores/app';
-import { usefillingStore } from '@/stores/filling';
-import { addBottle } from '../entities/fillingBottles';
+import { useFillingStore } from '@/stores/filling';
+import { addBottle } from '../entities/FillingBottles';
 import { FillingECS } from '../state';
 
 const beltEntities = FillingECS.world.with('belt');
@@ -21,14 +21,14 @@ export const FillingSystemBottles = ({
     entity.filling = true;
     let tl = gsap.timeline();
 
-    tl.to(entity.position, { y: -0.1, duration: 0.1 });
+    // tl.to(entity.position, { y: -0.1, duration: 0.1 });
     tl.to(entity, {
       progress: 1,
       y: 0.5,
       duration: 2,
       ease: 'none',
     });
-    tl.to(entity.position, { y: 0, duration: 0.1 });
+    // tl.to(entity.position, { y: 0, duration: 0.1 });
 
     await tl.then();
     entity.filling = false;

@@ -6,74 +6,93 @@ import { FillingECS } from '../state';
 
 const beltEntities = FillingECS.world.with('belt');
 const bottleEntities = FillingECS.world.with('isBottle');
+const filledEntities = FillingECS.world.with('filled');
 
 export const FillingSystemControls = ({
   within = 0.25,
   multiplier = 0.01,
   oneDirection = false,
 }) => {
-  const to = useRef(0);
   const current = useRef(0);
+  const speed = useRef(1.5);
 
-  const [wasDown, setWasDown] = useState(false);
-
-  let timeout;
-
-  const onUp = async () => {
-    if (timeout) clearTimeout(timeout);
-    timeout = setTimeout(() => {
-      let remainder = Math.abs(to.current) % 1;
-
-      if (remainder >= 1 - within) {
-        to.current = Math.ceil(to.current);
-      }
-      if (remainder <= within) {
-        to.current = Math.floor(to.current);
-      }
-    }, 200);
+  const setBeltLocked = (locked) => {
+    for (let entity of beltEntities) {
+      entity.locked = locked;
+    }
   };
 
-  const onDown = () => {
-    if (timeout) clearTimeout(timeout);
+  const fillBottle = async (entity) => {
+    console.log('fillBottle');
+    if (entity.filling || entity.filled) return;
+
+    FillingECS.world.addComponent(entity, 'filling', true);
+    entity.filling = true;
+    let tl = gsap.timeline();
+
+    tl.to(entity, {
+      progress: 1,
+      y: 0.5,
+      duration: 2,
+      ease: 'none',
+    });
+
+    await tl.then();
+    FillingECS.world.removeComponent(entity, 'filling', true);
+    FillingECS.world.addComponent(entity, 'filled', true);
+    // entity.filling = false;
+    // entity.filled = true;
   };
 
-  useDrag(
-    (state) => {
-      const isLocked = beltEntities.entities[0].locked;
-      if (isLocked) return;
+  const onFill = async (pos) => {
+    console.log('onFill');
 
-      if (to.current < 0) {
-        to.current = 0;
-        return;
-      }
+    setBeltLocked(true);
+    await gsap.to(current, { current: pos, duration: 0.1 }).then();
 
-      if (wasDown && !state.down) {
-        setWasDown(false);
-        onUp();
+    const promises = [];
+    for (const entity of bottleEntities) {
+      if (pos == entity.idx) {
+        let p = fillBottle(entity);
+        promises.push(p);
       }
-      if (!wasDown && state.down) {
-        setWasDown(true);
-        onDown();
-      }
+      await Promise.all(promises);
+    }
 
-      if (oneDirection && state.delta[0] < 0) return;
-      to.current += state.delta[0] * multiplier;
-    },
-    { target: window }
-  );
+    setBeltLocked(false);
+  };
+
+  const gl = useThree((state) => state.gl);
+
+  const onPointerDown = () => {
+    const isLocked = beltEntities.entities[0].locked;
+    if (isLocked) return;
+
+    let pos = current.current;
+    let remainder = Math.abs(pos) % 1;
+    console.log('onPointerDown', remainder);
+    if (remainder >= 1 - within) {
+      onFill(Math.ceil(pos));
+    }
+    if (remainder <= within) {
+      onFill(Math.floor(pos));
+    }
+  };
+
+  useEffect(() => {
+    gl.domElement.addEventListener('pointerdown', onPointerDown);
+    return () => {
+      gl.domElement.removeEventListener('pointerdown', onPointerDown);
+    };
+  }, []);
 
   useFrame((state, delta) => {
-    const opts = [
-      0.15, // smoothTime
-      delta, // delta
-      Infinity, // maxSpeed
-      exp, // easing
-      0.001, // eps
-    ];
-
-    damp(current, 'current', to.current, ...opts);
-    if (current.current < 0) {
-      current.current = 0;
+    const isLocked = beltEntities.entities[0].locked;
+    if (!isLocked) {
+      const count = filledEntities.entities.length;
+      speed.current = 1.5 + count * 0.5;
+      console.log('count', count, speed.current);
+      current.current += delta * speed.current;
     }
 
     for (const entity of beltEntities) {

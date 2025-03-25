@@ -14,6 +14,7 @@ export const textures = {
   t_filling_belt: `/assets/textures-o/2_filling/belt.ktx2`,
   t_filling_cap: `/assets/textures-o/2_filling/cap.ktx2`,
   t_filling_shadow: `/assets/textures-o/2_filling/shadow.ktx2`,
+  t_filling_nozzle: `/assets/textures-o/2_filling/nozzle.ktx2`,
 };
 
 export const jsons = {};

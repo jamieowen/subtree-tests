@@ -41,7 +41,7 @@ export const Filling = ({ show, ...props }) => {
         <button onClick={nextSection}>{t('filling.tutorial.cta')}</button>
       </section>
 
-      {/* {completed && show && <FillingGame show={section == 'game'} />} */}
+      {completed && show && <FillingGame show={section == 'game'} />}
 
       <section
         className={classnames([

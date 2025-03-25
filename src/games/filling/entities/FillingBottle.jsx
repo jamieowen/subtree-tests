@@ -3,15 +3,16 @@ import { FillingECS } from '../state';
 import { three } from '@/tunnels';
 import { Billboard } from '@react-three/drei';
 
-export const fillingBottle = (entity) => {
+export const FillingBottle = (entity) => {
   const refSprite = useRef(null);
 
-  const texture = useAsset(urls.t_filling_bottle);
+  const t_bottle = useAsset(urls.t_filling_bottle);
+  t_bottle.anisotropy = 16;
 
-  texture.anisotropy = 16;
+  const t_shadow = useAsset(urls.t_filling_shadow);
+  t_shadow.anisotropy = 16;
 
   const aspect = 256 / 1024;
-
   const s = 1.7;
 
   return (
@@ -42,13 +43,21 @@ export const fillingBottle = (entity) => {
               >
                 <MaterialModuleSpriteAnimated
                   ref={refSprite}
-                  map={texture}
+                  map={t_bottle}
                   rows={4096 / 1024}
                   cols={4096 / 256}
                   frames={47}
                   fps={12}
                 />
               </GBufferMaterial>
+            </mesh>
+
+            <mesh position-y={-1.6}>
+              <planeGeometry args={[2, 1]} />
+              <meshBasicMaterial
+                map={t_shadow}
+                transparent
+              />
             </mesh>
           </Billboard>
         </group>

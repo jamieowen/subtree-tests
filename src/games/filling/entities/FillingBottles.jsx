@@ -1,15 +1,15 @@
-import { ECS } from '../state';
+import { FillingECS } from '../state';
 import { three } from '@/tunnels';
-import { usefillingStore } from '@/stores/filling';
+import { useFillingStore } from '@/stores/filling';
 
-const bottles = ECS.world.with('isBottle');
+const bottles = FillingECS.world.with('isBottle');
 
-export const fillingBottles = () => {
+export const FillingBottles = () => {
   return (
     <>
-      <ECS.Entities
+      <FillingECS.Entities
         in={bottles}
-        children={fillingBottle}
+        children={FillingBottle}
       />
     </>
   );
@@ -17,13 +17,13 @@ export const fillingBottles = () => {
 
 let idx = 0;
 export const addBottle = () => {
-  ECS.world.add({
+  FillingECS.world.add({
     isBottle: true,
     idx,
     position: { x: 0, y: 0 },
     progress: 0,
-    filling: false,
-    bottled: false,
+    // filling: false,
+    // filled: false,
   });
   idx = idx + 1;
 };
