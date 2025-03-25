@@ -12,7 +12,9 @@ export const PreloadAssets = () => {
   let loadGroups = [
     //
     'critical',
-    'main',
+    'cleaning',
+    'filling',
+    'grouping',
   ];
 
   const addLoadGroup = useLoadingStore((s) => s.addLoadGroup);

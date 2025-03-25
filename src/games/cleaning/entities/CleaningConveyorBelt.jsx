@@ -1,23 +1,23 @@
-import { ECS } from '../state';
+import { CleaningECS } from '../state';
 import { three } from '@/tunnels';
 import { useCleaningStore } from '@/stores/cleaning';
 
 export const CleaningConveyorBelt = ({ children }) => {
   return (
-    <ECS.Entity>
-      <ECS.Component
+    <CleaningECS.Entity>
+      <CleaningECS.Component
         name="isBelt"
         data={true}
       />
-      <ECS.Component
+      <CleaningECS.Component
         name="belt"
         data={0}
       />
-      <ECS.Component
+      <CleaningECS.Component
         name="locked"
         data={false}
       />
-      <ECS.Component name="three">
+      <CleaningECS.Component name="three">
         <group>
           {/* <mesh
             name="belt"
@@ -35,7 +35,7 @@ export const CleaningConveyorBelt = ({ children }) => {
             {children}
           </group>
         </group>
-      </ECS.Component>
-    </ECS.Entity>
+      </CleaningECS.Component>
+    </CleaningECS.Entity>
   );
 };

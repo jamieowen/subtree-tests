@@ -11,7 +11,7 @@ export const Landing = ({ show, ...props }) => {
       className={classnames(['page', 'Landing', { show }])}
       onClick={() => setPage('cleaning-video')}
     >
-      <h1>{t('landing.title')}</h1>
+      <h1>{t('landing.heading')}</h1>
       <p>{t('landing.desc')}</p>
       <button>{t('landing.cta')}</button>
     </div>

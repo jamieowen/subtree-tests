@@ -1,9 +1,13 @@
 import * as critical from './manifests/0-critical';
-import * as main from './manifests/1-main';
+import * as cleaning from './manifests/1-cleaning';
+import * as filling from './manifests/2-filling';
+import * as grouping from './manifests/3-grouping';
 
 export const urls = {
   ...critical.urls,
-  ...main.urls,
+  ...cleaning.urls,
+  ...filling.urls,
+  ...grouping.urls,
 };
 
 const objectFlip = (obj) => {
@@ -18,33 +22,47 @@ export const ids = objectFlip(urls);
 
 export const fonts = {
   ...critical.fonts,
-  ...main.fonts,
+  ...cleaning.fonts,
+  ...filling.fonts,
+  ...grouping.fonts,
 };
 export const models = {
   ...critical.models,
-  ...main.models,
+  ...cleaning.models,
+  ...filling.models,
+  ...grouping.models,
 };
 export const textures = {
   ...critical.textures,
-  ...main.textures,
+  ...cleaning.textures,
+  ...filling.textures,
+  ...grouping.textures,
 };
 export const sounds = {
   ...critical.sounds,
-  ...main.sounds,
+  ...cleaning.sounds,
+  ...filling.sounds,
+  ...grouping.sounds,
 };
 
 export const manifests = {
   critical: critical.manifest,
-  main: main.manifest,
+  cleaning: cleaning.manifest,
+  filling: filling.manifest,
+  grouping: grouping.manifest,
 };
 
 export {
   //
   critical,
-  main,
+  cleaning,
+  filling,
+  grouping,
 };
 
 export default {
   critical,
-  main,
+  cleaning,
+  filling,
+  grouping,
 };

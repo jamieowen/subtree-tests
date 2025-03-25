@@ -48,9 +48,9 @@ class AssetService {
   }
 
   loadManifest = (manifest) => {
-    // console.groupCollapsed(
-    //   `AssetService.loadManifest: ${manifest.id} (${manifest.items.length})`
-    // );
+    console.groupCollapsed(
+      `AssetService.loadManifest: ${manifest.id} (${manifest.items.length})`
+    );
     manifest = this._registerManifest(manifest);
     return new Promise((resolve, reject) => {
       if (!manifest.flat.items.length) {
@@ -66,7 +66,7 @@ class AssetService {
         if (unsubscribe) {
           unsubscribe();
         }
-        // console.groupEnd();
+        console.groupEnd();
         resolve(manifest.flat.items);
         // resolve(manifest.flat.items.map((i) => i.asset));
       });
@@ -81,6 +81,7 @@ class AssetService {
   };
 
   loadItem = (data) => {
+    console.log('AssetService.loadItem', data);
     return new Promise((resolve, reject) => {
       if (this.assets[data.id]) {
         resolve(this.assets[data.id]);

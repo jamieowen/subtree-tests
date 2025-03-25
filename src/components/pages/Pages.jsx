@@ -17,11 +17,11 @@ export const Pages = () => {
       <Cleaning show={page == 'cleaning'} />
 
       <VideoPlayer
-        src="/assets/videos/bottling.mp4"
-        show={page == 'bottling-video'}
-        onEnd={() => setPage('bottling')}
+        src="/assets/videos/filling.mp4"
+        show={page == 'filling-video'}
+        onEnd={() => setPage('filling')}
       />
-      <Bottling show={page == 'bottling'} />
+      <Filling show={page == 'filling'} />
 
       <VideoPlayer
         src="/assets/videos/grouping.mp4"

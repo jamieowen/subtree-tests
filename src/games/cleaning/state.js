@@ -6,6 +6,6 @@
 //   cleaned: false;
 // };
 
-export const world = new World();
+export const cleaningWorld = new World();
 
-export const ECS = createReactAPI(world);
+export const CleaningECS = createReactAPI(cleaningWorld);

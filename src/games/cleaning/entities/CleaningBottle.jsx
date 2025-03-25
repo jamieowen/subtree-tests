@@ -1,5 +1,5 @@
 import { urls } from '@/config/assets';
-import { ECS } from '../state';
+import { CleaningECS } from '../state';
 import { three } from '@/tunnels';
 import { Billboard } from '@react-three/drei';
 
@@ -15,8 +15,8 @@ export const CleaningBottle = (entity) => {
   const s = 1.7;
 
   return (
-    <ECS.Entity entity={entity}>
-      <ECS.Component name="three">
+    <CleaningECS.Entity entity={entity}>
+      <CleaningECS.Component name="three">
         <group
           name="bottle"
           position-y={0.5}
@@ -52,12 +52,12 @@ export const CleaningBottle = (entity) => {
             </mesh>
           </Billboard>
         </group>
-      </ECS.Component>
+      </CleaningECS.Component>
 
-      <ECS.Component
+      <CleaningECS.Component
         name="sprite"
         data={refSprite}
       />
-    </ECS.Entity>
+    </CleaningECS.Entity>
   );
 };

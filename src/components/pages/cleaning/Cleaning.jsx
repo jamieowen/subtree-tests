@@ -41,7 +41,7 @@ export const Cleaning = ({ show, ...props }) => {
         <button onClick={nextSection}>{t('cleaning.tutorial.cta')}</button>
       </section>
 
-      {completed && <GameCleaning show={section == 'game'} />}
+      {completed && show && <CleaningGame show={section == 'game'} />}
 
       <section
         className={classnames([
@@ -62,7 +62,7 @@ export const Cleaning = ({ show, ...props }) => {
         ></Trans>
         <div className="buttons">
           <button onClick={replay}>{t('cleaning.results.replay')}</button>
-          <button onClick={() => setPage('bottling-video')}>
+          <button onClick={() => setPage('filling-video')}>
             {t('cleaning.results.next')}
           </button>
         </div>

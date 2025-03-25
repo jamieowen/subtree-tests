@@ -1,13 +1,13 @@
-import { ECS } from '../state';
+import { CleaningECS } from '../state';
 import { three } from '@/tunnels';
 import { useCleaningStore } from '@/stores/cleaning';
 
-const bottles = ECS.world.with('isBottle');
+const bottles = CleaningECS.world.with('isBottle');
 
 export const CleaningBottles = () => {
   return (
     <>
-      <ECS.Entities
+      <CleaningECS.Entities
         in={bottles}
         children={CleaningBottle}
       />
@@ -17,7 +17,8 @@ export const CleaningBottles = () => {
 
 let idx = 0;
 export const addBottle = () => {
-  ECS.world.add({
+  console.log('CleaningBottles.addBottle');
+  CleaningECS.world.add({
     isBottle: true,
     idx,
     position: { x: 0, y: 0 },

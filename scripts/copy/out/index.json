@@ -45,7 +45,7 @@
         "next": "Next"
       }
     },
-    "bottling": {
+    "filling": {
       "step": "Bottling",
       "intro": {
         "preheading": "Station 02",
@@ -148,7 +148,7 @@
         "next": "Próximo"
       }
     },
-    "bottling": {
+    "filling": {
       "step": "Embotellado",
       "intro": {
         "preheading": "Estación 02",
@@ -157,7 +157,7 @@
         "cta": "Próximo"
       },
       "tutorial": {
-        "heading": "Envasar tantas botellas como sea posible en el tiempo indicado.",
+        "heading": "Botellas tantas como sea posible dentro del tiempo indicado.",
         "cta": "Comenzar"
       },
       "game": {
@@ -251,7 +251,7 @@
         "next": "Suivant"
       }
     },
-    "bottling": {
+    "filling": {
       "step": "Embouteillage",
       "intro": {
         "preheading": "Gare 02",
