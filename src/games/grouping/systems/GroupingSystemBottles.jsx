@@ -23,7 +23,7 @@ export const GroupingSystemBottles = ({
     setTimeout(add, 1500 - speed.current);
     speed.current += 10;
     speed.current = Math.min(speed.current, 1450);
-    console.log('add', speed.current);
+    // console.log('add', speed.current);
   };
 
   useEffect(() => {
@@ -56,7 +56,7 @@ export const GroupingSystemBottles = ({
         entity.position[0] > box.position[0] - width / 2 &&
         entity.position[0] < box.position[0] + width / 2
       ) {
-        console.log('hit');
+        // console.log('hit');
         GroupingECS.world.removeComponent(entity, 'notHit');
         GroupingECS.world.addComponent(entity, 'hit', true);
       }
