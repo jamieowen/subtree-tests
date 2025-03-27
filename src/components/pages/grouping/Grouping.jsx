@@ -67,7 +67,7 @@ export const Grouping = ({ show, ...props }) => {
         ></Trans>
         <div className="buttons">
           <button onClick={replay}>{t('grouping.results.replay')}</button>
-          <button onClick={() => setPage('filling-video')}>
+          <button onClick={() => setPage('ending-video')}>
             {t('grouping.results.next')}
           </button>
         </div>
