@@ -7,7 +7,7 @@ import { Box } from '@react-three/drei';
 import { FillingECS } from './state';
 import { PerspectiveCamera, Grid } from '@react-three/drei';
 
-export const FillingGame = ({ show }) => {
+export const FillingGame = ({ show, onEnded }) => {
   // const count = useFillingStore((state) => state.count);
   // const setCount = useFillingStore((state) => state.setCount);
   // const setSection = useFillingStore((state) => state.setSection);
@@ -68,6 +68,13 @@ export const FillingGame = ({ show }) => {
         <TimeLeft />
         <Counter />
       </div> */}
+
+      <button
+        className="btn-skip"
+        onClick={onEnded}
+      >
+        Skip
+      </button>
     </section>
   );
 };

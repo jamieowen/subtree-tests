@@ -41,7 +41,12 @@ export const Filling = ({ show, ...props }) => {
         <button onClick={nextSection}>{t('filling.tutorial.cta')}</button>
       </section>
 
-      {completed && show && <FillingGame show={section == 'game'} />}
+      {completed && show && (
+        <FillingGame
+          show={section == 'game'}
+          onEnded={nextSection}
+        />
+      )}
 
       <section
         className={classnames([
@@ -62,7 +67,7 @@ export const Filling = ({ show, ...props }) => {
         ></Trans>
         <div className="buttons">
           <button onClick={replay}>{t('filling.results.replay')}</button>
-          <button onClick={() => setPage('filling-video')}>
+          <button onClick={() => setPage('grouping-video')}>
             {t('filling.results.next')}
           </button>
         </div>

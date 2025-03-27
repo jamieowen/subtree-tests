@@ -41,7 +41,12 @@ export const Cleaning = ({ show, ...props }) => {
         <button onClick={nextSection}>{t('cleaning.tutorial.cta')}</button>
       </section>
 
-      {completed && show && <CleaningGame show={section == 'game'} />}
+      {completed && show && (
+        <CleaningGame
+          show={section == 'game'}
+          onEnded={nextSection}
+        />
+      )}
 
       <section
         className={classnames([

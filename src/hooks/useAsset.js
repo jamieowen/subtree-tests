@@ -37,7 +37,7 @@ export const useAsset = (_input) => {
     let assets = AssetService.getAssets(inputIds);
 
     if (!assets[0]) {
-      console.error('Asset not found', input);
+      console.error('Asset not found', _input);
     }
 
     if (input.length == 1 && assets[0].scene) {

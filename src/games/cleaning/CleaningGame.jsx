@@ -6,7 +6,7 @@ import { Box } from '@react-three/drei';
 import { CleaningECS } from './state';
 import { PerspectiveCamera, Grid } from '@react-three/drei';
 
-export const CleaningGame = ({ show }) => {
+export const CleaningGame = ({ show, onEnded }) => {
   // const count = useCleaningStore((state) => state.count);
   // const setCount = useCleaningStore((state) => state.setCount);
   // const setSection = useCleaningStore((state) => state.setSection);
@@ -59,6 +59,13 @@ export const CleaningGame = ({ show }) => {
         <TimeLeft />
         <Counter />
       </div> */}
+
+      <button
+        className="btn-skip"
+        onClick={onEnded}
+      >
+        Skip
+      </button>
     </section>
   );
 };

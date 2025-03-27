@@ -10,7 +10,7 @@ export const fonts = {};
 export const models = {};
 
 export const textures = {
-  t_grouping_particle: `/assets/textures-o/0_misc/particle.ktx2`,
+  t_grouping_bottle: `/assets/textures-o/3_grouping/bottle.ktx2`,
 };
 
 export const jsons = {};
