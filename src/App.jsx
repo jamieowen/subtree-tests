@@ -10,6 +10,9 @@ import { ColorManagement } from 'three';
 ColorManagement.enabled = true;
 
 export function App() {
+  const { disable } = useContextMenu();
+  disable();
+
   return (
     <div
       id="app"

@@ -18,6 +18,11 @@ export const FillingConveyorBelt = ({ children }) => {
         name="isBelt"
         data={true}
       />
+
+      <FillingECS.Component
+        name="speed"
+        data={1.5}
+      />
       <FillingECS.Component
         name="belt"
         data={0}

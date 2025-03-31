@@ -6,6 +6,7 @@ import { FillingECS } from '../state';
 
 const beltEntities = FillingECS.world.with('belt');
 const bottleEntities = FillingECS.world.with('isBottle');
+const fillingEntities = FillingECS.world.with('filling');
 const filledEntities = FillingECS.world.with('filled');
 
 export const FillingSystemControls = ({
@@ -15,6 +16,7 @@ export const FillingSystemControls = ({
 }) => {
   const current = useRef(0);
   const speed = useRef(1.5);
+  const fillTime = useRef(1);
 
   const setBeltLocked = (locked) => {
     for (let entity of beltEntities) {
@@ -22,44 +24,44 @@ export const FillingSystemControls = ({
     }
   };
 
-  const fillBottle = async (entity) => {
-    console.log('fillBottle');
-    if (entity.filling || entity.filled) return;
+  // const fillBottle = async (entity) => {
+  //   console.log('fillBottle');
+  //   if (entity.filling || entity.filled) return;
 
-    FillingECS.world.addComponent(entity, 'filling', true);
-    entity.filling = true;
-    let tl = gsap.timeline();
+  //   FillingECS.world.addComponent(entity, 'filling', true);
+  //   entity.filling = true;
+  //   let tl = gsap.timeline();
 
-    tl.to(entity, {
-      progress: 1,
-      y: 0.5,
-      duration: 2,
-      ease: 'none',
-    });
+  //   tl.to(entity, {
+  //     progress: 1,
+  //     y: 0.5,
+  //     duration: 2,
+  //     ease: 'none',
+  //   });
 
-    await tl.then();
-    FillingECS.world.removeComponent(entity, 'filling', true);
-    FillingECS.world.addComponent(entity, 'filled', true);
-    // entity.filling = false;
-    // entity.filled = true;
-  };
+  //   await tl.then();
+  //   FillingECS.world.removeComponent(entity, 'filling', true);
+  //   FillingECS.world.addComponent(entity, 'filled', true);
+  //   // entity.filling = false;
+  //   // entity.filled = true;
+  // };
 
   const onFill = async (pos) => {
     console.log('onFill');
 
     setBeltLocked(true);
-    await gsap.to(current, { current: pos, duration: 0.1 }).then();
 
-    const promises = [];
-    for (const entity of bottleEntities) {
-      if (pos == entity.idx) {
-        let p = fillBottle(entity);
-        promises.push(p);
-      }
-      await Promise.all(promises);
-    }
+    const distance = Math.abs(current.current - pos);
+    console.log('distance', distance);
+    await gsap
+      .to(current, {
+        current: pos,
+        duration: distance,
+      })
+      .then();
 
-    setBeltLocked(false);
+    let bottleToFill = bottleEntities.entities.find((e) => e.idx == pos);
+    FillingECS.world.addComponent(bottleToFill, 'filling', true);
   };
 
   const gl = useThree((state) => state.gl);
@@ -70,19 +72,28 @@ export const FillingSystemControls = ({
 
     let pos = current.current;
     let remainder = Math.abs(pos) % 1;
-    console.log('onPointerDown', remainder);
+    // console.log('onPointerDown', remainder);
     if (remainder >= 1 - within) {
       onFill(Math.ceil(pos));
     }
-    // if (remainder <= within) {
-    //   onFill(Math.floor(pos));
-    // }
+  };
+
+  const onPointerUp = () => {
+    let pos = current.current;
+    let bottleToFill = bottleEntities.entities.find((e) => e.idx == pos);
+    if (bottleToFill) {
+      FillingECS.world.removeComponent(bottleToFill, 'filling', true);
+    }
+
+    setBeltLocked(false);
   };
 
   useEffect(() => {
     gl.domElement.addEventListener('pointerdown', onPointerDown);
+    gl.domElement.addEventListener('pointerup', onPointerUp);
     return () => {
       gl.domElement.removeEventListener('pointerdown', onPointerDown);
+      gl.domElement.removeEventListener('pointerup', onPointerUp);
     };
   }, []);
 
@@ -91,12 +102,20 @@ export const FillingSystemControls = ({
     if (!isLocked) {
       const count = filledEntities.entities.length;
       speed.current = 1.5 + count * 0.5;
-      console.log('count', count, speed.current);
       current.current += delta * speed.current;
     }
 
     for (const entity of beltEntities) {
       entity.belt = current.current;
+    }
+
+    for (const entity of fillingEntities) {
+      entity.progress += delta / fillTime.current;
+      if (entity.progress >= 1) {
+        FillingECS.world.removeComponent(entity, 'filling', true);
+        FillingECS.world.addComponent(entity, 'filled', true);
+      }
+      console.log('progress', delta, fillTime.current, entity.progress);
     }
   });
 
