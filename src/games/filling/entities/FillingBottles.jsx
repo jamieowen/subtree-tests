@@ -4,7 +4,7 @@ import { useFillingStore } from '@/stores/filling';
 
 const bottles = FillingECS.world.with('isBottle');
 
-export const FillingBottles = () => {
+export const FillingBottles = ({}) => {
   return (
     <>
       <FillingECS.Entities
@@ -21,9 +21,7 @@ export const addBottle = () => {
     isBottle: true,
     idx,
     position: { x: 0, y: 0 },
-    progress: 0,
-    // filling: false,
-    // filled: false,
+    frame: 0,
   });
   idx = idx + 1;
 };

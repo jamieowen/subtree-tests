@@ -103,6 +103,7 @@ export const MaterialModuleSpriteAnimated = forwardRef(
         `,
         main: /*glsl*/ `
           float frameNum = uSprite_Frame;
+          // float frameNum = 15.0;
           vec4 frameColor = getSpriteAt(
             tSprite, 
             st, 
@@ -141,18 +142,52 @@ export const MaterialModuleSpriteAnimated = forwardRef(
     useImperativeHandle(
       ref,
       () => ({
+        get material() {
+          return material;
+        },
+        get map() {
+          return material.uniforms['tSprite'].value;
+        },
+        set map(val) {
+          material.uniforms['tSprite'].value = val;
+        },
+        get row() {
+          return material.uniforms['uSprite_Rows'].value;
+        },
+        set row(val) {
+          material.uniforms['uSprite_Rows'].value = val;
+        },
+        get col() {
+          return material.uniforms['uSprite_Cols'].value;
+        },
+        set col(val) {
+          material.uniforms['uSprite_Cols'].value = val;
+        },
+        get frames() {
+          return material.uniforms['uSprite_Frames'].value;
+        },
+        set frames(val) {
+          material.uniforms['uSprite_Frames'].value = val;
+        },
+        get fps() {
+          return material.uniforms['uSprite_Fps'].value;
+        },
+        set fps(val) {
+          material.uniforms['uSprite_Fps'].value = val;
+        },
         get frame() {
           return material.uniforms['uSprite_Frame'].value;
         },
         set frame(val) {
-          material.uniforms['uSprite_Frame'].value = val;
+          material.uniforms['uSprite_Frame'].value = Math.floor(val);
         },
         get progress() {
           return material.uniforms['uSprite_Frame'].value / frames;
         },
         set progress(val) {
-          let f = Math.floor(val * frames);
-          // console.log('MaterialModuleSpriteAnimated.set progress', f);
+          let f = Math.floor(val * (frames - 1));
+
+          console.log('MaterialModuleSpriteAnimated.set progress', val, f);
           material.uniforms['uSprite_Frame'].value = f;
         },
       }),

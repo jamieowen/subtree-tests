@@ -124,6 +124,7 @@ export default defineConfig(async () => {
           'react-router-dom',
           'ahooks',
           {
+            // react: ['useContext', 'createContext'],
             // '@react-ecs/core': [
             //   'Entity',
             //   'Facet',

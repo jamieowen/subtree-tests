@@ -1,3 +1,4 @@
+import { createContext } from 'react';
 import { urls } from '@/config/assets';
 import './FillingGame.sass';
 import classnames from 'classnames';
@@ -7,14 +8,53 @@ import { Box } from '@react-three/drei';
 import { FillingECS } from './state';
 import { PerspectiveCamera, Grid } from '@react-three/drei';
 
-export const FillingGame = ({ show, onEnded }) => {
-  // const count = useFillingStore((state) => state.count);
-  // const setCount = useFillingStore((state) => state.setCount);
-  // const setSection = useFillingStore((state) => state.setSection);
-  // const numBottles = useFillingStore((state) => state.numBottles);
-  // const addBottle = useFillingStore((state) => state.addBottle);
+// export const FillingGameContext = createContext();
+// export const useFillingGameContext = () => useContext(FillingGameContext);
 
+export const textureConfigs = [
+  {
+    idx: 0,
+    progress: 0.25,
+    rows: 2048 / 1024,
+    cols: 2048 / 256,
+    end: 12,
+    frames: 15,
+  },
+  {
+    idx: 1,
+    progress: 0.5,
+    rows: 2048 / 1024,
+    cols: 4096 / 256,
+    edn: 18,
+    frames: 21,
+  },
+  {
+    idx: 2,
+    progress: 0.75,
+    rows: 2048 / 1024,
+    cols: 4096 / 256,
+    end: 24,
+    frames: 27,
+  },
+  {
+    idx: 3,
+    progress: 1,
+    rows: 4096 / 1024,
+    cols: 4096 / 256,
+    end: 48,
+    frames: 48,
+  },
+];
+
+export const FillingGame = ({ show, onEnded }) => {
   const t_filling_nozzle = useAsset(urls.t_filling_nozzle);
+
+  const textures = useAsset([
+    urls.t_filling_bottle25,
+    urls.t_filling_bottle50,
+    urls.t_filling_bottle75,
+    urls.t_filling_bottle100,
+  ]);
 
   return (
     <section className={classnames(['page', 'game', 'game-filling', { show }])}>
@@ -27,14 +67,14 @@ export const FillingGame = ({ show, onEnded }) => {
         />
 
         {/* <Grid
-          cellSize={1}
-          sectionSize={5}
-          args={[100, 100]}
-          fadeDistance={20}
-          side={DoubleSide}
-          cellThickness={0.75}
-          sectionThickness={1}
-        /> */}
+            cellSize={1}
+            sectionSize={5}
+            args={[100, 100]}
+            fadeDistance={20}
+            side={DoubleSide}
+            cellThickness={0.75}
+            sectionThickness={1}
+          /> */}
 
         <ambientLight intensity={1.5} />
 
@@ -60,7 +100,7 @@ export const FillingGame = ({ show, onEnded }) => {
           />
         </mesh>
 
-        <FillingSystemControls />
+        <FillingSystemControls textureConfigs={textureConfigs} />
         <FillingSystemBottles />
         <FillingSystemGraphics />
       </three.In>
