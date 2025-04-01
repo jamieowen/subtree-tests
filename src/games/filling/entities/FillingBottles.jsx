@@ -21,7 +21,7 @@ export const addBottle = () => {
     isBottle: true,
     idx,
     position: { x: 0, y: 0 },
-    frame: 0,
+    progress: 0,
   });
   idx = idx + 1;
 };

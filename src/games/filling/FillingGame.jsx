@@ -47,15 +47,6 @@ export const textureConfigs = [
 ];
 
 export const FillingGame = ({ show, onEnded }) => {
-  const t_filling_nozzle = useAsset(urls.t_filling_nozzle);
-
-  const textures = useAsset([
-    urls.t_filling_bottle25,
-    urls.t_filling_bottle50,
-    urls.t_filling_bottle75,
-    urls.t_filling_bottle100,
-  ]);
-
   return (
     <section className={classnames(['page', 'game', 'game-filling', { show }])}>
       <three.In>
@@ -83,27 +74,16 @@ export const FillingGame = ({ show, onEnded }) => {
           position={[3, 3, 3]}
         />
 
+        <FillingNozzle />
         <FillingConveyorBelt>
           <FillingBottles />
         </FillingConveyorBelt>
-
-        <mesh
-          position-y={2.73}
-          position-z={0.0}
-          scale={[2, -2, 2]}
-        >
-          <planeGeometry args={[0.5, 1, 32]} />
-          <meshBasicMaterial
-            map={t_filling_nozzle}
-            transparent
-            alphaTest={0.5}
-          />
-        </mesh>
 
         <FillingSystemControls textureConfigs={textureConfigs} />
         <FillingSystemBottles />
         <FillingSystemGraphics />
       </three.In>
+
       {/* <div className="game-filling-ui">
         <TimeLeft />
         <Counter />

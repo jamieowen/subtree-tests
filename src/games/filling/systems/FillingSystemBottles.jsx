@@ -10,18 +10,16 @@ const beltEntities = FillingECS.world.with('belt');
 const bottleEntities = FillingECS.world.with('isBottle');
 
 export const FillingSystemBottles = () => {
-  // TODO
-  // useEffect(() => {
-  //   addBottle();
-  // }, []);
+  useEffect(() => {
+    // addBottle(); // TODO
+  }, []);
 
   useFrame((state, delta) => {
     let belt = beltEntities.entities[0].belt;
 
     let numBottles = bottleEntities.entities.length;
     if (belt + 5 > numBottles) {
-      // TODO
-      addBottle();
+      addBottle(); // TODO
     }
   });
 

@@ -45,6 +45,7 @@ export const FillingConveyorBelt = ({ children }) => {
           <mesh
             scale={[s, -s, s]}
             position-y={-0.8}
+            visible={false}
           >
             <planeGeometry args={[2, 2 * aspect]} />
             <GBufferMaterial

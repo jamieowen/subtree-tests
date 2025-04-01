@@ -23,9 +23,9 @@ export const FillingSystemGraphics = () => {
       entity.three.position.y = entity.position.y;
     }
 
-    for (const entity of spriteEntities) {
-      entity.sprite.current.frame = Math.floor(entity.frame);
-    }
+    // for (const entity of spriteEntities) {
+    //   entity.sprite.current.frame = Math.floor(entity.frame);
+    // }
   });
 
   return null;

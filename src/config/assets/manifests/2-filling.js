@@ -10,15 +10,18 @@ export const fonts = {};
 export const models = {};
 
 export const textures = {
-  // t_filling_bottle: `/assets/textures-o/2_filling/bottle.ktx2`,
-  t_filling_bottle25: `/assets/textures-o/2_filling/25.ktx2`,
-  t_filling_bottle50: `/assets/textures-o/2_filling/50.ktx2`,
-  t_filling_bottle75: `/assets/textures-o/2_filling/75.ktx2`,
-  t_filling_bottle100: `/assets/textures-o/2_filling/100.ktx2`,
   t_filling_belt: `/assets/textures-o/2_filling/belt.ktx2`,
-  t_filling_cap: `/assets/textures-o/2_filling/cap.ktx2`,
-  t_filling_shadow: `/assets/textures-o/2_filling/shadow.ktx2`,
   t_filling_nozzle: `/assets/textures-o/2_filling/nozzle.ktx2`,
+  t_filling_pour: `/assets/textures-o/2_filling/pour.ktx2`,
+
+  t_filling_cap: `/assets/textures-o/2_filling/cap.ktx2`,
+
+  t_filling_bottle_shadow: `/assets/textures-o/2_filling/bottle/shadow.ktx2`,
+  t_filling_bottle_body: `/assets/textures-o/2_filling/bottle/body.ktx2`,
+  t_filling_bottle_liquid: `/assets/textures-o/2_filling/bottle/liquid.ktx2`,
+  t_filling_bottle_foam: `/assets/textures-o/2_filling/bottle/foam.ktx2`,
+  t_filling_bottle_logo: `/assets/textures-o/2_filling/bottle/logo.ktx2`,
+  t_filling_bottle_mask: `/assets/textures-o/2_filling/bottle/mask.ktx2`,
 };
 
 export const jsons = {};
