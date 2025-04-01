@@ -26,8 +26,6 @@ export const FillingSystemControls = ({
 
   const setBeltLocked = (locked) => {
     for (let entity of beltEntities) {
-      // entity.locked = locked;
-
       if (locked) {
         FillingECS.world.addComponent(entity, 'locked', true);
       } else {
@@ -75,12 +73,11 @@ export const FillingSystemControls = ({
   const gl = useThree((state) => state.gl);
 
   const onPointerDown = () => {
-    // const isLocked = beltEntities.entities[0].locked;
     if (isLocked()) return;
 
     let pos = current.current;
     let remainder = Math.abs(pos) % 1;
-    // onFill(0); // TODO
+
     if (remainder >= 1 - within) {
       onFill(Math.ceil(pos));
     }
@@ -113,10 +110,9 @@ export const FillingSystemControls = ({
   useFrame((state, delta) => {
     // MOVE BELT
     const count = filledEntities.entities.length;
-    // const isLocked = beltEntities.entities[0].locked;
     if (!isLocked()) {
-      speed.current = Math.min(1 + count * 0.15, 2);
-      current.current += delta * speed.current; // TODO
+      speed.current = Math.min(1 + count * 0.15, 2.5);
+      current.current += delta * speed.current;
     }
     for (const entity of beltEntities) {
       entity.belt = current.current;
@@ -124,8 +120,8 @@ export const FillingSystemControls = ({
     }
 
     // FILL
-    // timeToFill.current = Math.max(1, 3 - count * 0.5);
-    timeToFill.current = 3;
+    timeToFill.current = Math.max(0.5, 3 - count * 0.5);
+    timeToFill.current = 0.5;
 
     let complete = false;
     for (const entity of fillingEntities) {
