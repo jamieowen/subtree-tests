@@ -15,7 +15,7 @@ const pouringEntities = FillingECS.world.with('pouring');
 const lockedEntities = FillingECS.world.with('locked');
 
 export const FillingSystemControls = ({
-  within = 0.25,
+  within = 0.15,
   multiplier = 0.01,
   oneDirection = false,
   textureConfigs,
@@ -52,19 +52,21 @@ export const FillingSystemControls = ({
     return pouringEntities.entities.length > 0;
   };
 
+  let tween = useRef(null);
+
   const onFill = async (pos) => {
     setBeltLocked(true);
 
     const distance = Math.abs(current.current - pos);
     if (distance > 0) {
-      await gsap
-        .to(current, {
-          current: pos,
-          duration: distance,
-        })
-        .then();
+      tween.current = gsap.to(current, {
+        current: pos,
+        duration: distance,
+      });
+      await tween.current.then();
     }
 
+    if (!isLocked()) return;
     setNozzlePouring(true);
     let bottleToFill = bottleEntities.entities.find((e) => e.idx == pos);
     FillingECS.world.addComponent(bottleToFill, 'filling', true);
@@ -74,6 +76,7 @@ export const FillingSystemControls = ({
 
   const onPointerDown = () => {
     if (isLocked()) return;
+    if (tween.current) tween.current.kill();
 
     let pos = current.current;
     let remainder = Math.abs(pos) % 1;
