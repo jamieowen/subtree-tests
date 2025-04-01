@@ -108,12 +108,10 @@
     }
   },
   "ending": {
-    "results": {
-      "preheading": "Travail incroyable",
-      "heading": "Tu es un\r\nremplissage de bouteilles\r\nsuperstar",
-      "restart": "Rejouer",
-      "cta": "Partager"
-    }
+    "preheading": "Travail incroyable",
+    "heading": "Tu es\r\nune bouteille-\r\nremplissage\r\nsuperstar",
+    "restart": "Rejouer",
+    "cta": "Partager"
   },
   "example": "Exemple"
 }

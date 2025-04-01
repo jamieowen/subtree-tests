@@ -106,12 +106,10 @@
       }
     },
     "ending": {
-      "results": {
-        "preheading": "Amazing job",
-        "heading": "You're a\r\nbottle-refilling\r\nsuperstar",
-        "restart": "Play Again",
-        "cta": "Share"
-      }
+      "preheading": "Amazing job",
+      "heading": "You're\r\na bottle-\r\nrefilling\r\nsuperstar",
+      "restart": "Play Again",
+      "cta": "Share"
     },
     "example": "Example"
   },
@@ -225,12 +223,10 @@
       }
     },
     "ending": {
-      "results": {
-        "preheading": "trabajo increíble",
-        "heading": "eres un\r\nrecarga de botellas\r\nsuperestrella",
-        "restart": "Jugar de nuevo",
-        "cta": "Compartir"
-      }
+      "preheading": "trabajo increíble",
+      "heading": "Estás\r\nuna botella-\r\nrellenando\r\nsuperestrella",
+      "restart": "Jugar de nuevo",
+      "cta": "Compartir"
     },
     "example": "Ejemplo"
   },
@@ -344,12 +340,10 @@
       }
     },
     "ending": {
-      "results": {
-        "preheading": "Travail incroyable",
-        "heading": "Tu es un\r\nremplissage de bouteilles\r\nsuperstar",
-        "restart": "Rejouer",
-        "cta": "Partager"
-      }
+      "preheading": "Travail incroyable",
+      "heading": "Tu es\r\nune bouteille-\r\nremplissage\r\nsuperstar",
+      "restart": "Rejouer",
+      "cta": "Partager"
     },
     "example": "Exemple"
   }

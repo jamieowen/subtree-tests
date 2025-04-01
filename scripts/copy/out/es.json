@@ -108,12 +108,10 @@
     }
   },
   "ending": {
-    "results": {
-      "preheading": "trabajo increíble",
-      "heading": "eres un\r\nrecarga de botellas\r\nsuperestrella",
-      "restart": "Jugar de nuevo",
-      "cta": "Compartir"
-    }
+    "preheading": "trabajo increíble",
+    "heading": "Estás\r\nuna botella-\r\nrellenando\r\nsuperestrella",
+    "restart": "Jugar de nuevo",
+    "cta": "Compartir"
   },
   "example": "Ejemplo"
 }

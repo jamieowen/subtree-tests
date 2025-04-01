@@ -105,12 +105,10 @@
     }
   },
   "ending": {
-    "results": {
-      "preheading": "Amazing job",
-      "heading": "You're a\r\nbottle-refilling\r\nsuperstar",
-      "restart": "Play Again",
-      "cta": "Share"
-    }
+    "preheading": "Amazing job",
+    "heading": "You're\r\na bottle-\r\nrefilling\r\nsuperstar",
+    "restart": "Play Again",
+    "cta": "Share"
   },
   "example": "Example"
 }
