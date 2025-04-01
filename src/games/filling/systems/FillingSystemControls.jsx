@@ -121,7 +121,7 @@ export const FillingSystemControls = ({
 
     // FILL
     timeToFill.current = Math.max(0.5, 3 - count * 0.5);
-    timeToFill.current = 0.5;
+    // timeToFill.current = 0.5;
 
     let complete = false;
     for (const entity of fillingEntities) {
