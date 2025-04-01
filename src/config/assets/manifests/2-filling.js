@@ -21,7 +21,7 @@ export const textures = {
   t_filling_bottle_liquid: `/assets/textures-o/2_filling/bottle/liquid.ktx2`,
   t_filling_bottle_foam: `/assets/textures-o/2_filling/bottle/foam.ktx2`,
   t_filling_bottle_logo: `/assets/textures-o/2_filling/bottle/logo.ktx2`,
-  t_filling_bottle_mask: `/assets/textures-o/2_filling/bottle/mask.ktx2`,
+  t_filling_bottle_mask: `/assets/textures-o/2_filling/bottle/maskk.ktx2`,
 };
 
 export const jsons = {};

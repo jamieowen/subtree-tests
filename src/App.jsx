@@ -23,8 +23,8 @@ export function App() {
         <Webgl />
 
         <div className="ui">
-          <ui.Out />
           <Pages />
+          <ui.Out />
           <Loading />
           <TheGuidelines />
         </div>

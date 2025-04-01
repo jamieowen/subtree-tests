@@ -1,4 +1,5 @@
 @import "shared.sass"
+@import "app/index.sass"
 
 :root
   --height-header: 5rem
@@ -44,9 +45,6 @@ html
   &.remlock
     font-size: 10px !important
 
-#app
-  margin: 0
-
 body
   touch-action: none
 
@@ -67,6 +65,10 @@ ul, ol
 h1, h2, h3, h4, p
   margin: 0
 
+h1
+  +type-h1()
+
+
 button, input
   border: none
   outline: none
@@ -79,6 +81,7 @@ button, input
   text-transform: inherit
   color: inherit
   padding: 0
+  +type-cta
 
 img
   +user-select(none)
@@ -142,17 +145,17 @@ button
   top: calc(var(--p2) + 5rem) !important
   left: var(--p2) !important
 
-html.lenis, html.lenis body
-  height: auto
+// html.lenis, html.lenis body
+//   height: auto
 
-.lenis.lenis-smooth
-  scroll-behavior: auto !important
+// .lenis.lenis-smooth
+//   scroll-behavior: auto !important
 
-.lenis.lenis-smooth [data-lenis-prevent]
-  overscroll-behavior: contain
+// .lenis.lenis-smooth [data-lenis-prevent]
+//   overscroll-behavior: contain
 
-.lenis.lenis-stopped
-  overflow: hidden
+// .lenis.lenis-stopped
+//   overflow: hidden
 
-.lenis.lenis-scrolling iframe
-  pointer-events: none
+// .lenis.lenis-scrolling iframe
+//   pointer-events: none

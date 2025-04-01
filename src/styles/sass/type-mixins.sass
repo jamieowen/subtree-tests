@@ -1,77 +1,58 @@
 @import "./breakpoints.sass"
 
 
-$font-tccc: 'TCCCUnity'
-$font-tccc-cond: 'TCCCUnityCond'
-$font-tccc-head: 'TCCCUnityHead'
+$font-tccc: "TCCCUnity"
+$font-tccc-cond: "TCCCUnityCond"
+$font-tccc-head: "TCCCUnityHead"
 
-.ui
-  font-family: $font-tccc-cond
-
-=text-gradient($thick: 0.2rem)
-  background: -webkit-linear-gradient(#fff, #ccc)
-  -webkit-background-clip: text
-  -webkit-text-fill-color: transparent
-  -webkit-text-stroke-width: $thick
-  -webkit-text-stroke-color: rgba(255,255,255,0.1)
 
 =type-countdown
-  font-size: 45rem
-  line-height: 5.8rem
-  font-weight: 700
+  font-family: $font-tccc
+  font-size: 30rem
+  line-height: auto
+  font-weight: 900
   letter-spacing: -0.02em
-  text-transform: uppercase
 
 =type-score
+  font-family: $font-tccc
+  font-size: 3rem
+  line-height: 5.8rem
+  font-weight: 700
+  letter-spacing: -0.08em
+  text-transform: uppercase
+
+=type-point
+  font-family: $font-tccc-cond
   font-size: 5rem
   line-height: 5.8rem
   font-weight: 700
-  letter-spacing: -0.02em
   text-transform: uppercase
 
 =type-h1
-  font-size: 8.5rem
-  line-height: 7.2rem
-  font-weight: 700
-  text-transform: uppercase
-
-=type-h2
-  font-size: 8rem
-  line-height: 5.8rem
-  font-weight: 700
-  letter-spacing: -0.02em
-  text-transform: uppercase
-
-=type-h3
-  font-size: 4rem
-  line-height: 7.2rem
-  font-weight: 700
-  text-transform: uppercase
-
-=type-h4
-  font-size: 2.5rem
-  line-height: 2.6rem
-  font-weight: 500
-  text-transform: uppercase
-
-=type-subheading
-  font-size: 1.5rem
-  line-height: 2.6rem
-  font-weight: 500
+  font-family: $font-tccc
+  font-size: 4.5rem
+  line-height: 1
+  font-weight: 900
+  letter-spacing: -0.06em
   text-transform: uppercase
 
 =type-body1
-  font-size: 2rem
-  font-weight: 500
-  line-height: 2.6rem
-
-=type-cta1
-  font-size: 2rem
-  font-weight: 500
-  line-height: 2.6rem
-
-=type-cta2
+  font-family: $font-tccc
   font-size: 1.5rem
+  font-weight: 500
+  line-height: 2.2rem
+  letter-spacing: -0.04em
+
+=type-caption
+  font-family: $font-tccc
+  font-size: 1rem
+  font-weight: 500
+  line-height: 2.2rem
+  letter-spacing: -0.04em
+
+=type-cta
+  font-family: $font-tccc-cond
+  font-size: 2rem
   font-weight: 500
   line-height: 2.6rem
   letter-spacing: 0.02em
