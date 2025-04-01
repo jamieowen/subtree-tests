@@ -12,6 +12,7 @@ const fillingEntities = FillingECS.world.with('filling');
 const filledEntities = FillingECS.world.with('filled');
 const nozzleEntities = FillingECS.world.with('isNozzle');
 const pouringEntities = FillingECS.world.with('pouring');
+const lockedEntities = FillingECS.world.with('locked');
 
 export const FillingSystemControls = ({
   within = 0.25,
@@ -25,8 +26,18 @@ export const FillingSystemControls = ({
 
   const setBeltLocked = (locked) => {
     for (let entity of beltEntities) {
-      entity.locked = locked;
+      // entity.locked = locked;
+
+      if (locked) {
+        FillingECS.world.addComponent(entity, 'locked', true);
+      } else {
+        FillingECS.world.removeComponent(entity, 'locked', true);
+      }
     }
+  };
+
+  const isLocked = () => {
+    return lockedEntities.entities.length > 0;
   };
 
   const setNozzlePouring = (pouring) => {
@@ -64,8 +75,8 @@ export const FillingSystemControls = ({
   const gl = useThree((state) => state.gl);
 
   const onPointerDown = () => {
-    const isLocked = beltEntities.entities[0].locked;
-    if (isLocked) return;
+    // const isLocked = beltEntities.entities[0].locked;
+    if (isLocked()) return;
 
     let pos = current.current;
     let remainder = Math.abs(pos) % 1;
@@ -102,13 +113,14 @@ export const FillingSystemControls = ({
   useFrame((state, delta) => {
     // MOVE BELT
     const count = filledEntities.entities.length;
-    const isLocked = beltEntities.entities[0].locked;
-    if (!isLocked) {
+    // const isLocked = beltEntities.entities[0].locked;
+    if (!isLocked()) {
       speed.current = Math.min(1 + count * 0.15, 2);
       current.current += delta * speed.current; // TODO
     }
     for (const entity of beltEntities) {
       entity.belt = current.current;
+      entity.speed = speed.current;
     }
 
     // FILL

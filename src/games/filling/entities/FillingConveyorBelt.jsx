@@ -3,7 +3,10 @@ import { FillingECS } from '../state';
 import { three } from '@/tunnels';
 import { useFillingStore } from '@/stores/filling';
 
+const lockedTargets = FillingECS.world.with('locked');
+
 export const FillingConveyorBelt = ({ children }) => {
+  const refBelt = useRef(null);
   const refSprite = useRef(null);
   const s = 1.7;
 
@@ -12,8 +15,20 @@ export const FillingConveyorBelt = ({ children }) => {
   const t_belt = useAsset(urls.t_filling_belt);
   t_belt.anisotropy = 16;
 
+  const [locked] = useEntities(lockedTargets);
+
+  let fps = 24;
+  let frame = useRef(0);
+
+  useFrame((state, delta) => {
+    if (!refBelt.current.locked) {
+      frame.current += delta * fps * refBelt.current.speed;
+      refSprite.current.frame = Math.floor(frame.current) % 47;
+    }
+  });
+
   return (
-    <FillingECS.Entity>
+    <FillingECS.Entity ref={refBelt}>
       <FillingECS.Component
         name="isBelt"
         data={true}
@@ -21,31 +36,21 @@ export const FillingConveyorBelt = ({ children }) => {
 
       <FillingECS.Component
         name="speed"
-        data={1.5}
+        data={1}
       />
       <FillingECS.Component
         name="belt"
         data={0}
       />
-      <FillingECS.Component
+      {/* <FillingECS.Component
         name="locked"
         data={false}
-      />
+      /> */}
       <FillingECS.Component name="three">
         <group>
-          {/* <mesh
-            name="belt"
-            position={[0, 0, 0]}
-            rotation-x={degToRad(-90)}
-          >
-            <planeGeometry args={[10, 3]} />
-            <meshBasicMaterial color="grey" />
-          </mesh> */}
-
           <mesh
             scale={[s, -s, s]}
             position-y={-0.8}
-            visible={false}
           >
             <planeGeometry args={[2, 2 * aspect]} />
             <GBufferMaterial
@@ -58,7 +63,6 @@ export const FillingConveyorBelt = ({ children }) => {
                 rows={4096 / 256}
                 cols={2048 / 512}
                 frames={47}
-                fps={12}
               />
             </GBufferMaterial>
           </mesh>
@@ -71,11 +75,6 @@ export const FillingConveyorBelt = ({ children }) => {
           </group>
         </group>
       </FillingECS.Component>
-
-      <FillingECS.Component
-        name="sprite"
-        data={refSprite}
-      />
     </FillingECS.Entity>
   );
 };
