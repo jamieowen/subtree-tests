@@ -112,7 +112,7 @@ export const FillingSystemControls = ({
     // MOVE BELT
     const count = filledEntities.entities.length;
     if (!isLocked()) {
-      speed.current = Math.min(1 + count * 0.15, 2.5);
+      speed.current = Math.min(0.5 + count * 0.15, 2);
       current.current += delta * speed.current; // DEBUG
     }
     for (const entity of beltEntities) {
