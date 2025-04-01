@@ -1,0 +1,15 @@
+@import "@/styles/shared.sass"
+
+.results
+  +flex-col
+  padding-bottom: calc(env(safe-area-inset-bottom) + 6rem)
+
+  >.wrap
+    flex: 1
+    +flex-col
+    gap: 2rem
+
+  .btn-secondary
+    opacity: 0.5
+    border-bottom: 0.2rem solid white
+    +type-body1

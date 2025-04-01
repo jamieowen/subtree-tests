@@ -1,0 +1,15 @@
+@import "@/styles/shared.sass"
+
+.time-left
+  position: absolute
+  top: calc(var(--header-height) + 1rem)
+  left: 3rem
+  +flex-col
+  width: 8.5rem
+
+  .type-score
+    margin-top: -0.6em
+  
+  transition: opacity 0.3s ease-in-out
+  &:not(.show)
+    opacity: 0

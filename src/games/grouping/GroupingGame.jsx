@@ -8,6 +8,20 @@ import { GroupingECS } from './state';
 import { PerspectiveCamera, Grid } from '@react-three/drei';
 
 export const GroupingGame = ({ show, onEnded }) => {
+  const count = useGroupingStore((state) => state.count);
+  const points = useMemo(() => count * 10);
+  const duration = 20;
+
+  const [started, setStarted] = useState(false);
+
+  const onCountdownEnded = () => {
+    setStarted(true);
+  };
+
+  const onTimeLeftEnded = () => {
+    onEnded();
+  };
+
   return (
     <section
       className={classnames(['page', 'game', 'game-grouping', { show }])}
@@ -45,12 +59,31 @@ export const GroupingGame = ({ show, onEnded }) => {
         <GroupingSystemControls />
       </three.In>
 
-      <button
+      <div className="contents">
+        <TimeLeft
+          id="cleaning"
+          duration={duration}
+          onEnded={onTimeLeftEnded}
+          show={started}
+        />
+        <Points
+          id="cleaning"
+          points={points}
+          show={started}
+        />
+        <Countdown
+          id="cleaning"
+          onEnded={onCountdownEnded}
+          show={show && !started}
+        />
+      </div>
+
+      {/* <button
         className="btn-skip"
         onClick={onEnded}
       >
         Skip
-      </button>
+      </button> */}
     </section>
   );
 };

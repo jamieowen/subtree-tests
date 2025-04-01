@@ -1,0 +1,18 @@
+@import "@/styles/shared.sass"
+
+.countdown
+  +full
+  +flex-col
+  padding-top: calc(var(--header-height))
+
+  .preheading
+    position: absolute
+    top: calc(var(--header-height) + 5rem)
+    left: 0
+    right: 0
+    margin-inline: auto
+
+
+  transition: opacity 0.3s ease-in-out
+  &:not(.show)
+    opacity: 0

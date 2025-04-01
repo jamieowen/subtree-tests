@@ -13,7 +13,7 @@ export const Landing = ({ show, ...props }) => {
     >
       <h1>{t('landing.heading')}</h1>
       <p>{t('landing.desc')}</p>
-      <button>{t('landing.cta')}</button>
+      <ButtonPrimary>{t('landing.cta')}</ButtonPrimary>
     </div>
   );
 };

@@ -47,6 +47,20 @@ export const textureConfigs = [
 ];
 
 export const FillingGame = ({ show, onEnded }) => {
+  const count = useFillingStore((state) => state.count);
+  const points = useMemo(() => count * 10);
+  const duration = 20;
+
+  const [started, setStarted] = useState(false);
+
+  const onCountdownEnded = () => {
+    setStarted(true);
+  };
+
+  const onTimeLeftEnded = () => {
+    onEnded();
+  };
+
   return (
     <section className={classnames(['page', 'game', 'game-filling', { show }])}>
       <three.In>
@@ -84,17 +98,31 @@ export const FillingGame = ({ show, onEnded }) => {
         <FillingSystemGraphics />
       </three.In>
 
-      {/* <div className="game-filling-ui">
-        <TimeLeft />
-        <Counter />
-      </div> */}
+      <div className="contents">
+        <TimeLeft
+          id="cleaning"
+          duration={duration}
+          onEnded={onTimeLeftEnded}
+          show={started}
+        />
+        <Points
+          id="cleaning"
+          points={points}
+          show={started}
+        />
+        <Countdown
+          id="cleaning"
+          onEnded={onCountdownEnded}
+          show={show && !started}
+        />
+      </div>
 
-      <button
+      {/* <button
         className="btn-skip"
         onClick={onEnded}
       >
         Skip
-      </button>
+      </button> */}
     </section>
   );
 };

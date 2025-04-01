@@ -7,11 +7,19 @@ import { CleaningECS } from './state';
 import { PerspectiveCamera, Grid } from '@react-three/drei';
 
 export const CleaningGame = ({ show, onEnded }) => {
-  // const count = useCleaningStore((state) => state.count);
-  // const setCount = useCleaningStore((state) => state.setCount);
-  // const setSection = useCleaningStore((state) => state.setSection);
-  // const numBottles = useCleaningStore((state) => state.numBottles);
-  // const addBottle = useCleaningStore((state) => state.addBottle);
+  const count = useCleaningStore((state) => state.count);
+  const points = useMemo(() => count * 10);
+  const duration = 20;
+
+  const [started, setStarted] = useState(false);
+
+  const onCountdownEnded = () => {
+    setStarted(true);
+  };
+
+  const onTimeLeftEnded = () => {
+    onEnded();
+  };
 
   return (
     <section
@@ -55,17 +63,32 @@ export const CleaningGame = ({ show, onEnded }) => {
         <CleaningSystemBottles />
         <CleaningSystemGraphics />
       </three.In>
-      {/* <div className="game-cleaning-ui">
-        <TimeLeft />
-        <Counter />
-      </div> */}
 
-      <button
+      <div className="contents">
+        <TimeLeft
+          id="cleaning"
+          duration={duration}
+          onEnded={onTimeLeftEnded}
+          show={started}
+        />
+        <Points
+          id="cleaning"
+          points={points}
+          show={started}
+        />
+        <Countdown
+          id="cleaning"
+          onEnded={onCountdownEnded}
+          show={show && !started}
+        />
+      </div>
+
+      {/* <button
         className="btn-skip"
         onClick={onEnded}
       >
         Skip
-      </button>
+      </button> */}
     </section>
   );
 };

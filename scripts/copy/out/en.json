@@ -26,7 +26,7 @@
     "step": "Station 1/3",
     "intro": {
       "heading": "Time for a\r\nWash",
-      "desc": "First, all bottles need to be thoroughly cleaned",
+      "desc": "First, all bottles need to be \r\nthoroughly cleaned",
       "cta": "Play Game"
     },
     "tutorial": {
@@ -45,7 +45,7 @@
     },
     "results": {
       "heading": "Well Done!",
-      "desc": "You cleaned {num} bottles and\r\nearned {points} points",
+      "desc": "You cleaned {{count}} bottles and\r\nearned {{points}} points",
       "replay": "Restart Game",
       "next": "Next Game"
     }
@@ -74,7 +74,7 @@
     },
     "results": {
       "heading": "Well Done!",
-      "desc": "You filled {num} bottles and \r\nearned {points} points",
+      "desc": "You filled {{count}} bottles and \r\nearned {{points}} points",
       "replay": "Restart Game",
       "next": "Next Game"
     }
@@ -99,7 +99,7 @@
     },
     "results": {
       "heading": "Well Done!",
-      "desc": "You packed {num} bottles and \r\nearned {points} points",
+      "desc": "You packed {{count}} bottles and \r\nearned {{points}} points",
       "replay": "Restart Game",
       "next": "Next"
     }

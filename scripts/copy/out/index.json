@@ -27,7 +27,7 @@
       "step": "Station 1/3",
       "intro": {
         "heading": "Time for a\r\nWash",
-        "desc": "First, all bottles need to be thoroughly cleaned",
+        "desc": "First, all bottles need to be \r\nthoroughly cleaned",
         "cta": "Play Game"
       },
       "tutorial": {
@@ -46,7 +46,7 @@
       },
       "results": {
         "heading": "Well Done!",
-        "desc": "You cleaned {num} bottles and\r\nearned {points} points",
+        "desc": "You cleaned {{count}} bottles and\r\nearned {{points}} points",
         "replay": "Restart Game",
         "next": "Next Game"
       }
@@ -75,7 +75,7 @@
       },
       "results": {
         "heading": "Well Done!",
-        "desc": "You filled {num} bottles and \r\nearned {points} points",
+        "desc": "You filled {{count}} bottles and \r\nearned {{points}} points",
         "replay": "Restart Game",
         "next": "Next Game"
       }
@@ -100,7 +100,7 @@
       },
       "results": {
         "heading": "Well Done!",
-        "desc": "You packed {num} bottles and \r\nearned {points} points",
+        "desc": "You packed {{count}} bottles and \r\nearned {{points}} points",
         "replay": "Restart Game",
         "next": "Next"
       }
@@ -137,7 +137,7 @@
       "bottles": "botellas"
     },
     "landing": {
-      "heading": "Únase a nosotros el\r\nManera recargable",
+      "heading": "Únase a nosotros el\r\nForma recargable",
       "desc": "Nuestras botellas de vidrio recargables\r\nestán diseñados para ser recargados\r\nal menos 25 veces",
       "cta": "Recargar ahora"
     },
@@ -146,7 +146,7 @@
       "step": "Estación 1/3",
       "intro": {
         "heading": "tiempo para un\r\nLavar",
-        "desc": "Primero, todas las botellas deben limpiarse a fondo.",
+        "desc": "Primero, todas las botellas deben ser \r\nlimpiado a fondo",
         "cta": "jugar juego"
       },
       "tutorial": {
@@ -165,7 +165,7 @@
       },
       "results": {
         "heading": "¡Bien hecho!",
-        "desc": "Limpiaste {num} botellas y\r\nganado {puntos} puntos",
+        "desc": "Limpiaste {{count}} botellas y\r\nganado {{puntos}} puntos",
         "replay": "Reiniciar juego",
         "next": "Próximo juego"
       }
@@ -194,7 +194,7 @@
       },
       "results": {
         "heading": "¡Bien hecho!",
-        "desc": "Llenaste {num} botellas y \r\nganado {puntos} puntos",
+        "desc": "Llenaste {{count}} botellas y \r\nganado {{puntos}} puntos",
         "replay": "Reiniciar juego",
         "next": "Próximo juego"
       }
@@ -210,7 +210,7 @@
       "tutorial": {
         "preheading": "Atrapa tantas botellas como puedas\r\ndentro del tiempo dado",
         "heading": "Cómo jugar",
-        "cta": "Arrastre la caja hacia la izquierda/derecha\r\ncoger botellas"
+        "cta": "Arrastre la caja hacia la izquierda o hacia la derecha\r\ncoger botellas"
       },
       "game": {
         "ready": "¡Prepararse!",
@@ -219,7 +219,7 @@
       },
       "results": {
         "heading": "¡Bien hecho!",
-        "desc": "Empacaste {num} botellas y \r\nganado {puntos} puntos",
+        "desc": "Empacaste {{count}} botellas y \r\nganado {{puntos}} puntos",
         "replay": "Reiniciar juego",
         "next": "Próximo"
       }
@@ -265,7 +265,7 @@
       "step": "Gare 1/3",
       "intro": {
         "heading": "Il est temps pour un\r\nLaver",
-        "desc": "Tout d'abord, toutes les bouteilles doivent être soigneusement nettoyées",
+        "desc": "Premièrement, toutes les bouteilles doivent être \r\nsoigneusement nettoyé",
         "cta": "Jouer au jeu"
       },
       "tutorial": {
@@ -284,7 +284,7 @@
       },
       "results": {
         "heading": "Bien joué!",
-        "desc": "Vous avez nettoyé {num} bouteilles et\r\ngagné {points} points",
+        "desc": "Vous avez nettoyé {{count}} bouteilles et\r\ngagné {{points}} points",
         "replay": "Redémarrer le jeu",
         "next": "prochain match"
       }
@@ -313,7 +313,7 @@
       },
       "results": {
         "heading": "Bien joué!",
-        "desc": "Vous avez rempli {num} bouteilles et \r\ngagné {points} points",
+        "desc": "Vous avez rempli {{count}} bouteilles et \r\ngagné {{points}} points",
         "replay": "Redémarrer le jeu",
         "next": "prochain match"
       }
@@ -338,7 +338,7 @@
       },
       "results": {
         "heading": "Bien joué!",
-        "desc": "Vous avez emballé {num} bouteilles et \r\ngagné {points} points",
+        "desc": "Vous avez emballé {{count}} bouteilles et \r\ngagné {{points}} points",
         "replay": "Redémarrer le jeu",
         "next": "Suivant"
       }

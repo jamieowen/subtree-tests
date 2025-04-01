@@ -21,25 +21,16 @@ export const Filling = ({ show, ...props }) => {
 
   return (
     <div className={classnames(['page', 'game', 'Filling', { show }])}>
-      <section
-        className={classnames(['page', 'intro', { show: section == 'intro' }])}
-      >
-        <h3>{t('filling.intro.preheading')}</h3>
-        <h1>{t('filling.intro.heading')}</h1>
-        <p>{t('filling.intro.desc')}</p>
-        <button onClick={nextSection}>{t('filling.intro.cta')}</button>
-      </section>
-
-      <section
-        className={classnames([
-          'page',
-          'tutorial',
-          { show: section == 'tutorial' },
-        ])}
-      >
-        <h1>{t('filling.tutorial.heading')}</h1>
-        <button onClick={nextSection}>{t('filling.tutorial.cta')}</button>
-      </section>
+      <Intro
+        id="filling"
+        show={section == 'intro'}
+        onClick={nextSection}
+      />
+      <Tutorial
+        id="filling"
+        show={section == 'tutorial'}
+        onClick={nextSection}
+      />
 
       {completed && show && (
         <FillingGame
@@ -48,30 +39,13 @@ export const Filling = ({ show, ...props }) => {
         />
       )}
 
-      <section
-        className={classnames([
-          'page',
-
-          'results',
-          { show: section == 'results' },
-        ])}
-      >
-        <h3>{t('filling.results.preheading')}</h3>
-        <h1>{t('filling.results.heading')}</h1>
-        <Trans
-          i18nKey="filling.results.desc"
-          values={{
-            duration,
-            count,
-          }}
-        ></Trans>
-        <div className="buttons">
-          <button onClick={replay}>{t('filling.results.replay')}</button>
-          <button onClick={() => setPage('grouping-video')}>
-            {t('filling.results.next')}
-          </button>
-        </div>
-      </section>
+      <Results
+        id="filling"
+        show={section == 'results'}
+        onReplay={replay}
+        count={count}
+        onNext={() => setPage('grouping-video')}
+      />
     </div>
   );
 };

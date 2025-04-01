@@ -2,6 +2,7 @@ import './Cleaning.sass';
 import classnames from 'classnames';
 import { useAppStore } from '@/stores/app';
 import { useCleaningStore } from '@/stores/cleaning';
+import { Results } from '../../_misc/Results';
 
 export const Cleaning = ({ show, ...props }) => {
   const { t } = useTranslation();
@@ -21,25 +22,16 @@ export const Cleaning = ({ show, ...props }) => {
 
   return (
     <div className={classnames(['page', 'game', 'Cleaning', { show }])}>
-      <section
-        className={classnames(['page', 'intro', { show: section == 'intro' }])}
-      >
-        <h3>{t('cleaning.intro.preheading')}</h3>
-        <h1>{t('cleaning.intro.heading')}</h1>
-        <p>{t('cleaning.intro.desc')}</p>
-        <button onClick={nextSection}>{t('cleaning.intro.cta')}</button>
-      </section>
-
-      <section
-        className={classnames([
-          'page',
-          'tutorial',
-          { show: section == 'tutorial' },
-        ])}
-      >
-        <h1>{t('cleaning.tutorial.heading')}</h1>
-        <button onClick={nextSection}>{t('cleaning.tutorial.cta')}</button>
-      </section>
+      <Intro
+        id="cleaning"
+        show={section == 'intro'}
+        onClick={nextSection}
+      />
+      <Tutorial
+        id="cleaning"
+        show={section == 'tutorial'}
+        onClick={nextSection}
+      />
 
       {completed && show && (
         <CleaningGame
@@ -48,30 +40,13 @@ export const Cleaning = ({ show, ...props }) => {
         />
       )}
 
-      <section
-        className={classnames([
-          'page',
-
-          'results',
-          { show: section == 'results' },
-        ])}
-      >
-        <h3>{t('cleaning.results.preheading')}</h3>
-        <h1>{t('cleaning.results.heading')}</h1>
-        <Trans
-          i18nKey="cleaning.results.desc"
-          values={{
-            duration,
-            count,
-          }}
-        ></Trans>
-        <div className="buttons">
-          <button onClick={replay}>{t('cleaning.results.replay')}</button>
-          <button onClick={() => setPage('filling-video')}>
-            {t('cleaning.results.next')}
-          </button>
-        </div>
-      </section>
+      <Results
+        id="cleaning"
+        show={section == 'results'}
+        onReplay={replay}
+        count={count}
+        onNext={() => setPage('filling-video')}
+      />
     </div>
   );
 };

@@ -21,25 +21,16 @@ export const Grouping = ({ show, ...props }) => {
 
   return (
     <div className={classnames(['page', 'game', 'Grouping', { show }])}>
-      <section
-        className={classnames(['page', 'intro', { show: section == 'intro' }])}
-      >
-        <h3>{t('grouping.intro.preheading')}</h3>
-        <h1>{t('grouping.intro.heading')}</h1>
-        <p>{t('grouping.intro.desc')}</p>
-        <button onClick={nextSection}>{t('grouping.intro.cta')}</button>
-      </section>
-
-      <section
-        className={classnames([
-          'page',
-          'tutorial',
-          { show: section == 'tutorial' },
-        ])}
-      >
-        <h1>{t('grouping.tutorial.heading')}</h1>
-        <button onClick={nextSection}>{t('grouping.tutorial.cta')}</button>
-      </section>
+      <Intro
+        id="grouping"
+        show={section == 'intro'}
+        onClick={nextSection}
+      />
+      <Tutorial
+        id="grouping"
+        show={section == 'tutorial'}
+        onClick={nextSection}
+      />
 
       {completed && show && (
         <GroupingGame
@@ -48,30 +39,13 @@ export const Grouping = ({ show, ...props }) => {
         />
       )}
 
-      <section
-        className={classnames([
-          'page',
-
-          'results',
-          { show: section == 'results' },
-        ])}
-      >
-        <h3>{t('grouping.results.preheading')}</h3>
-        <h1>{t('grouping.results.heading')}</h1>
-        <Trans
-          i18nKey="grouping.results.desc"
-          values={{
-            duration,
-            count,
-          }}
-        ></Trans>
-        <div className="buttons">
-          <button onClick={replay}>{t('grouping.results.replay')}</button>
-          <button onClick={() => setPage('ending-video')}>
-            {t('grouping.results.next')}
-          </button>
-        </div>
-      </section>
+      <Results
+        id="grouping"
+        show={section == 'results'}
+        onReplay={replay}
+        count={count}
+        onNext={() => setPage('ending-video')}
+      />
     </div>
   );
 };

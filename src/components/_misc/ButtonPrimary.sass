@@ -1,0 +1,20 @@
+@import "@/styles/shared.sass"
+
+.button-primary
+  position: relative
+  pointer-events: auto
+  +flex-row(center, center)
+  border: 1px solid white
+  padding: 1rem 3rem
+  border-radius: 1000px
+
+  .bg
+    width: 100%
+    overflow: visible
+
+  .label
+    // +full
+    +flex-row(center, center)
+    +type-cta
+    margin-top: -0.3rem
+    

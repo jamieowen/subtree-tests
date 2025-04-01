@@ -187,7 +187,7 @@ export const MaterialModuleSpriteAnimated = forwardRef(
         set progress(val) {
           let f = Math.floor(val * (frames - 1));
 
-          console.log('MaterialModuleSpriteAnimated.set progress', val, f);
+          // console.log('MaterialModuleSpriteAnimated.set progress', val, f);
           material.uniforms['uSprite_Frame'].value = f;
         },
       }),

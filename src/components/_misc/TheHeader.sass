@@ -1,0 +1,28 @@
+@import "@/styles/shared.sass"
+
+.the-header
+  position: fixed
+  width: calc(100% - 6rem)
+  top: 0
+  left: 3rem
+  +flex-row(space-between, center)
+  padding-block: 2rem
+  // height: var(--header-height)
+  border-bottom: 1px solid rgba(255,255,255,0.2)
+
+
+  button
+    position: relative
+    width: 4rem
+    height: 4rem
+
+    svg
+      +full
+
+
+  .center
+    flex: 1
+    +flex-row(center, center)
+
+    .logo
+      height: 2.5rem

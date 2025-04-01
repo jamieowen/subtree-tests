@@ -33,7 +33,7 @@ export const VideoPlayer = ({ src, onEnd, show, ...props }) => {
         className="btn-skip"
         onClick={onEnd}
       >
-        Skip
+        {t('skip')}
       </button>
     </div>
   );

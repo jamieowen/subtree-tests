@@ -25,6 +25,7 @@ export function App() {
         <div className="ui">
           <Pages />
           <ui.Out />
+          <TheHeader />
           <Loading />
           <TheGuidelines />
         </div>
