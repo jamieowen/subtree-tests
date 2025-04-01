@@ -16,87 +16,101 @@
     "heading": "Coque"
   },
   "general": {
-    "skip": "Saltar",
+    "skipVideo": "Saltar vídeo",
     "bottles": "botellas"
   },
   "landing": {
-    "heading": "Bienvenido a Coca-Cola ESG",
-    "desc": "Estamos trabajando para crear un negocio más sostenible que tenga un impacto positivo en nuestra gente, nuestras comunidades y nuestro planeta.",
-    "cta": "Comienza la experiencia"
+    "preheading": "Únase a nosotros el",
+    "heading": "Forma recargable",
+    "desc": "Nuestras botellas de vidrio recargables están diseñadas para recargarse al menos 25 veces.",
+    "cta": "Recargar ahora"
   },
   "cleaning": {
-    "step": "Limpieza",
+    "name": "Lavado",
+    "step": "Estación 1/3",
     "intro": {
-      "preheading": "Estación 01",
-      "heading": "Hora de limpiar",
-      "desc": "En primer lugar, es necesario limpiar todas las botellas de suciedad, etiquetas y cualquier producto residual.",
-      "cta": "Próximo"
+      "preheading": "tiempo para un",
+      "heading": "Lavar",
+      "desc": "Primero, todas las botellas deben limpiarse a fondo.",
+      "cta": "jugar juego"
     },
     "tutorial": {
-      "heading": "Limpie tantas botellas como sea posible dentro del tiempo indicado.",
-      "cta": "Comenzar"
+      "preheading": "¿Cuantos puedes lavar?",
+      "heading": "Cómo jugar",
+      "cta": "Arrastrar y alinear",
+      "continue": "Continuar"
     },
     "game": {
-      "cta": "Arrastrar"
+      "ready": "¡Prepararse!",
+      "cta": "Grifo",
+      "time": "Tiempo restante",
+      "points": "Agujas"
     },
     "results": {
-      "preheading": "Resultados",
       "heading": "¡Bien hecho!",
-      "desc": "Limpiaste {{count}} botellas en {{duration}}s",
-      "replay": "Repetición",
-      "next": "Próximo"
+      "desc": "Limpiaste {num} botellas y ganaste {puntos} puntos",
+      "replay": "Reiniciar juego",
+      "next": "Próximo juego"
     }
   },
   "filling": {
-    "step": "Embotellado",
+    "name": "Llenado y tapado",
+    "step": "Estación 2/3",
     "intro": {
-      "preheading": "Estación 02",
-      "heading": "¡Es hora de llenar estas botellas!",
-      "desc": "Las máquinas garantizan una dispensación precisa de bebidas en cada botella. \r\n\r\n¡Así que tenga cuidado de no llenar demasiado!",
-      "cta": "Próximo"
+      "heading": "Listo. Colocar.\r\n¡Rellenar!",
+      "desc": "En cada botella se dispensa una cantidad exacta de bebida. ¡Tenga cuidado de no llenar demasiado!",
+      "cta": "jugar juego"
     },
     "tutorial": {
-      "heading": "Botellas tantas como sea posible dentro del tiempo indicado.",
-      "cta": "Comenzar"
+      "preheading": "Llena tantas botellas como puedas.\r\nPero date prisa, el tiempo corre.",
+      "heading": "Cómo jugar",
+      "cta": "Mantenga presionado\r\npara llenar botellas",
+      "continue": "Continuar"
     },
     "game": {
-      "cta": "Arrastrar"
+      "ready": "¡Prepararse!",
+      "cta": "Mantenga presionado",
+      "time": "Tiempo restante",
+      "points": "Agujas"
     },
     "results": {
-      "preheading": "Resultados",
       "heading": "¡Bien hecho!",
-      "desc": "Embotellaste {num} botellas en {duration}s",
-      "replay": "Repetición",
-      "next": "Próximo"
+      "desc": "Llenaste {num} botellas en {puntos} puntos",
+      "replay": "Reiniciar juego",
+      "next": "Próximo juego"
     }
   },
   "grouping": {
-    "step": "paletizado",
+    "name": "Agrupación y Paletizado",
+    "step": "Estación 3/3",
     "intro": {
-      "preheading": "Estación 03",
-      "heading": "paletizado",
-      "desc": "En los pasos finales, las botellas se clasifican por tamaño, tipo o sabor en una estación de agrupación.  ¿Podrás atraparlos a todos?",
-      "cta": "Próximo"
+      "heading": "Final\r\nPaso",
+      "desc": "Tus reflejos rápidos son necesarios para\r\nagrupar las botellas en cajas",
+      "cta": "jugar juego"
     },
     "tutorial": {
-      "heading": "Agrupe tantas botellas como sea posible dentro del tiempo indicado.",
-      "cta": "Comenzar"
+      "preheading": "Atrapa tantas botellas como puedas\r\ndentro del tiempo dado",
+      "heading": "Cómo jugar",
+      "cta": "Arrastra hacia la derecha y hacia la izquierda para atrapar"
     },
     "game": {
-      "cta": "Arrastrar"
+      "ready": "¡Prepararse!",
+      "time": "Tiempo restante",
+      "points": "Agujas"
     },
     "results": {
-      "preheading": "Resultados",
       "heading": "¡Bien hecho!",
-      "desc": "Agrupaste {num} botellas en {duration}s",
-      "replay": "Repetición",
+      "desc": "Empacaste {num} botellas y ganaste {puntos} puntos",
+      "replay": "Reiniciar juego",
       "next": "Próximo"
     }
   },
   "ending": {
     "results": {
-      "heading": "Tus resultados finales",
-      "restart": "Reanudar"
+      "preheading": "trabajo increíble",
+      "heading": "eres un\r\nrecarga de botellas\r\nsuperestrella",
+      "restart": "Jugar de nuevo",
+      "cta": "Compartir"
     }
   },
   "example": "Ejemplo"
