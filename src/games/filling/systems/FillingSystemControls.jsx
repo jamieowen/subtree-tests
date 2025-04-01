@@ -78,6 +78,7 @@ export const FillingSystemControls = ({
     let pos = current.current;
     let remainder = Math.abs(pos) % 1;
 
+    // return onFill(0); // DEBUG
     if (remainder >= 1 - within) {
       onFill(Math.ceil(pos));
     }
@@ -112,7 +113,7 @@ export const FillingSystemControls = ({
     const count = filledEntities.entities.length;
     if (!isLocked()) {
       speed.current = Math.min(1 + count * 0.15, 2.5);
-      current.current += delta * speed.current;
+      current.current += delta * speed.current; // DEBUG
     }
     for (const entity of beltEntities) {
       entity.belt = current.current;
@@ -121,7 +122,6 @@ export const FillingSystemControls = ({
 
     // FILL
     timeToFill.current = Math.max(0.5, 3 - count * 0.5);
-    // timeToFill.current = 0.5;
 
     let complete = false;
     for (const entity of fillingEntities) {

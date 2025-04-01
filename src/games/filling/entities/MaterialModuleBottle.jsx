@@ -89,6 +89,8 @@ export const MaterialModuleBottle = forwardRef(
           float frameNum = mod(floor(uTime * uBottle_Fps), uBottle_Frames);
 
           // LIQUID
+          uvl.y += sin((uvl.x + uTime * 1.0) * 9.0) * 0.0005;
+          uvl.y += sin((uvl.x + uTime * 1.0) * 6.0) * 0.002;
           vec4 liquid = getSpriteAt(
             tBottle_Liquid, 
             uvl, 
