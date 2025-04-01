@@ -14,29 +14,29 @@
       "heading": "Coke"
     },
     "general": {
-      "skipVideo": "Skip VIdeo",
+      "skipVideo": "Skip",
       "bottles": "Bottles"
     },
     "landing": {
-      "preheading": "Join us the",
-      "heading": "Refillable Way",
-      "desc": "Our refillable glass bottles are designed to be refilled at least 25 times",
+      "heading": "Join us the\r\nRefillable Way",
+      "desc": "Our refillable glass bottles\r\nare designed to be refilled\r\nat least 25 times",
       "cta": "Refill Now"
     },
     "cleaning": {
       "name": "Washing",
       "step": "Station 1/3",
       "intro": {
-        "preheading": "Time for a",
-        "heading": "Wash",
+        "heading": "Time for a\r\nWash",
         "desc": "First, all bottles need to be thoroughly cleaned",
         "cta": "Play Game"
       },
       "tutorial": {
         "preheading": "How many can you wash?",
         "heading": "How to Play",
-        "cta": "Drag & Align",
-        "continue": "Continue"
+        "instructions": [
+          "Drag & Align"
+        ],
+        "cta": "Start Game"
       },
       "game": {
         "ready": "Get Ready!",
@@ -46,7 +46,7 @@
       },
       "results": {
         "heading": "Well Done!",
-        "desc": "You cleaned {num} bottles and earned {points} points",
+        "desc": "You cleaned {num} bottles and\r\nearned {points} points",
         "replay": "Restart Game",
         "next": "Next Game"
       }
@@ -56,14 +56,16 @@
       "step": "Station 2/3",
       "intro": {
         "heading": "Ready. Set.\r\nRefill!",
-        "desc": "An exact amount of beverage is dispensed into each bottle. Be careful not to overfill!",
+        "desc": "An exact amount of beverage\r\nis dispensed into each bottle. \r\nBe careful not to overfill!",
         "cta": "Play Game"
       },
       "tutorial": {
         "preheading": "Fill as many bottles as you can.\r\nBut hurry up, the clock is ticking.",
         "heading": "How to Play",
-        "cta": "Press & Hold\r\nto Fill Bottles",
-        "continue": "Continue"
+        "instructions": [
+          "Press & Hold\r\nto Fill Bottles"
+        ],
+        "cta": "Start Game"
       },
       "game": {
         "ready": "Get Ready!",
@@ -73,7 +75,7 @@
       },
       "results": {
         "heading": "Well Done!",
-        "desc": "You filled {num} bottles in {points} points",
+        "desc": "You filled {num} bottles and \r\nearned {points} points",
         "replay": "Restart Game",
         "next": "Next Game"
       }
@@ -82,14 +84,14 @@
       "name": "Grouping & Palletizing",
       "step": "Station 3/3",
       "intro": {
-        "heading": "Final\r\nStep",
-        "desc": "Your fast reflexes are needed to\r\ngroup the bottles into crates",
+        "heading": "Final Step",
+        "desc": "Your fast reflexes are \r\nneeded to group the bottles \r\ninto crates",
         "cta": "Play Game"
       },
       "tutorial": {
         "preheading": "Catch as many botttles as possible\r\nwithin the time given",
         "heading": "How to Play",
-        "cta": "Drag right and left to catch"
+        "cta": "Drag crate left/right\r\nto catch bottles"
       },
       "game": {
         "ready": "Get Ready!",
@@ -98,7 +100,7 @@
       },
       "results": {
         "heading": "Well Done!",
-        "desc": "You packed {num} bottles and earned {points} points",
+        "desc": "You packed {num} bottles and \r\nearned {points} points",
         "replay": "Restart Game",
         "next": "Next"
       }
@@ -131,29 +133,29 @@
       "heading": "Coque"
     },
     "general": {
-      "skipVideo": "Saltar vídeo",
+      "skipVideo": "Saltar",
       "bottles": "botellas"
     },
     "landing": {
-      "preheading": "Únase a nosotros el",
-      "heading": "Forma recargable",
-      "desc": "Nuestras botellas de vidrio recargables están diseñadas para recargarse al menos 25 veces.",
+      "heading": "Únase a nosotros el\r\nManera recargable",
+      "desc": "Nuestras botellas de vidrio recargables\r\nestán diseñados para ser recargados\r\nal menos 25 veces",
       "cta": "Recargar ahora"
     },
     "cleaning": {
       "name": "Lavado",
       "step": "Estación 1/3",
       "intro": {
-        "preheading": "tiempo para un",
-        "heading": "Lavar",
+        "heading": "tiempo para un\r\nLavar",
         "desc": "Primero, todas las botellas deben limpiarse a fondo.",
         "cta": "jugar juego"
       },
       "tutorial": {
         "preheading": "¿Cuantos puedes lavar?",
         "heading": "Cómo jugar",
-        "cta": "Arrastrar y alinear",
-        "continue": "Continuar"
+        "instructions": [
+          "Arrastrar y alinear"
+        ],
+        "cta": "Iniciar juego"
       },
       "game": {
         "ready": "¡Prepararse!",
@@ -163,7 +165,7 @@
       },
       "results": {
         "heading": "¡Bien hecho!",
-        "desc": "Limpiaste {num} botellas y ganaste {puntos} puntos",
+        "desc": "Limpiaste {num} botellas y\r\nganado {puntos} puntos",
         "replay": "Reiniciar juego",
         "next": "Próximo juego"
       }
@@ -173,14 +175,16 @@
       "step": "Estación 2/3",
       "intro": {
         "heading": "Listo. Colocar.\r\n¡Rellenar!",
-        "desc": "En cada botella se dispensa una cantidad exacta de bebida. ¡Tenga cuidado de no llenar demasiado!",
+        "desc": "Una cantidad exacta de bebida.\r\nse dispensa en cada botella. \r\n¡Tenga cuidado de no llenar demasiado!",
         "cta": "jugar juego"
       },
       "tutorial": {
         "preheading": "Llena tantas botellas como puedas.\r\nPero date prisa, el tiempo corre.",
         "heading": "Cómo jugar",
-        "cta": "Mantenga presionado\r\npara llenar botellas",
-        "continue": "Continuar"
+        "instructions": [
+          "Mantenga presionado\r\npara llenar botellas"
+        ],
+        "cta": "Iniciar juego"
       },
       "game": {
         "ready": "¡Prepararse!",
@@ -190,7 +194,7 @@
       },
       "results": {
         "heading": "¡Bien hecho!",
-        "desc": "Llenaste {num} botellas en {puntos} puntos",
+        "desc": "Llenaste {num} botellas y \r\nganado {puntos} puntos",
         "replay": "Reiniciar juego",
         "next": "Próximo juego"
       }
@@ -199,14 +203,14 @@
       "name": "Agrupación y Paletizado",
       "step": "Estación 3/3",
       "intro": {
-        "heading": "Final\r\nPaso",
-        "desc": "Tus reflejos rápidos son necesarios para\r\nagrupar las botellas en cajas",
+        "heading": "Paso final",
+        "desc": "Tus rápidos reflejos son \r\nnecesario para agrupar las botellas \r\nen cajas",
         "cta": "jugar juego"
       },
       "tutorial": {
         "preheading": "Atrapa tantas botellas como puedas\r\ndentro del tiempo dado",
         "heading": "Cómo jugar",
-        "cta": "Arrastra hacia la derecha y hacia la izquierda para atrapar"
+        "cta": "Arrastre la caja hacia la izquierda/derecha\r\ncoger botellas"
       },
       "game": {
         "ready": "¡Prepararse!",
@@ -215,7 +219,7 @@
       },
       "results": {
         "heading": "¡Bien hecho!",
-        "desc": "Empacaste {num} botellas y ganaste {puntos} puntos",
+        "desc": "Empacaste {num} botellas y \r\nganado {puntos} puntos",
         "replay": "Reiniciar juego",
         "next": "Próximo"
       }
@@ -248,29 +252,29 @@
       "heading": "Coke"
     },
     "general": {
-      "skipVideo": "Sauter la vidéo",
+      "skipVideo": "Sauter",
       "bottles": "Bouteilles"
     },
     "landing": {
-      "preheading": "Rejoignez-nous le",
-      "heading": "Manière rechargeable",
-      "desc": "Nos bouteilles en verre rechargeables sont conçues pour être rechargées au moins 25 fois",
+      "heading": "Rejoignez-nous le\r\nManière rechargeable",
+      "desc": "Nos bouteilles en verre rechargeables\r\nsont conçus pour être rechargés\r\nau moins 25 fois",
       "cta": "Rechargez maintenant"
     },
     "cleaning": {
       "name": "Lavage",
       "step": "Gare 1/3",
       "intro": {
-        "preheading": "Il est temps pour un",
-        "heading": "Laver",
+        "heading": "Il est temps pour un\r\nLaver",
         "desc": "Tout d'abord, toutes les bouteilles doivent être soigneusement nettoyées",
         "cta": "Jouer au jeu"
       },
       "tutorial": {
         "preheading": "Combien pouvez-vous en laver ?",
         "heading": "Comment jouer",
-        "cta": "Glisser et aligner",
-        "continue": "Continuer"
+        "instructions": [
+          "Glisser et aligner"
+        ],
+        "cta": "Commencer le jeu"
       },
       "game": {
         "ready": "Se préparer!",
@@ -280,7 +284,7 @@
       },
       "results": {
         "heading": "Bien joué!",
-        "desc": "Vous avez nettoyé {num} bouteilles et gagné {points} points",
+        "desc": "Vous avez nettoyé {num} bouteilles et\r\ngagné {points} points",
         "replay": "Redémarrer le jeu",
         "next": "prochain match"
       }
@@ -290,14 +294,16 @@
       "step": "Gare 2/3",
       "intro": {
         "heading": "Prêt. Ensemble.\r\nRecharge!",
-        "desc": "Une quantité exacte de boisson est distribuée dans chaque bouteille. Attention à ne pas trop remplir !",
+        "desc": "Une quantité exacte de boisson\r\nest distribué dans chaque bouteille. \r\nAttention à ne pas trop remplir !",
         "cta": "Jouer au jeu"
       },
       "tutorial": {
         "preheading": "Remplissez autant de bouteilles que possible.\r\nMais dépêchez-vous, le temps presse.",
         "heading": "Comment jouer",
-        "cta": "Appuyez et maintenez\r\nremplir des bouteilles",
-        "continue": "Continuer"
+        "instructions": [
+          "Appuyez et maintenez\r\nremplir des bouteilles"
+        ],
+        "cta": "Commencer le jeu"
       },
       "game": {
         "ready": "Se préparer!",
@@ -307,7 +313,7 @@
       },
       "results": {
         "heading": "Bien joué!",
-        "desc": "Vous avez rempli {num} bouteilles en {points} points",
+        "desc": "Vous avez rempli {num} bouteilles et \r\ngagné {points} points",
         "replay": "Redémarrer le jeu",
         "next": "prochain match"
       }
@@ -316,14 +322,14 @@
       "name": "Regroupement & Palettisation",
       "step": "Gare 3/3",
       "intro": {
-        "heading": "Final\r\nÉtape",
-        "desc": "Vos réflexes rapides sont nécessaires pour\r\nregrouper les bouteilles dans des caisses",
+        "heading": "Dernière étape",
+        "desc": "Vos réflexes rapides sont \r\nnécessaire pour regrouper les bouteilles \r\ndans des caisses",
         "cta": "Jouer au jeu"
       },
       "tutorial": {
         "preheading": "Attrapez autant de bouteilles que possible\r\ndans le délai imparti",
         "heading": "Comment jouer",
-        "cta": "Faites glisser vers la droite et la gauche pour attraper"
+        "cta": "Faites glisser la caisse vers la gauche/droite\r\nattraper des bouteilles"
       },
       "game": {
         "ready": "Se préparer!",
@@ -332,7 +338,7 @@
       },
       "results": {
         "heading": "Bien joué!",
-        "desc": "Vous avez emballé {num} bouteilles et gagné {points} points",
+        "desc": "Vous avez emballé {num} bouteilles et \r\ngagné {points} points",
         "replay": "Redémarrer le jeu",
         "next": "Suivant"
       }

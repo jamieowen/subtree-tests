@@ -251,6 +251,9 @@ importers:
       vite-tsconfig-paths:
         specifier: ^5.1.4
         version: 5.1.4(typescript@5.6.2)(vite@6.2.2(@types/node@22.13.10)(jiti@2.4.2)(sass@1.86.0)(terser@5.39.0)(tsx@4.19.1)(yaml@2.7.0))
+      webgl-spy:
+        specifier: ^0.0.3
+        version: 0.0.3
       zustand:
         specifier: 5.0.3
         version: 5.0.3(@types/react@18.3.6)(immer@10.1.1)(react@19.0.0)(use-sync-external-store@1.4.0(react@19.0.0))
@@ -300,6 +303,9 @@ importers:
       sharp:
         specifier: ^0.33.5
         version: 0.33.5
+      three-perf:
+        specifier: ^1.0.10
+        version: 1.0.10(three@0.174.0)
       unplugin-auto-import:
         specifier: ^19.1.1
         version: 19.1.1
@@ -9012,6 +9018,11 @@ packages:
     peerDependencies:
       three: '>= 0.159.0'
 
+  three-perf@1.0.10:
+    resolution: {integrity: sha512-lCur/i8U6m0ysWYhQ1yFGWOZB0QA2oVsDsfynYd65HhXxLxJfiAt8OsXmpv9PnTLacfaZclBcZHUOB9QKk3eaw==}
+    peerDependencies:
+      three: '>=0.151'
+
   three-stdlib@2.35.14:
     resolution: {integrity: sha512-kpCaEg59M9usFTgHC+YZNKvx7nMoLI2zQxZBV8pjoNW6vNZmGyXpaLBL09A2oLCsS3KepgMFkOuk6lRoebTNvA==}
     peerDependencies:
@@ -9090,8 +9101,18 @@ packages:
     resolution: {integrity: sha512-aZbgViZrg1QNcG+LULa7nhZpJTZSLm/mXnHXnbAbjmN5aSa0y7V+wvv6+4WaBtpISJzThKy+PIPxc1Nq1EJ9mg==}
     engines: {node: '>= 14.0.0'}
 
+  troika-three-text@0.47.2:
+    resolution: {integrity: sha512-qylT0F+U7xGs+/PEf3ujBdJMYWbn0Qci0kLqI5BJG2kW1wdg4T1XSxneypnF05DxFqJhEzuaOR9S2SjiyknMng==}
+    peerDependencies:
+      three: '>=0.125.0'
+
   troika-three-text@0.52.3:
     resolution: {integrity: sha512-jLhiwgV8kEkwWjvK12f2fHVpbOC75p7SgPQ0cgcz+IMtN5Bdyg4EuFdwuTOVu9ga8UeYdKBpzd1AxviyixtYTQ==}
+    peerDependencies:
+      three: '>=0.125.0'
+
+  troika-three-utils@0.47.2:
+    resolution: {integrity: sha512-/28plhCxfKtH7MSxEGx8e3b/OXU5A0xlwl+Sbdp0H8FXUHKZDoksduEKmjQayXYtxAyuUiCRunYIv/8Vi7aiyg==}
     peerDependencies:
       three: '>=0.125.0'
 
@@ -9099,6 +9120,9 @@ packages:
     resolution: {integrity: sha512-00oxqIIehtEKInOTQekgyknBuRUj1POfOUE2q1OmL+Xlpp4gIu+S0oA0schTyXsDS4d9DkR04iqCdD40rF5R6w==}
     peerDependencies:
       three: '>=0.125.0'
+
+  troika-worker-utils@0.47.2:
+    resolution: {integrity: sha512-mzss4MeyzUkYBppn4x5cdAqrhBHFEuVmMMgLMTyFV23x6GvQMyo+/R5E5Lsbrt7WSt5RfvewjcwD1DChRTA9lA==}
 
   troika-worker-utils@0.52.0:
     resolution: {integrity: sha512-W1CpvTHykaPH5brv5VHLfQo9D1OYuo0cSBEUQFFT/nBUzM8iD6Lq2/tgG/f1OelbAS1WtaTPQzE5uM49egnngw==}
@@ -9150,6 +9174,9 @@ packages:
 
   turbo-stream@2.4.0:
     resolution: {integrity: sha512-FHncC10WpBd2eOmGwpmQsWLDoK4cqsA/UT/GqNoaKOQnT8uzhtCbg3EoUDMvqpOSAI0S26mr0rkjzbOO6S3v1g==}
+
+  tweakpane@3.1.10:
+    resolution: {integrity: sha512-rqwnl/pUa7+inhI2E9ayGTqqP0EPOOn/wVvSWjZsRbZUItzNShny7pzwL3hVlaN4m9t/aZhsP0aFQ9U5VVR2VQ==}
 
   tweetnacl@0.14.5:
     resolution: {integrity: sha512-KXXFFdAbFXY4geFIwoyNK+f5Z1b7swfXABfL7HXCmoIWMKU3dmS26672A4EeQtDzLKy7SXmfBu51JolvEKwtGA==}
@@ -9584,6 +9611,9 @@ packages:
 
   webgl-sdf-generator@1.1.1:
     resolution: {integrity: sha512-9Z0JcMTFxeE+b2x1LJTdnaT8rT8aEp7MVxkNwoycNmJWwPdzoXzMh0BjJSh/AEFP+KPYZUli814h8bJZFIZ2jA==}
+
+  webgl-spy@0.0.3:
+    resolution: {integrity: sha512-f0HjnNH1QdEsCBTv/WjfogjFLlLFSB8jwJj5ze8BaHSioZDGdT9ieXcjpv2HsB9u7t+gbX+8HDY3sT24n8YDyg==}
 
   webidl-conversions@3.0.1:
     resolution: {integrity: sha512-2JAn3z8AR6rjK8Sm8orRC0h/bcl/DqL7tRPdGZ4I1CjdF+EaMLmYxBHyXuKL849eucPFhvBoxMsflfOb8kxaeQ==}
@@ -20042,6 +20072,12 @@ snapshots:
     dependencies:
       three: 0.174.0
 
+  three-perf@1.0.10(three@0.174.0):
+    dependencies:
+      three: 0.174.0
+      troika-three-text: 0.47.2(three@0.174.0)
+      tweakpane: 3.1.10
+
   three-stdlib@2.35.14(three@0.174.0):
     dependencies:
       '@types/draco3d': 1.4.10
@@ -20116,6 +20152,14 @@ snapshots:
 
   triple-beam@1.4.1: {}
 
+  troika-three-text@0.47.2(three@0.174.0):
+    dependencies:
+      bidi-js: 1.0.3
+      three: 0.174.0
+      troika-three-utils: 0.47.2(three@0.174.0)
+      troika-worker-utils: 0.47.2
+      webgl-sdf-generator: 1.1.1
+
   troika-three-text@0.52.3(three@0.174.0):
     dependencies:
       bidi-js: 1.0.3
@@ -20124,9 +20168,15 @@ snapshots:
       troika-worker-utils: 0.52.0
       webgl-sdf-generator: 1.1.1
 
+  troika-three-utils@0.47.2(three@0.174.0):
+    dependencies:
+      three: 0.174.0
+
   troika-three-utils@0.52.0(three@0.174.0):
     dependencies:
       three: 0.174.0
+
+  troika-worker-utils@0.47.2: {}
 
   troika-worker-utils@0.52.0: {}
 
@@ -20177,6 +20227,8 @@ snapshots:
       - react
 
   turbo-stream@2.4.0: {}
+
+  tweakpane@3.1.10: {}
 
   tweetnacl@0.14.5: {}
 
@@ -20661,6 +20713,8 @@ snapshots:
   webgl-constants@1.1.1: {}
 
   webgl-sdf-generator@1.1.1: {}
+
+  webgl-spy@0.0.3: {}
 
   webidl-conversions@3.0.1: {}
 

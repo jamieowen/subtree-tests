@@ -13,29 +13,29 @@
     "heading": "Coke"
   },
   "general": {
-    "skipVideo": "Skip VIdeo",
+    "skipVideo": "Skip",
     "bottles": "Bottles"
   },
   "landing": {
-    "preheading": "Join us the",
-    "heading": "Refillable Way",
-    "desc": "Our refillable glass bottles are designed to be refilled at least 25 times",
+    "heading": "Join us the\r\nRefillable Way",
+    "desc": "Our refillable glass bottles\r\nare designed to be refilled\r\nat least 25 times",
     "cta": "Refill Now"
   },
   "cleaning": {
     "name": "Washing",
     "step": "Station 1/3",
     "intro": {
-      "preheading": "Time for a",
-      "heading": "Wash",
+      "heading": "Time for a\r\nWash",
       "desc": "First, all bottles need to be thoroughly cleaned",
       "cta": "Play Game"
     },
     "tutorial": {
       "preheading": "How many can you wash?",
       "heading": "How to Play",
-      "cta": "Drag & Align",
-      "continue": "Continue"
+      "instructions": [
+        "Drag & Align"
+      ],
+      "cta": "Start Game"
     },
     "game": {
       "ready": "Get Ready!",
@@ -45,7 +45,7 @@
     },
     "results": {
       "heading": "Well Done!",
-      "desc": "You cleaned {num} bottles and earned {points} points",
+      "desc": "You cleaned {num} bottles and\r\nearned {points} points",
       "replay": "Restart Game",
       "next": "Next Game"
     }
@@ -55,14 +55,16 @@
     "step": "Station 2/3",
     "intro": {
       "heading": "Ready. Set.\r\nRefill!",
-      "desc": "An exact amount of beverage is dispensed into each bottle. Be careful not to overfill!",
+      "desc": "An exact amount of beverage\r\nis dispensed into each bottle. \r\nBe careful not to overfill!",
       "cta": "Play Game"
     },
     "tutorial": {
       "preheading": "Fill as many bottles as you can.\r\nBut hurry up, the clock is ticking.",
       "heading": "How to Play",
-      "cta": "Press & Hold\r\nto Fill Bottles",
-      "continue": "Continue"
+      "instructions": [
+        "Press & Hold\r\nto Fill Bottles"
+      ],
+      "cta": "Start Game"
     },
     "game": {
       "ready": "Get Ready!",
@@ -72,7 +74,7 @@
     },
     "results": {
       "heading": "Well Done!",
-      "desc": "You filled {num} bottles in {points} points",
+      "desc": "You filled {num} bottles and \r\nearned {points} points",
       "replay": "Restart Game",
       "next": "Next Game"
     }
@@ -81,14 +83,14 @@
     "name": "Grouping & Palletizing",
     "step": "Station 3/3",
     "intro": {
-      "heading": "Final\r\nStep",
-      "desc": "Your fast reflexes are needed to\r\ngroup the bottles into crates",
+      "heading": "Final Step",
+      "desc": "Your fast reflexes are \r\nneeded to group the bottles \r\ninto crates",
       "cta": "Play Game"
     },
     "tutorial": {
       "preheading": "Catch as many botttles as possible\r\nwithin the time given",
       "heading": "How to Play",
-      "cta": "Drag right and left to catch"
+      "cta": "Drag crate left/right\r\nto catch bottles"
     },
     "game": {
       "ready": "Get Ready!",
@@ -97,7 +99,7 @@
     },
     "results": {
       "heading": "Well Done!",
-      "desc": "You packed {num} bottles and earned {points} points",
+      "desc": "You packed {num} bottles and \r\nearned {points} points",
       "replay": "Restart Game",
       "next": "Next"
     }
