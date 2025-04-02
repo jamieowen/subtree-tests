@@ -24,7 +24,7 @@ export const Landing = ({ show, ...props }) => {
         className="bg"
       />
 
-      <div className="darken" />
+      {/* <div className="darken" /> */}
 
       <div className="wrap">
         <h1>{t('landing.heading')}</h1>

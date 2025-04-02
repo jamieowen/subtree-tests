@@ -6,6 +6,10 @@ export const Intro = ({ id, show, onClick }) => {
 
   return (
     <section className={classnames(['page', 'intro', { show }])}>
+      <img
+        src={`/assets/images-next/${id}-intro.webp`}
+        className="bg"
+      />
       <div className="step">
         <span>{t(`${id}.step`)}</span>
       </div>
