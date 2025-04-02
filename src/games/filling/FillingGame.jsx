@@ -59,6 +59,7 @@ export const FillingGame = forwardRef(({ show, onEnded }, ref) => {
   };
 
   const onTimeLeftEnded = () => {
+    if (!show) return;
     onEnded();
   };
 
@@ -137,7 +138,12 @@ export const FillingGame = forwardRef(({ show, onEnded }, ref) => {
           count={count}
         />
 
-        <div className="btn-cta">{t('filling.game.cta')}</div>
+        <ButtonPrimary
+          className="btn-cta"
+          show={started}
+        >
+          {t('filling.game.cta')}
+        </ButtonPrimary>
       </div>
 
       {started && (

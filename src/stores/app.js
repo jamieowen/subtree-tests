@@ -48,19 +48,11 @@ export const useAppStore = create((set) => ({
   muted: true,
   setMuted: (val) =>
     set((state) => {
-      if (!val) {
-        document.querySelector('.bgm').play();
-      }
-      document.querySelector('.bgm').muted = val;
       return { muted: val };
     }),
   toggleMuted: () =>
     set((state) => {
       let val = !state.muted;
-      if (!val) {
-        document.querySelector('.bgm').play();
-      }
-      document.querySelector('.bgm').muted = val;
       return { muted: val };
     }),
 

@@ -14,7 +14,8 @@ export const Ending = ({ show, ...props }) => {
   const showVideo = show && section == 'video';
 
   const onRestart = () => {
-    setPage('');
+    // setPage('');
+    window.location.reload();
   };
 
   const onShare = () => {
@@ -73,13 +74,13 @@ export const Ending = ({ show, ...props }) => {
         </div>
 
         <div className="page__bottom">
-          <ButtonPrimary
+          {/* <ButtonPrimary
             show={section == 'intro'}
             color="white"
             onClick={onShare}
           >
             {t('ending.cta')}
-          </ButtonPrimary>
+          </ButtonPrimary> */}
         </div>
       </div>
     </div>

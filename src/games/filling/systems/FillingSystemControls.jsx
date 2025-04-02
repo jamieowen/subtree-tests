@@ -19,7 +19,7 @@ export const FillingSystemControls = forwardRef(
   (
     {
       playing = false,
-      within = 0.15,
+      within = 0.25,
       multiplier = 0.01,
       oneDirection = false,
       textureConfigs,
@@ -91,7 +91,8 @@ export const FillingSystemControls = forwardRef(
       if (distance > 0) {
         tween.current = gsap.to(current, {
           current: pos,
-          duration: distance,
+          duration: distance * 2 * speed.current,
+          ease: 'none',
         });
         await tween.current.then();
       }
@@ -140,11 +141,16 @@ export const FillingSystemControls = forwardRef(
     };
 
     useEffect(() => {
-      gl.domElement.addEventListener('pointerdown', onPointerDown);
-      gl.domElement.addEventListener('pointerup', onPointerUp);
+      // let el = gl.domElement
+      let el = document.querySelector('.game-filling .btn-cta');
+      el.addEventListener('pointerdown', onPointerDown);
+      el.addEventListener('pointerup', onPointerUp);
+
       return () => {
-        gl.domElement.removeEventListener('pointerdown', onPointerDown);
-        gl.domElement.removeEventListener('pointerup', onPointerUp);
+        let el = document.querySelector('.game-filling .btn-cta');
+        if (!el) return;
+        el.removeEventListener('pointerdown', onPointerDown);
+        el.removeEventListener('pointerup', onPointerUp);
       };
     }, []);
 

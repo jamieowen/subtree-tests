@@ -7,6 +7,8 @@ export const ButtonPrimary = ({
   children,
   color = 'red',
   auto = 0,
+  show = true,
+  disabled = false,
   ...props
 }) => {
   const { t } = useTranslation();
@@ -35,7 +37,12 @@ export const ButtonPrimary = ({
 
   return (
     <motion.button
-      className={classnames(['button-primary', `color-${color}`, className])}
+      className={classnames([
+        'button-primary',
+        `color-${color}`,
+        className,
+        { show, disabled },
+      ])}
       {...props}
       whileTap={{ scale: 0.95 }}
       data-auto={auto}

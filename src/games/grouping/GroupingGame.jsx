@@ -20,6 +20,7 @@ export const GroupingGame = forwardRef(({ show, onEnded }, ref) => {
   };
 
   const onTimeLeftEnded = () => {
+    if (!show) return;
     onEnded();
   };
 

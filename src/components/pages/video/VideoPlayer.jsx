@@ -3,7 +3,7 @@ import { useAppStore } from '@/stores/app';
 import classnames from 'classnames';
 export const VideoPlayer = ({ src, onEnd, showSkip = true, ...props }) => {
   const { t } = useTranslation();
-  const setPage = useAppStore((state) => state.setPage);
+  const muted = useAppStore((state) => state.muted);
 
   const refVideo = useRef(null);
 
@@ -29,6 +29,7 @@ export const VideoPlayer = ({ src, onEnd, showSkip = true, ...props }) => {
         src={src}
         onEnded={onEnd}
         playsInline
+        muted={muted}
       />
       <AnimatePresence>
         {showSkip && (

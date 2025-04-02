@@ -19,6 +19,7 @@ export const CleaningGame = forwardRef(({ show, onEnded }, ref) => {
   };
 
   const onTimeLeftEnded = () => {
+    if (!show) return;
     onEnded();
   };
 
