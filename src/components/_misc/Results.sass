@@ -10,3 +10,29 @@
     gap: 2rem
 
   
+  .scores
+    +flex-row
+    gap: 1rem
+
+    li
+      width: 7.6rem
+      aspect-ratio: 76 / 118
+      background: white
+      color: black
+      border-radius: 1.4rem
+      +flex-col
+      box-shadow: 0 0rem 2rem 0.5rem rgba(0,0,0, 0.1)
+
+      .value
+        font-family: $font-tccc-cond
+        font-size: 4rem
+        letter-spacing: -0.02rem
+
+      .label
+        font-family: $font-tccc-cond
+        letter-spacing: 0rem
+        text-transform: uppercase
+        margin-top: 1rem
+
+  .btn-secondary
+    pointer-events: all

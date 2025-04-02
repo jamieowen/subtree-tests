@@ -17,12 +17,13 @@
   },
   "general": {
     "skip": "Sauter",
-    "bottles": "Bouteilles"
+    "bottles": "Bouteilles",
+    "points": "Points"
   },
   "landing": {
     "heading": "Rejoignez-nous le\r\nManière rechargeable",
     "desc": "Nos bouteilles en verre rechargeables\r\nsont conçus pour être rechargés\r\nau moins 25 fois",
-    "cta": "Rechargez maintenant"
+    "cta": "Commencer l'expérience"
   },
   "cleaning": {
     "name": "Lavage",
@@ -93,7 +94,10 @@
     "tutorial": {
       "preheading": "Attrapez autant de bouteilles que possible\r\ndans le délai imparti",
       "heading": "Comment jouer",
-      "cta": "Faites glisser la caisse vers la gauche/droite\r\nattraper des bouteilles"
+      "instructions": [
+        "Faites glisser la caisse vers la gauche/droite\r\nattraper des bouteilles"
+      ],
+      "cta": "Commencer"
     },
     "game": {
       "ready": "Se préparer!",

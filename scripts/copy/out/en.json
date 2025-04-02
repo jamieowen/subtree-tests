@@ -14,12 +14,13 @@
   },
   "general": {
     "skip": "Skip",
-    "bottles": "Bottles"
+    "bottles": "Bottles",
+    "points": "Points"
   },
   "landing": {
     "heading": "Join us the\r\nRefillable Way",
     "desc": "Our refillable glass bottles\r\nare designed to be refilled\r\nat least 25 times",
-    "cta": "Refill Now"
+    "cta": "Start Experience"
   },
   "cleaning": {
     "name": "Washing",
@@ -90,7 +91,10 @@
     "tutorial": {
       "preheading": "Catch as many botttles as possible\r\nwithin the time given",
       "heading": "How to Play",
-      "cta": "Drag crate left/right\r\nto catch bottles"
+      "instructions": [
+        "Drag crate left/right\r\nto catch bottles"
+      ],
+      "cta": "Start"
     },
     "game": {
       "ready": "Get Ready!",

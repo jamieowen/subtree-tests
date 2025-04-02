@@ -1,7 +1,14 @@
 import './Results.sass';
 import classnames from 'classnames';
 
-export const Results = ({ id, show, count, points, onReplay, onNext }) => {
+export const Results = ({
+  id,
+  show,
+  count = 0,
+  points = 0,
+  onReplay,
+  onNext,
+}) => {
   const { t } = useTranslation();
 
   return (
@@ -11,10 +18,22 @@ export const Results = ({ id, show, count, points, onReplay, onNext }) => {
         <Trans
           i18nKey={`${id}.results.desc`}
           values={{
-            count: count || 0,
-            points: points || 0,
+            count,
+            points,
           }}
         ></Trans>
+
+        <ul class="scores">
+          <li>
+            <div className="value">{count}</div>
+            <div className="label">{t('general.bottles')}</div>
+          </li>
+          <li>
+            <div className="value">{points}</div>
+            <div className="label">{t('general.points')}</div>
+          </li>
+        </ul>
+
         <button
           className="btn-secondary"
           onClick={onReplay}
@@ -22,7 +41,12 @@ export const Results = ({ id, show, count, points, onReplay, onNext }) => {
           {t(`${id}.results.replay`)}
         </button>
       </div>
-      <ButtonPrimary onClick={onNext}>{t(`${id}.results.next`)}</ButtonPrimary>
+      <ButtonPrimary
+        onClick={onNext}
+        auto={show ? 10 : 0}
+      >
+        {t(`${id}.results.next`)}
+      </ButtonPrimary>
     </section>
   );
 };

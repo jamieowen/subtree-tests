@@ -27,7 +27,7 @@ export const CleaningGame = ({ show, onEnded }) => {
       className={classnames(['page', 'game', 'game-cleaning', { show }])}
     >
       <three.In>
-        <BackgroundColor color={0xff0000} />
+        <BackgroundColor color={0x84b792} />
 
         <PerspectiveCamera
           position={[0, 1, 6]}

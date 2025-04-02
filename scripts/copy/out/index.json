@@ -15,12 +15,13 @@
     },
     "general": {
       "skip": "Skip",
-      "bottles": "Bottles"
+      "bottles": "Bottles",
+      "points": "Points"
     },
     "landing": {
       "heading": "Join us the\r\nRefillable Way",
       "desc": "Our refillable glass bottles\r\nare designed to be refilled\r\nat least 25 times",
-      "cta": "Refill Now"
+      "cta": "Start Experience"
     },
     "cleaning": {
       "name": "Washing",
@@ -91,7 +92,10 @@
       "tutorial": {
         "preheading": "Catch as many botttles as possible\r\nwithin the time given",
         "heading": "How to Play",
-        "cta": "Drag crate left/right\r\nto catch bottles"
+        "instructions": [
+          "Drag crate left/right\r\nto catch bottles"
+        ],
+        "cta": "Start"
       },
       "game": {
         "ready": "Get Ready!",
@@ -132,12 +136,13 @@
     },
     "general": {
       "skip": "Saltar",
-      "bottles": "botellas"
+      "bottles": "botellas",
+      "points": "Agujas"
     },
     "landing": {
       "heading": "Únase a nosotros el\r\nManera recargable",
       "desc": "Nuestras botellas de vidrio recargables\r\nestán diseñados para ser recargados\r\nal menos 25 veces",
-      "cta": "Recargar ahora"
+      "cta": "Iniciar experiencia"
     },
     "cleaning": {
       "name": "Lavado",
@@ -208,7 +213,10 @@
       "tutorial": {
         "preheading": "Atrapa tantas botellas como puedas\r\ndentro del tiempo dado",
         "heading": "Cómo jugar",
-        "cta": "Arrastre la caja hacia la izquierda/derecha\r\ncoger botellas"
+        "instructions": [
+          "Arrastre la caja hacia la izquierda/derecha\r\ncoger botellas"
+        ],
+        "cta": "Comenzar"
       },
       "game": {
         "ready": "¡Prepararse!",
@@ -249,12 +257,13 @@
     },
     "general": {
       "skip": "Sauter",
-      "bottles": "Bouteilles"
+      "bottles": "Bouteilles",
+      "points": "Points"
     },
     "landing": {
       "heading": "Rejoignez-nous le\r\nManière rechargeable",
       "desc": "Nos bouteilles en verre rechargeables\r\nsont conçus pour être rechargés\r\nau moins 25 fois",
-      "cta": "Rechargez maintenant"
+      "cta": "Commencer l'expérience"
     },
     "cleaning": {
       "name": "Lavage",
@@ -325,7 +334,10 @@
       "tutorial": {
         "preheading": "Attrapez autant de bouteilles que possible\r\ndans le délai imparti",
         "heading": "Comment jouer",
-        "cta": "Faites glisser la caisse vers la gauche/droite\r\nattraper des bouteilles"
+        "instructions": [
+          "Faites glisser la caisse vers la gauche/droite\r\nattraper des bouteilles"
+        ],
+        "cta": "Commencer"
       },
       "game": {
         "ready": "Se préparer!",

@@ -2,18 +2,26 @@
 
 .button-primary
   position: relative
-  pointer-events: auto
   +flex-row(center, center)
   border: 1px solid white
   padding: 1rem 3rem
-  border-radius: 1000px
+  border-radius: 2.5rem
+  height: 6rem
+  min-height: 6rem
+  background: linear-gradient(to bottom, #f50008, #b50006)
+  border: 1px solid #ff484e
+  box-shadow: 0 0.5rem 1rem 0 rgba(0,0,0, 0.25)
+  pointer-events: auto
+  overflow: hidden
 
-  .bg
-    width: 100%
-    overflow: visible
+  .progress
+    +full
+    background: #a50509
+    transform: scaleX(0)
+    transform-origin: left
 
   .label
-    // +full
+    position: relative
     +flex-row(center, center)
     +type-cta
     margin-top: -0.3rem

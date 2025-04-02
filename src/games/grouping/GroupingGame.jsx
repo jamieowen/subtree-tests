@@ -28,7 +28,7 @@ export const GroupingGame = ({ show, onEnded }) => {
       className={classnames(['page', 'game', 'game-grouping', { show }])}
     >
       <three.In>
-        <BackgroundColor color={0xff0000} />
+        <BackgroundColor color={0x84b792} />
 
         <PerspectiveCamera
           position={[0, 3, 10]}

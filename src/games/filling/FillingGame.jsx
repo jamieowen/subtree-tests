@@ -65,7 +65,7 @@ export const FillingGame = ({ show, onEnded }) => {
   return (
     <section className={classnames(['page', 'game', 'game-filling', { show }])}>
       <three.In>
-        <BackgroundColor color={0xff0000} />
+        <BackgroundColor color={0x84b792} />
 
         <PerspectiveCamera
           position={[0, 1, 6]}

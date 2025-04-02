@@ -19,13 +19,23 @@ export const Grouping = ({ show, ...props }) => {
 
   const { completed } = useAssetProgress();
 
+  const showVideo = show && (section == 'video' || section == 'intro');
+
   return (
     <div className={classnames(['page', 'game', 'Grouping', { show }])}>
-      <VideoPlayer
-        src="/assets/videos/grouping.mp4"
-        show={section == 'video' || section == 'intro'}
-        onEnd={nextSection}
-      />
+      <AnimatePresence>
+        {showVideo && (
+          <VideoPlayer
+            key="grouping-video"
+            src="/assets/videos/grouping.mp4"
+            onEnd={() => {
+              nextSection();
+            }}
+            exit={{ opacity: 0 }}
+            showSkip={section == 'video'}
+          />
+        )}
+      </AnimatePresence>
 
       <Intro
         id="grouping"

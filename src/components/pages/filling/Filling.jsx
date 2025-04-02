@@ -19,13 +19,23 @@ export const Filling = ({ show, ...props }) => {
 
   const { completed } = useAssetProgress();
 
+  const showVideo = show && (section == 'video' || section == 'intro');
+
   return (
     <div className={classnames(['page', 'game', 'Filling', { show }])}>
-      <VideoPlayer
-        src="/assets/videos/filling.mp4"
-        show={section == 'video' || section == 'intro'}
-        onEnd={nextSection}
-      />
+      <AnimatePresence>
+        {showVideo && (
+          <VideoPlayer
+            key="filling-video"
+            src="/assets/videos/filling.mp4"
+            onEnd={() => {
+              nextSection();
+            }}
+            exit={{ opacity: 0 }}
+            showSkip={section == 'video'}
+          />
+        )}
+      </AnimatePresence>
 
       <Intro
         id="filling"

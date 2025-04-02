@@ -1,19 +1,14 @@
 @import "@/styles/shared.sass"
 
 .tutorial
-  padding-top: calc(var(--header-height) + 7rem)
-
-  .preheading
-    position: absolute
-    top: calc(var(--header-height) + 5rem)
-    left: 0
-    right: 0
-    margin-inline: auto
+  // opacity: 1 !important
+  +flex-col(space-between, stretch)
+  
+  
     
   .panel
     position: relative
     width: 27.6rem
-    width: 22rem
     aspect-ratio: 276 / 398
     +flex-col(center, stretch)
 
@@ -27,7 +22,7 @@
     >*
       position: relative
 
-    .top, .bottom
+    &__top, &__bottom
       position: relative
       +flex-row
       +type-caption
@@ -41,21 +36,21 @@
         width: 2rem
         transform: translate(0, -50%)
 
-    .top
+    &__top
       aspect-ratio: 276 / 64
 
-    .bottom
+    &__bottom
       aspect-ratio: 276 / 58
 
-    .center
+    &__center
       position: relative
       flex: 1
 
-      .wrap
-        +full
-        +flex-col
-        padding: 2rem
-        +type-cta
+    &__wrap
+      +full
+      +flex-col
+      padding: 2rem
+      +type-cta
 
     
 

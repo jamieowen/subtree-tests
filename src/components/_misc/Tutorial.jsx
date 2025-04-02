@@ -8,23 +8,32 @@ export const Tutorial = ({ id, show, onClick }) => {
 
   return (
     <section className={classnames(['page', 'tutorial', { show }])}>
-      <div className="step">{t(`${id}.step`)}</div>
-      <div className="preheading">{t(`${id}.tutorial.preheading`)}</div>
+      <div className="page__top">
+        <div className="preheading">{t(`${id}.tutorial.preheading`)}</div>
+      </div>
 
-      <div className="panel">
+      <div className="page__center panel">
         <IconPanel />
-        <div className="top">
-          <div className="heading">{t(`${id}.tutorial.heading`)}</div>
+        <div className="panel__top">
+          <div className="panel__heading">{t(`${id}.tutorial.heading`)}</div>
           <IconHelp className="help" />
         </div>
-        <div className="center">
-          <div className="wrap">
+        <div className="panel__center">
+          <div className="panel__wrap">
             <p>{t(`${id}.tutorial.instructions.0`)}</p>
           </div>
         </div>
-        <div className="bottom"></div>
+        <div className="panel__bottom"></div>
       </div>
-      <ButtonPrimary onClick={onClick}>{t(`${id}.tutorial.cta`)}</ButtonPrimary>
+
+      <div className="page__bottom">
+        <ButtonPrimary
+          onClick={onClick}
+          auto={show ? 10 : 0}
+        >
+          {t(`${id}.tutorial.cta`)}
+        </ButtonPrimary>
+      </div>
     </section>
   );
 };

@@ -5,12 +5,28 @@
 
 .page
   +full
-  +flex-col
+  +flex-col()
   gap: 1.6rem
   padding-inline: 2rem
   padding-top: calc(var(--header-height) + 2rem)
   padding-bottom: calc(env(safe-area-inset-bottom) + 2rem)
   text-align: center
+
+  &__top
+    position: relative
+    flex: 1
+    +flex-col
+
+  &__center
+    position: relative
+    width: 27.6rem
+    aspect-ratio: 276 / 398
+    margin-inline: auto
+
+  &__bottom
+    position: relative
+    flex: 1
+    +flex-col
 
   // TRANSITION
   transition: all 0.3s ease 0s
@@ -28,11 +44,3 @@
     backdrop-filter: none
     pointer-events: none
 
-
-  .step
-    position: absolute
-    top: calc(var(--header-height) + 2rem)
-    left: 0
-    right: 0
-    margin-inline: auto
-    +type-caption

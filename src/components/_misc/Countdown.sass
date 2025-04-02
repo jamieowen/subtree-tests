@@ -2,17 +2,14 @@
 
 .countdown
   +full
-  +flex-col
-  padding-top: calc(var(--header-height))
+  +flex-col(space-between, stretch)
+  // padding-top: calc(var(--header-height))
 
-  .preheading
-    position: absolute
-    top: calc(var(--header-height) + 5rem)
-    left: 0
-    right: 0
-    margin-inline: auto
+  .countdown__number
+    +center-img
+    -webkit-text-stroke: 2rem rgba(255, 255, 255, 0.1)
 
 
-  transition: opacity 0.3s ease-in-out
-  &:not(.show)
-    opacity: 0
+  // transition: opacity 0.3s ease-in-out
+  // &:not(.show)
+  //   opacity: 0
