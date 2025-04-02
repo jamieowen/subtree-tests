@@ -71,6 +71,7 @@ export const Cleaning = ({ show, ...props }) => {
         show={section == 'results'}
         onReplay={onReplay}
         count={count}
+        points={count * 10}
         onNext={() => setPage('filling')}
       />
     </div>

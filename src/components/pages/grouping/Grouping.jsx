@@ -70,6 +70,7 @@ export const Grouping = ({ show, ...props }) => {
         show={section == 'results'}
         onReplay={onReplay}
         count={count}
+        points={count * 10}
         onNext={() => setPage('ending')}
       />
     </div>
