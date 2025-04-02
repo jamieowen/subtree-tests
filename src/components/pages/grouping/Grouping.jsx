@@ -13,6 +13,7 @@ export const Grouping = ({ show, ...props }) => {
   const resetCount = useGroupingStore((state) => state.resetCount);
 
   const section = useGroupingStore((state) => state.section);
+  const setSection = useGroupingStore((state) => state.setSection);
   const nextSection = useGroupingStore((state) => state.nextSection);
 
   const replay = useGroupingStore((state) => state.replay);
@@ -20,6 +21,13 @@ export const Grouping = ({ show, ...props }) => {
   const { completed } = useAssetProgress();
 
   const showVideo = show && (section == 'video' || section == 'intro');
+
+  const refGame = useRef(null);
+  const onReplay = () => {
+    setCount(0);
+    setSection('intro');
+    refGame.current.reset();
+  };
 
   return (
     <div className={classnames(['page', 'game', 'Grouping', { show }])}>
@@ -51,6 +59,7 @@ export const Grouping = ({ show, ...props }) => {
 
       {completed && show && (
         <GroupingGame
+          ref={refGame}
           show={section == 'game'}
           onEnded={nextSection}
         />

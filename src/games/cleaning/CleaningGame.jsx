@@ -6,7 +6,7 @@ import { Box } from '@react-three/drei';
 import { CleaningECS } from './state';
 import { PerspectiveCamera, Grid } from '@react-three/drei';
 
-export const CleaningGame = ({ show, onEnded }) => {
+export const CleaningGame = forwardRef(({ show, onEnded }, ref) => {
   const { t } = useTranslation();
   const count = useCleaningStore((state) => state.count);
   const points = useMemo(() => count * 10);
@@ -21,6 +21,17 @@ export const CleaningGame = ({ show, onEnded }) => {
   const onTimeLeftEnded = () => {
     onEnded();
   };
+
+  const playing = show && started;
+
+  const refControls = useRef(null);
+
+  useImperativeHandle(ref, () => ({
+    reset: () => {
+      setStarted(false);
+      refControls.current.reset();
+    },
+  }));
 
   return (
     <section
@@ -57,8 +68,11 @@ export const CleaningGame = ({ show, onEnded }) => {
 
         <CleaningNozzle />
 
-        <CleaningSystemControls />
-        <CleaningSystemBottles />
+        <CleaningSystemControls
+          ref={refControls}
+          playing={playing}
+        />
+        <CleaningSystemBottles playing={playing} />
         <CleaningSystemGraphics />
       </three.In>
 
@@ -79,6 +93,10 @@ export const CleaningGame = ({ show, onEnded }) => {
           onEnded={onCountdownEnded}
           show={show && !started}
         />
+        <PointPopup
+          point={10}
+          count={count}
+        />
       </div>
 
       <button
@@ -89,4 +107,4 @@ export const CleaningGame = ({ show, onEnded }) => {
       </button>
     </section>
   );
-};
+});

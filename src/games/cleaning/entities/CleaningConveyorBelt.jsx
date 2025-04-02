@@ -13,10 +13,7 @@ export const CleaningConveyorBelt = ({ children }) => {
         name="belt"
         data={0}
       />
-      <CleaningECS.Component
-        name="locked"
-        data={false}
-      />
+
       <CleaningECS.Component name="three">
         <group>
           {/* <mesh

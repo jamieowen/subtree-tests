@@ -23,6 +23,17 @@ export const GroupingGame = ({ show, onEnded }) => {
     onEnded();
   };
 
+  const playing = show && started;
+
+  const refControls = useRef(null);
+
+  useImperativeHandle(ref, () => ({
+    reset: () => {
+      setStarted(false);
+      refControls.current.reset();
+    },
+  }));
+
   return (
     <section
       className={classnames(['page', 'game', 'game-grouping', { show }])}
@@ -57,7 +68,10 @@ export const GroupingGame = ({ show, onEnded }) => {
 
         <GroupingSystemBottles />
         <GroupingSystemGraphics />
-        <GroupingSystemControls />
+        <GroupingSystemControls
+          ref={refControls}
+          playing={playing}
+        />
       </three.In>
 
       <div className="contents">
@@ -76,6 +90,10 @@ export const GroupingGame = ({ show, onEnded }) => {
           id="cleaning"
           onEnded={onCountdownEnded}
           show={show && !started}
+        />
+        <PointPopup
+          point={10}
+          count={count}
         />
       </div>
 

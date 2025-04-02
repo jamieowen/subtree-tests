@@ -12,6 +12,7 @@ export const CleaningNozzle = () => {
 
     <mesh
       scale={[s, -s, s]}
+      position-x={0.015}
       position-y={-1.2}
     >
       <planeGeometry args={[102, 312]} />

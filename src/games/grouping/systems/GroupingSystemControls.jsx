@@ -6,49 +6,55 @@ import { GroupingECS } from '../state';
 
 const boxEntities = GroupingECS.world.with('isBox');
 
-export const GroupingSystemControls = ({
-  within = 0.25,
-  multiplier = 0.015,
-  limit = 2,
-  oneDirection = false,
-}) => {
-  const gl = useThree((state) => state.gl);
-
-  const to = useRef(0);
-  const current = useRef(0);
-
-  useDrag(
-    (state) => {
-      // TODO: LIMIT
-      if (to.current > limit) {
-        to.current = limit;
-        return;
-      }
-      if (to.current < -limit) {
-        to.current = -limit;
-        return;
-      }
-
-      to.current += state.delta[0] * multiplier;
+export const GroupingSystemControls = forwardRef(
+  (
+    {
+      playing = false,
+      within = 0.25,
+      multiplier = 0.015,
+      limit = 2,
+      oneDirection = false,
     },
-    { target: window }
-  );
+    ref
+  ) => {
+    const gl = useThree((state) => state.gl);
 
-  useFrame((state, delta) => {
-    const opts = [
-      0.1, // smoothTime
-      delta, // delta
-      Infinity, // maxSpeed
-      exp, // easing
-      0.001, // eps
-    ];
+    const to = useRef(0);
+    const current = useRef(0);
 
-    damp(current, 'current', to.current, ...opts);
+    useDrag(
+      (state) => {
+        // TODO: LIMIT
+        if (to.current > limit) {
+          to.current = limit;
+          return;
+        }
+        if (to.current < -limit) {
+          to.current = -limit;
+          return;
+        }
 
-    for (const entity of boxEntities) {
-      entity.position[0] = current.current;
-    }
-  });
+        to.current += state.delta[0] * multiplier;
+      },
+      { target: window }
+    );
 
-  return null;
-};
+    useFrame((state, delta) => {
+      const opts = [
+        0.1, // smoothTime
+        delta, // delta
+        Infinity, // maxSpeed
+        exp, // easing
+        0.001, // eps
+      ];
+
+      damp(current, 'current', to.current, ...opts);
+
+      for (const entity of boxEntities) {
+        entity.position[0] = current.current;
+      }
+    });
+
+    return null;
+  }
+);

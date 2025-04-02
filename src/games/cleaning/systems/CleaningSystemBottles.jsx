@@ -7,17 +7,33 @@ import { addBottle } from '../entities/CleaningBottles';
 
 const beltEntities = CleaningECS.world.with('belt');
 const bottleEntities = CleaningECS.world.with('isBottle');
+const uncleanEntities = CleaningECS.world.with('unclean');
+const cleanedEntities = CleaningECS.world.with('cleaned');
 
 export const CleaningSystemBottles = ({
+  playing = false,
   multiplier = 0.01,
   oneDirection = false,
 }) => {
+  const count = useCleaningStore((state) => state.count);
+  const setCount = useCleaningStore((state) => state.setCount);
+
+  const setBeltLocked = (locked) => {
+    for (let entity of beltEntities) {
+      if (locked) {
+        FillingECS.world.addComponent(entity, 'locked', true);
+      } else {
+        FillingECS.world.removeComponent(entity, 'locked', true);
+      }
+    }
+  };
+
   const cleanBottle = async (entity) => {
     if (entity.cleaning || entity.cleaned) return;
 
-    beltEntities.entities[0].locked = true;
+    setBeltLocked(true);
 
-    entity.cleaning = true;
+    CleaningECS.world.addComponent(entity, 'cleaning', true);
     let tl = gsap.timeline();
 
     tl.to(entity.position, { y: -0.1, duration: 0.1 });
@@ -30,10 +46,12 @@ export const CleaningSystemBottles = ({
     tl.to(entity.position, { y: 0, duration: 0.1 });
 
     await tl.then();
-    entity.cleaning = false;
-    entity.cleaned = true;
+    CleaningECS.world.removeComponent(entity, 'cleaning', true);
+    // entity.cleaned = true;
+    CleaningECS.world.removeComponent(entity, 'unclean', true);
+    CleaningECS.world.addComponent(entity, 'cleaned', true);
 
-    beltEntities.entities[0].locked = false;
+    setBeltLocked(false);
   };
 
   useFrame((state, delta) => {
@@ -44,12 +62,19 @@ export const CleaningSystemBottles = ({
       addBottle();
     }
 
-    // TODO: Delete bottles that are off screen
+    if (!playing) return;
 
-    for (const entity of bottleEntities) {
+    // UNCLEAN
+    for (const entity of uncleanEntities) {
       if (belt == entity.idx) {
         cleanBottle(entity);
       }
+    }
+
+    // COUNT CLEANED
+    let num = cleanedEntities.entities.length;
+    if (count != num) {
+      setCount(num);
     }
   });
 

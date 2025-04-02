@@ -14,6 +14,7 @@ export const Cleaning = ({ show, ...props }) => {
   const resetCount = useCleaningStore((state) => state.resetCount);
 
   const section = useCleaningStore((state) => state.section);
+  const setSection = useCleaningStore((state) => state.setSection);
   const nextSection = useCleaningStore((state) => state.nextSection);
 
   const replay = useCleaningStore((state) => state.replay);
@@ -21,6 +22,13 @@ export const Cleaning = ({ show, ...props }) => {
   const { completed } = useAssetProgress();
 
   const showVideo = show && (section == 'video' || section == 'intro');
+
+  const refGame = useRef(null);
+  const onReplay = () => {
+    setCount(0);
+    setSection('intro');
+    refGame.current.reset();
+  };
 
   return (
     <div className={classnames(['page', 'game', 'Cleaning', { show }])}>
@@ -52,6 +60,7 @@ export const Cleaning = ({ show, ...props }) => {
 
       {completed && show && (
         <CleaningGame
+          ref={refGame}
           show={section == 'game'}
           onEnded={nextSection}
         />
@@ -60,7 +69,7 @@ export const Cleaning = ({ show, ...props }) => {
       <Results
         id="cleaning"
         show={section == 'results'}
-        onReplay={replay}
+        onReplay={onReplay}
         count={count}
         onNext={() => setPage('filling')}
       />

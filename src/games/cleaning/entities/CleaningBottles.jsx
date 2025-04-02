@@ -23,8 +23,7 @@ export const addBottle = () => {
     idx,
     position: { x: 0, y: 0 },
     progress: 0,
-    cleaning: false,
-    cleaned: false,
+    unclean: true,
   });
   idx = idx + 1;
 };
