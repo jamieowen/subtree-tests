@@ -65,6 +65,7 @@
     "miniplex": "^2.0.0",
     "miniplex-react": "^2.0.1",
     "mitt": "^3.0.1",
+    "motion": "^12.6.3",
     "noisejs": "^2.1.0",
     "perlin-simplex": "^0.0.3",
     "postprocessing": "^6.37.1",

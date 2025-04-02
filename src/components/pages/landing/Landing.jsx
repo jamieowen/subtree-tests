@@ -9,11 +9,23 @@ export const Landing = ({ show, ...props }) => {
   return (
     <div
       className={classnames(['page', 'Landing', { show }])}
-      onClick={() => setPage('cleaning-video')}
+      onClick={() => setPage('cleaning')}
     >
-      <h1>{t('landing.heading')}</h1>
-      <p>{t('landing.desc')}</p>
-      <ButtonPrimary>{t('landing.cta')}</ButtonPrimary>
+      <video
+        src="/assets/videos/intro.mp4"
+        muted
+        playsInline
+        autoPlay
+        loop
+      />
+
+      <div className="darken" />
+
+      <div className="wrap">
+        <h1>{t('landing.heading')}</h1>
+        <p>{t('landing.desc')}</p>
+        <ButtonPrimary>{t('landing.cta')}</ButtonPrimary>
+      </div>
     </div>
   );
 };

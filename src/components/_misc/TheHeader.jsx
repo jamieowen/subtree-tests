@@ -8,7 +8,7 @@ export const TheHeader = () => {
   const { t } = useTranslation();
   const page = useAppStore((state) => state.page);
 
-  const showLogo = page == 'landing' || page == 'results';
+  const showLogo = page == '' || page == 'ending';
   const isVideo = page.includes('video');
 
   return (
@@ -17,10 +17,27 @@ export const TheHeader = () => {
         <IconAudio />
       </button>
       <div className="center">
-        {showLogo && <IconCocaCola className="logo" />}
-        {!showLogo && !isVideo && (
-          <span className="type-caption">{t(`${page}.name`)}</span>
-        )}
+        <AnimatePresence>
+          {showLogo && (
+            <IconCocaCola
+              className="logo"
+              key="logo"
+              exit={{ opacity: 0 }}
+            />
+          )}
+        </AnimatePresence>
+
+        <AnimatePresence>
+          {!showLogo && !isVideo && (
+            <span
+              className="type-caption"
+              key={page}
+              exit={{ opacity: 0 }}
+            >
+              {t(`${page}.name`)}
+            </span>
+          )}
+        </AnimatePresence>
       </div>
       <button>
         <IconClose />

@@ -14,7 +14,7 @@
       "heading": "Coke"
     },
     "general": {
-      "skipVideo": "Skip",
+      "skip": "Skip",
       "bottles": "Bottles"
     },
     "landing": {
@@ -131,11 +131,11 @@
       "heading": "Coque"
     },
     "general": {
-      "skipVideo": "Saltar",
+      "skip": "Saltar",
       "bottles": "botellas"
     },
     "landing": {
-      "heading": "Únase a nosotros el\r\nForma recargable",
+      "heading": "Únase a nosotros el\r\nManera recargable",
       "desc": "Nuestras botellas de vidrio recargables\r\nestán diseñados para ser recargados\r\nal menos 25 veces",
       "cta": "Recargar ahora"
     },
@@ -208,7 +208,7 @@
       "tutorial": {
         "preheading": "Atrapa tantas botellas como puedas\r\ndentro del tiempo dado",
         "heading": "Cómo jugar",
-        "cta": "Arrastre la caja hacia la izquierda o hacia la derecha\r\ncoger botellas"
+        "cta": "Arrastre la caja hacia la izquierda/derecha\r\ncoger botellas"
       },
       "game": {
         "ready": "¡Prepararse!",
@@ -248,7 +248,7 @@
       "heading": "Coke"
     },
     "general": {
-      "skipVideo": "Sauter",
+      "skip": "Sauter",
       "bottles": "Bouteilles"
     },
     "landing": {

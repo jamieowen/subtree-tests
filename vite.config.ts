@@ -140,6 +140,7 @@ export default defineConfig(async () => {
             //   'useTimer',
             // ],
             // '@react-ecs/three': ['ThreeView'],
+            'motion/react': ['motion', 'AnimatePresence'],
             miniplex: ['World'],
             'miniplex-react': ['createReactAPI', 'useEntities'],
             '@lilib/hooks': ['useRaf'],

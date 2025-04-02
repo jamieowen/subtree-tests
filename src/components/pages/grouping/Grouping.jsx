@@ -21,11 +21,18 @@ export const Grouping = ({ show, ...props }) => {
 
   return (
     <div className={classnames(['page', 'game', 'Grouping', { show }])}>
+      <VideoPlayer
+        src="/assets/videos/grouping.mp4"
+        show={section == 'video' || section == 'intro'}
+        onEnd={nextSection}
+      />
+
       <Intro
         id="grouping"
         show={section == 'intro'}
         onClick={nextSection}
       />
+
       <Tutorial
         id="grouping"
         show={section == 'tutorial'}
@@ -44,7 +51,7 @@ export const Grouping = ({ show, ...props }) => {
         show={section == 'results'}
         onReplay={replay}
         count={count}
-        onNext={() => setPage('ending-video')}
+        onNext={() => setPage('ending')}
       />
     </div>
   );

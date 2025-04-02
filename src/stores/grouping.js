@@ -39,7 +39,7 @@ export const useGroupingStore = create((set) => ({
   // ****************************************
   // SECTION
   // ****************************************
-  section: getUrlString('section', 'intro'),
+  section: getUrlString('section', 'video'),
   setSection: (val) =>
     set((state) => {
       return { section: val };
@@ -47,6 +47,8 @@ export const useGroupingStore = create((set) => ({
   nextSection: () =>
     set((state) => {
       switch (state.section) {
+        case 'video':
+          return { section: 'intro' };
         case 'intro':
           return { section: 'tutorial' };
         case 'tutorial':

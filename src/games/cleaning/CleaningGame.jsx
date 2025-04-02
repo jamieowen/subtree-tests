@@ -7,6 +7,7 @@ import { CleaningECS } from './state';
 import { PerspectiveCamera, Grid } from '@react-three/drei';
 
 export const CleaningGame = ({ show, onEnded }) => {
+  const { t } = useTranslation();
   const count = useCleaningStore((state) => state.count);
   const points = useMemo(() => count * 10);
   const duration = 20;
@@ -83,12 +84,12 @@ export const CleaningGame = ({ show, onEnded }) => {
         />
       </div>
 
-      {/* <button
-        className="btn-skip"
+      <button
+        className="btn-skip-game"
         onClick={onEnded}
       >
-        Skip
-      </button> */}
+        {t('general.skip')}
+      </button>
     </section>
   );
 };

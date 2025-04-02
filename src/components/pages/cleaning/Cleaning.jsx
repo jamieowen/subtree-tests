@@ -20,13 +20,30 @@ export const Cleaning = ({ show, ...props }) => {
 
   const { completed } = useAssetProgress();
 
+  const showVideo = show && (section == 'video' || section == 'intro');
+
   return (
     <div className={classnames(['page', 'game', 'Cleaning', { show }])}>
+      <AnimatePresence>
+        {showVideo && (
+          <VideoPlayer
+            key="cleaning-video"
+            src="/assets/videos/cleaning.mp4"
+            onEnd={() => {
+              nextSection();
+            }}
+            exit={{ opacity: 0 }}
+            showSkip={section == 'video'}
+          />
+        )}
+      </AnimatePresence>
+
       <Intro
         id="cleaning"
         show={section == 'intro'}
         onClick={nextSection}
       />
+
       <Tutorial
         id="cleaning"
         show={section == 'tutorial'}
@@ -45,7 +62,7 @@ export const Cleaning = ({ show, ...props }) => {
         show={section == 'results'}
         onReplay={replay}
         count={count}
-        onNext={() => setPage('filling-video')}
+        onNext={() => setPage('filling')}
       />
     </div>
   );

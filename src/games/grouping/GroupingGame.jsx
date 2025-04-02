@@ -8,6 +8,7 @@ import { GroupingECS } from './state';
 import { PerspectiveCamera, Grid } from '@react-three/drei';
 
 export const GroupingGame = ({ show, onEnded }) => {
+  const { t } = useTranslation();
   const count = useGroupingStore((state) => state.count);
   const points = useMemo(() => count * 10);
   const duration = 20;
@@ -78,12 +79,12 @@ export const GroupingGame = ({ show, onEnded }) => {
         />
       </div>
 
-      {/* <button
-        className="btn-skip"
+      <button
+        className="btn-skip-game"
         onClick={onEnded}
       >
-        Skip
-      </button> */}
+        {t('general.skip')}
+      </button>
     </section>
   );
 };

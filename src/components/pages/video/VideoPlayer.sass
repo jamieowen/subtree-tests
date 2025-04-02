@@ -1,19 +1,19 @@
 @import '@/styles/shared.sass'
   
-.VideoPlayer
-
+.video-player
 
   video
     +full
     object-fit: cover
 
-.btn-skip
-  position: absolute
-  bottom: 10%
-  left: 0
-  right: 0
-  margin: 0 auto
-  +type-caption
-  text-transform: uppercase
-  font-weight: 900
-  letter-spacing: 0.05em
+  .btn-skip
+    position: absolute
+    bottom: 10%
+    left: 0
+    right: 0
+    margin: 0 auto
+    +type-caption
+    text-transform: uppercase
+    font-weight: 900
+    letter-spacing: 0.05em
+    pointer-events: all

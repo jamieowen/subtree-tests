@@ -21,11 +21,18 @@ export const Filling = ({ show, ...props }) => {
 
   return (
     <div className={classnames(['page', 'game', 'Filling', { show }])}>
+      <VideoPlayer
+        src="/assets/videos/filling.mp4"
+        show={section == 'video' || section == 'intro'}
+        onEnd={nextSection}
+      />
+
       <Intro
         id="filling"
         show={section == 'intro'}
         onClick={nextSection}
       />
+
       <Tutorial
         id="filling"
         show={section == 'tutorial'}
@@ -44,7 +51,7 @@ export const Filling = ({ show, ...props }) => {
         show={section == 'results'}
         onReplay={replay}
         count={count}
-        onNext={() => setPage('grouping-video')}
+        onNext={() => setPage('grouping')}
       />
     </div>
   );
