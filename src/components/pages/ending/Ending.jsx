@@ -13,6 +13,10 @@ export const Ending = ({ show, ...props }) => {
 
   const showVideo = show && section == 'video';
 
+  const onRestart = () => {
+    setPage('');
+  };
+
   return (
     <div className={classnames(['page', 'ending', { show }])}>
       <div className="bg">
@@ -52,7 +56,12 @@ export const Ending = ({ show, ...props }) => {
         <div className="page__center">
           <div className="preheading">{t('ending.preheading')}</div>
           <h1>{t('ending.heading')}</h1>
-          <button className="btn-secondary">{t('ending.restart')}</button>
+          <button
+            className="btn-secondary"
+            onClick={onRestart}
+          >
+            {t('ending.restart')}
+          </button>
         </div>
 
         <div className="page__bottom">
