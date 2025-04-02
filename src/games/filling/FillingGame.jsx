@@ -117,6 +117,10 @@ export const FillingGame = ({ show, onEnded }) => {
           onEnded={onCountdownEnded}
           show={show && !started}
         />
+        <PointPopup
+          point={10}
+          count={count}
+        />
       </div>
 
       <button
