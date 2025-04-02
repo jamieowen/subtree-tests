@@ -93,6 +93,13 @@ export const FillingSystemControls = ({
     if (bottleToFill) {
       FillingECS.world.removeComponent(bottleToFill, 'filling', true);
       FillingECS.world.addComponent(bottleToFill, 'ended', true);
+      FillingECS.world.removeComponent(bottleToFill, 'pouring', true);
+
+      if (bottleToFill.progress >= 0.75 && bottleToFill.progress <= 1.0) {
+        FillingECS.world.addComponent(bottleToFill, 'filled', true);
+      } else {
+        FillingECS.world.removeComponent(bottleToFill, 'filled', true);
+      }
     }
 
     if (isPouring()) {
@@ -130,19 +137,15 @@ export const FillingSystemControls = ({
     for (const entity of fillingEntities) {
       if (entity.filling) {
         entity.progress += delta / timeToFill.current;
-      }
-
-      if (entity.progress >= 0.8) {
         entity.progress = Math.min(entity.progress, 1);
-        // FillingECS.world.removeComponent(entity, 'filling', true);
-        FillingECS.world.addComponent(entity, 'filled', true);
-        complete = true;
       }
     }
 
     if (complete) {
       for (const entity of pouringEntities) {
-        FillingECS.world.removeComponent(entity, 'pouring', true);
+        if (entity.progress >= 1) {
+          FillingECS.world.removeComponent(entity, 'pouring', true);
+        }
       }
     }
   });

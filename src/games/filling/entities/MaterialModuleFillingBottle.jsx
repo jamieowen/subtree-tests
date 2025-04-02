@@ -131,18 +131,28 @@ export const MaterialModuleFillingBottle = forwardRef(
           // LINE
           float dpr = uDpr;
           float resY = uResolution.y * dpr;
+          float pos = 0.25;
+          pos = crange(pos, 0.0, 1.0, 0.15, 0.9);
+
+          // float thickness = 0.1;
+          // float posA = pos - thickness;
+          // float posB = pos;
+
           float thickness = 5.0;
           float thick = thickness / resY;
-          // float pos = 1.0 - uBottle_Progress;
-          float pos = 0.2;
-          pos = crange(pos, 0.0, 1.0, 0.15, 0.9);
           float posA = round((pos - thick) * resY) / resY;
           float posB = round((pos + thick) * resY) / resY;
 
-          vec3 lineColor = mix(vec3(1.0, 0.0, 0.0), vec3(0.0, 1.0, 0.0), step(0.8, uBottle_Progress));
+          vec3 lineColor = vec3(1.0, 0.0, 0.0);
+          if (uBottle_Progress >= 0.75 && uBottle_Progress <= 1.0) {
+            lineColor = vec3(0.0, 1.0, 0.0);
+          }
 
           if (st.y > posA && st.y < posB && uBottle_Filling == 1.0) {
-            pc_fragColor = vec4(lineColor, 1.0);
+            // pc_fragColor.rgb = blendMultiply(pc_fragColor.rgb, vec3(lineColor), 0.5);
+            // pc_fragColor.a = 1.0;
+
+            pc_fragColor.rgb = lineColor;
           }
           
         `,
