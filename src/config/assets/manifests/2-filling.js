@@ -14,8 +14,7 @@ export const textures = {
   t_filling_nozzle: `/assets/textures-o/2_filling/nozzle.ktx2`,
   t_filling_pour: `/assets/textures-o/2_filling/pour.ktx2`,
 
-  t_filling_cap: `/assets/textures-o/2_filling/cap.ktx2`,
-
+  t_filling_bottle_cap: `/assets/textures-o/2_filling/bottle/cap.ktx2`,
   t_filling_bottle_shadow: `/assets/textures-o/2_filling/bottle/shadow.ktx2`,
   t_filling_bottle_body: `/assets/textures-o/2_filling/bottle/body.ktx2`,
   t_filling_bottle_liquid: `/assets/textures-o/2_filling/bottle/liquid.ktx2`,

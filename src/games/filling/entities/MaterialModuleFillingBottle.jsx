@@ -11,6 +11,7 @@ export const MaterialModuleFillingBottle = forwardRef(
       t_filling_bottle_logo,
       t_filling_bottle_mask,
       t_filling_bottle_shadow,
+      t_filling_bottle_cap,
     ] = useAsset([
       urls.t_filling_bottle_body,
       urls.t_filling_bottle_liquid,
@@ -18,6 +19,7 @@ export const MaterialModuleFillingBottle = forwardRef(
       urls.t_filling_bottle_logo,
       urls.t_filling_bottle_mask,
       urls.t_filling_bottle_shadow,
+      urls.t_filling_bottle_cap,
     ]);
 
     const { material } = useMaterialModule({
@@ -29,6 +31,7 @@ export const MaterialModuleFillingBottle = forwardRef(
         tBottle_Logo: { type: 't', value: t_filling_bottle_logo },
         tBottle_Mask: { type: 't', value: t_filling_bottle_mask },
         tBottle_Shadow: { type: 't', value: t_filling_bottle_shadow },
+        tBottle_Cap: { type: 't', value: t_filling_bottle_cap },
 
         uBottle_Rows: { value: rows },
         uBottle_Cols: { value: cols },
@@ -36,6 +39,7 @@ export const MaterialModuleFillingBottle = forwardRef(
         uBottle_Fps: { value: fps },
         uBottle_Progress: { value: progress },
         uBottle_Filling: { value: 0.0 },
+        uBottle_Filled: { value: 0.0 },
       },
       fragmentShader: {
         setup: /*glsl*/ `
@@ -45,6 +49,7 @@ export const MaterialModuleFillingBottle = forwardRef(
           uniform sampler2D tBottle_Logo;
           uniform sampler2D tBottle_Mask;
           uniform sampler2D tBottle_Shadow;
+          uniform sampler2D tBottle_Cap;
 
           uniform float uBottle_Rows;
           uniform float uBottle_Cols;
@@ -52,6 +57,7 @@ export const MaterialModuleFillingBottle = forwardRef(
           uniform float uBottle_Fps;
           uniform float uBottle_Progress;
           uniform float uBottle_Filling;
+          uniform float uBottle_Filled;
 
           ${blend}
 
@@ -126,7 +132,13 @@ export const MaterialModuleFillingBottle = forwardRef(
           color.rgb = mix(color.rgb, logo.rgb, logo.a);
           color.a = mix(color.a, logo.a, logo.a);
 
+          // CAP
+          vec4 cap = texture2D(tBottle_Cap, st);
+          color.rgb = mix(color.rgb, cap.rgb, cap.a * uBottle_Filled);
+          color.a = mix(color.a, cap.a, cap.a * uBottle_Filled);
+
           pc_fragColor = color;
+
 
           // LINE
           float dpr = uDpr;
@@ -173,6 +185,12 @@ export const MaterialModuleFillingBottle = forwardRef(
         },
         set filling(val) {
           material.uniforms['uBottle_Filling'].value = val ? 1.0 : 0.0;
+        },
+        get filled() {
+          return material.uniforms['uBottle_Filled'].value;
+        },
+        set filled(val) {
+          material.uniforms['uBottle_Filled'].value = val ? 1.0 : 0.0;
         },
       }),
       [material]

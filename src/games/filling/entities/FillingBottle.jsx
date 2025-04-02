@@ -12,6 +12,7 @@ export const FillingBottle = (entity) => {
     if (entity.progress == undefined) return;
     refBottle.current.progress = entity.progress;
     refBottle.current.filling = entity.filling || false;
+    refBottle.current.filled = entity.filled || false;
   });
 
   return (
