@@ -50,7 +50,7 @@ export const FillingGame = forwardRef(({ show, onEnded }, ref) => {
   const { t } = useTranslation();
   const count = useFillingStore((state) => state.count);
   const points = useMemo(() => count * 10);
-  const duration = 59;
+  const duration = 40;
 
   const [started, setStarted] = useState(false);
 

@@ -18,7 +18,7 @@ export const VideoPlayer = ({ src, onEnd, showSkip = true, ...props }) => {
   }, []);
 
   const onSkip = () => {
-    refVideo.current.pause();
+    // refVideo.current.pause();
     onEnd();
   };
 

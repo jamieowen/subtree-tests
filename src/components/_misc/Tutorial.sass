@@ -11,6 +11,10 @@
     width: 27.6rem
     aspect-ratio: 276 / 398
     +flex-col(center, stretch)
+    background: rgba(255,255,255,0.2)
+    backdrop-filter: blur(15px)
+    border-radius: 2rem
+    border: 0.5rem solid rgba(255,255,255,0.2)
 
     >svg
       position: absolute
@@ -18,6 +22,7 @@
       left: 50%
       top: 50%
       transform: translate(-50%, -50%)
+      display: none
 
     >*
       position: relative
@@ -26,7 +31,7 @@
       position: relative
       +flex-row
       +type-caption
-      border: 0.6rem solid transparent
+      // border: 0.6rem solid transparent
 
       .help
         position: absolute
@@ -38,9 +43,12 @@
 
     &__top
       aspect-ratio: 276 / 64
+      border-bottom: 0.5rem solid rgba(255,255,255,0.2)
 
     &__bottom
       aspect-ratio: 276 / 58
+      border-top: 0.5rem solid rgba(255,255,255,0.2)
+      display: none
 
     &__center
       position: relative
@@ -53,7 +61,8 @@
       padding: 2rem
       +type-cta
       +flex-col(center, stretch)
-      gap: 2rem
+      gap: 4rem
+      padding-bottom: 4rem
 
       .panel__icon
         position: relative
