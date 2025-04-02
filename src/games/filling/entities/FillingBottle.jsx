@@ -10,6 +10,7 @@ export const FillingBottle = (entity) => {
       return;
     }
     refBottle.current.progress = entity.progress;
+    refBottle.current.filling = entity.filling || false;
   });
 
   return (
@@ -29,7 +30,7 @@ export const FillingBottle = (entity) => {
                 transparent
                 alphaToCoverage={false}
               >
-                <MaterialModuleBottle ref={refBottle} />
+                <MaterialModuleFillingBottle ref={refBottle} />
               </GBufferMaterial>
             </mesh>
           </Billboard>

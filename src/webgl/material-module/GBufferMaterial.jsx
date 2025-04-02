@@ -28,6 +28,7 @@ export const GBufferMaterial = forwardRef(
   ) => {
     const size = useThree((state) => state.size);
     const viewport = useThree((state) => state.viewport);
+    const dpr = useThree((state) => state.dpr);
 
     const _uniforms = useMemo(() => {
       return Object.assign(
@@ -36,6 +37,7 @@ export const GBufferMaterial = forwardRef(
           uResolution: {
             value: [size.width * viewport.dpr, size.height * viewport.dpr],
           },
+          uDpr: { value: viewport.dpr },
         },
         uniforms
       );
@@ -56,7 +58,7 @@ export const GBufferMaterial = forwardRef(
               varying vec3 vWorldNormal;
               uniform float uTime;
               uniform vec2 uResolution;
-
+              uniform float uDpr;
               ${range}
               /// insert <setup>
 
@@ -76,6 +78,7 @@ export const GBufferMaterial = forwardRef(
 
               uniform float uTime;
               uniform vec2 uResolution;
+              uniform float uDpr;
 
               layout(location = 1) out vec4 gNormal;
               layout(location = 2) out vec4 gOutline;
@@ -107,8 +110,9 @@ export const GBufferMaterial = forwardRef(
             varying vec3 vNormal;
             varying vec3 vWorldNormal;
 
-            uniform vec2 uResolution;
             uniform float uTime;
+            uniform vec2 uResolution;
+            uniform float uDpr;
 
             
             ${range}
@@ -138,8 +142,9 @@ export const GBufferMaterial = forwardRef(
             varying vec3 vNormal;
             varying vec3 vWorldNormal;
 
-            uniform vec2 uResolution;
             uniform float uTime;
+            uniform vec2 uResolution;
+            uniform float uDpr;
 
             ${range}
 

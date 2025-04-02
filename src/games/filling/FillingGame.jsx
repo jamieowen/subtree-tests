@@ -50,7 +50,7 @@ export const FillingGame = ({ show, onEnded }) => {
   const { t } = useTranslation();
   const count = useFillingStore((state) => state.count);
   const points = useMemo(() => count * 10);
-  const duration = 20;
+  const duration = 59;
 
   const [started, setStarted] = useState(false);
 
@@ -92,6 +92,7 @@ export const FillingGame = ({ show, onEnded }) => {
         <FillingNozzle />
         <FillingConveyorBelt>
           <FillingBottles />
+          {/* <FillingLines /> */}
         </FillingConveyorBelt>
 
         <FillingSystemControls textureConfigs={textureConfigs} />

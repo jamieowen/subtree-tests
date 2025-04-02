@@ -115,7 +115,7 @@ export const FillingSystemControls = ({
     // MOVE BELT
     const count = filledEntities.entities.length;
     if (!isLocked()) {
-      speed.current = Math.min(0.5 + count * 0.15, 2);
+      speed.current = Math.min(0.5 + count * 0.1, 1);
       current.current += delta * speed.current; // DEBUG
     }
     for (const entity of beltEntities) {
@@ -132,9 +132,9 @@ export const FillingSystemControls = ({
         entity.progress += delta / timeToFill.current;
       }
 
-      if (entity.progress >= 1) {
-        entity.progress = 1;
-        FillingECS.world.removeComponent(entity, 'filling', true);
+      if (entity.progress >= 0.8) {
+        entity.progress = Math.min(entity.progress, 1);
+        // FillingECS.world.removeComponent(entity, 'filling', true);
         FillingECS.world.addComponent(entity, 'filled', true);
         complete = true;
       }
