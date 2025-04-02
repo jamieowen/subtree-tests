@@ -6,9 +6,10 @@ export const FillingBottle = (entity) => {
   const refBottle = useRef(null);
 
   useFrame(() => {
-    if (!entity?.progress) {
+    if (!entity) {
       return;
     }
+    if (entity.progress == undefined) return;
     refBottle.current.progress = entity.progress;
     refBottle.current.filling = entity.filling || false;
   });

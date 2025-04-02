@@ -13,6 +13,7 @@ export const Filling = ({ show, ...props }) => {
   const resetCount = useFillingStore((state) => state.resetCount);
 
   const section = useFillingStore((state) => state.section);
+  const setSection = useFillingStore((state) => state.setSection);
   const nextSection = useFillingStore((state) => state.nextSection);
 
   const replay = useFillingStore((state) => state.replay);
@@ -20,6 +21,13 @@ export const Filling = ({ show, ...props }) => {
   const { completed } = useAssetProgress();
 
   const showVideo = show && (section == 'video' || section == 'intro');
+
+  const refGame = useRef(null);
+  const onReplay = () => {
+    setCount(0);
+    setSection('intro');
+    refGame.current.reset();
+  };
 
   return (
     <div className={classnames(['page', 'game', 'Filling', { show }])}>
@@ -51,6 +59,7 @@ export const Filling = ({ show, ...props }) => {
 
       {completed && show && (
         <FillingGame
+          ref={refGame}
           show={section == 'game'}
           onEnded={nextSection}
         />
@@ -59,7 +68,7 @@ export const Filling = ({ show, ...props }) => {
       <Results
         id="filling"
         show={section == 'results'}
-        onReplay={replay}
+        onReplay={onReplay}
         count={count}
         onNext={() => setPage('grouping')}
       />

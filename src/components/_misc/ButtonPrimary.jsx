@@ -3,6 +3,7 @@ import IconButtonRed from '@/assets/btn-red.svg?react';
 import classnames from 'classnames';
 
 export const ButtonPrimary = ({
+  className,
   children,
   color = 'red',
   auto = 0,
@@ -34,7 +35,7 @@ export const ButtonPrimary = ({
 
   return (
     <motion.button
-      className={classnames(['button-primary', `color-${color}`])}
+      className={classnames(['button-primary', `color-${color}`, className])}
       {...props}
       whileTap={{ scale: 0.95 }}
       data-auto={auto}

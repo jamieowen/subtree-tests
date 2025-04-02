@@ -5,7 +5,7 @@ import { useFillingStore } from '@/stores/filling';
 
 const lockedTargets = FillingECS.world.with('locked');
 
-export const FillingConveyorBelt = ({ children }) => {
+export const FillingConveyorBelt = ({ playing = false, children }) => {
   const refBelt = useRef(null);
   const refSprite = useRef(null);
   const s = 1.7;
@@ -21,6 +21,7 @@ export const FillingConveyorBelt = ({ children }) => {
   let frame = useRef(0);
 
   useFrame((state, delta) => {
+    if (!playing) return;
     if (!refBelt.current.locked) {
       frame.current += delta * fps * refBelt.current.speed;
       refSprite.current.frame = Math.floor(frame.current) % 47;

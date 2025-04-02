@@ -13,6 +13,7 @@ export const Countdown = ({
 
   useEffect(() => {
     if (!show) return;
+    setTime(duration);
     let interval = setInterval(() => {
       setTime((time) => {
         if (time === 1) {

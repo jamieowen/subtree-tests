@@ -46,7 +46,7 @@ export const textureConfigs = [
   },
 ];
 
-export const FillingGame = ({ show, onEnded }) => {
+export const FillingGame = forwardRef(({ show, onEnded }, ref) => {
   const { t } = useTranslation();
   const count = useFillingStore((state) => state.count);
   const points = useMemo(() => count * 10);
@@ -61,6 +61,17 @@ export const FillingGame = ({ show, onEnded }) => {
   const onTimeLeftEnded = () => {
     onEnded();
   };
+
+  const playing = show && started;
+
+  const refControls = useRef(null);
+
+  useImperativeHandle(ref, () => ({
+    reset: () => {
+      setStarted(false);
+      refControls.current.reset();
+    },
+  }));
 
   return (
     <section className={classnames(['page', 'game', 'game-filling', { show }])}>
@@ -90,12 +101,16 @@ export const FillingGame = ({ show, onEnded }) => {
         />
 
         <FillingNozzle />
-        <FillingConveyorBelt>
+        <FillingConveyorBelt playing={playing}>
           <FillingBottles />
           {/* <FillingLines /> */}
         </FillingConveyorBelt>
 
-        <FillingSystemControls textureConfigs={textureConfigs} />
+        <FillingSystemControls
+          ref={refControls}
+          textureConfigs={textureConfigs}
+          playing={playing}
+        />
         <FillingSystemBottles />
         <FillingSystemGraphics />
       </three.In>
@@ -121,6 +136,8 @@ export const FillingGame = ({ show, onEnded }) => {
           point={10}
           count={count}
         />
+
+        <div className="btn-cta">{t('filling.game.cta')}</div>
       </div>
 
       <button
@@ -131,4 +148,4 @@ export const FillingGame = ({ show, onEnded }) => {
       </button>
     </section>
   );
-};
+});
