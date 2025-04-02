@@ -11,12 +11,17 @@ export const Landing = ({ show, ...props }) => {
       className={classnames(['page', 'Landing', { show }])}
       onClick={() => setPage('cleaning')}
     >
-      <video
+      {/* <video
+        className="bg"
         src="/assets/videos/intro.mp4"
         muted
         playsInline
         autoPlay
         loop
+      /> */}
+      <img
+        src="/assets/images-next/landing.webp"
+        className="bg"
       />
 
       <div className="darken" />
@@ -24,7 +29,13 @@ export const Landing = ({ show, ...props }) => {
       <div className="wrap">
         <h1>{t('landing.heading')}</h1>
         <p>{t('landing.desc')}</p>
-        <ButtonPrimary>{t('landing.cta')}</ButtonPrimary>
+        <div className="btn">
+          <ButtonPrimary>{t('landing.cta')}</ButtonPrimary>
+          <img
+            src="/assets/images-next/hand.webp"
+            className="hand"
+          />
+        </div>
       </div>
     </div>
   );
