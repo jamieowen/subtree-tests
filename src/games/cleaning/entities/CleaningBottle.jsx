@@ -45,7 +45,7 @@ export const CleaningBottle = (entity) => {
                   map={texture}
                   rows={4096 / 1024}
                   cols={4096 / 256}
-                  frames={47}
+                  frames={48}
                   fps={12}
                 />
               </GBufferMaterial>

@@ -55,10 +55,7 @@ export const CleaningGame = ({ show, onEnded }) => {
           <CleaningBottles />
         </CleaningConveyorBelt>
 
-        <mesh position-y={-1}>
-          <coneGeometry args={[0.3, 1, 32]} />
-          <meshBasicMaterial color="green" />
-        </mesh>
+        <CleaningNozzle />
 
         <CleaningSystemControls />
         <CleaningSystemBottles />
