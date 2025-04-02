@@ -45,12 +45,20 @@
     &__center
       position: relative
       flex: 1
+      
+
 
     &__wrap
       +full
-      +flex-col
       padding: 2rem
       +type-cta
+      +flex-col(center, stretch)
+      gap: 2rem
+
+      .panel__icon
+        position: relative
+        flex: 1
+
 
     
 

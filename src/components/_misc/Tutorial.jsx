@@ -13,7 +13,7 @@ export const Tutorial = ({ id, show, onClick }) => {
       </div>
 
       <div className="page__center panel">
-        <IconPanel />
+        <IconPanel className="panel__frame" />
         <div className="panel__top">
           <div className="panel__heading">{t(`${id}.tutorial.heading`)}</div>
           <IconHelp className="help" />
@@ -21,6 +21,12 @@ export const Tutorial = ({ id, show, onClick }) => {
         <div className="panel__center">
           <div className="panel__wrap">
             <p>{t(`${id}.tutorial.instructions.0`)}</p>
+
+            <div className="panel__icon">
+              {id == 'cleaning' && <TutorialCleaning />}
+              {id == 'filling' && <TutorialFilling />}
+              {id == 'grouping' && <TutorialGrouping />}
+            </div>
           </div>
         </div>
         <div className="panel__bottom"></div>
@@ -29,7 +35,7 @@ export const Tutorial = ({ id, show, onClick }) => {
       <div className="page__bottom">
         <ButtonPrimary
           onClick={onClick}
-          auto={show ? 10 : 0}
+          // auto={show ? 10 : 0}
         >
           {t(`${id}.tutorial.cta`)}
         </ButtonPrimary>

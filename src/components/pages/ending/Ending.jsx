@@ -29,7 +29,7 @@ export const Ending = ({ show, ...props }) => {
 
       <img
         className="glow"
-        src="/assets/images/ending-glow.png"
+        src="/assets/images-next/ending-glow.webp"
       />
 
       <AnimatePresence>

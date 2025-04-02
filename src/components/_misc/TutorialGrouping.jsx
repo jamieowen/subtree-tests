@@ -1,0 +1,30 @@
+import './TutorialGrouping.sass';
+
+export const TutorialGrouping = () => {
+  const refNub = useRef(null);
+
+  useEffect(() => {
+    gsap.fromTo(
+      refNub.current,
+      { x: '-40%' },
+      {
+        x: '40%',
+        duration: 1,
+        ease: 'power2.inOut',
+        repeat: -1,
+        yoyo: true,
+      }
+    );
+  }, []);
+
+  return (
+    <div className="tutorial-grouping">
+      <div className="circle">
+        <div
+          className="nub"
+          ref={refNub}
+        />
+      </div>
+    </div>
+  );
+};

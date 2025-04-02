@@ -1,0 +1,32 @@
+@import "@/styles/shared.sass"
+
+.tutorial-cleaning
+  +full
+  +flex-row
+
+  img
+    height: 100%
+
+  .bottle-solid
+    position: absolute
+    left: 50%
+    top: 50%
+    transform: translate(-50%, -50%)
+
+    animation: align 1s ease-in-out infinite
+
+
+@keyframes align
+  0%
+    transform: translate(50%, -50%)
+    opacity: 0
+  20%
+    opacity: 1
+  80%
+    transform: translate(-50%, -50%)
+    opacity: 1
+  100%
+    opacity: 0
+
+    
+    
