@@ -6,6 +6,7 @@
   padding-bottom: calc(env(safe-area-inset-bottom) + 6rem)
 
   .wrap
+    position: relative
     flex: 1
     +flex-col
     gap: 2rem
@@ -13,3 +14,25 @@
   .btn-secondary
     opacity: 1 !important
     margin-top: 1rem
+
+
+  .bg
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    gap: 0
+    font-size: 0
+    line-height: 0
+    animation: up 15s linear infinite
+
+    img
+      position: relative
+      width: 100%
+      margin-top: -28rem
+
+@keyframes up
+  0%
+    transform: translateY(0)
+  100%
+    transform: translateY(-50%)

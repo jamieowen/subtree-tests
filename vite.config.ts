@@ -64,8 +64,8 @@ export default defineConfig(async () => {
       host: '0.0.0.0',
       port,
       https: {
-        key: fs.readFileSync('./key.pem'),
-        cert: fs.readFileSync('./cert.pem'),
+        key: fs.readFileSync('./localhost-key.pem'),
+        cert: fs.readFileSync('./localhost.pem'),
       },
       // proxy: {},
       // fs: {
