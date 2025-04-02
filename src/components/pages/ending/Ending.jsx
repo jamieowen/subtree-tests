@@ -17,6 +17,14 @@ export const Ending = ({ show, ...props }) => {
     setPage('');
   };
 
+  const onShare = () => {
+    navigator.share({
+      title: 'Coke ESG Reborn',
+      text: 'Coke ESG Reborn',
+      url: window.location.href,
+    });
+  };
+
   return (
     <div className={classnames(['page', 'ending', { show }])}>
       <div className="bg">
@@ -68,6 +76,7 @@ export const Ending = ({ show, ...props }) => {
           <ButtonPrimary
             show={section == 'intro'}
             color="white"
+            onClick={onShare}
           >
             {t('ending.cta')}
           </ButtonPrimary>
