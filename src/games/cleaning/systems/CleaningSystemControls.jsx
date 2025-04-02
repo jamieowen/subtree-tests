@@ -65,6 +65,7 @@ export const CleaningSystemControls = forwardRef(
     useDrag(
       (state) => {
         if (isLocked()) return;
+        if (!playing) return;
 
         if (to.current < 0) {
           to.current = 0;
