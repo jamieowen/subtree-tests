@@ -5,7 +5,7 @@ import { useAppStore } from '@/stores/app';
 
 const beltEntities = CleaningECS.world.with('belt');
 const bottleEntities = CleaningECS.world.with('isBottle');
-const lockedEntities = FillingECS.world.with('locked');
+const lockedEntities = CleaningECS.world.with('locked');
 
 export const CleaningSystemControls = forwardRef(
   (

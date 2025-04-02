@@ -21,9 +21,9 @@ export const CleaningSystemBottles = ({
   const setBeltLocked = (locked) => {
     for (let entity of beltEntities) {
       if (locked) {
-        FillingECS.world.addComponent(entity, 'locked', true);
+        CleaningECS.world.addComponent(entity, 'locked', true);
       } else {
-        FillingECS.world.removeComponent(entity, 'locked', true);
+        CleaningECS.world.removeComponent(entity, 'locked', true);
       }
     }
   };
