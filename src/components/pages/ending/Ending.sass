@@ -5,11 +5,17 @@
   padding-top: calc(var(--header-height))
   padding-bottom: calc(env(safe-area-inset-bottom) + 6rem)
 
-  .wrap
-    position: relative
-    flex: 1
-    +flex-col
-    gap: 2rem
+
+  >.page
+    +flex-col(space-between, stretch)
+
+    .page__top
+      // flex: 0.5
+
+    .page__center
+      +flex-col
+      gap: 2rem
+      transform: translateY(-8%)
 
   .btn-secondary
     opacity: 1 !important

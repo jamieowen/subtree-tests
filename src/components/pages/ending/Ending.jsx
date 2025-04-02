@@ -11,6 +11,8 @@ export const Ending = ({ show, ...props }) => {
   const [section, setSection] = useState('video');
   const nextSection = () => setSection('intro');
 
+  const showVideo = show && section == 'video';
+
   return (
     <div className={classnames(['page', 'ending', { show }])}>
       <div className="bg">
@@ -30,21 +32,38 @@ export const Ending = ({ show, ...props }) => {
         src="/assets/images/ending-glow.png"
       />
 
-      <VideoPlayer
-        src="/assets/videos/ending.mp4"
-        show={section == 'video'}
-        onEnd={nextSection}
-      />
+      <AnimatePresence>
+        {showVideo && (
+          <VideoPlayer
+            key="ending-video"
+            src="/assets/videos/ending.mp4"
+            onEnd={() => {
+              nextSection();
+            }}
+            exit={{ opacity: 0 }}
+            showSkip={section == 'video'}
+          />
+        )}
+      </AnimatePresence>
 
-      <motion.div
-        className="wrap"
-        animate={{ opacity: section == 'intro' ? 1 : 0 }}
-      >
-        <div className="preheading">{t('ending.preheading')}</div>
-        <h1>{t('ending.heading')}</h1>
-        <button className="btn-secondary">{t('ending.restart')}</button>
-      </motion.div>
-      <ButtonPrimary>{t('ending.cta')}</ButtonPrimary>
+      <div className={classnames(['page', { show: section == 'intro' }])}>
+        <div className="page__top" />
+
+        <div className="page__center">
+          <div className="preheading">{t('ending.preheading')}</div>
+          <h1>{t('ending.heading')}</h1>
+          <button className="btn-secondary">{t('ending.restart')}</button>
+        </div>
+
+        <div className="page__bottom">
+          <ButtonPrimary
+            show={section == 'intro'}
+            color="white"
+          >
+            {t('ending.cta')}
+          </ButtonPrimary>
+        </div>
+      </div>
     </div>
   );
 };

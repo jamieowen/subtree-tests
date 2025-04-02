@@ -1,5 +1,6 @@
 import './ButtonPrimary.sass';
 import IconButtonRed from '@/assets/btn-red.svg?react';
+import classnames from 'classnames';
 
 export const ButtonPrimary = ({
   children,
@@ -33,7 +34,7 @@ export const ButtonPrimary = ({
 
   return (
     <motion.button
-      className={`button-primary ${color}`}
+      className={classnames(['button-primary', `color-${color}`])}
       {...props}
       whileTap={{ scale: 0.95 }}
       data-auto={auto}
