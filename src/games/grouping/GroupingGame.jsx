@@ -7,11 +7,11 @@ import { Box } from '@react-three/drei';
 import { GroupingECS } from './state';
 import { PerspectiveCamera, Grid } from '@react-three/drei';
 
-export const GroupingGame = ({ show, onEnded }) => {
+export const GroupingGame = forwardRef(({ show, onEnded }, ref) => {
   const { t } = useTranslation();
   const count = useGroupingStore((state) => state.count);
   const points = useMemo(() => count * 10);
-  const duration = 20;
+  const duration = 5;
 
   const [started, setStarted] = useState(false);
 
@@ -25,12 +25,14 @@ export const GroupingGame = ({ show, onEnded }) => {
 
   const playing = show && started;
 
-  const refControls = useRef(null);
+  console.log('GroupingGame', show, playing);
+
+  const refSystemBottles = useRef(null);
 
   useImperativeHandle(ref, () => ({
     reset: () => {
       setStarted(false);
-      refControls.current.reset();
+      refSystemBottles.current.reset();
     },
   }));
 
@@ -66,12 +68,12 @@ export const GroupingGame = ({ show, onEnded }) => {
         <GroupingBox />
         <GroupingBottles />
 
-        <GroupingSystemBottles />
-        <GroupingSystemGraphics />
-        <GroupingSystemControls
-          ref={refControls}
+        <GroupingSystemBottles
+          ref={refSystemBottles}
           playing={playing}
         />
+        <GroupingSystemGraphics />
+        <GroupingSystemControls playing={playing} />
       </three.In>
 
       <div className="contents">
@@ -105,4 +107,4 @@ export const GroupingGame = ({ show, onEnded }) => {
       </button>
     </section>
   );
-};
+});

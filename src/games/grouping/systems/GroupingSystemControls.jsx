@@ -24,6 +24,8 @@ export const GroupingSystemControls = forwardRef(
 
     useDrag(
       (state) => {
+        if (!playing) return;
+
         // TODO: LIMIT
         if (to.current > limit) {
           to.current = limit;

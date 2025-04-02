@@ -68,7 +68,7 @@ export const Grouping = ({ show, ...props }) => {
       <Results
         id="grouping"
         show={section == 'results'}
-        onReplay={replay}
+        onReplay={onReplay}
         count={count}
         onNext={() => setPage('ending')}
       />
