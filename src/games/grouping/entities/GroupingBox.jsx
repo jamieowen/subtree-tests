@@ -28,17 +28,17 @@ export const GroupingBox = () => {
       },
       'start'
     );
-    tl.to(
-      refMesh.current.scale,
-      {
-        x: 1.1,
-        duration: 0.1,
-        ease: 'power2.inOut',
-        repeat: 1,
-        yoyo: true,
-      },
-      'start'
-    );
+    // tl.to(
+    //   refMesh.current.scale,
+    //   {
+    //     x: 1.1,
+    //     duration: 0.1,
+    //     ease: 'power2.inOut',
+    //     repeat: 1,
+    //     yoyo: true,
+    //   },
+    //   'start'
+    // );
   }, [count]);
 
   const s = 2.5;

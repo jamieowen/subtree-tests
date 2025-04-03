@@ -44,11 +44,11 @@ export const GroupingGame = forwardRef(({ show, onEnded }, ref) => {
           {/* <BackgroundColor color={0x84b792} /> */}
 
           <PerspectiveCamera
-            position={[0, 3, 10]}
+            position={[0, 2.7, 10]}
             makeDefault
           />
 
-          <Grid
+          {/* <Grid
             cellSize={1}
             sectionSize={5}
             args={[100, 100]}
@@ -56,7 +56,7 @@ export const GroupingGame = forwardRef(({ show, onEnded }, ref) => {
             side={DoubleSide}
             cellThickness={0.75}
             sectionThickness={1}
-          />
+          /> */}
 
           <ambientLight intensity={1} />
 

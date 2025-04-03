@@ -22,7 +22,12 @@ export const addBottle = () => {
     isBottle: true,
     notHit: true,
     opacity: 1,
-    position: [randomInRange(-2, 2), 8, 0],
+    position: [
+      //
+      randomInRange(-2, 2),
+      8,
+      randomInRange(-1, 0),
+    ],
     rotationSpeed: randomInRange(0.2, 0.5),
     rotationDirection: sample(['clockwise', 'counterclockwise']),
     progress: 0,
