@@ -42,39 +42,41 @@ export const GroupingGame = forwardRef(({ show, onEnded }, ref) => {
       className={classnames(['page', 'game', 'game-grouping', { show }])}
     >
       <three.In>
-        <BackgroundColor color={0x84b792} />
+        <group visible={show}>
+          {/* <BackgroundColor color={0x84b792} /> */}
 
-        <PerspectiveCamera
-          position={[0, 3, 10]}
-          makeDefault
-        />
+          <PerspectiveCamera
+            position={[0, 3, 10]}
+            makeDefault
+          />
 
-        <Grid
-          cellSize={1}
-          sectionSize={5}
-          args={[100, 100]}
-          fadeDistance={20}
-          side={DoubleSide}
-          cellThickness={0.75}
-          sectionThickness={1}
-        />
+          <Grid
+            cellSize={1}
+            sectionSize={5}
+            args={[100, 100]}
+            fadeDistance={20}
+            side={DoubleSide}
+            cellThickness={0.75}
+            sectionThickness={1}
+          />
 
-        <ambientLight intensity={1} />
+          <ambientLight intensity={1} />
 
-        <directionalLight
-          intensity={2}
-          position={[0, 8, 3]}
-        />
+          <directionalLight
+            intensity={2}
+            position={[0, 8, 3]}
+          />
 
-        <GroupingBox />
-        <GroupingBottles />
+          <GroupingBox />
+          <GroupingBottles />
 
-        <GroupingSystemBottles
-          ref={refSystemBottles}
-          playing={playing}
-        />
-        <GroupingSystemGraphics />
-        <GroupingSystemControls playing={playing} />
+          <GroupingSystemBottles
+            ref={refSystemBottles}
+            playing={playing}
+          />
+          <GroupingSystemGraphics />
+          <GroupingSystemControls playing={playing} />
+        </group>
       </three.In>
 
       <div className="contents">

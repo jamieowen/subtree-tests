@@ -77,14 +77,15 @@ export const FillingGame = forwardRef(({ show, onEnded }, ref) => {
   return (
     <section className={classnames(['page', 'game', 'game-filling', { show }])}>
       <three.In>
-        <BackgroundColor color={0x84b792} />
+        <group visible={show}>
+          {/* <BackgroundColor color={0x84b792} /> */}
 
-        <PerspectiveCamera
-          position={[0, 1, 6]}
-          makeDefault
-        />
+          <PerspectiveCamera
+            position={[0, 1, 6]}
+            makeDefault
+          />
 
-        {/* <Grid
+          {/* <Grid
             cellSize={1}
             sectionSize={5}
             args={[100, 100]}
@@ -94,26 +95,27 @@ export const FillingGame = forwardRef(({ show, onEnded }, ref) => {
             sectionThickness={1}
           /> */}
 
-        <ambientLight intensity={1.5} />
+          <ambientLight intensity={1.5} />
 
-        <directionalLight
-          intensity={2}
-          position={[3, 3, 3]}
-        />
+          <directionalLight
+            intensity={2}
+            position={[3, 3, 3]}
+          />
 
-        <FillingNozzle />
-        <FillingConveyorBelt playing={playing}>
-          <FillingBottles />
-          {/* <FillingLines /> */}
-        </FillingConveyorBelt>
+          <FillingNozzle />
+          <FillingConveyorBelt playing={playing}>
+            <FillingBottles />
+            {/* <FillingLines /> */}
+          </FillingConveyorBelt>
 
-        <FillingSystemControls
-          ref={refControls}
-          textureConfigs={textureConfigs}
-          playing={playing}
-        />
-        <FillingSystemBottles />
-        <FillingSystemGraphics />
+          <FillingSystemControls
+            ref={refControls}
+            textureConfigs={textureConfigs}
+            playing={playing}
+          />
+          <FillingSystemBottles />
+          <FillingSystemGraphics />
+        </group>
       </three.In>
 
       <div className="contents">

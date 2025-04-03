@@ -173,3 +173,14 @@ button
   bottom: 2rem
   right: 2rem
   pointer-events: all
+
+
+.game-bg
+  +full
+  object-fit: cover
+  z-index: -1
+  transition: all 0.3s ease
+
+
+  &.blurBg
+    filter: blur(16px)

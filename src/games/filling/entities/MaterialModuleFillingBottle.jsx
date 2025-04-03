@@ -80,8 +80,10 @@ export const MaterialModuleFillingBottle = forwardRef(
           float mask = step(0.5, texture2D(tBottle_Mask, st).r);
 
           // BASE
-          // vec4 color = vec4(1.0, 0.0, 0.0, 0.0);
-          vec4 color = vec4(132. / 255., 183. / 255., 146. / 255., 0.0);
+          // vec4 color = vec4(1.0, 1.0, 1.0, 0.0);
+          // vec4 color = vec4(0.5, 0.7, 0.5, 0.0);
+          vec4 color = vec4(132. / 255., 183. / 255., 146. / 255., 0.);
+          color *= 0.8;
 
           // SHADOW
           vec4 shadow = texture2D(tBottle_Shadow, st);

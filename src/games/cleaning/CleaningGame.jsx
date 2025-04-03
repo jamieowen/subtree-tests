@@ -39,14 +39,15 @@ export const CleaningGame = forwardRef(({ show, onEnded }, ref) => {
       className={classnames(['page', 'game', 'game-cleaning', { show }])}
     >
       <three.In>
-        <BackgroundColor color={0x84b792} />
+        <group visible={show}>
+          {/* <BackgroundColor color={0x84b792} /> */}
 
-        <PerspectiveCamera
-          position={[0, 1, 6]}
-          makeDefault
-        />
+          <PerspectiveCamera
+            position={[0, 1, 6]}
+            makeDefault
+          />
 
-        {/* <Grid
+          {/* <Grid
           cellSize={1}
           sectionSize={5}
           args={[100, 100]}
@@ -56,25 +57,26 @@ export const CleaningGame = forwardRef(({ show, onEnded }, ref) => {
           sectionThickness={1}
         /> */}
 
-        <ambientLight intensity={1.5} />
+          <ambientLight intensity={1.5} />
 
-        <directionalLight
-          intensity={2}
-          position={[3, 3, 3]}
-        />
+          <directionalLight
+            intensity={2}
+            position={[3, 3, 3]}
+          />
 
-        <CleaningConveyorBelt>
-          <CleaningBottles />
-        </CleaningConveyorBelt>
+          <CleaningConveyorBelt>
+            <CleaningBottles />
+          </CleaningConveyorBelt>
 
-        <CleaningNozzle />
+          <CleaningNozzle />
 
-        <CleaningSystemControls
-          ref={refControls}
-          playing={playing}
-        />
-        <CleaningSystemBottles playing={playing} />
-        <CleaningSystemGraphics />
+          <CleaningSystemControls
+            ref={refControls}
+            playing={playing}
+          />
+          <CleaningSystemBottles playing={playing} />
+          <CleaningSystemGraphics />
+        </group>
       </three.In>
 
       <div className="contents">

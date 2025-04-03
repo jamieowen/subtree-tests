@@ -21,7 +21,9 @@ export const Cleaning = ({ show, ...props }) => {
 
   const { completed } = useAssetProgress();
 
-  const showVideo = show && (section == 'video' || section == 'intro');
+  const showVideo = show && section == 'video';
+
+  const blurBg = !showVideo && section != 'intro';
 
   const refGame = useRef(null);
   const onReplay = () => {
@@ -31,7 +33,12 @@ export const Cleaning = ({ show, ...props }) => {
   };
 
   return (
-    <div className={classnames(['page', 'game', 'Cleaning', { show }])}>
+    <div className={classnames(['page', 'game', 'cleaning', { show }])}>
+      <img
+        src={`/assets/images-next/cleaning-intro.webp`}
+        className={classnames(['game-bg', { blurBg }])}
+      />
+
       <AnimatePresence>
         {showVideo && (
           <VideoPlayer
