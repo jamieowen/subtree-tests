@@ -37,9 +37,10 @@ export const GroupingSystemBottles = forwardRef(
     const add = () => {
       // console.log('add', playing);
       addBottle();
-      addTimeout.current = setTimeout(add, 1500 - speed.current);
-      speed.current += 10;
-      speed.current = Math.min(speed.current, 2000);
+      let startTime = 1000;
+      addTimeout.current = setTimeout(add, startTime - speed.current);
+      speed.current += 12;
+      speed.current = Math.min(speed.current, startTime - 150);
 
       return addTimeout.current;
     };
