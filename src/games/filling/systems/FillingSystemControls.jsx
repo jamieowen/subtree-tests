@@ -6,6 +6,7 @@ import { FillingECS } from '../state';
 import { urls } from '@/config/assets';
 import { PromiseTimeout } from '@/helpers/PromiseTimeout';
 import { forwardRef } from 'react';
+import { gsap } from 'gsap';
 
 const beltEntities = FillingECS.world.with('belt');
 const bottleEntities = FillingECS.world.with('isBottle');

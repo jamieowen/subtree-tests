@@ -3,6 +3,7 @@ import { GroupingECS } from '../state';
 import { three } from '@/tunnels';
 import { Billboard } from '@react-three/drei';
 import { useGroupingStore } from '@/stores/grouping';
+import { gsap } from 'gsap';
 
 export const GroupingBox = () => {
   const texture = useAsset(urls.t_grouping_box);

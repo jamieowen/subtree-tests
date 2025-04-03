@@ -3,6 +3,7 @@ import { damp, dampE, exp } from 'maath/easing';
 import { LogEase } from '@/helpers/LogEase';
 import { useAppStore } from '@/stores/app';
 import { FillingECS } from '../state';
+import { gsap } from 'gsap';
 
 const beltEntities = FillingECS.world.with('belt');
 const bottleEntities = FillingECS.world.with('isBottle');

@@ -4,6 +4,7 @@ import { LogEase } from '@/helpers/LogEase';
 import { useAppStore } from '@/stores/app';
 import { useCleaningStore } from '@/stores/cleaning';
 import { addBottle } from '../entities/CleaningBottles';
+import { gsap } from 'gsap';
 
 const beltEntities = CleaningECS.world.with('belt');
 const bottleEntities = CleaningECS.world.with('isBottle');

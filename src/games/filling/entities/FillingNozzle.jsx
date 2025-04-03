@@ -1,5 +1,6 @@
 import { urls } from '@/config/assets';
 import { FillingECS } from '../state';
+import { gsap } from 'gsap';
 
 const pouringTargets = FillingECS.world.with('pouring', 'isNozzle');
 
