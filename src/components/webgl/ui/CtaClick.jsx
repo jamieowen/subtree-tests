@@ -3,6 +3,7 @@ import { damp } from 'maath/easing';
 import Env from '@/helpers/Env';
 import { Billboard, Sphere, Box } from '@react-three/drei';
 import useWatchableEffect from '@/libs/react-ref-watcher/src/useWatchableEffect';
+import { gsap } from 'gsap';
 
 export const CtaClick = forwardRef(
   ({ children, show, onClick, materialProps, ...props }, ref) => {

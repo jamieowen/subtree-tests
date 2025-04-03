@@ -27,14 +27,16 @@ export const Landing = ({ show, ...props }) => {
       {/* <div className="darken" /> */}
 
       <div className="wrap">
-        <h1>{t('landing.heading')}</h1>
-        <p>{t('landing.desc')}</p>
+        {/* <h1>{t('landing.heading')}</h1> */}
+        <Heading1>{t('landing.heading')}</Heading1>
+        <Paragraph1>{t('landing.desc')}</Paragraph1>
+        {/* <p>{t('landing.desc')}</p> */}
         <div className="btn">
           <ButtonPrimary>{t('landing.cta')}</ButtonPrimary>
-          <img
+          {/* <img
             src="/assets/images-next/hand.webp"
             className="hand"
-          />
+          /> */}
         </div>
       </div>
     </div>

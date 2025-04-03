@@ -1,6 +1,7 @@
 import { urls } from '@/config/assets';
 import { damp } from 'maath/easing';
 import { Billboard } from '@react-three/drei';
+import { gsap } from 'gsap';
 
 export const CtaTapHold = forwardRef(
   (

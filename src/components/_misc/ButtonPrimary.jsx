@@ -1,6 +1,7 @@
 import './ButtonPrimary.sass';
 import IconButtonRed from '@/assets/btn-red.svg?react';
 import classnames from 'classnames';
+import { gsap } from 'gsap';
 
 export const ButtonPrimary = ({
   className,

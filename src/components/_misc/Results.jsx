@@ -23,7 +23,7 @@ export const Results = ({
           }}
         ></Trans>
 
-        <ul class="scores">
+        <ul className="scores">
           <li>
             <div className="value">{count}</div>
             <div className="label">{t('general.bottles')}</div>

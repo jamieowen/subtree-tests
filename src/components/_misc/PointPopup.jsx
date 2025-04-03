@@ -1,5 +1,6 @@
 import './PointPopup.sass';
 import { randomSign } from '@/helpers/MathUtils';
+import { gsap } from 'gsap';
 
 export const PointPopup = ({ count, point = 10 }) => {
   const refRoot = useRef(null);

@@ -159,7 +159,7 @@ export default defineConfig(async () => {
             'react-merge-refs': ['mergeRefs'],
             // '@yaireo/react-ref-watcher': ['useWatchableEffect'],
             zustand: ['create'],
-            gsap: ['gsap'],
+            // gsap: ['gsap'],
             three: [
               'Vector2',
               'Vector3',

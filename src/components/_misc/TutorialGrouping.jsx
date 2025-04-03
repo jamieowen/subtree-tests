@@ -1,4 +1,5 @@
 import './TutorialGrouping.sass';
+import { gsap } from 'gsap';
 
 export const TutorialGrouping = () => {
   const refNub = useRef(null);
