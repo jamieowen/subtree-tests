@@ -35,11 +35,11 @@ export const GroupingSystemBottles = forwardRef(
     }));
 
     const add = () => {
-      console.log('add', playing);
+      // console.log('add', playing);
       addBottle();
       addTimeout.current = setTimeout(add, 1500 - speed.current);
       speed.current += 10;
-      speed.current = Math.min(speed.current, 1450);
+      speed.current = Math.min(speed.current, 2000);
 
       return addTimeout.current;
     };
@@ -63,9 +63,14 @@ export const GroupingSystemBottles = forwardRef(
       const width = 2;
 
       for (const entity of bottleEntities) {
+        entity.progress += delta * entity.rotationSpeed;
+
         if (entity.hit) continue;
         // Gravity
         entity.position[1] -= delta * gravity.current;
+
+        // Progress
+        // console.log(entity.progress, delta, entity.rotationSpeed);
 
         // Remove bottles off screen
         // if (entity.position[1] < -5) {
@@ -75,7 +80,8 @@ export const GroupingSystemBottles = forwardRef(
 
       // Hit fade out
       for (const entity of hitEntities) {
-        entity.opacity -= 0.5 * delta;
+        // entity.opacity -= 0.5 * delta;
+        entity.opacity = 0;
       }
 
       // Check Hit

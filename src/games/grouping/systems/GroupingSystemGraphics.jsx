@@ -21,17 +21,16 @@ export const GroupingSystemGraphics = ({}) => {
     }
 
     // SPRITE
-    for (const entity of spriteEntities) {
-      entity.sprite.current.progress = entity.progress % 1;
-    }
+    // for (const entity of spriteEntities) {
+    //   entity.sprite.current.progress = entity.progress % 1;
+    // }
     // OPACITY
-    for (const entity of opacityEntities) {
-      // entity.three. = entity.progress % 1;
-      entity.three.traverse((child) => {
-        if (!child.material) return;
-        child.material.opacity = entity.opacity;
-      });
-    }
+    // for (const entity of opacityEntities) {
+    //   entity.three.traverse((child) => {
+    //     if (!child.material) return;
+    //     child.material.opacity = entity.opacity;
+    //   });
+    // }
   });
 
   return null;

@@ -1,7 +1,8 @@
 import { GroupingECS } from '../state';
 import { three } from '@/tunnels';
 import { useGroupingStore } from '@/stores/grouping';
-import { randomInRange } from '@/helpers/MathUtils';
+import { randomInRange, randomSign } from '@/helpers/MathUtils';
+import sample from 'lodash/sample';
 
 const bottles = GroupingECS.world.with('isBottle');
 
@@ -22,5 +23,8 @@ export const addBottle = () => {
     notHit: true,
     opacity: 1,
     position: [randomInRange(-2, 2), 8, 0],
+    rotationSpeed: randomInRange(0.2, 0.5),
+    rotationDirection: sample(['clockwise', 'counterclockwise']),
+    progress: 0,
   });
 };
