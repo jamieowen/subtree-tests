@@ -18,6 +18,11 @@ export function App() {
     window.AssetService = AssetService;
   }, []);
 
+  const { i18n } = useTranslation();
+  useEffect(() => {
+    console.log('i18n', i18n);
+  }, []);
+
   return (
     <div
       id="app"

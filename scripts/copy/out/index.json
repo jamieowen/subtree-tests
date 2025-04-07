@@ -142,7 +142,7 @@
       "points": "Agujas"
     },
     "landing": {
-      "heading": "Únase a nosotros el\r\nManera recargable",
+      "heading": "Únase a nosotros el\r\nForma recargable",
       "desc": "Nuestras botellas de vidrio recargables\r\nestán diseñados para ser recargados\r\nal menos 25 veces",
       "cta": "Iniciar experiencia"
     },
@@ -216,7 +216,7 @@
         "preheading": "cuantas botellas\r\n¿puedes atrapar?",
         "heading": "Cómo jugar",
         "instructions": [
-          "Arrastre la caja hacia la izquierda/derecha\r\ncoger botellas"
+          "Arrastre la caja hacia la izquierda o hacia la derecha\r\ncoger botellas"
         ],
         "cta": "Comenzar"
       },
