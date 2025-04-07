@@ -19,10 +19,10 @@ export const textures = {
 export const jsons = {};
 
 export const sounds = {
-  sfx_dragscreen: '/assets/sounds/1_cleaning/SFX_DragScreen.ogg',
-  sfx_washbottle01: '/assets/sounds/1_cleaning/SFX_WashBottle01.ogg',
-  sfx_washbottle02: '/assets/sounds/1_cleaning/SFX_WashBottle02.ogg',
-  sfx_washbottle03: '/assets/sounds/1_cleaning/SFX_WashBottle03.ogg',
+  sfx_dragscreen: '/assets/sounds-o/1_cleaning/SFX_DragScreen.aac',
+  sfx_washbottle01: '/assets/sounds-o/1_cleaning/SFX_WashBottle01.aac',
+  sfx_washbottle02: '/assets/sounds-o/1_cleaning/SFX_WashBottle02.aac',
+  sfx_washbottle03: '/assets/sounds-o/1_cleaning/SFX_WashBottle03.aac',
 };
 
 export const urls = {

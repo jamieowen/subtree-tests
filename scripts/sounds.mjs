@@ -14,8 +14,9 @@ let globPath = `${__dirname}../public/assets/sounds/${a}/**/*`;
 let wavs = await glob(`${globPath}.wav`);
 let mp3s = await glob(`${globPath}.mp3`);
 let m4as = await glob(`${globPath}.m4a`);
+let ogg = await glob(`${globPath}.ogg`);
 
-let files = [...wavs, ...mp3s];
+let files = [...wavs, ...mp3s, ...ogg];
 
 console.log(globPath, files);
 
@@ -30,9 +31,19 @@ for (let file of files) {
   }
 
   let newPath = `${newDir}/${filename}${extname}`;
-  console.log(file);
 
-  execSync(
-    `lame -b 96 -B 96 --resample 44.1 --vbr-new --silent -V 6 ${file} ${newPath}`
-  );
+  console.log(file, extname);
+  switch (extname) {
+    case '.mp3':
+    case '.wav':
+      execSync(
+        `lame -b 96 -B 96 --resample 44.1 --vbr-new --silent -V 6 ${file} ${newPath}`
+      );
+      break;
+    case '.ogg':
+      execSync(
+        `ffmpeg -i ${file} -strict experimental -acodec aac ${newDir}/${filename}.aac`
+      );
+      break;
+  }
 }

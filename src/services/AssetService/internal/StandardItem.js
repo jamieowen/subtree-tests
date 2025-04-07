@@ -51,7 +51,7 @@ export const ASSET_TYPE_CONFIG = {
   },
 
   [ASSET_TYPES.AUDIO]: {
-    regExp: /\.(mp3|acc|wav|ogg)$/i,
+    regExp: /\.(mp3|acc|wav|ogg|aac)$/i,
     argIsItem: true,
     loader: AudioLoader.load_audio_url,
     processor: (item, asset) => {},

@@ -16,16 +16,18 @@ export const textures = {
 };
 
 export const sounds = {
-  mx_introvideo: '/assets/sounds/0_critical/MX_IntroVideo.ogg',
-  sfx_introvideo: '/assets/sounds/0_critical/SFX_IntroVideo.ogg',
-  sfx_buttonclick: '/assets/sounds/0_critical/SFX_ButtonClick.ogg',
+  bgm: '/assets/sounds/music_MAIN.mp3',
 
-  mx_gameloop: '/assets/sounds/0_critical/MX_GameLoop.ogg',
-  sfx_countdown: '/assets/sounds/0_critical/SFX_Countdown.ogg',
-  sfx_start: '/assets/sounds/0_critical/SFX_Start.ogg',
+  mx_introvideo: '/assets/sounds-o/0_critical/MX_IntroVideo.aac',
+  sfx_introvideo: '/assets/sounds-o/0_critical/SFX_IntroVideo.aac',
+  sfx_buttonclick: '/assets/sounds-o/0_critical/SFX_ButtonClick.aac',
 
-  sfx_pointget: '/assets/sounds/0_critical/SFX_PointGet.ogg',
-  sfx_showresult: '/assets/sounds/0_critical/SFX_ShowResult.ogg',
+  mx_gameloop: '/assets/sounds-o/0_critical/MX_GameLoop.aac',
+  sfx_countdown: '/assets/sounds-o/0_critical/SFX_Countdown.aac',
+  sfx_start: '/assets/sounds-o/0_critical/SFX_Start.aac',
+
+  sfx_pointget: '/assets/sounds-o/0_critical/SFX_PointGet.aac',
+  sfx_showresult: '/assets/sounds-o/0_critical/SFX_ShowResult.aac',
 };
 
 export const urls = {

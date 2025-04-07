@@ -26,14 +26,14 @@ export const textures = {
 export const jsons = {};
 
 export const sounds = {
-  sfx_interlude01: '/assets/sounds/2_filling/SFX_Interlude01.ogg',
-  sfx_conveyer: '/assets/sounds/2_filling/SFX_Conveyer.ogg',
-  sfx_spout01: '/assets/sounds/2_filling/SFX_Spout01.ogg',
-  sfx_spout02: '/assets/sounds/2_filling/SFX_Spout02.ogg',
-  sfx_spout03: '/assets/sounds/2_filling/SFX_Spout03.ogg',
-  sfx_fillbottle01: '/assets/sounds/2_filling/SFX_FillBottle01.ogg',
-  sfx_fillbottle02: '/assets/sounds/2_filling/SFX_FillBottle02.ogg',
-  sfx_bottlecap: '/assets/sounds/2_filling/SFX_BottleCap.ogg',
+  sfx_interlude01: '/assets/sounds-o/2_filling/SFX_Interlude01.aac',
+  sfx_conveyer: '/assets/sounds-o/2_filling/SFX_Conveyer.aac',
+  sfx_spout01: '/assets/sounds-o/2_filling/SFX_Spout01.aac',
+  sfx_spout02: '/assets/sounds-o/2_filling/SFX_Spout02.aac',
+  sfx_spout03: '/assets/sounds-o/2_filling/SFX_Spout03.aac',
+  sfx_fillbottle01: '/assets/sounds-o/2_filling/SFX_FillBottle01.aac',
+  sfx_fillbottle02: '/assets/sounds-o/2_filling/SFX_FillBottle02.aac',
+  sfx_bottlecap: '/assets/sounds-o/2_filling/SFX_BottleCap.aac',
 };
 
 export const urls = {
