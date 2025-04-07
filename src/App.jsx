@@ -14,14 +14,9 @@ export function App() {
   const { disable } = useContextMenu();
   disable();
 
-  useEffect(() => {
-    window.AssetService = AssetService;
-  }, []);
-
-  const { i18n } = useTranslation();
-  useEffect(() => {
-    console.log('i18n', i18n);
-  }, []);
+  // useEffect(() => {
+  //   window.AssetService = AssetService;
+  // }, []);
 
   return (
     <div
