@@ -19,8 +19,8 @@ export const Paragraph1 = ({
       type: 'lines',
       noBalance: true,
     });
-    s.lines.forEach((word) => {
-      word.style.opacity = 0;
+    s.lines.forEach((item) => {
+      item.style.opacity = 0;
     });
     setSplit(s);
     return () => {
@@ -30,23 +30,34 @@ export const Paragraph1 = ({
 
   const animateIn = contextSafe(() => {
     // console.log('Paragraph1.animateIn', split);
-    gsap.set(refRoot.current, {
-      opacity: 1,
-    });
-    gsap.fromTo(
+    let tl = gsap.timeline();
+    tl.add('reset');
+    tl.set(
+      refRoot.current,
+      {
+        opacity: 1,
+      },
+      'reset'
+    );
+    tl.set(
       split.lines,
       {
         opacity: 0,
         y: 20,
       },
+      'reset'
+    );
+    tl.add('start', `reset+=${delay}`);
+    tl.to(
+      split.lines,
       {
         opacity: 1,
         y: 0,
-        duration: 1,
+        duration: 0.5,
         stagger: 0.2,
-        ease: 'power2.inOut',
-        delay,
-      }
+        ease: 'back.out(3)',
+      },
+      'start'
     );
   });
 

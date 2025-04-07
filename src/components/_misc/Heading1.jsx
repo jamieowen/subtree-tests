@@ -11,11 +11,11 @@ export const Heading1 = ({ show = false, delay = 0, className, children }) => {
   const [split, setSplit] = useState(null);
   useEffect(() => {
     let s = new SplitText(refRoot.current, {
-      type: 'words',
+      type: 'lines,words,chars',
       noBalance: true,
     });
-    s.words.forEach((word) => {
-      word.style.opacity = 0;
+    s.chars.forEach((item) => {
+      item.style.opacity = 0;
     });
     setSplit(s);
     return () => {
@@ -24,27 +24,39 @@ export const Heading1 = ({ show = false, delay = 0, className, children }) => {
   }, []);
 
   const animateIn = contextSafe(() => {
-    // console.log('Heading1.animateIn', split);
-    gsap.set(refRoot.current, {
-      opacity: 1,
-      blur: '0px',
-    });
-    gsap.fromTo(
-      split.words,
-      {
-        opacity: 0,
-        scale: 2,
-        blur: '5px',
-      },
+    console.log('Heading1.animateIn', split.chars);
+    let tl = gsap.timeline();
+
+    tl.add('reset');
+    tl.set(
+      refRoot.current,
       {
         opacity: 1,
-        scale: 1,
         blur: '0px',
-        duration: 1,
-        stagger: 0.2,
-        ease: 'power2.inOut',
-        delay,
-      }
+      },
+      'reset'
+    );
+    tl.set(
+      split.chars,
+      {
+        opacity: 0,
+        y: 20,
+      },
+      'reset'
+    );
+
+    tl.add('start', `reset+=${delay}`);
+    tl.to(
+      split.chars,
+      {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        duration: 0.3,
+        stagger: 0.05,
+        ease: 'back.out(3)',
+      },
+      'start'
     );
   });
 

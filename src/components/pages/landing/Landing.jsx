@@ -14,7 +14,7 @@ export const Landing = ({ show, ...props }) => {
       <div className="wrap">
         <Heading1
           show={show}
-          delay={0.5}
+          delay={1}
         >
           {t('landing.heading')}
         </Heading1>
@@ -22,13 +22,13 @@ export const Landing = ({ show, ...props }) => {
         <div className="bottom">
           <Paragraph1
             show={show}
-            delay={1}
+            delay={1.3}
           >
             {t('landing.desc')}
           </Paragraph1>
           <ButtonPrimary
             show={show}
-            delay={1.5}
+            delay={1.6}
           >
             {t('landing.cta')}
           </ButtonPrimary>
