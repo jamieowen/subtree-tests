@@ -24,7 +24,7 @@ export const Heading1 = ({ show = false, delay = 0, className, children }) => {
   }, []);
 
   const animateIn = contextSafe(() => {
-    console.log('Heading1.animateIn', split);
+    // console.log('Heading1.animateIn', split);
     gsap.set(refRoot.current, {
       opacity: 1,
       blur: '0px',
@@ -49,7 +49,7 @@ export const Heading1 = ({ show = false, delay = 0, className, children }) => {
   });
 
   const animateOut = contextSafe(() => {
-    console.log('Heading1.animateOut', split);
+    // console.log('Heading1.animateOut', split);
     gsap.to(refRoot.current, {
       opacity: 0,
       blur: '5px',
@@ -59,7 +59,7 @@ export const Heading1 = ({ show = false, delay = 0, className, children }) => {
   });
 
   useEffect(() => {
-    console.log('Heading1.show', show);
+    // console.log('Heading1.show', show);
     if (!split) return;
     if (show) {
       animateIn();

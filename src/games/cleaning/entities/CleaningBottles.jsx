@@ -17,7 +17,7 @@ export const CleaningBottles = () => {
 
 let idx = 0;
 export const addBottle = () => {
-  console.log('CleaningBottles.addBottle');
+  // console.log('CleaningBottles.addBottle');
   CleaningECS.world.add({
     isBottle: true,
     idx,

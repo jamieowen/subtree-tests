@@ -29,7 +29,7 @@ export const Paragraph1 = ({
   }, []);
 
   const animateIn = contextSafe(() => {
-    console.log('Paragraph1.animateIn', split);
+    // console.log('Paragraph1.animateIn', split);
     gsap.set(refRoot.current, {
       opacity: 1,
     });
@@ -51,7 +51,7 @@ export const Paragraph1 = ({
   });
 
   const animateOut = contextSafe(() => {
-    console.log('Paragraph1.animateOut', split);
+    // console.log('Paragraph1.animateOut', split);
     gsap.to(refRoot.current, {
       opacity: 0,
       duration: 0.6,
@@ -60,7 +60,7 @@ export const Paragraph1 = ({
   });
 
   useEffect(() => {
-    console.log('Paragraph1.show', show);
+    // console.log('Paragraph1.show', show);
     if (!split) return;
     if (show) {
       animateIn();

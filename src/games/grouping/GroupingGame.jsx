@@ -100,7 +100,7 @@ export const GroupingGame = forwardRef(({ show, onEnded }, ref) => {
         />
       </div>
 
-      {started && (
+      {show && started && (
         <button
           className="btn-skip-game"
           onClick={onEnded}

@@ -19,6 +19,8 @@ export const Pages = () => {
   }, [page]);
   const showCleaningIntroVideo = page == '' || page == 'cleaning-intro';
 
+  const completed = useAssetProgress();
+
   return (
     <div className="pages">
       <AnimatePresence>
@@ -33,7 +35,7 @@ export const Pages = () => {
           />
         )}
       </AnimatePresence>
-      <Landing show={page == ''} />
+      <Landing show={page == '' && completed} />
       <Cleaning show={page == 'cleaning'} />
       <Filling show={page == 'filling'} />
       <Grouping show={page == 'grouping'} />

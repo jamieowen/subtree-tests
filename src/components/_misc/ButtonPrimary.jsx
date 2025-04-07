@@ -41,15 +41,18 @@ export const ButtonPrimary = ({
   const { contextSafe } = useGSAP({ scope: refRoot });
 
   const animateIn = contextSafe(() => {
-    console.log('ButtonPrimary.animateIn');
-    let tl = gsap.timeline({ delay });
-    tl.add('start');
-    tl.set(refRoot.current, {
-      opacity: 1,
-    });
-    tl.fromTo(
+    // console.log('ButtonPrimary.animateIn');
+    let tl = gsap.timeline();
+
+    tl.add('reset');
+    tl.set(refRoot.current, { opacity: 1 }, 'reset');
+    tl.set('.border', { opacity: 0 }), 'reset';
+    tl.set('.button-primary-wrap', { opacity: 0, scale: 0.7 }), 'reset';
+
+    tl.add('start', `reset+=${delay}`);
+    tl.to(
       '.border',
-      { opacity: 0 },
+      // { opacity: 0 },
       {
         opacity: 1,
         duration: 0.5,
@@ -57,9 +60,9 @@ export const ButtonPrimary = ({
       },
       'start'
     );
-    tl.fromTo(
+    tl.to(
       '.button-primary-wrap',
-      { opacity: 0, scale: 0.7 },
+      // { opacity: 0, scale: 0.7 },
       {
         opacity: 1,
         scale: 1,
@@ -71,7 +74,7 @@ export const ButtonPrimary = ({
   });
 
   const animateOut = contextSafe(() => {
-    console.log('ButtonPrimary.animateOut');
+    // console.log('ButtonPrimary.animateOut');
     let tl = gsap.timeline();
     tl.to(refRoot.current, {
       opacity: 0,
