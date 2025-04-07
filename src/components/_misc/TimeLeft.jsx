@@ -28,8 +28,10 @@ export const TimeLeft = ({
 
   return (
     <div className={classnames('time-left', { show })}>
-      <div className="type-caption">{t(`${id}.game.time`)}</div>
-      <div className="type-score">00:{time.toString().padStart(2, '0')}</div>
+      <div className="type-score-label">{t(`${id}.game.time`)}</div>
+      <div className="type-score-value">
+        00:{time.toString().padStart(2, '0')}
+      </div>
     </div>
   );
 };

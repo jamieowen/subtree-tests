@@ -3,18 +3,18 @@
 .tutorial
   // opacity: 1 !important
   +flex-col(space-between, stretch)
+  --border: 0.2rem solid rgba(255,255,255,0.2)
   
-  
-    
   .panel
     position: relative
     width: 27.6rem
     aspect-ratio: 276 / 398
+    aspect-ratio: 276 / 334
     +flex-col(center, stretch)
     background: rgba(255,255,255,0.2)
     backdrop-filter: blur(7px)
     border-radius: 2rem
-    border: 0.5rem solid rgba(255,255,255,0.2)
+    border: var(--border)
 
     >svg
       position: absolute
@@ -30,24 +30,22 @@
     &__top, &__bottom
       position: relative
       +flex-row
-      +type-caption
       // border: 0.6rem solid transparent
 
-      .help
-        position: absolute
-        left: auto
-        right: 2rem
-        top: 50%
-        width: 2rem
-        transform: translate(0, -50%)
+      font-family: $font-tccc
+      font-weight: 500
+      font-size: 1rem
+      line-height: 2.2rem
+      letter-spacing: -0.04em
+
 
     &__top
       aspect-ratio: 276 / 64
-      border-bottom: 0.5rem solid rgba(255,255,255,0.2)
+      border-bottom: var(--border)
 
     &__bottom
       aspect-ratio: 276 / 58
-      border-top: 0.5rem solid rgba(255,255,255,0.2)
+      border-top: var(--border)
       display: none
 
     &__center
@@ -59,10 +57,15 @@
     &__wrap
       +full
       padding: 2rem
-      +type-cta
       +flex-col(center, stretch)
       gap: 4rem
-      padding-bottom: 4rem
+      padding-bottom: 5rem
+
+      font-family: $font-tccc-cond
+      font-weight: 500
+      font-size: 2rem
+      line-height: 2.6rem
+      letter-spacing: 0em
 
       .panel__icon
         position: relative

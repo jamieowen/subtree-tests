@@ -15,22 +15,18 @@ export const Results = ({
     <section className={classnames(['page', 'results', { show }])}>
       <div className="wrap">
         <h1>{t(`${id}.results.heading`)}</h1>
-        <Trans
+        {/* <Trans
           i18nKey={`${id}.results.desc`}
           values={{
             count,
             points,
           }}
-        ></Trans>
+        ></Trans> */}
 
         <ul className="scores">
           <li>
             <div className="value">{count}</div>
-            <div className="label">{t('general.bottles')}</div>
-          </li>
-          <li>
-            <div className="value">{points}</div>
-            <div className="label">{t('general.points')}</div>
+            <div className="label">{t(`${id}.results.desc`)}</div>
           </li>
         </ul>
 

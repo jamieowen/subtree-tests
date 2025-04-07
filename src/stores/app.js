@@ -64,4 +64,21 @@ export const useAppStore = create((set) => ({
     set((state) => {
       return { page: val };
     }),
+  nextPage: () =>
+    set((state) => {
+      let pages = [
+        '',
+        'cleaning-intro',
+        'cleaning',
+        'filling',
+        'grouping',
+        'ending',
+      ];
+      let idx = pages.indexOf(state.page);
+      idx++;
+      if (idx >= pages.length) return {};
+      const toPage = pages[idx];
+      console.log('nextPage', idx, toPage);
+      return { page: toPage };
+    }),
 }));

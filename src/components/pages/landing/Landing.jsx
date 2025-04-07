@@ -4,39 +4,19 @@ import classnames from 'classnames';
 
 export const Landing = ({ show, ...props }) => {
   const { t } = useTranslation();
-  const setPage = useAppStore((state) => state.setPage);
+  const nextPage = useAppStore((state) => state.nextPage);
 
   return (
     <div
       className={classnames(['page', 'Landing', { show }])}
-      onClick={() => setPage('cleaning')}
+      onClick={nextPage}
     >
-      {/* <video
-        className="bg"
-        src="/assets/videos/intro.mp4"
-        muted
-        playsInline
-        autoPlay
-        loop
-      /> */}
-      <img
-        src="/assets/images-next/landing.webp"
-        className="bg"
-      />
-
-      {/* <div className="darken" /> */}
-
       <div className="wrap">
-        {/* <h1>{t('landing.heading')}</h1> */}
         <Heading1>{t('landing.heading')}</Heading1>
-        <Paragraph1>{t('landing.desc')}</Paragraph1>
-        {/* <p>{t('landing.desc')}</p> */}
-        <div className="btn">
+
+        <div className="bottom">
+          <Paragraph1>{t('landing.desc')}</Paragraph1>
           <ButtonPrimary>{t('landing.cta')}</ButtonPrimary>
-          {/* <img
-            src="/assets/images-next/hand.webp"
-            className="hand"
-          /> */}
         </div>
       </div>
     </div>

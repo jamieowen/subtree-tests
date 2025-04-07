@@ -13,6 +13,7 @@
     "heading": "Coke"
   },
   "general": {
+    "loading": "Loading",
     "skip": "Skip",
     "bottles": "Bottles",
     "points": "Points"
@@ -36,7 +37,7 @@
       "instructions": [
         "Drag & Align"
       ],
-      "cta": "Start Game"
+      "cta": "Start"
     },
     "game": {
       "ready": "Get Ready!",
@@ -46,7 +47,7 @@
     },
     "results": {
       "heading": "Well Done!",
-      "desc": "You cleaned {{count}} bottles and\r\nearned {{points}} points",
+      "desc": "Bottles\r\nCleaned",
       "replay": "Restart Game",
       "next": "Next Game"
     }
@@ -63,9 +64,9 @@
       "preheading": "Fill as many bottles as you can.\r\nBut hurry up, the clock is ticking.",
       "heading": "How to Play",
       "instructions": [
-        "Press & Hold\r\nto Fill Bottles"
+        "Press & Hold to Fill Bottles"
       ],
-      "cta": "Start Game"
+      "cta": "Start"
     },
     "game": {
       "ready": "Get Ready!",
@@ -75,7 +76,7 @@
     },
     "results": {
       "heading": "Well Done!",
-      "desc": "You filled {{count}} bottles and \r\nearned {{points}} points",
+      "desc": "Bottles\r\nFilled",
       "replay": "Restart Game",
       "next": "Next Game"
     }
@@ -84,12 +85,12 @@
     "name": "Grouping & Palletizing",
     "step": "Station 3/3",
     "intro": {
-      "heading": "Final Step",
-      "desc": "Your fast reflexes are \r\nneeded to group the bottles \r\ninto crates",
+      "heading": "Final Step.",
+      "desc": "Your fast reflexes are needed to \r\ngroup the bottles into crates",
       "cta": "Play Game"
     },
     "tutorial": {
-      "preheading": "Catch as many botttles as possible\r\nwithin the time given",
+      "preheading": "How many bottles\r\ncan you catch?",
       "heading": "How to Play",
       "instructions": [
         "Drag crate left/right\r\nto catch bottles"
@@ -103,9 +104,9 @@
     },
     "results": {
       "heading": "Well Done!",
-      "desc": "You packed {{count}} bottles and \r\nearned {{points}} points",
+      "desc": "Bottles\r\nPacked",
       "replay": "Restart Game",
-      "next": "Next"
+      "next": "Continue"
     }
   },
   "ending": {

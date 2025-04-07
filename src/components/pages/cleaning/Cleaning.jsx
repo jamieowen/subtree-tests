@@ -34,24 +34,11 @@ export const Cleaning = ({ show, ...props }) => {
 
   return (
     <div className={classnames(['page', 'game', 'cleaning', { show }])}>
+      {/* TODO: Swap to looping video */}
       <img
-        src={`/assets/images-next/cleaning-intro.webp`}
+        src={`/assets/images-next/cleaning-loop.webp`}
         className={classnames(['game-bg', { blurBg }])}
       />
-
-      <AnimatePresence>
-        {showVideo && (
-          <VideoPlayer
-            key="cleaning-video"
-            src="/assets/videos/cleaning.mp4"
-            onEnd={() => {
-              nextSection();
-            }}
-            exit={{ opacity: 0 }}
-            showSkip={section == 'video'}
-          />
-        )}
-      </AnimatePresence>
 
       <Intro
         id="cleaning"

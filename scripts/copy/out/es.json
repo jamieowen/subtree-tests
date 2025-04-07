@@ -16,12 +16,13 @@
     "heading": "Coque"
   },
   "general": {
+    "loading": "Cargando",
     "skip": "Saltar",
     "bottles": "botellas",
     "points": "Agujas"
   },
   "landing": {
-    "heading": "Únase a nosotros el\r\nManera recargable",
+    "heading": "Únase a nosotros el\r\nForma recargable",
     "desc": "Nuestras botellas de vidrio recargables\r\nestán diseñados para ser recargados\r\nal menos 25 veces",
     "cta": "Iniciar experiencia"
   },
@@ -39,7 +40,7 @@
       "instructions": [
         "Arrastrar y alinear"
       ],
-      "cta": "Iniciar juego"
+      "cta": "Comenzar"
     },
     "game": {
       "ready": "¡Prepararse!",
@@ -49,7 +50,7 @@
     },
     "results": {
       "heading": "¡Bien hecho!",
-      "desc": "Limpiaste {{count}} botellas y\r\nganado {{puntos}} puntos",
+      "desc": "botellas\r\nlimpiado",
       "replay": "Reiniciar juego",
       "next": "Próximo juego"
     }
@@ -66,9 +67,9 @@
       "preheading": "Llena tantas botellas como puedas.\r\nPero date prisa, el tiempo corre.",
       "heading": "Cómo jugar",
       "instructions": [
-        "Mantenga presionado\r\npara llenar botellas"
+        "Mantenga presionado para llenar botellas"
       ],
-      "cta": "Iniciar juego"
+      "cta": "Comenzar"
     },
     "game": {
       "ready": "¡Prepararse!",
@@ -78,7 +79,7 @@
     },
     "results": {
       "heading": "¡Bien hecho!",
-      "desc": "Llenaste {{count}} botellas y \r\nganado {{puntos}} puntos",
+      "desc": "botellas\r\nCompletado",
       "replay": "Reiniciar juego",
       "next": "Próximo juego"
     }
@@ -87,15 +88,15 @@
     "name": "Agrupación y Paletizado",
     "step": "Estación 3/3",
     "intro": {
-      "heading": "Paso final",
-      "desc": "Tus rápidos reflejos son \r\nnecesario para agrupar las botellas \r\nen cajas",
+      "heading": "Paso final.",
+      "desc": "Tus reflejos rápidos son necesarios para \r\nagrupar las botellas en cajas",
       "cta": "jugar juego"
     },
     "tutorial": {
-      "preheading": "Atrapa tantas botellas como puedas\r\ndentro del tiempo dado",
+      "preheading": "cuantas botellas\r\n¿puedes atrapar?",
       "heading": "Cómo jugar",
       "instructions": [
-        "Arrastre la caja hacia la izquierda/derecha\r\ncoger botellas"
+        "Arrastre la caja hacia la izquierda o hacia la derecha\r\ncoger botellas"
       ],
       "cta": "Comenzar"
     },
@@ -106,9 +107,9 @@
     },
     "results": {
       "heading": "¡Bien hecho!",
-      "desc": "Empacaste {{count}} botellas y \r\nganado {{puntos}} puntos",
+      "desc": "botellas\r\nLleno",
       "replay": "Reiniciar juego",
-      "next": "Próximo"
+      "next": "Continuar"
     }
   },
   "ending": {

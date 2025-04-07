@@ -2,51 +2,53 @@
 
 .button-primary
   position: relative
-  +flex-row(center, center)
-  border: 1px solid white
-  padding: 1rem 3rem
-  border-radius: 2.5rem
-  height: 6rem
-  min-height: 6rem
-  background: linear-gradient(to bottom, #f50008, #b50006)
-  border: 1px solid #ff484e
-  box-shadow: 0 0.5rem 1rem 0 rgba(0,0,0, 0.25)
-  pointer-events: auto
-  overflow: hidden
+  +type-cta
 
-  &:not(.show) 
-    display: none
-    pointer-events: none
+  .border
+    position: absolute
+    top: 50%
+    left: 50%
+    --size: 0.7rem
+    width: calc(100% + var(--size) * 2)
+    height: calc(100% + var(--size) * 2)
+    background: rgba(255,255,255,0.1)
+    backdrop-filter: blur(10px)
+    border-radius: 9999px
+    transform: translate(-50%, -50%)
 
-  &.disabled
-    filter: saturate(0.5)
-    pointer-events: none
+  .wrap
+    position: relative
+    +flex-row(center, center)
+    padding: 1rem 4rem
+    height: 6rem
+    min-height: 6rem
+    background: linear-gradient(to bottom, #f50008, #810004)
+    border: 1px solid #ff484e
+    border-radius: 9999px
+    box-shadow: 0 0.5rem 1rem 0 rgba(0,0,0, 0.25)
+    overflow: hidden
+    pointer-events: auto
 
   .progress
     +full
-    background: #a50509
+    // background: #a50509
+    background: rgba(#111111, 0.2)
     transform: scaleX(0)
     transform-origin: left
 
   .label
     position: relative
     +flex-row(center, center)
-    +type-cta
     margin-top: -0.3rem
+
+
+  
+  &:not(.show) 
+    display: none
+    pointer-events: none
+
+  
+  &.disabled
+    filter: saturate(0.5)
+    pointer-events: none
     
-
-  // &.color-green
-  //   background: linear-gradient(to bottom, #008000, #006400)
-  //   border: 1px solid #008000
-  //   box-shadow: 0 0.5rem 1rem 0 rgba(0,0,0, 0.25)
-
-
-  &.color-white
-    background: linear-gradient(to bottom, #ffffff, #cacaca)
-    border: 1px solid #cccccc
-    box-shadow: 0 0.5rem 1rem 0 rgba(0,0,0, 0.25)
-    color: black
-
-    .progress
-      background: #dddddd
-      // transform: scaleX(0.5) !important

@@ -39,7 +39,7 @@ export const useCleaningStore = create((set) => ({
   // ****************************************
   // SECTION
   // ****************************************
-  section: getUrlString('section', 'video'),
+  section: getUrlString('section', 'intro'),
   setSection: (val) =>
     set((state) => {
       return { section: val };
@@ -47,8 +47,8 @@ export const useCleaningStore = create((set) => ({
   nextSection: () =>
     set((state) => {
       switch (state.section) {
-        case 'video':
-          return { section: 'intro' };
+        // case 'video':
+        //   return { section: 'intro' };
         case 'intro':
           return { section: 'tutorial' };
         case 'tutorial':

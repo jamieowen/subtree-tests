@@ -37,7 +37,7 @@ export const ButtonPrimary = ({
   }, [auto]);
 
   return (
-    <motion.button
+    <div
       className={classnames([
         'button-primary',
         `color-${color}`,
@@ -45,14 +45,19 @@ export const ButtonPrimary = ({
         { show, disabled },
       ])}
       {...props}
-      whileTap={{ scale: 0.95 }}
       data-auto={auto}
     >
-      <div
-        className="progress"
-        ref={refProgress}
-      />
-      <span className="label">{children}</span>
-    </motion.button>
+      <div className="border" />
+      <motion.button
+        className="wrap"
+        whileTap={{ scale: 0.95 }}
+      >
+        <div
+          className="progress"
+          ref={refProgress}
+        />
+        <span className="label">{children}</span>
+      </motion.button>
+    </div>
   );
 };

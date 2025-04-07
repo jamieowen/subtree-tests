@@ -16,6 +16,7 @@
     "heading": "Coke"
   },
   "general": {
+    "loading": "Chargement",
     "skip": "Sauter",
     "bottles": "Bouteilles",
     "points": "Points"
@@ -39,7 +40,7 @@
       "instructions": [
         "Glisser et aligner"
       ],
-      "cta": "Commencer le jeu"
+      "cta": "Commencer"
     },
     "game": {
       "ready": "Se préparer!",
@@ -49,7 +50,7 @@
     },
     "results": {
       "heading": "Bien joué!",
-      "desc": "Vous avez nettoyé {{count}} bouteilles et\r\ngagné {{points}} points",
+      "desc": "Bouteilles\r\nNettoyé",
       "replay": "Redémarrer le jeu",
       "next": "prochain match"
     }
@@ -66,9 +67,9 @@
       "preheading": "Remplissez autant de bouteilles que possible.\r\nMais dépêchez-vous, le temps presse.",
       "heading": "Comment jouer",
       "instructions": [
-        "Appuyez et maintenez\r\nremplir des bouteilles"
+        "Appuyez et maintenez pour remplir les bouteilles"
       ],
-      "cta": "Commencer le jeu"
+      "cta": "Commencer"
     },
     "game": {
       "ready": "Se préparer!",
@@ -78,7 +79,7 @@
     },
     "results": {
       "heading": "Bien joué!",
-      "desc": "Vous avez rempli {{count}} bouteilles et \r\ngagné {{points}} points",
+      "desc": "Bouteilles\r\nRempli",
       "replay": "Redémarrer le jeu",
       "next": "prochain match"
     }
@@ -87,12 +88,12 @@
     "name": "Regroupement & Palettisation",
     "step": "Gare 3/3",
     "intro": {
-      "heading": "Dernière étape",
-      "desc": "Vos réflexes rapides sont \r\nnécessaire pour regrouper les bouteilles \r\ndans des caisses",
+      "heading": "Dernière étape.",
+      "desc": "Vos réflexes rapides sont nécessaires pour \r\nregrouper les bouteilles dans des caisses",
       "cta": "Jouer au jeu"
     },
     "tutorial": {
-      "preheading": "Attrapez autant de bouteilles que possible\r\ndans le délai imparti",
+      "preheading": "Combien de bouteilles\r\npeux-tu attraper ?",
       "heading": "Comment jouer",
       "instructions": [
         "Faites glisser la caisse vers la gauche/droite\r\nattraper des bouteilles"
@@ -106,9 +107,9 @@
     },
     "results": {
       "heading": "Bien joué!",
-      "desc": "Vous avez emballé {{count}} bouteilles et \r\ngagné {{points}} points",
+      "desc": "Bouteilles\r\nEmballé",
       "replay": "Redémarrer le jeu",
-      "next": "Suivant"
+      "next": "Continuer"
     }
   },
   "ending": {

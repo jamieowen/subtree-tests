@@ -1,48 +1,75 @@
 import './VideoPlayer.sass';
 import { useAppStore } from '@/stores/app';
-import classnames from 'classnames';
-export const VideoPlayer = ({ src, onEnd, showSkip = true, ...props }) => {
-  const { t } = useTranslation();
-  const muted = useAppStore((state) => state.muted);
 
-  const refVideo = useRef(null);
+export const VideoPlayer = forwardRef(
+  ({ src, autoPlay = true, onEnd, showSkip = true, ...props }, ref) => {
+    const { t } = useTranslation();
+    const muted = useAppStore((state) => state.muted);
 
-  useEffect(() => {
-    refVideo.current.currentTime = 0;
-    refVideo.current.play();
+    const refVideo = useRef(null);
 
-    return () => {
+    const [playing, setPlaying] = useState(false);
+    const onPlay = () => setPlaying(true);
+    const onPause = () => setPlaying(false);
+
+    useEffect(() => {
+      if (autoPlay) {
+        play();
+      }
+
+      refVideo.current.addEventListener('play', onPlay);
+      refVideo.current.addEventListener('pause', onPause);
+
+      return () => {
+        if (!refVideo.current) return;
+        pause();
+        refVideo.current.removeEventListener('play', onPlay);
+        refVideo.current.removeEventListener('pause', onPause);
+      };
+    }, []);
+
+    const onSkip = () => {
+      pause();
+      onEnd();
+    };
+
+    const play = () => {
+      refVideo.current.currentTime = 0;
+      refVideo.current.play();
+    };
+
+    const pause = () => {
       if (!refVideo.current) return;
       refVideo.current.pause();
     };
-  }, []);
 
-  const onSkip = () => {
-    // refVideo.current.pause();
-    onEnd();
-  };
+    useImperativeHandle(ref, () => ({
+      play,
+      pause,
+    }));
 
-  return (
-    <div className="video-player">
-      <video
-        ref={refVideo}
-        src={src}
-        onEnded={onEnd}
-        playsInline
-        muted={muted}
-      />
-      <AnimatePresence>
-        {showSkip && (
-          <button
-            className="btn-skip"
-            onClick={onSkip}
-            key="btn-skip"
-            exit={{ opacity: 0 }}
-          >
-            {t('general.skip')}
-          </button>
-        )}
-      </AnimatePresence>
-    </div>
-  );
-};
+    return (
+      <div className="video-player">
+        <video
+          ref={refVideo}
+          src={src}
+          onEnded={onEnd}
+          playsInline
+          muted={muted}
+        />
+        <AnimatePresence>
+          {showSkip && playing && (
+            <button
+              className="btn-skip"
+              onClick={onSkip}
+              key="btn-skip"
+              exit={{ opacity: 0 }}
+            >
+              {t('general.skip')}
+            </button>
+          )}
+        </AnimatePresence>
+      </div>
+    );
+  }
+);

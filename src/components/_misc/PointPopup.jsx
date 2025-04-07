@@ -45,7 +45,7 @@ export const PointPopup = ({ count, point = 10 }) => {
         className="wrap"
         ref={refRoot}
       >
-        <span>+{point}P</span>
+        <span>+1</span>
       </div>
     </div>
   );
