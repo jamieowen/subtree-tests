@@ -2,6 +2,7 @@ import { useDrag } from '@use-gesture/react';
 import { damp, dampE, exp } from 'maath/easing';
 import { LogEase } from '@/helpers/LogEase';
 import { useAppStore } from '@/stores/app';
+import AssetService from '@/services/AssetService';
 
 const beltEntities = CleaningECS.world.with('belt');
 const bottleEntities = CleaningECS.world.with('isBottle');
@@ -56,6 +57,7 @@ export const CleaningSystemControls = forwardRef(
 
     const onDown = () => {
       if (timeout) clearTimeout(timeout);
+      AssetService.getAsset('sfx_dragscreen').play();
     };
 
     const isLocked = () => {

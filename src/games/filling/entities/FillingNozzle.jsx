@@ -2,6 +2,8 @@ import { urls } from '@/config/assets';
 import { FillingECS } from '../state';
 import { gsap } from 'gsap';
 import * as config from '@/config/games/filling';
+import AssetService from '@/services/AssetService';
+import { randomIntRange } from '@/helpers/MathUtils';
 
 const pouringTargets = FillingECS.world.with('pouring', 'isNozzle');
 const cappingTargets = FillingECS.world.with('capping', 'isNozzle');
@@ -20,6 +22,15 @@ export const FillingNozzle = () => {
 
   let tweenPour = useRef(null);
 
+  const playSpoutSound = () => {
+    let sfx = AssetService.getAsset(`sfx_spout0${randomIntRange(1, 3)}`);
+    sfx.loop = true;
+    sfx.play();
+    return sfx;
+  };
+
+  let spoutSfx = useRef(null);
+
   const pourStart = async () => {
     if (tweenPour.current) tweenPour.current.kill();
     tweenPour.current = gsap.fromTo(
@@ -27,6 +38,8 @@ export const FillingNozzle = () => {
       { frame: 0 },
       { frame: 19, duration: 19 / fps, onComplete: pourLoop }
     );
+
+    spoutSfx.current = playSpoutSound();
 
     await tweenPour.current.then();
   };
@@ -53,7 +66,10 @@ export const FillingNozzle = () => {
       frame: target,
       duration: 0.3,
     });
+
     await tweenPour.current.then();
+
+    if (spoutSfx.current) spoutSfx.current.stop();
   };
 
   const [pouring] = useEntities(pouringTargets);
@@ -79,14 +95,24 @@ export const FillingNozzle = () => {
 
   const animateCapping = async () => {
     if (tweenCapping.current) tweenCapping.current.kill();
-    let duration = 48 / config.cappingFps;
-    console.log('duration', duration);
-    tweenCapping.current = gsap.fromTo(
+
+    let endFrame = 25;
+
+    tweenCapping.current = gsap.timeline();
+    tweenCapping.current.fromTo(
       refNozzle.current,
       { frame: 0 },
-      { frame: 47, duration, ease: 'none' }
+      { frame: endFrame, duration: endFrame / config.cappingFps, ease: 'none' }
     );
+    await tweenCapping.current.then();
 
+    AssetService.getAsset('sfx_bottlecap').play();
+
+    tweenCapping.current.to(refNozzle.current, {
+      frame: 47,
+      duration: (48 - endFrame) / config.cappingFps,
+      ease: 'none',
+    });
     await tweenCapping.current.then();
   };
 

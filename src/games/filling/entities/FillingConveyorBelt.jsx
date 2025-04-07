@@ -2,6 +2,7 @@ import { urls } from '@/config/assets';
 import { FillingECS } from '../state';
 import { three } from '@/tunnels';
 import { useFillingStore } from '@/stores/filling';
+import AssetService from '@/services/AssetService';
 
 const lockedTargets = FillingECS.world.with('locked');
 
@@ -27,6 +28,14 @@ export const FillingConveyorBelt = ({ playing = false, children }) => {
       refSprite.current.frame = Math.floor(frame.current) % 47;
     }
   });
+
+  useEffect(() => {
+    if (locked) {
+      AssetService.getAsset('sfx_conveyer').stop();
+    } else {
+      AssetService.getAsset('sfx_conveyer').play();
+    }
+  }, [locked]);
 
   return (
     <FillingECS.Entity ref={refBelt}>

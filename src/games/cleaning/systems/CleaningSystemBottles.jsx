@@ -5,6 +5,8 @@ import { useAppStore } from '@/stores/app';
 import { useCleaningStore } from '@/stores/cleaning';
 import { addBottle } from '../entities/CleaningBottles';
 import { gsap } from 'gsap';
+import { randomIntRange } from '@/helpers/MathUtils';
+import AssetService from '@/services/AssetService';
 
 const beltEntities = CleaningECS.world.with('belt');
 const bottleEntities = CleaningECS.world.with('isBottle');
@@ -31,6 +33,8 @@ export const CleaningSystemBottles = ({
 
   const cleanBottle = async (entity) => {
     if (entity.cleaning || entity.cleaned) return;
+
+    AssetService.getAsset(`sfx_washbottle0${randomIntRange(1, 3)}`).play();
 
     setBeltLocked(true);
 
