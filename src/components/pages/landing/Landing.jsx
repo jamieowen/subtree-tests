@@ -11,6 +11,8 @@ export const Landing = ({ show, ...props }) => {
     nextPage();
     AssetService.getAsset('sfx_introvideo').play();
     AssetService.getAsset('mx_introvideo').play();
+    AssetService.getAsset('bgm').play();
+    console.log('bgm', AssetService.getAsset('bgm'));
   };
 
   return (

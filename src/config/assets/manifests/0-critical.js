@@ -16,25 +16,30 @@ export const textures = {
 };
 
 export const sounds = {
-  bgm: '/assets/sounds/music_MAIN.mp3',
+  mx_introvideo: { url: '/assets/sounds-o/0_critical/MX_IntroVideo.aac' },
+  sfx_introvideo: { url: '/assets/sounds-o/0_critical/SFX_IntroVideo.aac' },
+  sfx_buttonclick: { url: '/assets/sounds-o/0_critical/SFX_ButtonClick.aac' },
 
-  mx_introvideo: '/assets/sounds-o/0_critical/MX_IntroVideo.aac',
-  sfx_introvideo: '/assets/sounds-o/0_critical/SFX_IntroVideo.aac',
-  sfx_buttonclick: '/assets/sounds-o/0_critical/SFX_ButtonClick.aac',
+  mx_gameloop: { url: '/assets/sounds-o/0_critical/MX_GameLoop.aac' },
+  sfx_countdown: { url: '/assets/sounds-o/0_critical/SFX_Countdown.aac' },
+  sfx_start: { url: '/assets/sounds-o/0_critical/SFX_Start.aac' },
 
-  mx_gameloop: '/assets/sounds-o/0_critical/MX_GameLoop.aac',
-  sfx_countdown: '/assets/sounds-o/0_critical/SFX_Countdown.aac',
-  sfx_start: '/assets/sounds-o/0_critical/SFX_Start.aac',
-
-  sfx_pointget: '/assets/sounds-o/0_critical/SFX_PointGet.aac',
-  sfx_showresult: '/assets/sounds-o/0_critical/SFX_ShowResult.aac',
+  sfx_pointget: { url: '/assets/sounds-o/0_critical/SFX_PointGet.aac' },
+  sfx_showresult: { url: '/assets/sounds-o/0_critical/SFX_ShowResult.aac' },
 };
 
 export const urls = {
   ...fonts,
   ...models,
   ...textures,
-  ...sounds,
+  ...Object.entries(sounds)
+    .map(([id, obj]) => {
+      return { id, url: obj.url };
+    })
+    .reduce((acc, curr) => {
+      acc[curr.id] = curr.url;
+      return acc;
+    }, {}),
 };
 
 // **********************************************************************
@@ -46,6 +51,9 @@ export const manifest = {
     ...Object.entries(fonts).map(([id, url]) => ({ id, url })),
     ...Object.entries(models).map(([id, url]) => ({ id, url })),
     ...Object.entries(textures).map(([id, url]) => ({ id, url })),
-    ...Object.entries(sounds).map(([id, url]) => ({ id, url })),
+    ...Object.entries(sounds).map(([id, obj]) => {
+      let { url, ...options } = obj;
+      return { id, url, options };
+    }),
   ],
 };

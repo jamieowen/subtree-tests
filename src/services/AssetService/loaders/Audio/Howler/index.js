@@ -22,9 +22,9 @@ export default class Sound extends Track {
       ...options,
       onload: handleLoad,
     });
-    this.volume = 0;
+    // this.volume = 0;
     this.play();
-    this.loop = true;
+    // this.loop = true;
 
     this.interrupt = options.interrupt;
     // this.concurrent = concurrent
