@@ -101,12 +101,12 @@ export const CleaningGame = forwardRef(({ show, onEnded }, ref) => {
           count={count}
         />
 
-        <ButtonPrimary
+        {/* <ButtonPrimary
           className="btn-cta"
           show={show && started}
         >
-          {t('filling.game.cta')}
-        </ButtonPrimary>
+          {t('cleaning.game.cta')}
+        </ButtonPrimary> */}
       </div>
 
       {show && started && (

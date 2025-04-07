@@ -54,8 +54,18 @@ export const VideoPlayer = forwardRef(
       pause,
     }));
 
+    const onClick = () => {
+      console.log('onClick', played);
+      if (!played) {
+        play();
+      }
+    };
+
     return (
-      <div className="video-player">
+      <div
+        className="video-player"
+        onClick={onClick}
+      >
         <video
           ref={refVideo}
           src={src}

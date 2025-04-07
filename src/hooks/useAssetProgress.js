@@ -10,6 +10,8 @@ const ignoreKeys = [
 
 // Pass in null to get total progress of all manifests added together
 export const useAssetProgress = (manifestId) => {
+  const store = useLoadingStore();
+
   const [completed, setCompleted] = useState(false);
   const [progress, setProgress] = useState(0);
 
@@ -47,6 +49,7 @@ export const useAssetProgress = (manifestId) => {
   };
 
   useEffect(() => {
+    update(store);
     return useLoadingStore.subscribe(update);
   }, []);
 

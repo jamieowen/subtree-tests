@@ -32,7 +32,15 @@ export const Filling = ({ show, ...props }) => {
   };
 
   return (
-    <div className={classnames(['page', 'game', 'Filling', { show }])}>
+    <div
+      className={classnames([
+        'page',
+        'game',
+        'Filling',
+        { show },
+        `section-${section}`,
+      ])}
+    >
       {/* TODO: Video */}
       <img
         src={`/assets/images-next/filling-loop.webp`}
@@ -43,7 +51,7 @@ export const Filling = ({ show, ...props }) => {
         {showVideo && (
           <VideoPlayer
             key="filling-video"
-            src="/assets/videos/filling.mp4"
+            src="/assets/videos/filling-intro.mp4"
             poster="/assets/images-next/filling-intro.webp"
             onEnd={() => {
               nextSection();
