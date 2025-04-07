@@ -33,8 +33,9 @@ export const Grouping = ({ show, ...props }) => {
 
   return (
     <div className={classnames(['page', 'game', 'Grouping', { show }])}>
+      {/* TODO: Video */}
       <img
-        src={`/assets/images-next/grouping-intro.webp`}
+        src={`/assets/images-next/grouping-loop.webp`}
         className={classnames(['game-bg', { blurBg }])}
       />
 
@@ -43,6 +44,7 @@ export const Grouping = ({ show, ...props }) => {
           <VideoPlayer
             key="grouping-video"
             src="/assets/videos/grouping.mp4"
+            poster="/assets/images-next/grouping-intro.webp"
             onEnd={() => {
               nextSection();
             }}

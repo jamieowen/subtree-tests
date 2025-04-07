@@ -1,0 +1,1 @@
+ffmpeg -ss 00:00:00 -i ending.mp4 -frames:v 1 ending.png

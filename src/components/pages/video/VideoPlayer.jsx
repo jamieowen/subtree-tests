@@ -2,15 +2,21 @@ import './VideoPlayer.sass';
 import { useAppStore } from '@/stores/app';
 
 export const VideoPlayer = forwardRef(
-  ({ src, autoPlay = true, onEnd, showSkip = true, ...props }, ref) => {
+  ({ src, poster, autoPlay = true, onEnd, showSkip = true, ...props }, ref) => {
     const { t } = useTranslation();
     const muted = useAppStore((state) => state.muted);
 
     const refVideo = useRef(null);
 
     const [playing, setPlaying] = useState(false);
-    const onPlay = () => setPlaying(true);
-    const onPause = () => setPlaying(false);
+    const [played, setPlayed] = useState(false);
+    const onPlay = () => {
+      setPlaying(true);
+      setPlayed(true);
+    };
+    const onPause = () => {
+      setPlaying(false);
+    };
 
     useEffect(() => {
       if (autoPlay) {
@@ -57,6 +63,7 @@ export const VideoPlayer = forwardRef(
           playsInline
           muted={muted}
         />
+        {!playing && !played && <img src={poster} />}
         <AnimatePresence>
           {showSkip && playing && (
             <button

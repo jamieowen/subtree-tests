@@ -54,6 +54,7 @@ export const Ending = ({ show, ...props }) => {
           <VideoPlayer
             key="ending-video"
             src="/assets/videos/ending.mp4"
+            poster="/assets/images-next/ending.webp"
             onEnd={() => {
               nextSection();
             }}

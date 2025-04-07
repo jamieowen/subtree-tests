@@ -33,8 +33,9 @@ export const Filling = ({ show, ...props }) => {
 
   return (
     <div className={classnames(['page', 'game', 'Filling', { show }])}>
+      {/* TODO: Video */}
       <img
-        src={`/assets/images-next/filling-intro.webp`}
+        src={`/assets/images-next/filling-loop.webp`}
         className={classnames(['game-bg', { blurBg }])}
       />
 
@@ -43,6 +44,7 @@ export const Filling = ({ show, ...props }) => {
           <VideoPlayer
             key="filling-video"
             src="/assets/videos/filling.mp4"
+            poster="/assets/images-next/filling-intro.webp"
             onEnd={() => {
               nextSection();
             }}
