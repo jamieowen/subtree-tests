@@ -7,6 +7,7 @@ import { useFillingStore } from '@/stores/filling';
 import { Box } from '@react-three/drei';
 import { FillingECS } from './state';
 import { PerspectiveCamera, Grid } from '@react-three/drei';
+import * as config from '@/config/games/filling';
 
 // export const FillingGameContext = createContext();
 // export const useFillingGameContext = () => useContext(FillingGameContext);
@@ -50,7 +51,6 @@ export const FillingGame = forwardRef(({ show, onEnded }, ref) => {
   const { t } = useTranslation();
   const count = useFillingStore((state) => state.count);
   const points = useMemo(() => count, [count]);
-  const duration = 40;
 
   const [started, setStarted] = useState(false);
 
@@ -121,7 +121,7 @@ export const FillingGame = forwardRef(({ show, onEnded }, ref) => {
       <div className="contents">
         <TimeLeft
           id="cleaning"
-          duration={duration}
+          duration={config.duration}
           onEnded={onTimeLeftEnded}
           show={started}
         />

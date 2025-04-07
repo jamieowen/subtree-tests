@@ -7,6 +7,7 @@ import { urls } from '@/config/assets';
 import { PromiseTimeout } from '@/helpers/PromiseTimeout';
 import { forwardRef } from 'react';
 import { gsap } from 'gsap';
+import * as config from '@/config/games/filling';
 
 const beltEntities = FillingECS.world.with('belt');
 const bottleEntities = FillingECS.world.with('isBottle');
@@ -14,6 +15,7 @@ const fillingEntities = FillingECS.world.with('filling');
 const filledEntities = FillingECS.world.with('filled');
 const nozzleEntities = FillingECS.world.with('isNozzle');
 const pouringEntities = FillingECS.world.with('pouring');
+const cappingEntities = FillingECS.world.with('capping');
 const lockedEntities = FillingECS.world.with('locked');
 
 export const FillingSystemControls = forwardRef(
@@ -39,9 +41,14 @@ export const FillingSystemControls = forwardRef(
       for (const entity of bottleEntities) {
         FillingECS.world.removeComponent(entity, 'filling', true);
         FillingECS.world.removeComponent(entity, 'filled', true);
-        FillingECS.world.removeComponent(entity, 'pouring', true);
+        FillingECS.world.removeComponent(entity, 'capped', true);
         FillingECS.world.removeComponent(entity, 'ended', true);
         entity.progress = 0;
+      }
+
+      for (const entity of nozzleEntities) {
+        FillingECS.world.removeComponent(entity, 'pouring', true);
+        FillingECS.world.removeComponent(entity, 'capping', true);
       }
 
       for (const entity of beltEntities) {
@@ -78,9 +85,21 @@ export const FillingSystemControls = forwardRef(
         }
       }
     };
+    const setNozzleCapping = (capping) => {
+      for (let entity of nozzleEntities) {
+        if (capping) {
+          FillingECS.world.addComponent(entity, 'capping', true);
+        } else {
+          FillingECS.world.removeComponent(entity, 'capping', true);
+        }
+      }
+    };
 
     const isPouring = () => {
       return pouringEntities.entities.length > 0;
+    };
+    const isCapping = () => {
+      return cappingEntities.entities.length > 0;
     };
 
     let tween = useRef(null);
@@ -122,12 +141,13 @@ export const FillingSystemControls = forwardRef(
     const onPointerUp = async () => {
       let pos = current.current;
       let bottleToFill = bottleEntities.entities.find((e) => e.idx == pos);
+      let filled = false;
       if (bottleToFill) {
         FillingECS.world.removeComponent(bottleToFill, 'filling', true);
         FillingECS.world.addComponent(bottleToFill, 'ended', true);
-        FillingECS.world.removeComponent(bottleToFill, 'pouring', true);
 
-        if (bottleToFill.progress >= 0.75 && bottleToFill.progress <= 1.0) {
+        filled = bottleToFill.progress >= 0.75 && bottleToFill.progress <= 1.0;
+        if (filled) {
           FillingECS.world.addComponent(bottleToFill, 'filled', true);
         } else {
           FillingECS.world.removeComponent(bottleToFill, 'filled', true);
@@ -137,6 +157,14 @@ export const FillingSystemControls = forwardRef(
       if (isPouring()) {
         setNozzlePouring(false);
         await PromiseTimeout(300);
+      }
+      if (filled) {
+        setNozzleCapping(true);
+        let endFrame = 25;
+        await PromiseTimeout((endFrame / config.cappingFps) * 1000);
+        FillingECS.world.addComponent(bottleToFill, 'capped', true);
+        await PromiseTimeout(((48 - endFrame) / config.cappingFps) * 1000);
+        setNozzleCapping(false);
       }
       setBeltLocked(false);
     };

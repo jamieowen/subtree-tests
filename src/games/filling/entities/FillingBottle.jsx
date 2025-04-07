@@ -13,6 +13,7 @@ export const FillingBottle = (entity) => {
     refBottle.current.progress = entity.progress;
     refBottle.current.filling = entity.filling || false;
     refBottle.current.filled = entity.filled || false;
+    refBottle.current.capped = entity.capped || false;
   });
 
   return (

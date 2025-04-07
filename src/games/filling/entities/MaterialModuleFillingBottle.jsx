@@ -40,6 +40,7 @@ export const MaterialModuleFillingBottle = forwardRef(
         uBottle_Progress: { value: progress },
         uBottle_Filling: { value: 0.0 },
         uBottle_Filled: { value: 0.0 },
+        uBottle_Capped: { value: 0.0 },
       },
       fragmentShader: {
         setup: /*glsl*/ `
@@ -57,7 +58,8 @@ export const MaterialModuleFillingBottle = forwardRef(
           uniform float uBottle_Fps;
           uniform float uBottle_Progress;
           uniform float uBottle_Filling;
-          uniform float uBottle_Filled;
+          uniform float uBottle_Filled; 
+          uniform float uBottle_Capped;
 
           ${blend}
 
@@ -136,8 +138,8 @@ export const MaterialModuleFillingBottle = forwardRef(
 
           // CAP
           vec4 cap = texture2D(tBottle_Cap, st);
-          color.rgb = mix(color.rgb, cap.rgb, cap.a * uBottle_Filled);
-          color.a = mix(color.a, cap.a, cap.a * uBottle_Filled);
+          color.rgb = mix(color.rgb, cap.rgb, cap.a * uBottle_Capped);
+          color.a = mix(color.a, cap.a, cap.a * uBottle_Capped);
 
           pc_fragColor = color;
 
@@ -193,6 +195,12 @@ export const MaterialModuleFillingBottle = forwardRef(
         },
         set filled(val) {
           material.uniforms['uBottle_Filled'].value = val ? 1.0 : 0.0;
+        },
+        get capped() {
+          return material.uniforms['uBottle_Capped'].value;
+        },
+        set capped(val) {
+          material.uniforms['uBottle_Capped'].value = val ? 1.0 : 0.0;
         },
       }),
       [material]
