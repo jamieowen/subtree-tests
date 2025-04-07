@@ -11,6 +11,7 @@ export const models = {};
 
 export const images = {
   i_filling_intro: `/assets/images-next/filling-intro.webp`,
+  i_filling_loop: `/assets/images-next/filling-loop.webp`,
 };
 
 export const textures = {

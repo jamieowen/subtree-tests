@@ -4,6 +4,7 @@ import { useAppStore } from '@/stores/app';
 import { useCleaningStore } from '@/stores/cleaning';
 import { Results } from '../../_misc/Results';
 import AssetService from '@/services/AssetService';
+import { urls } from '@/config/assets';
 
 export const Cleaning = ({ show, ...props }) => {
   const { t } = useTranslation();
@@ -48,7 +49,7 @@ export const Cleaning = ({ show, ...props }) => {
     <div className={classnames(['page', 'game', 'cleaning', { show }])}>
       {/* TODO: Swap to looping video */}
       <img
-        src={`/assets/images-next/cleaning-loop.webp`}
+        src={urls.i_cleaning_loop}
         className={classnames(['game-bg', { blurBg }])}
       />
 

@@ -36,7 +36,7 @@ export const Grouping = ({ show, ...props }) => {
     <div className={classnames(['page', 'game', 'Grouping', { show }])}>
       {/* TODO: Video */}
       <img
-        src={`/assets/images-next/grouping-loop.webp`}
+        src={urls.i_grouping_loop}
         className={classnames(['game-bg', { blurBg }])}
       />
 

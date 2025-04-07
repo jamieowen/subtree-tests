@@ -11,6 +11,7 @@ export const models = {};
 
 export const images = {
   i_grouping_intro: `/assets/images-next/grouping-intro.webp`,
+  i_grouping_loop: `/assets/images-next/grouping-loop.webp`,
   i_ending: `/assets/images-next/ending.webp`,
 };
 

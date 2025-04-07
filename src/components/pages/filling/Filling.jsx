@@ -44,7 +44,7 @@ export const Filling = ({ show, ...props }) => {
     >
       {/* TODO: Video */}
       <img
-        src={`/assets/images-next/filling-loop.webp`}
+        src={urls.i_filling_loop}
         className={classnames(['game-bg', { blurBg }])}
       />
 
