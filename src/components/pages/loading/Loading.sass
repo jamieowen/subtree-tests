@@ -3,12 +3,42 @@
 .Loading
   @include full
   z-index: 100
-  background: black
-  color: white
   +flex-col
 
 
+  .loading-percent
+    position: absolute
+    top: 65%
+    width: fit-content
+    left: 0
+    right: 0
+    margin: 0 auto
+    font-family: $font-tccc
+    font-weight: 700
+    font-size: 3rem
+    line-height: 5.8rem
+    letter-spacing: -0.08em
+
+  .desc
+    position: absolute
+    bottom: 5%
+    width: fit-content
+    left: 0
+    right: 0
+    margin: 0 auto
+    font-family: $font-tccc
+    font-weight: 900
+    font-size: 1rem
+    line-height: 1
+    letter-spacing: 0.05em
+    text-transform: uppercase
+
+    .ellipsis
+      margin-left: 0.2em
+    
   &.hide
-    opacity: 0
     pointer-events: none
-    transition: opacity 0.5s ease-in-out
+
+    .content
+      opacity: 0
+      transition: opacity 1s ease-in-out

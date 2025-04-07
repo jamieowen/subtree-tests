@@ -3,9 +3,12 @@ import classNames from 'classnames';
 import { useAppStore } from '@/stores/app';
 import requestIdleCallback from '@/helpers/RequestIdleCallback';
 import { PromiseTimeout } from '@/helpers/PromiseTimeout';
+import ReactAnimatedEllipsis from 'react-animated-ellipsis';
 
 export const Loading = ({ ...props }) => {
   const emitter = useMitt();
+
+  const { t } = useTranslation();
 
   const { completed } = useAssetProgress();
   const ready = useAppStore((state) => state.ready);
@@ -23,10 +26,13 @@ export const Loading = ({ ...props }) => {
   }, [completed]);
 
   return (
-    <div className={classNames(['Loading', { hide: ready }])}>
+    <div className={classNames(['Loading', { hide: completed }])}>
+      <LoadingBg />
       <div className="content">
-        <div className={'bottom'}>
-          <LoadingPercent show={true} />
+        <LoadingPercent show={true} />
+        <div className="desc">
+          {t('general.loading')}
+          <ReactAnimatedEllipsis className="ellipsis" />
         </div>
       </div>
     </div>

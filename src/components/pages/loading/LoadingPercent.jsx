@@ -5,10 +5,12 @@ export const LoadingPercent = ({ show }) => {
   const { progress } = useAssetProgress();
 
   const label = useMemo(() => {
-    return Math.floor(progress * 100)
-      .toString()
-      .padStart(3, '0');
+    return Math.floor(progress * 100);
+    // .toString()
+    // .padStart(3, '0');
   }, [progress]);
 
-  return <div className={classNames(['percent', { show }])}>{label}</div>;
+  return (
+    <div className={classNames(['loading-percent', { show }])}>{label}%</div>
+  );
 };
