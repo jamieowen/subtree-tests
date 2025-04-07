@@ -20,9 +20,10 @@
   .wrap
     position: relative
     +flex-row(center, center)
-    padding: 1rem 4rem
+    padding: 1rem 3rem
     height: 6rem
     min-height: 6rem
+    min-width: 12.4rem
     background: linear-gradient(to bottom, #f50008, #810004)
     border: 1px solid #ff484e
     border-radius: 9999px
@@ -42,7 +43,6 @@
     +flex-row(center, center)
     margin-top: -0.3rem
 
-
   
   &:not(.show) 
     pointer-events: none
@@ -52,3 +52,8 @@
     filter: saturate(0.5)
     pointer-events: none
     
+
+  &.color-white
+    .wrap
+      background: linear-gradient(to bottom, #ffffff, #919191)
+      border-color: #b5b5b5
