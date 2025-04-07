@@ -10,7 +10,11 @@ export const LoadingBg = () => {
   useEffect(() => {
     if (!completed) return;
     setEnableMask(true);
-    let tl = gsap.timeline();
+    let tl = gsap.timeline({
+      onComplete: () => {
+        refRoot.current.style.display = 'none';
+      },
+    });
     tl.add('start');
     tl.to(
       [
