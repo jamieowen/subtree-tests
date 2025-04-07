@@ -2,6 +2,7 @@ import './Grouping.sass';
 import classnames from 'classnames';
 import { useAppStore } from '@/stores/app';
 import { useGroupingStore } from '@/stores/grouping';
+import { urls } from '@/config/assets';
 
 export const Grouping = ({ show, ...props }) => {
   const { t } = useTranslation();
@@ -44,7 +45,7 @@ export const Grouping = ({ show, ...props }) => {
           <VideoPlayer
             key="grouping-video"
             src="/assets/videos/grouping-intro.mp4"
-            poster="/assets/images-next/grouping-intro.webp"
+            poster={urls.i_grouping_intro}
             onEnd={() => {
               nextSection();
             }}

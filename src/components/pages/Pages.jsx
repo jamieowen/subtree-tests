@@ -1,5 +1,6 @@
 import { useAppStore } from '@/stores/app';
 import './Pages.sass';
+import { urls } from '@/config/assets';
 
 export const Pages = () => {
   const page = useAppStore((state) => state.page);
@@ -30,7 +31,7 @@ export const Pages = () => {
             ref={refVideo}
             key="cleaning-video"
             src="/assets/videos/cleaning-intro.mp4"
-            poster="/assets/images-next/cleaning-intro.webp"
+            poster={urls.i_cleaning_intro}
             onEnd={nextPage}
             autoPlay={false}
             exit={{ opacity: 0 }}

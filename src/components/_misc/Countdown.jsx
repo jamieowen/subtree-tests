@@ -42,8 +42,12 @@ export const Countdown = ({
   }, [show]);
 
   const { contextSafe } = useGSAP({ scope: refRoot });
+
+  let tween = useRef(null);
   const animateNum = contextSafe(() => {
+    if (tween.current) tween.current.kill();
     let tl = gsap.timeline();
+    tween.current = tl;
     tl.add('start');
     tl.set(refNum.current, { opacity: 1, scale: 1 });
     tl.to(

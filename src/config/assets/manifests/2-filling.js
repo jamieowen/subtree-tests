@@ -9,6 +9,10 @@ export const fonts = {};
 
 export const models = {};
 
+export const images = {
+  i_filling_intro: `/assets/images-next/filling-intro.webp`,
+};
+
 export const textures = {
   // t_filling_nozzle: `/assets/textures-o/2_filling/nozzle.ktx2`,
   t_filling_belt: `/assets/textures-o/2_filling/belt.ktx2`,
@@ -40,6 +44,7 @@ export const sounds = {
 export const urls = {
   ...fonts,
   ...models,
+  ...images,
   ...textures,
   ...sounds,
 };
@@ -52,6 +57,7 @@ export const manifest = {
   items: [
     ...Object.entries(fonts).map(([id, url]) => ({ id, url })),
     ...Object.entries(models).map(([id, url]) => ({ id, url })),
+    ...Object.entries(images).map(([id, url]) => ({ id, url })),
     ...Object.entries(textures).map(([id, url]) => ({ id, url })),
     ...Object.entries(sounds).map(([id, url]) => ({ id, url })),
     ...Object.entries(jsons).map(([id, url]) => ({ id, url })),

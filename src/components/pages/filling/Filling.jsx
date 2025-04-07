@@ -2,6 +2,7 @@ import './Filling.sass';
 import classnames from 'classnames';
 import { useAppStore } from '@/stores/app';
 import { useFillingStore } from '@/stores/filling';
+import { urls } from '@/config/assets';
 
 export const Filling = ({ show, ...props }) => {
   const { t } = useTranslation();
@@ -52,7 +53,7 @@ export const Filling = ({ show, ...props }) => {
           <VideoPlayer
             key="filling-video"
             src="/assets/videos/filling-intro.mp4"
-            poster="/assets/images-next/filling-intro.webp"
+            poster={urls.i_filling_intro}
             onEnd={() => {
               nextSection();
             }}

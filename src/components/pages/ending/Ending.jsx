@@ -2,6 +2,7 @@ import './Ending.sass';
 import { useAppStore } from '@/stores/app';
 import classnames from 'classnames';
 import IconPattern from '@/assets/bottle-pattern.svg?react';
+import { urls } from '@/config/assets';
 
 // import IconBottlePattern from '@/assets/bg-pattern.svg?react';
 
@@ -54,7 +55,7 @@ export const Ending = ({ show, ...props }) => {
           <VideoPlayer
             key="ending-video"
             src="/assets/videos/ending.mp4"
-            poster="/assets/images-next/ending.webp"
+            poster={urls.i_ending}
             onEnd={() => {
               nextSection();
             }}

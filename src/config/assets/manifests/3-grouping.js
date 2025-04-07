@@ -9,6 +9,11 @@ export const fonts = {};
 
 export const models = {};
 
+export const images = {
+  i_grouping_intro: `/assets/images-next/grouping-intro.webp`,
+  i_ending: `/assets/images-next/ending.webp`,
+};
+
 export const textures = {
   t_grouping_bottle: `/assets/textures-o/3_grouping/bottle.ktx2`, // TODO: Remove
   t_grouping_bottle_c: `/assets/textures-o/3_grouping/bottle-c.ktx2`,
@@ -29,6 +34,7 @@ export const sounds = {
 
 export const urls = {
   ...fonts,
+  ...images,
   ...models,
   ...textures,
   ...sounds,
@@ -42,6 +48,7 @@ export const manifest = {
   items: [
     ...Object.entries(fonts).map(([id, url]) => ({ id, url })),
     ...Object.entries(models).map(([id, url]) => ({ id, url })),
+    ...Object.entries(images).map(([id, url]) => ({ id, url })),
     ...Object.entries(textures).map(([id, url]) => ({ id, url })),
     ...Object.entries(sounds).map(([id, url]) => ({ id, url })),
     ...Object.entries(jsons).map(([id, url]) => ({ id, url })),
