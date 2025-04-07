@@ -4,6 +4,8 @@ import { three } from '@/tunnels';
 import { Billboard } from '@react-three/drei';
 import { useGroupingStore } from '@/stores/grouping';
 import { gsap } from 'gsap';
+import AssetService from '@/services/AssetService';
+import { randomIntRange } from '@/helpers/MathUtils';
 
 export const GroupingBox = () => {
   const texture = useAsset(urls.t_grouping_box);
@@ -40,6 +42,8 @@ export const GroupingBox = () => {
     //   },
     //   'start'
     // );
+
+    AssetService.getAsset(`sfx_cratecatch0${randomIntRange(1, 5)}`).play();
   }, [count]);
 
   const s = 2.5;
