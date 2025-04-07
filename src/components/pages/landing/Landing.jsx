@@ -26,13 +26,13 @@ export const Landing = ({ show, ...props }) => {
         <div className="bottom">
           <Paragraph1
             show={show}
-            delay={1.3}
+            delay={1.2}
           >
             {t('landing.desc')}
           </Paragraph1>
           <ButtonPrimary
             show={show}
-            delay={1.6}
+            delay={1.4}
             onClick={onClick}
           >
             {t('landing.cta')}

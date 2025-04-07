@@ -11,7 +11,7 @@ export const Loading = ({ ...props }) => {
   const { t } = useTranslation();
 
   const { completed } = useAssetProgress();
-  const ready = useAppStore((state) => state.ready);
+
   const setReady = useAppStore((state) => state.setReady);
 
   useEffect(() => {

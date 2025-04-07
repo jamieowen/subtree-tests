@@ -19,7 +19,8 @@ export const Pages = () => {
   }, [page]);
   const showCleaningIntroVideo = page == '' || page == 'cleaning-intro';
 
-  const completed = useAssetProgress();
+  // const completed = useAssetProgress();
+  const ready = useAppStore((state) => state.ready);
 
   return (
     <div className="pages">
@@ -36,7 +37,7 @@ export const Pages = () => {
           />
         )}
       </AnimatePresence>
-      {page == '' && completed && <Landing show={true} />}
+      {page == '' && ready && <Landing show={true} />}
       {page == 'cleaning' && <Cleaning show={true} />}
       {page == 'filling' && <Filling show={true} />}
       {page == 'grouping' && <Grouping show={true} />}
