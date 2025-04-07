@@ -17,8 +17,8 @@ export const Ending = ({ show, ...props }) => {
   const showIntro = show && section == 'intro';
 
   const onRestart = () => {
-    // setPage('');
-    window.location.reload();
+    setPage('');
+    // window.location.reload();
   };
 
   const onShare = () => {
