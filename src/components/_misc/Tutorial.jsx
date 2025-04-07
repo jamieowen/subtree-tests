@@ -8,10 +8,20 @@ export const Tutorial = ({ id, show, onClick }) => {
   return (
     <section className={classnames(['page', 'tutorial', { show }])}>
       <div className="page__top">
-        <div className="preheading">{t(`${id}.tutorial.preheading`)}</div>
+        <motion.div
+          className="preheading"
+          animate={{ opacity: show ? 1 : 0, scale: show ? 1 : 0.8 }}
+          transition={{ duration: 0.6, delay: show ? 0.2 : 0 }}
+        >
+          {t(`${id}.tutorial.preheading`)}
+        </motion.div>
       </div>
 
-      <div className="page__center panel">
+      <motion.div
+        className="page__center panel"
+        animate={{ opacity: show ? 1 : 0, scale: show ? 1 : 0.8 }}
+        transition={{ duration: show ? 0.6 : 0.2, delay: show ? 0.3 : 0 }}
+      >
         <IconPanel className="panel__frame" />
         <div className="panel__top">
           <div className="panel__heading">{t(`${id}.tutorial.heading`)}</div>
@@ -28,12 +38,14 @@ export const Tutorial = ({ id, show, onClick }) => {
           </div>
         </div>
         <div className="panel__bottom"></div>
-      </div>
+      </motion.div>
 
       <div className="page__bottom">
         <ButtonPrimary
+          show={show}
+          delay={show ? 0.6 : 0}
           onClick={onClick}
-          // auto={show ? 10 : 0}
+          auto={show ? 10 : 0}
         >
           {t(`${id}.tutorial.cta`)}
         </ButtonPrimary>

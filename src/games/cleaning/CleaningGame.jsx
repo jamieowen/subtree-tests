@@ -9,7 +9,7 @@ import { PerspectiveCamera, Grid } from '@react-three/drei';
 export const CleaningGame = forwardRef(({ show, onEnded }, ref) => {
   const { t } = useTranslation();
   const count = useCleaningStore((state) => state.count);
-  const points = useMemo(() => count * 10);
+  const points = useMemo(() => count, [count]);
   const duration = 20;
 
   const [started, setStarted] = useState(false);

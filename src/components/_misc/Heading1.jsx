@@ -14,6 +14,9 @@ export const Heading1 = ({ show = false, delay = 0, className, children }) => {
       type: 'words',
       noBalance: true,
     });
+    s.words.forEach((word) => {
+      word.style.opacity = 0;
+    });
     setSplit(s);
     return () => {
       s.revert();
@@ -22,6 +25,10 @@ export const Heading1 = ({ show = false, delay = 0, className, children }) => {
 
   const animateIn = contextSafe(() => {
     console.log('Heading1.animateIn', split);
+    gsap.set(refRoot.current, {
+      opacity: 1,
+      blur: '0px',
+    });
     gsap.fromTo(
       split.words,
       {
@@ -43,12 +50,11 @@ export const Heading1 = ({ show = false, delay = 0, className, children }) => {
 
   const animateOut = contextSafe(() => {
     console.log('Heading1.animateOut', split);
-    gsap.to(split.words, {
+    gsap.to(refRoot.current, {
       opacity: 0,
       blur: '5px',
-      duration: 0.8,
-      stagger: 0.2,
-      ease: 'power2.in',
+      duration: 0.6,
+      ease: 'power2.out',
     });
   });
 

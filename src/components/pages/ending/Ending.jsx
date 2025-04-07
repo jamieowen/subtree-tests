@@ -13,6 +13,7 @@ export const Ending = ({ show, ...props }) => {
   const nextSection = () => setSection('intro');
 
   const showVideo = show && section == 'video';
+  const showIntro = show && section == 'intro';
 
   const onRestart = () => {
     // setPage('');
@@ -28,7 +29,7 @@ export const Ending = ({ show, ...props }) => {
   };
 
   return (
-    <div className={classnames(['page', 'ending', { show }])}>
+    <div className={classnames(['page', 'page-opacity', 'ending', { show }])}>
       <div className="bg">
         {Array.from({ length: 10 }).map((_, i) => (
           <div
@@ -62,28 +63,46 @@ export const Ending = ({ show, ...props }) => {
         )}
       </AnimatePresence>
 
-      <div className={classnames(['page', { show: section == 'intro' }])}>
+      <div
+        className={classnames(['page', 'page-opacity', { show: showIntro }])}
+      >
         <div className="page__top" />
 
         <div className="page__center">
-          <div className="preheading">{t('ending.preheading')}</div>
-          <h1>{t('ending.heading')}</h1>
-          <button
+          <motion.div
+            className="preheading"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: showIntro ? 1 : 0, scale: showIntro ? 1 : 0.8 }}
+            transition={{
+              duration: showIntro ? 0.6 : 0.2,
+            }}
+          >
+            {t('ending.preheading')}
+          </motion.div>
+          <Heading1 show={showIntro}>{t('ending.heading')}</Heading1>
+          <motion.button
             className="btn-secondary"
             onClick={onRestart}
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: showIntro ? 1 : 0, scale: showIntro ? 1 : 0.8 }}
+            transition={{
+              duration: showIntro ? 0.6 : 0.2,
+              delay: showIntro ? 1.5 : 0,
+            }}
           >
             {t('ending.restart')}
-          </button>
+          </motion.button>
         </div>
 
         <div className="page__bottom">
-          {/* <ButtonPrimary
-            show={section == 'intro'}
+          <ButtonPrimary
+            show={showIntro}
+            delay={2}
             color="white"
             onClick={onShare}
           >
             {t('ending.cta')}
-          </ButtonPrimary> */}
+          </ButtonPrimary>
         </div>
       </div>
     </div>

@@ -28,7 +28,7 @@ export const Countdown = ({
   }, [show]);
 
   return (
-    <div className={classnames('page', 'countdown', { show })}>
+    <div className={classnames('page', 'page-opacity', 'countdown', { show })}>
       <div className="page__top">
         <div className="preheading type-body1">{t(`${id}.game.ready`)}</div>
       </div>

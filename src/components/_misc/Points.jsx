@@ -6,7 +6,7 @@ export const Points = ({ id, points, show = false }) => {
 
   return (
     <div className={classnames('points', { show })}>
-      <div className="type-score-label">{t(`${id}.game.points`)}</div>
+      <div className="type-score-label">{t(`general.bottles`)}</div>
       <div className="type-score-value">{points}</div>
     </div>
   );

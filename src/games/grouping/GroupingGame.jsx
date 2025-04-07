@@ -10,7 +10,7 @@ import { PerspectiveCamera, Grid } from '@react-three/drei';
 export const GroupingGame = forwardRef(({ show, onEnded }, ref) => {
   const { t } = useTranslation();
   const count = useGroupingStore((state) => state.count);
-  const points = useMemo(() => count * 10);
+  const points = useMemo(() => count, [count]);
   const duration = 45;
 
   const [started, setStarted] = useState(false);

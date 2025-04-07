@@ -54,30 +54,30 @@ export const Filling = ({ show, ...props }) => {
 
       <Intro
         id="filling"
-        show={section == 'intro'}
+        show={show && section == 'intro'}
         onClick={nextSection}
       />
 
       <Tutorial
         id="filling"
-        show={section == 'tutorial'}
+        show={show && section == 'tutorial'}
         onClick={nextSection}
       />
 
       {completed && show && (
         <FillingGame
           ref={refGame}
-          show={section == 'game'}
+          show={show && section == 'game'}
           onEnded={nextSection}
         />
       )}
 
       <Results
         id="filling"
-        show={section == 'results'}
+        show={show && section == 'results'}
         onReplay={onReplay}
         count={count}
-        points={count * 10}
+        points={count}
         onNext={() => setPage('grouping')}
       />
     </div>

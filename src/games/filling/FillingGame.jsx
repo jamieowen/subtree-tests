@@ -49,7 +49,7 @@ export const textureConfigs = [
 export const FillingGame = forwardRef(({ show, onEnded }, ref) => {
   const { t } = useTranslation();
   const count = useFillingStore((state) => state.count);
-  const points = useMemo(() => count * 10);
+  const points = useMemo(() => count, [count]);
   const duration = 40;
 
   const [started, setStarted] = useState(false);
@@ -152,6 +152,7 @@ export const FillingGame = forwardRef(({ show, onEnded }, ref) => {
         <button
           className="btn-skip-game"
           onClick={onEnded}
+          show={show && started}
         >
           {t('general.skip')}
         </button>

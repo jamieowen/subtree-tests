@@ -54,30 +54,30 @@ export const Grouping = ({ show, ...props }) => {
 
       <Intro
         id="grouping"
-        show={section == 'intro'}
+        show={show && section == 'intro'}
         onClick={nextSection}
       />
 
       <Tutorial
         id="grouping"
-        show={section == 'tutorial'}
+        show={show && section == 'tutorial'}
         onClick={nextSection}
       />
 
       {completed && show && (
         <GroupingGame
           ref={refGame}
-          show={section == 'game'}
+          show={show && section == 'game'}
           onEnded={nextSection}
         />
       )}
 
       <Results
         id="grouping"
-        show={section == 'results'}
+        show={show && section == 'results'}
         onReplay={onReplay}
         count={count}
-        points={count * 10}
+        points={count}
         onNext={() => setPage('ending')}
       />
     </div>

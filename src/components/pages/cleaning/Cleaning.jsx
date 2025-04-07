@@ -42,30 +42,30 @@ export const Cleaning = ({ show, ...props }) => {
 
       <Intro
         id="cleaning"
-        show={section == 'intro'}
+        show={show && section == 'intro'}
         onClick={nextSection}
       />
 
       <Tutorial
         id="cleaning"
-        show={section == 'tutorial'}
+        show={show && section == 'tutorial'}
         onClick={nextSection}
       />
 
       {completed && show && (
         <CleaningGame
           ref={refGame}
-          show={section == 'game'}
+          show={show && section == 'game'}
           onEnded={nextSection}
         />
       )}
 
       <Results
         id="cleaning"
-        show={section == 'results'}
+        show={show && section == 'results'}
         onReplay={onReplay}
         count={count}
-        points={count * 10}
+        points={count}
         onNext={() => setPage('filling')}
       />
     </div>
