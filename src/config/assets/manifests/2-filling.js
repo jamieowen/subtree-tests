@@ -25,7 +25,16 @@ export const textures = {
 
 export const jsons = {};
 
-export const sounds = {};
+export const sounds = {
+  sfx_interlude01: '/assets/sounds/2_filling/SFX_Interlude01.ogg',
+  sfx_conveyer: '/assets/sounds/2_filling/SFX_Conveyer.ogg',
+  sfx_spout01: '/assets/sounds/2_filling/SFX_Spout01.ogg',
+  sfx_spout02: '/assets/sounds/2_filling/SFX_Spout02.ogg',
+  sfx_spout03: '/assets/sounds/2_filling/SFX_Spout03.ogg',
+  sfx_fillbottle01: '/assets/sounds/2_filling/SFX_FillBottle01.ogg',
+  sfx_fillbottle02: '/assets/sounds/2_filling/SFX_FillBottle02.ogg',
+  sfx_bottlecap: '/assets/sounds/2_filling/SFX_BottleCap.ogg',
+};
 
 export const urls = {
   ...fonts,

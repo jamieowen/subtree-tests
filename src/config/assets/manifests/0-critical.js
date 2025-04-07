@@ -16,8 +16,18 @@ export const textures = {
 };
 
 export const sounds = {
-  // sfx_bgm: '/assets/sounds-o/bgm.mp3',
+  mx_introvideo: '/assets/sounds/0_critical/MX_IntroVideo.ogg',
+  sfx_introvideo: '/assets/sounds/0_critical/SFX_IntroVideo.ogg',
+  sfx_buttonclick: '/assets/sounds/0_critical/SFX_ButtonClick.ogg',
+
+  mx_gameloop: '/assets/sounds/0_critical/MX_GameLoop.ogg',
+  sfx_countdown: '/assets/sounds/0_critical/SFX_Countdown.ogg',
+  sfx_start: '/assets/sounds/0_critical/SFX_Start.ogg',
+
+  sfx_pointget: '/assets/sounds/0_critical/SFX_PointGet.ogg',
+  sfx_showresult: '/assets/sounds/0_critical/SFX_ShowResult.ogg',
 };
+
 export const urls = {
   ...fonts,
   ...models,

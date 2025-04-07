@@ -18,7 +18,14 @@ export const textures = {
 
 export const jsons = {};
 
-export const sounds = {};
+export const sounds = {
+  sfx_interlude02: '/assets/sounds/3_grouping/SFX_Interlude02.ogg',
+  sfx_cratecatch01: '/assets/sounds/3_grouping/SFX_CrateCatch01.ogg',
+  sfx_cratecatch02: '/assets/sounds/3_grouping/SFX_CrateCatch02.ogg',
+  sfx_cratecatch03: '/assets/sounds/3_grouping/SFX_CrateCatch03.ogg',
+  sfx_cratecatch04: '/assets/sounds/3_grouping/SFX_CrateCatch04.ogg',
+  sfx_cratecatch05: '/assets/sounds/3_grouping/SFX_CrateCatch05.ogg',
+};
 
 export const urls = {
   ...fonts,
