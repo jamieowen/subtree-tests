@@ -11,12 +11,12 @@ export default class Sound extends Track {
     // this.url = url
 
     const handleLoad = () => {
-      console.log('Howl.handleload', url);
+      // console.log('Howl.handleload', url);
       if (typeof options.onload === 'function') {
         options.onload.call(this);
       }
     };
-    console.log('Howl', url);
+    // console.log('Howl', url);
     this.obj = new Howl({
       src: [url],
       ...options,

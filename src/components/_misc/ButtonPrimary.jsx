@@ -2,6 +2,7 @@ import './ButtonPrimary.sass';
 import IconButtonRed from '@/assets/btn-red.svg?react';
 import classnames from 'classnames';
 import { gsap } from 'gsap';
+import AssetService from '@/services/AssetService';
 
 export const ButtonPrimary = ({
   className,
@@ -11,6 +12,7 @@ export const ButtonPrimary = ({
   show = false,
   delay = 0,
   disabled = false,
+  onClick = () => {},
   ...props
 }) => {
   const { t } = useTranslation();
@@ -26,7 +28,7 @@ export const ButtonPrimary = ({
           ease: 'none',
           scaleX: 1,
           onComplete: () => {
-            props.onClick?.();
+            _onClick?.();
           },
         }
       );
@@ -91,6 +93,13 @@ export const ButtonPrimary = ({
     }
   }, [show]);
 
+  const _onClick = () => {
+    const sfx_buttonclick = AssetService.getAsset('sfx_buttonclick');
+    console.log('onClick', sfx_buttonclick);
+    sfx_buttonclick.play();
+    onClick?.();
+  };
+
   return (
     <div
       ref={refRoot}
@@ -107,6 +116,7 @@ export const ButtonPrimary = ({
       <motion.button
         className="wrap button-primary-wrap"
         whileTap={{ scale: 0.95 }}
+        onClick={_onClick}
       >
         <div
           className="progress"

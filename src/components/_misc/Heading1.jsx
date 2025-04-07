@@ -24,7 +24,7 @@ export const Heading1 = ({ show = false, delay = 0, className, children }) => {
   }, []);
 
   const animateIn = contextSafe(() => {
-    console.log('Heading1.animateIn', split.chars);
+    // console.log('Heading1.animateIn', split.chars);
     let tl = gsap.timeline();
 
     tl.add('reset');
