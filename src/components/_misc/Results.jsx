@@ -1,5 +1,6 @@
 import './Results.sass';
 import classnames from 'classnames';
+import AssetService from '@/services/AssetService';
 
 export const Results = ({
   id,

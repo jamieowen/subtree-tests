@@ -95,7 +95,6 @@ export const ButtonPrimary = ({
 
   const _onClick = () => {
     const sfx_buttonclick = AssetService.getAsset('sfx_buttonclick');
-    console.log('onClick', sfx_buttonclick);
     sfx_buttonclick.play();
     onClick?.();
   };

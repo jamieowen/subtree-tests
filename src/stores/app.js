@@ -78,7 +78,6 @@ export const useAppStore = create((set) => ({
       idx++;
       if (idx >= pages.length) return {};
       const toPage = pages[idx];
-      console.log('nextPage', idx, toPage);
       return { page: toPage };
     }),
 }));
