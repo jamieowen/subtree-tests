@@ -32,8 +32,8 @@ export const LoadingBg = () => {
         scale: 20,
         rotation: '30deg',
         transformOrigin: 'center',
-        ease: 'power2.in',
-        duration: 2,
+        ease: 'back.in(0.3)',
+        duration: 1.2,
       },
       'start+=0.1'
     );

@@ -12,11 +12,26 @@ export const Landing = ({ show, ...props }) => {
       onClick={nextPage}
     >
       <div className="wrap">
-        <Heading1>{t('landing.heading')}</Heading1>
+        <Heading1
+          show={show}
+          delay={0.5}
+        >
+          {t('landing.heading')}
+        </Heading1>
 
         <div className="bottom">
-          <Paragraph1>{t('landing.desc')}</Paragraph1>
-          <ButtonPrimary>{t('landing.cta')}</ButtonPrimary>
+          <Paragraph1
+            show={show}
+            delay={1}
+          >
+            {t('landing.desc')}
+          </Paragraph1>
+          <ButtonPrimary
+            show={show}
+            delay={1.5}
+          >
+            {t('landing.cta')}
+          </ButtonPrimary>
         </div>
       </div>
     </div>

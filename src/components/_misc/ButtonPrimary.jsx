@@ -8,7 +8,8 @@ export const ButtonPrimary = ({
   children,
   color = 'red',
   auto = 0,
-  show = true,
+  show = false,
+  delay = 0,
   disabled = false,
   ...props
 }) => {
@@ -36,8 +37,55 @@ export const ButtonPrimary = ({
     }
   }, [auto]);
 
+  const refRoot = useRef(null);
+  const { contextSafe } = useGSAP({ scope: refRoot });
+
+  const animateIn = contextSafe(() => {
+    let tl = gsap.timeline({ delay });
+    tl.add('start');
+    tl.fromTo(
+      '.border',
+      { opacity: 0 },
+      {
+        opacity: 1,
+        duration: 0.5,
+        ease: 'power2.in',
+      },
+      'start'
+    );
+    tl.fromTo(
+      '.button-primary-wrap',
+      { opacity: 0, scale: 0.7 },
+      {
+        opacity: 1,
+        scale: 1,
+        duration: 0.6,
+        ease: 'back.out',
+      },
+      'start'
+    );
+  });
+
+  const animateOut = contextSafe(() => {
+    let tl = gsap.timeline();
+    tl.to(refRoot.current, {
+      opacity: 0,
+      duration: 0.8,
+      ease: 'power2.in',
+    });
+  });
+
+  useEffect(() => {
+    if (show) {
+      animateIn();
+    } else {
+      animateOut();
+    }
+  }, [show]);
+
   return (
     <div
+      ref={refRoot}
       className={classnames([
         'button-primary',
         `color-${color}`,
@@ -49,7 +97,7 @@ export const ButtonPrimary = ({
     >
       <div className="border" />
       <motion.button
-        className="wrap"
+        className="wrap button-primary-wrap"
         whileTap={{ scale: 0.95 }}
       >
         <div

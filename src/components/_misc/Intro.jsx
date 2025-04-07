@@ -6,12 +6,29 @@ export const Intro = ({ id, show, onClick }) => {
 
   return (
     <section className={classnames(['page', 'intro', { show }])}>
-      <div className="step">
+      <motion.div
+        className="step"
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.6 }}
+      >
         <span>{t(`${id}.step`)}</span>
-      </div>
-      <h1>{t(`${id}.intro.heading`)}</h1>
-      <p>{t(`${id}.intro.desc`)}</p>
-      <ButtonPrimary onClick={onClick}>{t('cleaning.intro.cta')}</ButtonPrimary>
+      </motion.div>
+
+      <Heading1 show={show}>{t(`${id}.intro.heading`)}</Heading1>
+      <Paragraph1
+        show={show}
+        delay={0.5}
+      >
+        {t(`${id}.intro.desc`)}
+      </Paragraph1>
+      <ButtonPrimary
+        show={show}
+        delay={1}
+        onClick={onClick}
+      >
+        {t('cleaning.intro.cta')}
+      </ButtonPrimary>
     </section>
   );
 };
