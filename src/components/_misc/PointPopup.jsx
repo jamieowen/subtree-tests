@@ -1,6 +1,7 @@
 import './PointPopup.sass';
 import { randomSign } from '@/helpers/MathUtils';
 import { gsap } from 'gsap';
+import AssetService from '@/services/AssetService';
 
 export const PointPopup = ({ count, point = 10 }) => {
   const refRoot = useRef(null);
@@ -10,6 +11,8 @@ export const PointPopup = ({ count, point = 10 }) => {
 
     let tl = gsap.timeline();
     tl.add('start');
+
+    AssetService.getAsset('sfx_pointget').play();
 
     const direction = randomSign();
 

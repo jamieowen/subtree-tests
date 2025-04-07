@@ -3,6 +3,7 @@ import classnames from 'classnames';
 import { useAppStore } from '@/stores/app';
 import { useCleaningStore } from '@/stores/cleaning';
 import { Results } from '../../_misc/Results';
+import AssetService from '@/services/AssetService';
 
 export const Cleaning = ({ show, ...props }) => {
   const { t } = useTranslation();
@@ -31,6 +32,17 @@ export const Cleaning = ({ show, ...props }) => {
     setSection('intro');
     refGame.current.reset();
   };
+
+  useEffect(() => {
+    if (!show) return;
+    AssetService.getAsset('sfx_introvideo')?.stop(); // TODO: Remove
+    AssetService.getAsset('mx_introvideo')?.stop();
+    let gameloop = AssetService.getAsset('mx_gameloop');
+    if (gameloop) {
+      gameloop.loop = true;
+      gameloop.play();
+    }
+  }, [show]);
 
   return (
     <div className={classnames(['page', 'game', 'cleaning', { show }])}>

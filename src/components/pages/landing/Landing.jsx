@@ -9,10 +9,8 @@ export const Landing = ({ show, ...props }) => {
 
   const onClick = () => {
     nextPage();
-    AssetService.getAsset('sfx_introvideo').play();
+    AssetService.getAsset('sfx_introvideo').play(); // TODO: Remove
     AssetService.getAsset('mx_introvideo').play();
-    AssetService.getAsset('bgm').play();
-    console.log('bgm', AssetService.getAsset('bgm'));
   };
 
   return (

@@ -11,6 +11,11 @@ export const Results = ({
 }) => {
   const { t } = useTranslation();
 
+  useEffect(() => {
+    if (!show) return;
+    AssetService.getAsset('sfx_showresult').play();
+  }, [show]);
+
   return (
     <section className={classnames(['page', 'results', { show }])}>
       <div className="wrap">

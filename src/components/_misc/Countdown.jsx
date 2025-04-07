@@ -1,5 +1,6 @@
 import './Countdown.sass';
 import classnames from 'classnames';
+import AssetService from '@/services/AssetService';
 
 export const Countdown = ({
   id,
@@ -14,13 +15,19 @@ export const Countdown = ({
   useEffect(() => {
     if (!show) return;
     setTime(duration);
+    AssetService.getAsset('sfx_countdown').play();
+
     let interval = setInterval(() => {
       setTime((time) => {
         if (time === 1) {
+          AssetService.getAsset('sfx_start').play();
           clearInterval(interval);
           onEnded();
           return 1;
-        } else return time - 1;
+        } else {
+          AssetService.getAsset('sfx_countdown').play();
+          return time - 1;
+        }
       });
     }, 1000);
 

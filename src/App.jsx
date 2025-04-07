@@ -5,6 +5,7 @@ import '@/plugins/i18n';
 import { ui } from '@/tunnels';
 import { Leva } from 'leva';
 import './App.sass';
+import AssetService from '@/services/AssetService';
 
 import { ColorManagement } from 'three';
 ColorManagement.enabled = true;
@@ -12,6 +13,10 @@ ColorManagement.enabled = true;
 export function App() {
   const { disable } = useContextMenu();
   disable();
+
+  useEffect(() => {
+    window.AssetService = AssetService;
+  }, []);
 
   return (
     <div
