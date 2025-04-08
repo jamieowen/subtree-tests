@@ -5,43 +5,49 @@ export const LoadingBg = () => {
   const { progress, completed } = useAssetProgress();
 
   const refRoot = useRef(null);
+  const refFill = useRef(null);
   const [enableMask, setEnableMask] = useState(false);
 
-  useEffect(() => {
-    if (!completed) return;
-    setEnableMask(true);
-    let tl = gsap.timeline({
-      onComplete: () => {
-        refRoot.current.style.display = 'none';
-      },
-    });
-    tl.add('start');
-    tl.to(
-      [
-        refRoot.current.querySelector('.fill'),
-        refRoot.current.querySelector('.stroke'),
-      ],
-      {
-        opacity: 0,
-        duration: 0.5,
-        ease: 'power2.inOut',
-      },
-      'start'
-    );
+  // useEffect(() => {
+  //   if (!completed) return;
+  //   setEnableMask(true);
+  //   let tl = gsap.timeline({
+  //     onComplete: () => {
+  //       refRoot.current.style.display = 'none';
+  //     },
+  //   });
+  //   tl.add('start');
+  //   tl.to(
+  //     [
+  //       refRoot.current.querySelector('.fill'),
+  //       refRoot.current.querySelector('.stroke'),
+  //     ],
+  //     {
+  //       opacity: 0,
+  //       duration: 0.5,
+  //       ease: 'power2.inOut',
+  //     },
+  //     'start'
+  //   );
 
-    let mask = refRoot.current.querySelector('.bottleMaskInvert');
-    tl.to(
-      mask,
-      {
-        scale: 20,
-        rotation: '30deg',
-        transformOrigin: 'center',
-        ease: 'back.in(0.3)',
-        duration: 1.2,
-      },
-      'start+=0.1'
-    );
-  }, [completed]);
+  //   let mask = refRoot.current.querySelector('.bottleMaskInvert');
+  //   tl.to(
+  //     mask,
+  //     {
+  //       scale: 20,
+  //       rotation: '30deg',
+  //       transformOrigin: 'center',
+  //       ease: 'back.in(0.3)',
+  //       duration: 1.2,
+  //     },
+  //     'start+=0.1'
+  //   );
+  // }, [completed]);
+
+  // useEffect(() => {
+  //   let box = refFill.current.getBBox();
+  //   console.log(box);
+  // }, []);
 
   return (
     <svg
@@ -67,7 +73,7 @@ export const LoadingBg = () => {
         fill="none"
       />
 
-      <rect
+      {/* <rect
         className="fill"
         x="0"
         y={844 / 2 - 140 / 2 + 140 * (1 - progress)}
@@ -75,7 +81,18 @@ export const LoadingBg = () => {
         height="140"
         fill="white"
         mask="url(#bottleMask)"
-      />
+      /> */}
+
+      <g mask="url(#bottleMask)">
+        <g style={{ transform: `translateY(${139 * (1 - progress)}px)` }}>
+          <path
+            className="fill slide-right"
+            ref={refFill}
+            d="M175.12,494.4h-41.12v-144.75c10.28,0,10.28-10.19,20.56-10.14,10.28.05,10.28,10.19,20.56,10.19l-.24-.05c10.28.05,10.28-10.14,20.56-10.14s10.28,10.19,20.56,10.19v144.7h-41.12"
+            fill="white"
+          />
+        </g>
+      </g>
 
       <mask id="bottleMask">
         <path

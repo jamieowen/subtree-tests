@@ -26,7 +26,7 @@ export const Loading = ({ ...props }) => {
   }, [completed]);
 
   return (
-    <div className={classNames(['Loading', { hide: completed }])}>
+    <div className={classNames(['Loading', { hide: !completed }])}>
       <LoadingBg />
       <div className="content">
         <LoadingPercent show={true} />

@@ -26,13 +26,18 @@ export const MaterialModuleParticle = memo(({}) => {
         ${quaternionToMatrix4}
       `,
       main: /*glsl*/ `
+        vec4 life = texture2D(uLifeTexture, reference);
+        float progress = life.y;
+        vProgress = progress;
+
+        if (progress <= 0. || progress >= 1.) {
+          discard;
+          return;
+        }
+
         vec4 rot = texture2D(uRotationTexture, reference);
         vec4 pos = texture2D(uPositionTexture, reference);
         vec4 rand = texture2D(uRandomTexture, reference);
-        vec4 life = texture2D(uLifeTexture, reference);
-
-        float progress = life.y;
-        vProgress = progress;
 
         transformed = (vec4(position, 1.0) * quaternionToMatrix4(rot)).xyz;
         transformed += pos.xyz;
