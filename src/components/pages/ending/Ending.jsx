@@ -1,7 +1,7 @@
 import './Ending.sass';
 import { useAppStore } from '@/stores/app';
 import classnames from 'classnames';
-import IconPattern from '@/assets/bottle-pattern.svg?react';
+
 import { urls } from '@/config/assets';
 
 // import IconBottlePattern from '@/assets/bg-pattern.svg?react';
@@ -31,21 +31,7 @@ export const Ending = ({ show, ...props }) => {
 
   return (
     <div className={classnames(['page', 'page-opacity', 'ending', { show }])}>
-      {showIntro && (
-        <div className="bg">
-          {Array.from({ length: 10 }).map((_, i) => (
-            <div
-              key={i}
-              className="contents"
-            >
-              {/* <img src="/assets/images/bottle-pattern-red.svg" /> */}
-              {/* <img src="/assets/images/bottle-pattern-green.svg" /> */}
-              <IconPattern className="red" />
-              <IconPattern className="green" />
-            </div>
-          ))}
-        </div>
-      )}
+      {showIntro && <BottleBg />}
 
       {/* <img
         className="glow"

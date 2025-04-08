@@ -7,7 +7,9 @@ import { getUrlFloat, getUrlBoolean, getUrlString } from '@/helpers/UrlParam';
 // **********************************************************************
 export const fonts = {};
 
-export const models = {};
+export const models = {
+  m_bottle_cap: `/assets/models-o/2_filling/cap.glb`,
+};
 
 export const images = {
   i_filling_intro: `/assets/images-next/filling-intro.webp`,

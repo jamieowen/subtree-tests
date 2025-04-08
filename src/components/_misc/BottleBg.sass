@@ -1,0 +1,43 @@
+@import "@/styles/shared.sass"
+
+.bottleBg
+  +full
+
+.bottleBg__pattern
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  gap: 0
+  font-size: 0
+  line-height: 0
+  animation: up 15s linear infinite
+
+  .bottle
+    position: relative
+    width: 100%
+    margin-top: -28rem
+
+    &.red
+      color: $cl-red
+
+    &.green
+      color: $cl-green-light
+
+.bottleBg__circle
+  position: absolute
+  left: 50%
+  top: 50%
+  transform: translate(-50%, -50%)
+  max-width: none
+  max-height: none
+  width: 65rem
+  aspect-ratio: 1
+  background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 70%)
+  border-radius: 50%
+
+@keyframes up
+  0%
+    transform: translateY(0)
+  100%
+    transform: translateY(-50%)

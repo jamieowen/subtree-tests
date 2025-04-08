@@ -18,6 +18,11 @@ export const textures = {
   // t_bottle_0: `/assets/spritesheets-o/cleaning_bottle/data-0.ktx2`,
   t_cleaning_bottle: `/assets/textures-o/1_cleaning/cleaning_bottle.ktx2`,
   t_cleaning_nozzle: `/assets/textures-o/1_cleaning/cleaning_nozzle.ktx2`,
+
+  t_hanger_railback: `/assets/textures-o/1_cleaning/HangerRailback.ktx2`,
+  t_hanger_railfront: `/assets/textures-o/1_cleaning/HangerRailFront.ktx2`,
+  t_hanger_back: `/assets/textures-o/1_cleaning/HangerSingleBack.ktx2`,
+  t_hanger_front: `/assets/textures-o/1_cleaning/HangerSinglefront.ktx2`,
 };
 
 export const jsons = {};
