@@ -10,15 +10,38 @@
     +full
     background: rgba(0, 0, 0, 0.2)
 
+  
+
+
   .wrap
     position: relative
     width: 100%
     height: 100%
     +flex-col(space-between, center)
 
-    >.bottom
+    >.top
+      flex: 1
       +flex-col()
-      gap: 5lvh
+
+    >.center
+      width: 100%
+      aspect-ratio: 1
+
+    >.bottom
+      position: relative
+      flex: 1
+      width: 100%
+
+      +flex-col()
+      gap: 2rem
+
+      @media (min-aspect-ratio: 390 / 750)
+
+        .paragraph1
+          position: absolute
+          bottom: 100%
+          width: 100%
+          // margin-bottom: 2rem
 
   // .btn
   //   position: relative

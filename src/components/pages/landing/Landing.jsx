@@ -16,12 +16,16 @@ export const Landing = ({ show, ...props }) => {
   return (
     <div className={classnames(['page', 'Landing', { show }])}>
       <div className="wrap">
-        <Heading1
-          show={show}
-          delay={1}
-        >
-          {t('landing.heading')}
-        </Heading1>
+        <div className="top">
+          <Heading1
+            show={show}
+            delay={1}
+          >
+            {t('landing.heading')}
+          </Heading1>
+        </div>
+
+        <div className="center" />
 
         <div className="bottom">
           <Paragraph1
