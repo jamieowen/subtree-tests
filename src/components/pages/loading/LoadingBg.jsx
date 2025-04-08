@@ -44,10 +44,16 @@ export const LoadingBg = () => {
     );
   }, [completed]);
 
+  const refFillY = useRef(null);
+  const tween = useRef(null);
   useEffect(() => {
-    let box = refFill.current.getBBox();
-    console.log(box);
-  }, []);
+    if (tween.current) tween.current.kill();
+    tween.current = gsap.to(refFillY.current, {
+      y: `${139 * (1 - progress)}px)`,
+      duration: 0.3,
+      ease: 'none',
+    });
+  }, [progress]);
 
   return (
     <svg
@@ -73,18 +79,12 @@ export const LoadingBg = () => {
         fill="none"
       />
 
-      {/* <rect
-        className="fill"
-        x="0"
-        y={844 / 2 - 140 / 2 + 140 * (1 - progress)}
-        width="390"
-        height="140"
-        fill="white"
-        mask="url(#bottleMask)"
-      /> */}
-
       <g mask="url(#bottleMask)">
-        <g style={{ transform: `translateY(${139 * (1 - progress)}px)` }}>
+        <g
+          ref={refFillY}
+          style={{ transform: `translateY(${139 * (1 - 0)}px)` }}
+          className="fill-transform"
+        >
           <path
             className="fill slide-right"
             ref={refFill}
