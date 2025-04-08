@@ -35,24 +35,25 @@ export const BottleBg = ({ show }) => {
     );
   });
 
-  const animateOut = contextSafe(() => {
-    if (_tl.current) _tl.current.kill();
-    let tl = gsap.timeline();
-    _tl.current = tl;
-    tl.add('start');
-    tl.to(refRoot.current, {
-      opacity: 0,
-      duration: 0.3,
-      ease: 'power2.out',
-    });
-  });
+  // const animateOut = contextSafe(() => {
+  //   if (_tl.current) _tl.current.kill();
+  //   let tl = gsap.timeline();
+  //   _tl.current = tl;
+  //   tl.add('start');
+  //   tl.to(refRoot.current, {
+  //     opacity: 0,
+  //     duration: 0.3,
+  //     ease: 'power2.out',
+  //   });
+  // });
 
   useEffect(() => {
     if (show) {
       animateIn();
-    } else {
-      animateOut();
     }
+    // else {
+    //   animateOut();
+    // }
   }, [show]);
 
   return (
