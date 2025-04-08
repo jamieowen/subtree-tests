@@ -49,7 +49,8 @@ export const ButtonPrimary = ({
     tl.add('reset');
     tl.set(refRoot.current, { opacity: 1 }, 'reset');
     tl.set('.border', { opacity: 0 }), 'reset';
-    tl.set('.button-primary-wrap', { opacity: 0, scale: 0.7 }), 'reset';
+    tl.set('.button-primary-wrap', { opacity: 0, scale: 0.5 }), 'reset';
+    tl.set('.label', { opacity: 0, y: 50 }), 'reset';
 
     tl.add('start', `reset+=${delay}`);
     tl.to(
@@ -68,10 +69,21 @@ export const ButtonPrimary = ({
       {
         opacity: 1,
         scale: 1,
-        duration: 0.6,
-        ease: 'back.out',
+        duration: 0.7,
+        ease: 'back.out(2)',
       },
       'start'
+    );
+
+    tl.to(
+      '.label',
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.5,
+        ease: 'back.out(2)',
+      },
+      'start+=0.2'
     );
   });
 
