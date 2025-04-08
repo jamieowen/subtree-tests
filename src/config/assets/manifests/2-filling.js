@@ -29,6 +29,9 @@ export const textures = {
   t_filling_bottle_foam: `/assets/textures-o/2_filling/bottle/foam.ktx2`,
   t_filling_bottle_logo: `/assets/textures-o/2_filling/bottle/logo.ktx2`,
   t_filling_bottle_mask: `/assets/textures-o/2_filling/bottle/maskk.ktx2`,
+
+  t_filling_line_horizontal: `/assets/textures-o/2_filling/lines/filling_line_horizontal.ktx2`,
+  t_filling_line_vertical: `/assets/textures-o/2_filling/lines/filling_line_vertical.ktx2`,
 };
 
 export const jsons = {};

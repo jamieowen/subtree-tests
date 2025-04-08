@@ -81,7 +81,7 @@ export const FillingGame = forwardRef(({ show, onEnded }, ref) => {
           {/* <BackgroundColor color={0x84b792} /> */}
 
           <PerspectiveCamera
-            position={[0, 1, 6]}
+            position={[0, 1, 6.1]}
             makeDefault
           />
 
@@ -105,7 +105,7 @@ export const FillingGame = forwardRef(({ show, onEnded }, ref) => {
           <FillingNozzle />
           <FillingConveyorBelt playing={playing}>
             <FillingBottles />
-            {/* <FillingLines /> */}
+            <FillingLines />
           </FillingConveyorBelt>
 
           <FillingSystemControls

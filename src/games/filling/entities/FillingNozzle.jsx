@@ -124,6 +124,8 @@ export const FillingNozzle = () => {
     }
   }, [capping]);
 
+  const s = 1;
+
   return (
     <FillingECS.Entity>
       <FillingECS.Component
@@ -134,7 +136,7 @@ export const FillingNozzle = () => {
         <group position-y={0.95}>
           <mesh
             position-y={0.9}
-            scale={[1, -1, 1]}
+            scale={[s, -s, s]}
             renderOrder={2}
           >
             <planeGeometry args={[1, 4]} />

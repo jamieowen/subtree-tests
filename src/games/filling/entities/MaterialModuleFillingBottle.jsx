@@ -1,6 +1,7 @@
 import { randomIntRange } from '@/helpers/MathUtils';
 import blend from './blend.glsl';
 import { urls } from '@/config/assets';
+import * as config from '@/config/games/filling';
 
 export const MaterialModuleFillingBottle = forwardRef(
   ({ rows = 4, cols = 16, frames = 12, fps = 24, progress = 0 }, ref) => {
@@ -12,6 +13,7 @@ export const MaterialModuleFillingBottle = forwardRef(
       t_filling_bottle_mask,
       t_filling_bottle_shadow,
       t_filling_bottle_cap,
+      t_filling_line_horizontal,
     ] = useAsset([
       urls.t_filling_bottle_body,
       urls.t_filling_bottle_liquid,
@@ -20,6 +22,7 @@ export const MaterialModuleFillingBottle = forwardRef(
       urls.t_filling_bottle_mask,
       urls.t_filling_bottle_shadow,
       urls.t_filling_bottle_cap,
+      urls.t_filling_line_horizontal,
     ]);
 
     const { material } = useMaterialModule({
@@ -32,7 +35,7 @@ export const MaterialModuleFillingBottle = forwardRef(
         tBottle_Mask: { type: 't', value: t_filling_bottle_mask },
         tBottle_Shadow: { type: 't', value: t_filling_bottle_shadow },
         tBottle_Cap: { type: 't', value: t_filling_bottle_cap },
-
+        tBottle_Line: { type: 't', value: t_filling_line_horizontal },
         uBottle_Rows: { value: rows },
         uBottle_Cols: { value: cols },
         uBottle_Frames: { value: frames },
@@ -51,6 +54,7 @@ export const MaterialModuleFillingBottle = forwardRef(
           uniform sampler2D tBottle_Mask;
           uniform sampler2D tBottle_Shadow;
           uniform sampler2D tBottle_Cap;
+          uniform sampler2D tBottle_Line;
 
           uniform float uBottle_Rows;
           uniform float uBottle_Cols;
@@ -141,35 +145,33 @@ export const MaterialModuleFillingBottle = forwardRef(
           color.rgb = mix(color.rgb, cap.rgb, cap.a * uBottle_Capped);
           color.a = mix(color.a, cap.a, cap.a * uBottle_Capped);
 
+          // LINE
+          vec2 uvLine = st;
+          uvLine.y += -0.77 + 0.77 * ${config.threshold};
+          vec4 line = texture2D(tBottle_Line, uvLine);
+          color.rgb = mix(color.rgb, line.rgb, line.a * uBottle_Filling);
+          color.a = mix(color.a, line.a, line.a * uBottle_Filling);
+
           pc_fragColor = color;
 
+          // float dpr = uDpr;
+          // float resY = uResolution.y * dpr;
+          // float pos = 0.25;
+          // pos = crange(pos, 0.0, 1.0, 0.15, 0.9);
 
-          // LINE
-          float dpr = uDpr;
-          float resY = uResolution.y * dpr;
-          float pos = 0.25;
-          pos = crange(pos, 0.0, 1.0, 0.15, 0.9);
+          // float thickness = 5.0;
+          // float thick = thickness / resY;
+          // float posA = round((pos - thick) * resY) / resY;
+          // float posB = round((pos + thick) * resY) / resY;
 
-          // float thickness = 0.1;
-          // float posA = pos - thickness;
-          // float posB = pos;
+          // vec3 lineColor = vec3(1.0, 0.0, 0.0);
+          // if (uBottle_Progress >= 0.75 && uBottle_Progress <= 1.0) {
+          //   lineColor = vec3(0.0, 1.0, 0.0);
+          // }
 
-          float thickness = 5.0;
-          float thick = thickness / resY;
-          float posA = round((pos - thick) * resY) / resY;
-          float posB = round((pos + thick) * resY) / resY;
-
-          vec3 lineColor = vec3(1.0, 0.0, 0.0);
-          if (uBottle_Progress >= 0.75 && uBottle_Progress <= 1.0) {
-            lineColor = vec3(0.0, 1.0, 0.0);
-          }
-
-          if (st.y > posA && st.y < posB && uBottle_Filling == 1.0) {
-            // pc_fragColor.rgb = blendMultiply(pc_fragColor.rgb, vec3(lineColor), 0.5);
-            // pc_fragColor.a = 1.0;
-
-            pc_fragColor.rgb = lineColor;
-          }
+          // if (st.y > posA && st.y < posB && uBottle_Filling == 1.0) {
+          //   pc_fragColor.rgb = lineColor;
+          // }
           
         `,
       },

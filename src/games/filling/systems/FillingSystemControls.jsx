@@ -146,7 +146,9 @@ export const FillingSystemControls = forwardRef(
         FillingECS.world.removeComponent(bottleToFill, 'filling', true);
         FillingECS.world.addComponent(bottleToFill, 'ended', true);
 
-        filled = bottleToFill.progress >= 0.75 && bottleToFill.progress <= 1.0;
+        filled =
+          bottleToFill.progress >= config.threshold &&
+          bottleToFill.progress <= 1.0;
         if (filled) {
           FillingECS.world.addComponent(bottleToFill, 'filled', true);
         } else {

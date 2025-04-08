@@ -37,7 +37,7 @@ export const Filling = ({ show, ...props }) => {
       className={classnames([
         'page',
         'game',
-        'Filling',
+        'filling',
         { show },
         `section-${section}`,
       ])}
@@ -46,6 +46,11 @@ export const Filling = ({ show, ...props }) => {
       <img
         src={urls.i_filling_loop}
         className={classnames(['game-bg', { blurBg }])}
+      />
+
+      <img
+        src={'/assets/images/filling-game-artboard.png'}
+        className={classnames(['artboard'])}
       />
 
       <AnimatePresence>
