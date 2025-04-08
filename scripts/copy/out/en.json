@@ -35,7 +35,8 @@
       "preheading": "How many can you wash?",
       "heading": "How to Play",
       "instructions": [
-        "Drag & Align"
+        "Drag and\r\nalign bottles",
+        "Press\r\nto spray water"
       ],
       "cta": "Start"
     },
@@ -64,7 +65,8 @@
       "preheading": "Fill as many bottles as you can.\r\nBut hurry up, the clock is ticking.",
       "heading": "How to Play",
       "instructions": [
-        "Press & Hold to Fill Bottles"
+        "Press & Hold\r\nto fill bottles",
+        "Fill every bottle\r\nto the line"
       ],
       "cta": "Start"
     },
@@ -93,7 +95,8 @@
       "preheading": "How many bottles\r\ncan you catch?",
       "heading": "How to Play",
       "instructions": [
-        "Drag crate left/right\r\nto catch bottles"
+        "Drag the crate\r\nleft / right",
+        "Catch bottles\r\nas they drop"
       ],
       "cta": "Start"
     },

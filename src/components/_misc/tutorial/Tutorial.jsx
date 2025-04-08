@@ -2,8 +2,18 @@ import './Tutorial.sass';
 import classnames from 'classnames';
 import IconPanel from '@/assets/panel.svg?react';
 
-export const Tutorial = ({ id, show, onClick }) => {
+const stepTime = 4;
+
+export const Tutorial = ({ id, show, steps = 2, onClick }) => {
   const { t } = useTranslation();
+
+  const [step, setStep] = useState(0);
+
+  useEffect(() => {
+    if (show) {
+      setStep(0);
+    }
+  }, [show]);
 
   return (
     <section className={classnames(['page', 'tutorial', { show }])}>
@@ -34,16 +44,28 @@ export const Tutorial = ({ id, show, onClick }) => {
         </div>
         <div className="panel__center">
           <div className="panel__wrap">
-            <p>{t(`${id}.tutorial.instructions.0`)}</p>
+            <p>{t(`${id}.tutorial.instructions.${step}`)}</p>
 
             <div className="panel__icon">
-              {id == 'cleaning' && <TutorialCleaning />}
-              {id == 'filling' && <TutorialFilling />}
-              {id == 'grouping' && <TutorialGrouping />}
+              {id == 'cleaning' && <TutorialCleaning0 />}
+              {/* {id == 'cleaning' && step == 1 && <TutorialCleaning1 />} */}
+              {id == 'filling' && step == 0 && <TutorialFilling0 />}
+              {id == 'filling' && step == 1 && <TutorialFilling1 />}
+              {id == 'grouping' && step == 0 && <TutorialGrouping0 />}
+              {id == 'grouping' && step == 1 && <TutorialGrouping1 />}
             </div>
           </div>
         </div>
-        <div className="panel__bottom"></div>
+        <div className="panel__bottom">
+          <Pagination
+            show={show}
+            steps={steps}
+            step={step}
+            setStep={setStep}
+            onComplete={onClick}
+            stepTime={stepTime}
+          />
+        </div>
       </motion.div>
 
       <div className="page__bottom">
@@ -51,7 +73,7 @@ export const Tutorial = ({ id, show, onClick }) => {
           show={show}
           delay={show ? 0.4 : 0}
           onClick={onClick}
-          auto={show ? 10 : 0}
+          auto={show ? stepTime * steps : 0}
         >
           {t(`${id}.tutorial.cta`)}
         </ButtonPrimary>

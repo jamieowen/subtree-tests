@@ -1,0 +1,32 @@
+@import "@/styles/shared.sass"
+
+.tutorial-grouping1
+  +full
+  +flex-row
+  overflow: hidden
+
+  .fall-wrap
+    +full
+    animation: fall 1s linear infinite
+
+  svg
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    margin: auto
+    height: 12rem
+    overflow: visible
+
+    &:nth-child(2)
+      transform: translateY(-15rem)
+
+    &:nth-child(3)
+      transform: translateY(-30rem)
+  
+
+@keyframes fall
+  0%
+    transform: translateY(0)
+  100%
+    transform: translateY(15rem)

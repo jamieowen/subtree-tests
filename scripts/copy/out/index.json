@@ -36,7 +36,8 @@
         "preheading": "How many can you wash?",
         "heading": "How to Play",
         "instructions": [
-          "Drag & Align"
+          "Drag and\r\nalign bottles",
+          "Press\r\nto spray water"
         ],
         "cta": "Start"
       },
@@ -65,7 +66,8 @@
         "preheading": "Fill as many bottles as you can.\r\nBut hurry up, the clock is ticking.",
         "heading": "How to Play",
         "instructions": [
-          "Press & Hold to Fill Bottles"
+          "Press & Hold\r\nto fill bottles",
+          "Fill every bottle\r\nto the line"
         ],
         "cta": "Start"
       },
@@ -94,7 +96,8 @@
         "preheading": "How many bottles\r\ncan you catch?",
         "heading": "How to Play",
         "instructions": [
-          "Drag crate left/right\r\nto catch bottles"
+          "Drag the crate\r\nleft / right",
+          "Catch bottles\r\nas they drop"
         ],
         "cta": "Start"
       },
@@ -142,7 +145,7 @@
       "points": "Agujas"
     },
     "landing": {
-      "heading": "Únase a nosotros el\r\nForma recargable",
+      "heading": "Únase a nosotros el\r\nManera recargable",
       "desc": "Nuestras botellas de vidrio recargables\r\nestán diseñados para ser recargados\r\nal menos 25 veces",
       "cta": "Iniciar experiencia"
     },
@@ -158,7 +161,8 @@
         "preheading": "¿Cuantos puedes lavar?",
         "heading": "Cómo jugar",
         "instructions": [
-          "Arrastrar y alinear"
+          "Arrastra y\r\nalinear botellas",
+          "Prensa\r\nrociar agua"
         ],
         "cta": "Comenzar"
       },
@@ -187,7 +191,8 @@
         "preheading": "Llena tantas botellas como puedas.\r\nPero date prisa, el tiempo corre.",
         "heading": "Cómo jugar",
         "instructions": [
-          "Mantenga presionado para llenar botellas"
+          "Mantenga presionado\r\npara llenar botellas",
+          "Llena cada botella\r\na la linea"
         ],
         "cta": "Comenzar"
       },
@@ -216,7 +221,8 @@
         "preheading": "cuantas botellas\r\n¿puedes atrapar?",
         "heading": "Cómo jugar",
         "instructions": [
-          "Arrastre la caja hacia la izquierda o hacia la derecha\r\ncoger botellas"
+          "Arrastra la caja\r\nizquierda / derecha",
+          "coger botellas\r\nmientras caen"
         ],
         "cta": "Comenzar"
       },
@@ -280,7 +286,8 @@
         "preheading": "Combien pouvez-vous en laver ?",
         "heading": "Comment jouer",
         "instructions": [
-          "Glisser et aligner"
+          "Faites glisser et\r\naligner les bouteilles",
+          "Presse\r\npulvériser de l'eau"
         ],
         "cta": "Commencer"
       },
@@ -309,7 +316,8 @@
         "preheading": "Remplissez autant de bouteilles que possible.\r\nMais dépêchez-vous, le temps presse.",
         "heading": "Comment jouer",
         "instructions": [
-          "Appuyez et maintenez pour remplir les bouteilles"
+          "Appuyez et maintenez\r\nremplir des bouteilles",
+          "Remplissez chaque bouteille\r\nà la ligne"
         ],
         "cta": "Commencer"
       },
@@ -338,7 +346,8 @@
         "preheading": "Combien de bouteilles\r\npeux-tu attraper ?",
         "heading": "Comment jouer",
         "instructions": [
-          "Faites glisser la caisse vers la gauche/droite\r\nattraper des bouteilles"
+          "Faites glisser la caisse\r\ngauche / droite",
+          "Récupérer des bouteilles\r\nalors qu'ils tombent"
         ],
         "cta": "Commencer"
       },

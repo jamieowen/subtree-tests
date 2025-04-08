@@ -4,12 +4,15 @@
   // opacity: 1 !important
   +flex-col(space-between, stretch)
   --border: 0.2rem solid rgba(255,255,255,0.2)
+
+  .page__top
+    flex: 0.5
   
   .panel
     position: relative
     width: 27.6rem
     aspect-ratio: 276 / 398
-    aspect-ratio: 276 / 334
+    // aspect-ratio: 276 / 334
     +flex-col(center, stretch)
     background: rgba(255,255,255,0.2)
     backdrop-filter: blur(7px)
@@ -46,7 +49,7 @@
     &__bottom
       aspect-ratio: 276 / 58
       border-top: var(--border)
-      display: none
+      // display: none
 
     &__center
       position: relative

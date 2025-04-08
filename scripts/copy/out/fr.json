@@ -38,7 +38,8 @@
       "preheading": "Combien pouvez-vous en laver ?",
       "heading": "Comment jouer",
       "instructions": [
-        "Glisser et aligner"
+        "Faites glisser et\r\naligner les bouteilles",
+        "Presse\r\npulvériser de l'eau"
       ],
       "cta": "Commencer"
     },
@@ -67,7 +68,8 @@
       "preheading": "Remplissez autant de bouteilles que possible.\r\nMais dépêchez-vous, le temps presse.",
       "heading": "Comment jouer",
       "instructions": [
-        "Appuyez et maintenez pour remplir les bouteilles"
+        "Appuyez et maintenez\r\nremplir des bouteilles",
+        "Remplissez chaque bouteille\r\nà la ligne"
       ],
       "cta": "Commencer"
     },
@@ -96,7 +98,8 @@
       "preheading": "Combien de bouteilles\r\npeux-tu attraper ?",
       "heading": "Comment jouer",
       "instructions": [
-        "Faites glisser la caisse vers la gauche/droite\r\nattraper des bouteilles"
+        "Faites glisser la caisse\r\ngauche / droite",
+        "Récupérer des bouteilles\r\nalors qu'ils tombent"
       ],
       "cta": "Commencer"
     },

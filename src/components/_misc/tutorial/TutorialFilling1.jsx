@@ -1,8 +1,8 @@
-import './TutorialFilling.sass';
+import './TutorialFilling1.sass';
 
-export const TutorialFilling = () => {
+export const TutorialFilling1 = () => {
   return (
-    <div className="tutorial-filling">
+    <div className="tutorial-filling1">
       <img
         src="/assets/images-next/filling-tutorial-outline.webp"
         className="bottle-outline"
@@ -14,6 +14,11 @@ export const TutorialFilling = () => {
           className="bottle-solid"
         />
       </div>
+
+      <img
+        src="/assets/images-next/filling-tutorial-line.svg"
+        className="bottle-line"
+      />
     </div>
   );
 };

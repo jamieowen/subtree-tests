@@ -1,0 +1,53 @@
+@import "@/styles/shared.sass"
+
+.tutorial-filling1
+  +full
+  +flex-row
+  overflow: hidden
+
+  .bottle-outline, .bottle-solid
+    +center-img
+    height: 100%
+
+  .bottle-solid-wrap
+    position: relative
+    height: 100%
+    width: 100%
+    transform: translateY(50%)
+    overflow: hidden
+    filter: brightness(100)
+
+    animation: fill 2s ease-in-out infinite
+
+    img
+      transform: translateY(-50%)
+
+      animation: fill-inverse 2s ease-in-out infinite
+
+  .bottle-line
+    position: absolute
+    top: 20%
+    left: 50%
+    transform: translateX(-50%)
+    width: 6.2rem
+
+
+@keyframes fill
+  0%
+    transform: translateY(100%)
+  70%
+    transform: translateY(0%)
+  100%
+    transform: translateY(0%)
+
+@keyframes fill-inverse
+  0%
+    transform: translateY(-100%)
+  70%
+    transform: translateY(0%)
+    opacity: 1
+  100%
+    transform: translateY(0%)
+    opacity: 0
+
+    

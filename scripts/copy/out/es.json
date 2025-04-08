@@ -22,7 +22,7 @@
     "points": "Agujas"
   },
   "landing": {
-    "heading": "Únase a nosotros el\r\nForma recargable",
+    "heading": "Únase a nosotros el\r\nManera recargable",
     "desc": "Nuestras botellas de vidrio recargables\r\nestán diseñados para ser recargados\r\nal menos 25 veces",
     "cta": "Iniciar experiencia"
   },
@@ -38,7 +38,8 @@
       "preheading": "¿Cuantos puedes lavar?",
       "heading": "Cómo jugar",
       "instructions": [
-        "Arrastrar y alinear"
+        "Arrastra y\r\nalinear botellas",
+        "Prensa\r\nrociar agua"
       ],
       "cta": "Comenzar"
     },
@@ -67,7 +68,8 @@
       "preheading": "Llena tantas botellas como puedas.\r\nPero date prisa, el tiempo corre.",
       "heading": "Cómo jugar",
       "instructions": [
-        "Mantenga presionado para llenar botellas"
+        "Mantenga presionado\r\npara llenar botellas",
+        "Llena cada botella\r\na la linea"
       ],
       "cta": "Comenzar"
     },
@@ -96,7 +98,8 @@
       "preheading": "cuantas botellas\r\n¿puedes atrapar?",
       "heading": "Cómo jugar",
       "instructions": [
-        "Arrastre la caja hacia la izquierda o hacia la derecha\r\ncoger botellas"
+        "Arrastra la caja\r\nizquierda / derecha",
+        "coger botellas\r\nmientras caen"
       ],
       "cta": "Comenzar"
     },

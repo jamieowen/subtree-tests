@@ -67,6 +67,7 @@ export const Cleaning = ({ show, ...props }) => {
         id="cleaning"
         show={show && section == 'tutorial'}
         onClick={nextSection}
+        steps={1}
       />
 
       {completed && show && (

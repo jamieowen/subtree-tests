@@ -1,7 +1,7 @@
-import './TutorialGrouping.sass';
+import './TutorialGrouping0.sass';
 import { gsap } from 'gsap';
 
-export const TutorialGrouping = () => {
+export const TutorialGrouping0 = () => {
   const refNub = useRef(null);
 
   useEffect(() => {
@@ -19,7 +19,7 @@ export const TutorialGrouping = () => {
   }, []);
 
   return (
-    <div className="tutorial-grouping">
+    <div className="tutorial-grouping0">
       <div className="circle">
         <div
           className="nub"
