@@ -31,30 +31,29 @@ export const Ending = ({ show, ...props }) => {
 
   return (
     <div className={classnames(['page', 'page-opacity', 'ending', { show }])}>
-      {showIntro && <BottleBg />}
-
       {/* <img
         className="glow"
         src="/assets/images-next/ending-glow.webp"
       /> */}
 
-      <AnimatePresence>
-        {showVideo && (
-          <VideoPlayer
-            key="ending-video"
-            src="/assets/videos/ending.mp4"
-            poster={urls.i_ending}
-            onEnd={() => {
-              nextSection();
-            }}
-            exit={{ opacity: 0 }}
-            showSkip={section == 'video'}
-          />
-        )}
-      </AnimatePresence>
+      <VideoPlayer
+        key="ending-video"
+        src="/assets/videos/ending.mp4"
+        poster={urls.i_ending}
+        onEnd={() => {
+          nextSection();
+        }}
+        showSkip={section == 'video'}
+      />
+
+      <BottleBg show={showIntro} />
 
       <div
-        className={classnames(['page', 'page-opacity', { show: showIntro }])}
+        className={classnames([
+          'page relative',
+          'page-opacity',
+          { show: showIntro },
+        ])}
       >
         <div className="page__top" />
 
