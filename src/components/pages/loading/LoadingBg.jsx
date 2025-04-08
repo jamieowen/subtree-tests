@@ -8,46 +8,46 @@ export const LoadingBg = () => {
   const refFill = useRef(null);
   const [enableMask, setEnableMask] = useState(false);
 
-  // useEffect(() => {
-  //   if (!completed) return;
-  //   setEnableMask(true);
-  //   let tl = gsap.timeline({
-  //     onComplete: () => {
-  //       refRoot.current.style.display = 'none';
-  //     },
-  //   });
-  //   tl.add('start');
-  //   tl.to(
-  //     [
-  //       refRoot.current.querySelector('.fill'),
-  //       refRoot.current.querySelector('.stroke'),
-  //     ],
-  //     {
-  //       opacity: 0,
-  //       duration: 0.5,
-  //       ease: 'power2.inOut',
-  //     },
-  //     'start'
-  //   );
+  useEffect(() => {
+    if (!completed) return;
+    setEnableMask(true);
+    let tl = gsap.timeline({
+      onComplete: () => {
+        refRoot.current.style.display = 'none';
+      },
+    });
+    tl.add('start');
+    tl.to(
+      [
+        refRoot.current.querySelector('.fill'),
+        refRoot.current.querySelector('.stroke'),
+      ],
+      {
+        opacity: 0,
+        duration: 0.5,
+        ease: 'power2.inOut',
+      },
+      'start'
+    );
 
-  //   let mask = refRoot.current.querySelector('.bottleMaskInvert');
-  //   tl.to(
-  //     mask,
-  //     {
-  //       scale: 20,
-  //       rotation: '30deg',
-  //       transformOrigin: 'center',
-  //       ease: 'back.in(0.3)',
-  //       duration: 1.2,
-  //     },
-  //     'start+=0.1'
-  //   );
-  // }, [completed]);
+    let mask = refRoot.current.querySelector('.bottleMaskInvert');
+    tl.to(
+      mask,
+      {
+        scale: 20,
+        rotation: '30deg',
+        transformOrigin: 'center',
+        ease: 'back.in(0.3)',
+        duration: 1.2,
+      },
+      'start+=0.1'
+    );
+  }, [completed]);
 
-  // useEffect(() => {
-  //   let box = refFill.current.getBBox();
-  //   console.log(box);
-  // }, []);
+  useEffect(() => {
+    let box = refFill.current.getBBox();
+    console.log(box);
+  }, []);
 
   return (
     <svg

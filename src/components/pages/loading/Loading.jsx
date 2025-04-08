@@ -12,6 +12,7 @@ export const Loading = ({ ...props }) => {
 
   const { completed } = useAssetProgress();
 
+  const ready = useAppStore((state) => state.ready);
   const setReady = useAppStore((state) => state.setReady);
 
   useEffect(() => {
@@ -26,7 +27,7 @@ export const Loading = ({ ...props }) => {
   }, [completed]);
 
   return (
-    <div className={classNames(['Loading', { hide: !completed }])}>
+    <div className={classNames(['Loading', { hide: ready }])}>
       <LoadingBg />
       <div className="content">
         <LoadingPercent show={true} />
