@@ -75,7 +75,11 @@
     },
     "game": {
       "ready": "Se préparer!",
-      "cta": "Appuyez et maintenez",
+      "cta": {
+        "press": "Appuyez et maintenez",
+        "hold": "Continuez à tenir",
+        "release": "Libérer"
+      },
       "time": "Temps restant",
       "points": "Points"
     },

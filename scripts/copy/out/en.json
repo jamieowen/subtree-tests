@@ -72,7 +72,11 @@
     },
     "game": {
       "ready": "Get Ready!",
-      "cta": "Press & Hold",
+      "cta": {
+        "press": "Press & Hold",
+        "hold": "Keep Holding",
+        "release": "Release"
+      },
       "time": "Time left",
       "points": "Points"
     },

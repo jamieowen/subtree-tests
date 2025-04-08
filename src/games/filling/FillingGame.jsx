@@ -144,7 +144,7 @@ export const FillingGame = forwardRef(({ show, onEnded }, ref) => {
           className="btn-cta"
           show={show && started}
         >
-          {t('filling.game.cta')}
+          {t('filling.game.cta.press')}
         </ButtonPrimary>
       </div>
 

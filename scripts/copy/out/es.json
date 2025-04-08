@@ -22,7 +22,7 @@
     "points": "Agujas"
   },
   "landing": {
-    "heading": "Únase a nosotros el\r\nManera recargable",
+    "heading": "Únase a nosotros el\r\nForma recargable",
     "desc": "Nuestras botellas de vidrio recargables\r\nestán diseñados para ser recargados\r\nal menos 25 veces",
     "cta": "Iniciar experiencia"
   },
@@ -75,7 +75,11 @@
     },
     "game": {
       "ready": "¡Prepararse!",
-      "cta": "Mantenga presionado",
+      "cta": {
+        "press": "Mantenga presionado",
+        "hold": "Sigue sosteniendo",
+        "release": "Liberar"
+      },
       "time": "Tiempo restante",
       "points": "Agujas"
     },
