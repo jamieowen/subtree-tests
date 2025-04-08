@@ -1,5 +1,6 @@
 import './CleaningGame.sass';
 import classnames from 'classnames';
+import { urls } from '@/config/assets';
 import { three } from '@/tunnels';
 import { useCleaningStore } from '@/stores/cleaning';
 import { Box } from '@react-three/drei';
@@ -10,7 +11,7 @@ export const CleaningGame = forwardRef(({ show, onEnded }, ref) => {
   const { t } = useTranslation();
   const count = useCleaningStore((state) => state.count);
   const points = useMemo(() => count, [count]);
-  const duration = 20;
+  const duration = 20 * 100000000;
 
   const [started, setStarted] = useState(false);
 
@@ -34,6 +35,11 @@ export const CleaningGame = forwardRef(({ show, onEnded }, ref) => {
     },
   }));
 
+  const [t_hanger_back, t_hanger_front] = useAsset([
+    urls.t_hanger_back,
+    urls.t_hanger_front,
+  ]);
+
   return (
     <section
       className={classnames(['page', 'game', 'game-cleaning', { show }])}
@@ -43,7 +49,7 @@ export const CleaningGame = forwardRef(({ show, onEnded }, ref) => {
           {/* <BackgroundColor color={0x84b792} /> */}
 
           <PerspectiveCamera
-            position={[0, 1, 6]}
+            position={[0, 1.77, 4.5]}
             makeDefault
           />
 
@@ -69,6 +75,8 @@ export const CleaningGame = forwardRef(({ show, onEnded }, ref) => {
           </CleaningConveyorBelt>
 
           <CleaningNozzle />
+
+          <CleaningHanger />
 
           <CleaningSystemControls
             ref={refControls}

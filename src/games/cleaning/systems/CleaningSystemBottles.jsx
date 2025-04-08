@@ -41,7 +41,7 @@ export const CleaningSystemBottles = ({
     CleaningECS.world.addComponent(entity, 'cleaning', true);
     let tl = gsap.timeline();
 
-    tl.to(entity.position, { y: -0.1, duration: 0.1 });
+    tl.to(entity.position, { y: -0.25, duration: 0.1 });
     tl.to(entity, {
       progress: 1,
       y: 0.5,
