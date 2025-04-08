@@ -96,6 +96,7 @@ export const Results = ({
     let tl = gsap.timeline();
     _tl.current = tl;
     tl.add('start');
+
     tl.to(refRoot.current, {
       opacity: 0,
       duration: 0.3,

@@ -17,19 +17,19 @@ export const Intro = ({ id, show, onClick }) => {
 
       <Heading1
         show={show}
-        delay={0.2}
+        delay={0}
       >
         {t(`${id}.intro.heading`)}
       </Heading1>
       <Paragraph1
         show={show}
-        delay={0.4}
+        delay={0.2}
       >
         {t(`${id}.intro.desc`)}
       </Paragraph1>
       <ButtonPrimary
         show={show}
-        delay={0.6}
+        delay={0.4}
         onClick={onClick}
       >
         {t('cleaning.intro.cta')}

@@ -31,6 +31,7 @@ export const BottleBg = ({ show }) => {
         y: '-50%',
         duration: 15,
         ease: 'none',
+        repeat: -1,
       }
     );
   });

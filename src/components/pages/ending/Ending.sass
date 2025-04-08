@@ -2,20 +2,22 @@
 
 .ending
   +flex-col
-  padding-top: calc(var(--header-height))
-  padding-bottom: calc(env(safe-area-inset-bottom) + 6rem)
+  // padding-top: calc(var(--header-height))
+  // padding-bottom: calc(env(safe-area-inset-bottom) + 6rem)
 
 
   >.page
     +flex-col(space-between, stretch)
+    padding: 0 !important
 
     .page__top
-      // flex: 0.5
+      flex: 0.5
 
     .page__center
       +flex-col
       gap: 2rem
       transform: translateY(-8%)
+      aspect-ratio: auto
 
   .btn-secondary
     margin-top: 1rem
