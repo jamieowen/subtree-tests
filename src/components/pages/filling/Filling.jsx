@@ -8,7 +8,6 @@ export const Filling = ({ show, ...props }) => {
   const { t } = useTranslation();
   const setPage = useAppStore((state) => state.setPage);
 
-  const duration = useFillingStore((state) => state.config.duration);
   const count = useFillingStore((state) => state.count);
   const setCount = useFillingStore((state) => state.setCount);
   const resetCount = useFillingStore((state) => state.resetCount);

@@ -81,6 +81,7 @@ export const Ending = ({ show, ...props }) => {
             }}
           >
             {t('ending.restart')}
+            <div className="line" />
           </motion.button>
         </div>
 

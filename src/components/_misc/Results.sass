@@ -12,17 +12,21 @@
 
   
   .scores
+    position: relative
     +flex-row
     gap: 1rem
 
     li
       width: 10.4rem
       aspect-ratio: 104 / 118
-      background: white
       color: black
-      border-radius: 1.4rem
       +flex-col
-      box-shadow: 0 0rem 2rem 0.5rem rgba(0,0,0, 0.1)
+
+      .bg
+        +full
+        background: white
+        border-radius: 1.4rem
+        box-shadow: 0 0rem 2rem 0.5rem rgba(0,0,0, 0.1)
 
       .value
         font-family: $font-tccc
@@ -42,4 +46,6 @@
         margin-top: 0.5rem
 
   .btn-secondary
+    position: relative
     pointer-events: all
+    
