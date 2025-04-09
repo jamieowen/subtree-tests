@@ -24,7 +24,7 @@ export const LoadingBg = () => {
       ],
       {
         opacity: 0,
-        duration: 0.5,
+        duration: 0.2,
         ease: 'power2.inOut',
       },
       'start'
@@ -37,8 +37,8 @@ export const LoadingBg = () => {
         scale: 20,
         rotation: '30deg',
         transformOrigin: 'center',
-        ease: 'back.in(0.3)',
-        duration: 1.2,
+        ease: 'back.in(0.6)',
+        duration: 0.8,
       },
       'start+=0.1'
     );
