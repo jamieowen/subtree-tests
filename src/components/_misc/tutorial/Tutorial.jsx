@@ -1,6 +1,7 @@
 import './Tutorial.sass';
 import classnames from 'classnames';
 import IconPanel from '@/assets/panel.svg?react';
+import { useDrag } from '@use-gesture/react';
 
 const stepTime = 6;
 
@@ -8,12 +9,30 @@ export const Tutorial = ({ id, show, steps = 2, onClick }) => {
   const { t } = useTranslation();
 
   const [step, setStep] = useState(0);
+  const nextStep = () => {
+    if (step == steps - 1) return;
+    setStep(step + 1);
+  };
+  const prevStep = () => {
+    if (step == 0) return;
+    setStep(step - 1);
+  };
 
   useEffect(() => {
     if (show) {
       setStep(0);
     }
   }, [show]);
+
+  const refPanel = useRef(null);
+  const bind = useDrag((state) => {
+    console.log(state.swipe[0], step);
+    if (state.swipe[0] == 1) {
+      prevStep();
+    } else if (state.swipe[0] == -1) {
+      nextStep();
+    }
+  });
 
   return (
     <section className={classnames(['page', 'tutorial', { show }])}>
@@ -42,7 +61,11 @@ export const Tutorial = ({ id, show, steps = 2, onClick }) => {
         <div className="panel__top">
           <div className="panel__heading">{t(`${id}.tutorial.heading`)}</div>
         </div>
-        <div className="panel__center">
+        <div
+          className="panel__center"
+          ref={refPanel}
+          {...bind()}
+        >
           <div className="panel__wrap">
             <p>{t(`${id}.tutorial.instructions.${step}`)}</p>
 
