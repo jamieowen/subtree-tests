@@ -7,6 +7,7 @@ import {
   getUrlInt,
   getUrlFloat,
 } from '@/helpers/UrlParam';
+import { Howler } from 'howler';
 
 export const useAppStore = create((set) => ({
   // ****************************************
@@ -45,14 +46,16 @@ export const useAppStore = create((set) => ({
   // ****************************************
   // MUTED
   // ****************************************
-  muted: true,
+  muted: false,
   setMuted: (val) =>
     set((state) => {
+      Howler.mute(val);
       return { muted: val };
     }),
   toggleMuted: () =>
     set((state) => {
       let val = !state.muted;
+      Howler.mute(val);
       return { muted: val };
     }),
 
