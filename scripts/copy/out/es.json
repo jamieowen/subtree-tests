@@ -25,7 +25,7 @@
     "no": "No"
   },
   "landing": {
-    "heading": "Únase a nosotros el\r\nForma recargable",
+    "heading": "Únase a nosotros el\r\nManera recargable",
     "desc": "Nuestras botellas de vidrio recargables\r\nestán diseñados para ser recargados\r\nal menos 25 veces",
     "cta": "Iniciar experiencia"
   },
@@ -94,7 +94,7 @@
     }
   },
   "grouping": {
-    "name": "Agrupación y Paletizado",
+    "name": "embalaje",
     "step": "Estación 3/3",
     "intro": {
       "heading": "Paso final.",

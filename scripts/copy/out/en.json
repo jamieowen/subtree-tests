@@ -91,7 +91,7 @@
     }
   },
   "grouping": {
-    "name": "Grouping & Palletizing",
+    "name": "Crating",
     "step": "Station 3/3",
     "intro": {
       "heading": "Final Step.",
