@@ -7,7 +7,7 @@ import { Box } from '@react-three/drei';
 import { CleaningECS } from './state';
 import { PerspectiveCamera, Grid } from '@react-three/drei';
 
-export const CleaningGame = forwardRef(({ show, onEnded }, ref) => {
+export const CleaningGame = forwardRef(({ visible, show, onEnded }, ref) => {
   const { t } = useTranslation();
   const count = useCleaningStore((state) => state.count);
   const points = useMemo(() => count, [count]);
@@ -45,7 +45,7 @@ export const CleaningGame = forwardRef(({ show, onEnded }, ref) => {
       className={classnames(['page', 'game', 'game-cleaning', { show }])}
     >
       <three.In>
-        <group visible={show}>
+        <group visible={visible}>
           {/* <BackgroundColor color={0x84b792} /> */}
 
           <PerspectiveCamera
@@ -85,6 +85,8 @@ export const CleaningGame = forwardRef(({ show, onEnded }, ref) => {
           <CleaningSystemBottles playing={playing} />
           <CleaningSystemGraphics />
         </group>
+
+        <PreCompile />
       </three.In>
 
       <div className="contents">

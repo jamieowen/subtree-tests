@@ -71,6 +71,7 @@ export const Cleaning = ({ show, ...props }) => {
       {completed && show && (
         <CleaningGame
           ref={refGame}
+          visible={show && section != 'intro'}
           show={show && section == 'game'}
           onEnded={nextSection}
         />

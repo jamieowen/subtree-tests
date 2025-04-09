@@ -70,6 +70,7 @@ export const Grouping = ({ show, ...props }) => {
       {completed && show && (
         <GroupingGame
           ref={refGame}
+          visible={show && section != 'intro'}
           show={show && section == 'game'}
           onEnded={nextSection}
         />

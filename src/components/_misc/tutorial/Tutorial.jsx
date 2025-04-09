@@ -2,10 +2,11 @@ import './Tutorial.sass';
 import classnames from 'classnames';
 import IconPanel from '@/assets/panel.svg?react';
 import { useDrag } from '@use-gesture/react';
+import gsap from 'gsap';
 
 const stepTime = 6;
 
-export const Tutorial = ({ id, show, steps = 2, onClick }) => {
+export const Tutorial = memo(({ id, show, steps = 2, onClick }) => {
   const { t } = useTranslation();
 
   const [step, setStep] = useState(0);
@@ -24,6 +25,11 @@ export const Tutorial = ({ id, show, steps = 2, onClick }) => {
     }
   }, [show]);
 
+  // ***************************************************************************
+  //
+  // SWIPE
+  //
+  // ***************************************************************************
   const refPanel = useRef(null);
   const bind = useDrag((state) => {
     console.log(state.swipe[0], step);
@@ -34,29 +40,126 @@ export const Tutorial = ({ id, show, steps = 2, onClick }) => {
     }
   });
 
+  // ***************************************************************************
+  //
+  // SWIPE
+  //
+  // ***************************************************************************
+  const refRoot = useRef(null);
+  const { contextSafe } = useGSAP({ scope: refRoot });
+
+  const _tl = useRef(null);
+
+  const reset = contextSafe(() => {
+    console.log('reset', id);
+    if (_tl.current) _tl.current.kill();
+    let tl = gsap.timeline();
+    _tl.current = tl;
+    tl.add('reset');
+    tl.set('.preheading', { opacity: 0 }, 'reset');
+    tl.set('.panel', { opacity: 0, scale: 0.5 }, 'reset');
+    tl.set('.panel__heading', { opacity: 0, y: 20 }, 'reset');
+    tl.set('.panel__text', { opacity: 0, y: 20 }, 'reset');
+  });
+
+  const animateIn = contextSafe(() => {
+    reset();
+
+    console.log('animateIn', id);
+
+    if (_tl.current) _tl.current.kill();
+    let tl = gsap.timeline();
+    _tl.current = tl;
+
+    // RESET
+
+    // START
+    tl.add('start');
+    tl.to(
+      '.preheading',
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.5,
+        ease: 'back.out(2)',
+      },
+      'start'
+    );
+
+    tl.to(
+      '.panel',
+      {
+        opacity: 1,
+        scale: 1,
+        duration: 0.5,
+        ease: 'back.out(2)',
+      },
+      'start+=0.2'
+    );
+
+    tl.to(
+      ['.panel__heading', '.panel__text'],
+      { opacity: 1, y: 0, duration: 0.5, ease: 'back.out(2)', stagger: 0.2 },
+      'start+=0.15'
+    );
+  });
+
+  const animateOut = contextSafe(() => {
+    console.log('animateOut', id);
+
+    if (_tl.current) _tl.current.kill();
+    let tl = gsap.timeline();
+    _tl.current = tl;
+
+    tl.add('start');
+    tl.to(
+      ['.preheading', '.panel__heading', '.panel__text'],
+      {
+        opacity: 0,
+        duration: 0.3,
+        ease: 'power2.out',
+      },
+      'start'
+    );
+
+    tl.to(
+      '.panel',
+      {
+        opacity: 0,
+        scale: 0.5,
+        duration: 0.3,
+        ease: 'back.in(2)',
+      },
+      'start+=0.2'
+    );
+  });
+
+  useEffect(reset, []);
+
+  const firstUpdate = useRef(true);
+  useEffect(() => {
+    if (firstUpdate.current) {
+      firstUpdate.current = false;
+      return;
+    }
+
+    if (show) {
+      animateIn();
+    } else {
+      animateOut();
+    }
+  }, [show]);
+
   return (
-    <section className={classnames(['page', 'tutorial', { show }])}>
+    <section
+      className={classnames(['page', 'tutorial', { show }])}
+      ref={refRoot}
+    >
       <div className="page__top">
-        <motion.div
-          className="preheading"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: show ? 1 : 0 }}
-          transition={{ duration: 0.3, delay: show ? 0.2 : 0 }}
-        >
-          {t(`${id}.tutorial.preheading`)}
-        </motion.div>
+        <div className="preheading">{t(`${id}.tutorial.preheading`)}</div>
       </div>
 
-      <motion.div
-        className="page__center panel"
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ opacity: show ? 1 : 0, scale: show ? 1 : 0.8 }}
-        transition={{
-          duration: show ? 0.3 : 0.2,
-          delay: show ? 0.3 : 0,
-          ease: 'backOut',
-        }}
-      >
+      <div className="page__center panel">
         <IconPanel className="panel__frame" />
         <div className="panel__top">
           <div className="panel__heading">{t(`${id}.tutorial.heading`)}</div>
@@ -67,7 +170,9 @@ export const Tutorial = ({ id, show, steps = 2, onClick }) => {
           {...bind()}
         >
           <div className="panel__wrap">
-            <p>{t(`${id}.tutorial.instructions.${step}`)}</p>
+            <p className="panel__text">
+              {t(`${id}.tutorial.instructions.${step}`)}
+            </p>
 
             <div className="panel__icon">
               {id == 'cleaning' && <TutorialCleaning0 />}
@@ -89,7 +194,7 @@ export const Tutorial = ({ id, show, steps = 2, onClick }) => {
             stepTime={stepTime}
           />
         </div>
-      </motion.div>
+      </div>
 
       <div className="page__bottom">
         <ButtonPrimary
@@ -103,4 +208,4 @@ export const Tutorial = ({ id, show, steps = 2, onClick }) => {
       </div>
     </section>
   );
-};
+});

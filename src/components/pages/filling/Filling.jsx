@@ -82,6 +82,7 @@ export const Filling = ({ show, ...props }) => {
       {completed && show && (
         <FillingGame
           ref={refGame}
+          visible={show && section != 'intro'}
           show={show && section == 'game'}
           onEnded={nextSection}
         />

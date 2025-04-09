@@ -47,7 +47,7 @@ export const textureConfigs = [
   },
 ];
 
-export const FillingGame = forwardRef(({ show, onEnded }, ref) => {
+export const FillingGame = forwardRef(({ visible, show, onEnded }, ref) => {
   const { t } = useTranslation();
   const count = useFillingStore((state) => state.count);
   const points = useMemo(() => count, [count]);
@@ -77,7 +77,7 @@ export const FillingGame = forwardRef(({ show, onEnded }, ref) => {
   return (
     <section className={classnames(['page', 'game', 'game-filling', { show }])}>
       <three.In>
-        <group visible={show}>
+        <group visible={visible}>
           {/* <BackgroundColor color={0x84b792} /> */}
 
           <PerspectiveCamera
@@ -116,6 +116,8 @@ export const FillingGame = forwardRef(({ show, onEnded }, ref) => {
           <FillingSystemBottles />
           <FillingSystemGraphics />
         </group>
+
+        <PreCompile />
       </three.In>
 
       <div className="contents">

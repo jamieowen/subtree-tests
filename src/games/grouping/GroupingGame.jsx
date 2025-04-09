@@ -7,7 +7,7 @@ import { Box } from '@react-three/drei';
 import { GroupingECS } from './state';
 import { PerspectiveCamera, Grid } from '@react-three/drei';
 
-export const GroupingGame = forwardRef(({ show, onEnded }, ref) => {
+export const GroupingGame = forwardRef(({ visible, show, onEnded }, ref) => {
   const { t } = useTranslation();
   const count = useGroupingStore((state) => state.count);
   const points = useMemo(() => count, [count]);
@@ -40,7 +40,7 @@ export const GroupingGame = forwardRef(({ show, onEnded }, ref) => {
       className={classnames(['page', 'game', 'game-grouping', { show }])}
     >
       <three.In>
-        <group visible={show}>
+        <group visible={visible}>
           {/* <BackgroundColor color={0x84b792} /> */}
 
           <PerspectiveCamera
@@ -75,6 +75,8 @@ export const GroupingGame = forwardRef(({ show, onEnded }, ref) => {
           <GroupingSystemGraphics />
           <GroupingSystemControls playing={playing} />
         </group>
+
+        <PreCompile />
       </three.In>
 
       <div className="contents">
