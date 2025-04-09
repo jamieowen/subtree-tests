@@ -16,7 +16,10 @@
     "loading": "Loading",
     "skip": "Skip",
     "bottles": "Bottles",
-    "points": "Points"
+    "points": "Points",
+    "quit": "Want to\r\nquit game?",
+    "yes": "Yes",
+    "no": "No"
   },
   "landing": {
     "heading": "Join us the\r\nRefillable Way",

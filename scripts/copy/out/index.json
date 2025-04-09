@@ -17,7 +17,10 @@
       "loading": "Loading",
       "skip": "Skip",
       "bottles": "Bottles",
-      "points": "Points"
+      "points": "Points",
+      "quit": "Want to\r\nquit game?",
+      "yes": "Yes",
+      "no": "No"
     },
     "landing": {
       "heading": "Join us the\r\nRefillable Way",
@@ -146,7 +149,10 @@
       "loading": "Cargando",
       "skip": "Saltar",
       "bottles": "botellas",
-      "points": "Agujas"
+      "points": "Agujas",
+      "quit": "quiero\r\nabandonar el juego?",
+      "yes": "Sí",
+      "no": "No"
     },
     "landing": {
       "heading": "Únase a nosotros el\r\nForma recargable",
@@ -275,7 +281,10 @@
       "loading": "Chargement",
       "skip": "Sauter",
       "bottles": "Bouteilles",
-      "points": "Points"
+      "points": "Points",
+      "quit": "Je veux\r\nquitter le jeu ?",
+      "yes": "Oui",
+      "no": "Non"
     },
     "landing": {
       "heading": "Rejoignez-nous le\r\nManière rechargeable",

@@ -1,5 +1,6 @@
 import './TheHeader.sass';
-import IconAudio from '@/assets/audio.svg?react';
+import IconSoundOn from '@/assets/sound-on.svg?react';
+import IconSoundOff from '@/assets/sound-off.svg?react';
 import IconClose from '@/assets/close.svg?react';
 import IconCocaCola from '@/assets/cocacola.svg?react';
 import { useAppStore } from '@/stores/app';
@@ -11,11 +12,21 @@ export const TheHeader = () => {
   const showLogo = page == '' || page == 'ending';
   const isVideo = page.includes('video');
 
+  const showQuit = useAppStore((state) => state.showQuit);
+  const setShowQuit = useAppStore((state) => state.setShowQuit);
+  const muted = useAppStore((state) => state.muted);
+  const toggleMuted = useAppStore((state) => state.toggleMuted);
+
   return (
     <div className="the-header">
-      <button>
-        <IconAudio />
+      <button
+        className="btn-audio"
+        onClick={() => toggleMuted()}
+      >
+        {!muted && <IconSoundOn />}
+        {muted && <IconSoundOff />}
       </button>
+
       <div className="center">
         <AnimatePresence>
           {showLogo && (
@@ -39,7 +50,10 @@ export const TheHeader = () => {
           )}
         </AnimatePresence>
       </div>
-      <button>
+      <button
+        className="btn-quit"
+        onClick={() => setShowQuit(true)}
+      >
         <IconClose />
       </button>
     </div>

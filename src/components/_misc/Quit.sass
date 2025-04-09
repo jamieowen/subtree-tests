@@ -1,0 +1,46 @@
+
+@import "@/styles/shared.sass"
+
+.quit
+  +full()
+  +flex-col
+
+  &:not(.show)
+    pointer-events: none
+    display: none
+
+  .bg
+    +full
+    background: rgba(0, 0, 0, 0.4)
+
+    img
+      +full
+      object-fit: cover
+
+    
+  .content
+    +full
+    +flex-col
+    text-align: center
+    gap: var(--p5)
+
+    .buttons
+      +flex-row
+      gap: var(--p3)
+
+      button
+        width: 7.5rem
+        min-width: 7.5rem
+        height: 4rem
+        min-height: 4rem
+        +flex-row
+        background: white
+        border-radius: 2rem
+        color: black
+        font-family: $font-tccc
+        font-size: 1.5rem
+        font-weight: 500
+        cursor: pointer
+        border: none
+
+        

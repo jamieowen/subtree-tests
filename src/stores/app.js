@@ -57,6 +57,20 @@ export const useAppStore = create((set) => ({
     }),
 
   // ****************************************
+  // SHOW QUIT
+  // ****************************************
+  showQuit: false,
+  setShowQuit: (val) =>
+    set((state) => {
+      return { showQuit: val };
+    }),
+  toggleShowQuit: () =>
+    set((state) => {
+      let val = !state.showQuit;
+      return { showQuit: val };
+    }),
+
+  // ****************************************
   // PAGE
   // ****************************************
   page: getUrlString('page', ''),

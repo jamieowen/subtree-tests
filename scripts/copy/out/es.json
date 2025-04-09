@@ -19,7 +19,10 @@
     "loading": "Cargando",
     "skip": "Saltar",
     "bottles": "botellas",
-    "points": "Agujas"
+    "points": "Agujas",
+    "quit": "quiero\r\nabandonar el juego?",
+    "yes": "Sí",
+    "no": "No"
   },
   "landing": {
     "heading": "Únase a nosotros el\r\nForma recargable",

@@ -33,6 +33,7 @@ export function App() {
           <TheHeader />
           <Loading />
           <TheGuidelines />
+          <Quit />
         </div>
       </MittProvider>
     </div>

@@ -19,7 +19,10 @@
     "loading": "Chargement",
     "skip": "Sauter",
     "bottles": "Bouteilles",
-    "points": "Points"
+    "points": "Points",
+    "quit": "Je veux\r\nquitter le jeu ?",
+    "yes": "Oui",
+    "no": "Non"
   },
   "landing": {
     "heading": "Rejoignez-nous le\r\nManière rechargeable",
