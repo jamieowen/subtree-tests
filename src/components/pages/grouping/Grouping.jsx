@@ -28,7 +28,7 @@ export const Grouping = ({ show, ...props }) => {
   const refGame = useRef(null);
   const onReplay = () => {
     setCount(0);
-    setSection('intro');
+    setSection('game');
     refGame.current.reset();
   };
 

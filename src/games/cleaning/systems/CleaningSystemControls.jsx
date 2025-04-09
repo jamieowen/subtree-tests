@@ -10,7 +10,7 @@ const lockedEntities = CleaningECS.world.with('locked');
 
 export const CleaningSystemControls = forwardRef(
   (
-    { playing = false, within = 0.25, multiplier = 0.01, oneDirection = false },
+    { playing = false, within = 0.3, multiplier = 0.016, oneDirection = false },
     ref
   ) => {
     const to = useRef(0);

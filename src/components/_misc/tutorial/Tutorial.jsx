@@ -2,7 +2,7 @@ import './Tutorial.sass';
 import classnames from 'classnames';
 import IconPanel from '@/assets/panel.svg?react';
 
-const stepTime = 4;
+const stepTime = 6;
 
 export const Tutorial = ({ id, show, steps = 2, onClick }) => {
   const { t } = useTranslation();
@@ -73,7 +73,7 @@ export const Tutorial = ({ id, show, steps = 2, onClick }) => {
           show={show}
           delay={show ? 0.4 : 0}
           onClick={onClick}
-          auto={show ? stepTime * steps : 0}
+          // auto={show ? stepTime * steps : 0}
         >
           {t(`${id}.tutorial.cta`)}
         </ButtonPrimary>

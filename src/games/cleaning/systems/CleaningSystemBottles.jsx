@@ -45,7 +45,7 @@ export const CleaningSystemBottles = ({
     tl.to(entity, {
       progress: 1,
       y: 0.5,
-      duration: 2,
+      duration: 1.25,
       ease: 'none',
     });
     tl.to(entity.position, { y: 0, duration: 0.1 });
