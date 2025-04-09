@@ -76,7 +76,7 @@ export const Ending = ({ show, ...props }) => {
             animate={{ opacity: showIntro ? 1 : 0, scale: showIntro ? 1 : 0.8 }}
             transition={{
               duration: showIntro ? 0.6 : 0.2,
-              delay: showIntro ? 1.5 : 0,
+              delay: showIntro ? 0.6 : 0,
             }}
           >
             {t('ending.restart')}
@@ -87,7 +87,7 @@ export const Ending = ({ show, ...props }) => {
         <div className="page__bottom">
           <ButtonPrimary
             show={showIntro}
-            delay={2}
+            delay={0.9}
             color="white"
             onClick={onShare}
           >
