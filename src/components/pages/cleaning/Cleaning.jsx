@@ -40,6 +40,8 @@ export const Cleaning = ({ show, ...props }) => {
     AssetService.getAsset('mx_introvideo')?.stop();
     let gameloop = AssetService.getAsset('mx_gameloop');
     if (gameloop) {
+      gameloop.stop();
+      gameloop.currentTime = 0;
       gameloop.loop = true;
       gameloop.play();
     }
