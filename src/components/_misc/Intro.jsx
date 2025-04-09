@@ -6,14 +6,10 @@ export const Intro = ({ id, show, onClick }) => {
 
   return (
     <section className={classnames(['page', 'intro', { show }])}>
-      <motion.div
-        className="step"
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: show ? 1 : 0, scale: show ? 1 : 0.8 }}
-        transition={{ duration: 0.6 }}
-      >
-        <span>{t(`${id}.step`)}</span>
-      </motion.div>
+      <Step
+        id={id}
+        show={show}
+      />
 
       <Heading1
         show={show}

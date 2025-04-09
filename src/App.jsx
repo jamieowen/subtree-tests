@@ -6,6 +6,9 @@ import { ui } from '@/tunnels';
 import { Leva } from 'leva';
 import './App.sass';
 import AssetService from '@/services/AssetService';
+import { useVisibilityChange } from '@uidotdev/usehooks';
+import { Howler } from 'howler';
+import { useAppStore } from '@/stores/app';
 
 import { ColorManagement } from 'three';
 ColorManagement.enabled = true;
@@ -14,9 +17,13 @@ export function App() {
   const { disable } = useContextMenu();
   disable();
 
+  // const documentVisible = useVisibilityChange();
+  // const muted = useAppStore((state) => state.muted);
   // useEffect(() => {
-  //   window.AssetService = AssetService;
-  // }, []);
+  //   if (!muted) {
+  //     Howler.mute(false);
+  //   }
+  // }, [documentVisible]);
 
   return (
     <div

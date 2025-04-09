@@ -1,5 +1,6 @@
 import './VideoPlayer.sass';
 import { useAppStore } from '@/stores/app';
+import { useVisibilityChange } from '@uidotdev/usehooks';
 
 export const VideoPlayer = forwardRef(
   ({ src, poster, autoPlay = true, onEnd, showSkip = true, ...props }, ref) => {
@@ -61,6 +62,14 @@ export const VideoPlayer = forwardRef(
       }
     };
 
+    // REPLAY VIDEO WHEN PAGE IS VISIBLE
+    const documentVisible = useVisibilityChange();
+    useEffect(() => {
+      if (documentVisible && played) {
+        play();
+      }
+    }, [documentVisible]);
+
     return (
       <div
         className="video-player"
@@ -75,7 +84,7 @@ export const VideoPlayer = forwardRef(
         />
         {!playing && !played && <img src={poster} />}
         <AnimatePresence>
-          {showSkip && playing && (
+          {showSkip && played && (
             <button
               className="btn-skip"
               onClick={onSkip}

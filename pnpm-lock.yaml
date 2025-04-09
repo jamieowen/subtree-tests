@@ -56,6 +56,9 @@ importers:
       '@types/three':
         specifier: ^0.174.0
         version: 0.174.0
+      '@uidotdev/usehooks':
+        specifier: ^2.4.1
+        version: 2.4.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@use-gesture/react':
         specifier: ^10.3.1
         version: 10.3.1(react@19.0.0)
@@ -3507,6 +3510,13 @@ packages:
   '@typescript-eslint/visitor-keys@5.62.0':
     resolution: {integrity: sha512-07ny+LHRzQXepkGg6w0mFY41fVUNBrL2Roj/++7V1txKugfjm/Ci/qSND03r2RhlJhJYMcTn9AhhSSqQp0Ysyw==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+
+  '@uidotdev/usehooks@2.4.1':
+    resolution: {integrity: sha512-1I+RwWyS+kdv3Mv0Vmc+p0dPYH0DTRAo04HLyXReYBL9AeseDWUJyi4THuksBJcu9F0Pih69Ak150VDnqbVnXg==}
+    engines: {node: '>=16'}
+    peerDependencies:
+      react: '>=18.0.0'
+      react-dom: '>=18.0.0'
 
   '@unocss/astro@66.1.0-beta.6':
     resolution: {integrity: sha512-LL4DqqMB5D++c5aPZAis1YjzqvwstLVOYwcoXfuA8Ty96/HgCK8XZINpfZUwUND8FqlpFjnqs0NgUm4NkDDexg==}
@@ -13652,6 +13662,11 @@ snapshots:
     dependencies:
       '@typescript-eslint/types': 5.62.0
       eslint-visitor-keys: 3.4.3
+
+  '@uidotdev/usehooks@2.4.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
+    dependencies:
+      react: 19.0.0
+      react-dom: 19.0.0(react@19.0.0)
 
   '@unocss/astro@66.1.0-beta.6(vite@6.2.2(@types/node@22.13.10)(jiti@2.4.2)(sass@1.86.0)(terser@5.39.0)(tsx@4.19.1)(yaml@2.7.0))(vue@3.5.13(typescript@5.6.2))':
     dependencies:
