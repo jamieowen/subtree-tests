@@ -3,7 +3,7 @@ import './TutorialFilling1.sass';
 export const TutorialFilling1 = () => {
   return (
     <div className="tutorial-filling1">
-      <img
+      {/* <img
         src="/assets/images-next/filling-tutorial-outline.webp"
         className="bottle-outline"
       />
@@ -13,7 +13,9 @@ export const TutorialFilling1 = () => {
           src="/assets/images-next/filling-tutorial-solid.webp"
           className="bottle-solid"
         />
-      </div>
+      </div> */}
+
+      <BottleIcon />
 
       <img
         src="/assets/images-next/filling-tutorial-line.svg"
