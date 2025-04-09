@@ -111,6 +111,14 @@ export const ButtonPrimary = ({
     onClick?.();
   };
 
+  const [holding, setHolding] = useState(false);
+  const onPointerDown = () => {
+    setHolding(true);
+  };
+  const onPointerUp = () => {
+    setHolding(false);
+  };
+
   return (
     <div
       ref={refRoot}
@@ -128,11 +136,14 @@ export const ButtonPrimary = ({
         className="wrap button-primary-wrap"
         whileTap={{ scale: 0.95 }}
         onClick={_onClick}
+        onPointerDown={onPointerDown}
+        onPointerUp={onPointerUp}
       >
         <div
           className="progress"
           ref={refProgress}
         />
+        <div className={classnames('holding-circle', { holding })} />
         <span className="label">{children}</span>
       </motion.button>
     </div>
