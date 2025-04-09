@@ -9,8 +9,10 @@ export const TheHeader = () => {
   const { t } = useTranslation();
   const page = useAppStore((state) => state.page);
 
+  console.log('page', page);
+
   const showLogo = page == '' || page == 'ending';
-  const isVideo = page.includes('video');
+  const isVideo = page.includes('video') || page == 'cleaning-intro';
 
   const showQuit = useAppStore((state) => state.showQuit);
   const setShowQuit = useAppStore((state) => state.setShowQuit);
@@ -24,7 +26,7 @@ export const TheHeader = () => {
         onClick={() => toggleMuted()}
       >
         {!muted && <IconSoundOn />}
-        {muted && <IconSoundOff />}
+        {/* {muted && <IconSoundOff />} */}
       </button>
 
       <div className="center">
