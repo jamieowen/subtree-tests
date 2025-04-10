@@ -14,7 +14,7 @@ export const CleaningNozzle = () => {
       <meshBasicMaterial
         map={texture}
         transparent
-        alphaTest={0.5}
+        alphaTest={0.8}
       />
     </mesh>
   );
