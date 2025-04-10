@@ -18,7 +18,7 @@ export const Ending = ({ show, ...props }) => {
 
   const emitter = useMitt();
   const onRestart = () => {
-    emitter.emit('restart');
+    emitter.emit('reset');
     setPage('');
     // window.location.reload();
   };
