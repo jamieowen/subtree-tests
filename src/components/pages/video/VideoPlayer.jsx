@@ -56,7 +56,6 @@ export const VideoPlayer = forwardRef(
     }));
 
     const onClick = () => {
-      console.log('onClick', played);
       if (!played) {
         play();
       }

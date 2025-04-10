@@ -9,8 +9,6 @@ export const TheHeader = () => {
   const { t } = useTranslation();
   const page = useAppStore((state) => state.page);
 
-  console.log('page', page);
-
   const showLogo = page == '' || page == 'ending';
   const isVideo = page.includes('video') || page == 'cleaning-intro';
 

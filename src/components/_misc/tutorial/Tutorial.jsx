@@ -32,7 +32,6 @@ export const Tutorial = memo(({ id, show, steps = 2, onClick }) => {
   // ***************************************************************************
   const refPanel = useRef(null);
   const bind = useDrag((state) => {
-    console.log(state.swipe[0], step);
     if (state.swipe[0] == 1) {
       prevStep();
     } else if (state.swipe[0] == -1) {
@@ -51,12 +50,11 @@ export const Tutorial = memo(({ id, show, steps = 2, onClick }) => {
   const _tl = useRef(null);
 
   const reset = contextSafe(() => {
-    console.log('reset', id);
     if (_tl.current) _tl.current.kill();
     let tl = gsap.timeline();
     _tl.current = tl;
     tl.add('reset');
-    tl.set('.preheading', { opacity: 0 }, 'reset');
+    tl.set('.tutorial__preheading', { opacity: 0 }, 'reset');
     tl.set('.panel', { opacity: 0, scale: 0.5 }, 'reset');
     tl.set('.panel__heading', { opacity: 0, y: 20 }, 'reset');
     tl.set('.panel__text', { opacity: 0, y: 20 }, 'reset');
@@ -64,8 +62,6 @@ export const Tutorial = memo(({ id, show, steps = 2, onClick }) => {
 
   const animateIn = contextSafe(() => {
     reset();
-
-    console.log('animateIn', id);
 
     if (_tl.current) _tl.current.kill();
     let tl = gsap.timeline();
@@ -76,7 +72,7 @@ export const Tutorial = memo(({ id, show, steps = 2, onClick }) => {
     // START
     tl.add('start');
     tl.to(
-      '.preheading',
+      '.tutorial__preheading',
       {
         opacity: 1,
         y: 0,
@@ -105,15 +101,13 @@ export const Tutorial = memo(({ id, show, steps = 2, onClick }) => {
   });
 
   const animateOut = contextSafe(() => {
-    console.log('animateOut', id);
-
     if (_tl.current) _tl.current.kill();
     let tl = gsap.timeline();
     _tl.current = tl;
 
     tl.add('start');
     tl.to(
-      ['.preheading', '.panel__heading', '.panel__text'],
+      ['.tutorial__preheading', '.panel__heading', '.panel__text'],
       {
         opacity: 0,
         duration: 0.3,
@@ -156,7 +150,9 @@ export const Tutorial = memo(({ id, show, steps = 2, onClick }) => {
       ref={refRoot}
     >
       <div className="page__top">
-        <div className="preheading">{t(`${id}.tutorial.preheading`)}</div>
+        <div className="tutorial__preheading">
+          {t(`${id}.tutorial.preheading`)}
+        </div>
       </div>
 
       <div className="page__center panel">
