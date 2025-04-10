@@ -12,7 +12,7 @@ export const CleaningHanger = () => {
     <group scale={1}>
       <mesh
         renderOrder={-2}
-        position-y={2.4}
+        position-y={2.45}
         scale={s}
         scale-y={-s}
       >
@@ -23,7 +23,7 @@ export const CleaningHanger = () => {
       </mesh>
       <mesh
         renderOrder={4}
-        position-y={2.35}
+        position-y={2.5}
         scale={s}
         scale-y={-s}
       >

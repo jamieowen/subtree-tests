@@ -63,6 +63,10 @@ export const Cleaning = ({ show, ...props }) => {
         src={urls.i_cleaning_loop}
         className={classnames(['game-bg', { blurBg }])}
       />
+      {/* <img
+        src={'/assets/images/game-1-gameplay-1.png'}
+        className="artboard"
+      /> */}
 
       <Intro
         id="cleaning"

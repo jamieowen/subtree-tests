@@ -49,7 +49,7 @@ export const CleaningGame = forwardRef(({ visible, show, onEnded }, ref) => {
           {/* <BackgroundColor color={0x84b792} /> */}
 
           <PerspectiveCamera
-            position={[0, 1.77, 4.5]}
+            position={[0, 1.82, 5.2]}
             makeDefault
           />
 
@@ -75,7 +75,6 @@ export const CleaningGame = forwardRef(({ visible, show, onEnded }, ref) => {
           </CleaningConveyorBelt>
 
           <CleaningNozzle />
-
           <CleaningHanger />
 
           <CleaningSystemControls

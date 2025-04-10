@@ -12,7 +12,7 @@ export const CleaningBottle = (entity) => {
 
   const aspect = 256 / 1024;
 
-  const s = 1;
+  const s = 1.15;
 
   const [t_hanger_back, t_hanger_front] = useAsset([
     urls.t_hanger_back,
@@ -31,10 +31,10 @@ export const CleaningBottle = (entity) => {
         <CleaningECS.Component name="three">
           <group name="bottle">
             <mesh
-              position-y={1.3}
+              position-y={1.4}
               renderOrder={-1}
-              scale={1}
-              scale-y={-1}
+              scale={s}
+              scale-y={-s}
             >
               <planeGeometry args={[1, 1]} />
               <meshBasicMaterial
@@ -43,10 +43,10 @@ export const CleaningBottle = (entity) => {
               />
             </mesh>
             <mesh
-              position-y={1.3}
+              position-y={1.4}
               renderOrder={3}
-              scale={1}
-              scale-y={-1}
+              scale={s}
+              scale-y={-s}
             >
               <planeGeometry args={[1, 1]} />
               <meshBasicMaterial
