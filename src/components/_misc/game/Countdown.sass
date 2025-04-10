@@ -5,11 +5,20 @@
   +flex-col(space-between, stretch)
   // padding-top: calc(var(--header-height))
 
+  .page__center
+    +flex-col
+
+  .countdown__wrap
+    +full
+    padding-bottom: 13rem
+
   .countdown__number
-    +center-img
+    // +center-img
     transform-origin: center
     -webkit-text-stroke: 2rem rgba(255, 255, 255, 0.1)
     opacity: 0
+    // transform: scale(1)
+    // transition: transform 0.3s ease-in-out
 
 
   // transition: opacity 0.3s ease-in-out

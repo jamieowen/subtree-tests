@@ -18,7 +18,7 @@ export const images = {
 
 export const textures = {
   // t_filling_nozzle: `/assets/textures-o/2_filling/nozzle.ktx2`,
-  t_filling_belt: `/assets/textures-o/2_filling/belt.ktx2`,
+  t_filling_belt: `/assets/textures-o/2_filling/belt/belt.ktx2`,
   t_filling_pour: `/assets/textures-o/2_filling/pour.ktx2`,
   t_filling_capping: `/assets/textures-o/2_filling/capping.ktx2`,
 

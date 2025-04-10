@@ -17,7 +17,7 @@ export const Countdown = ({
   const refNum = useRef(null);
 
   useEffect(() => {
-    if (!show) return;
+    // if (!show) return;
 
     setTime(duration);
     animateNum();
@@ -49,13 +49,26 @@ export const Countdown = ({
     let tl = gsap.timeline();
     tween.current = tl;
     tl.add('start');
-    tl.set(refNum.current, { opacity: 1, scale: 1 });
+    tl.set(refNum.current, { opacity: 1, scale: 1.1 });
+    tl.set('.countdown__inner', { scale: 1.2 });
+    tl.to(refNum.current, { scale: 0.9, ease: 'none', duration: 1 }, 'start');
+
+    tl.add('inner', 'start');
     tl.to(
-      refNum.current,
-      { scale: 0.5, ease: 'power3.in', duration: 1 },
-      'start'
+      '.countdown__inner',
+      { scale: 1, ease: 'power3.out', duration: 0.8 },
+      'inner'
     );
-    tl.to(refNum.current, { opacity: 0, duration: 0.2 }, 'start+=0.8');
+    tl.to(
+      '.countdown__inner',
+      {
+        scale: 0.8,
+        ease: 'power2.out',
+        duration: 0.2,
+      },
+      'inner+=0.8'
+    );
+    tl.to(refNum.current, { opacity: 0, duration: 0.1 }, 'start+=0.9');
   });
 
   return (
@@ -74,16 +87,17 @@ export const Countdown = ({
         </motion.div>
       </div>
 
-      <div className="page__center">
+      <div className="page__center" />
+      <div className="page__bottom" />
+
+      <div className="page countdown__wrap">
         <div
           className="countdown__number type-countdown"
           ref={refNum}
         >
-          {time}
+          <div className="countdown__inner">{time}</div>
         </div>
       </div>
-
-      <div className="page__bottom" />
     </div>
   );
 };

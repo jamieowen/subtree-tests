@@ -9,7 +9,7 @@ const lockedTargets = FillingECS.world.with('locked');
 export const FillingConveyorBelt = ({ playing = false, children }) => {
   const refBelt = useRef(null);
   const refSprite = useRef(null);
-  const s = 1.7;
+  const s = 1;
 
   const aspect = 256 / 512;
 
@@ -62,7 +62,7 @@ export const FillingConveyorBelt = ({ playing = false, children }) => {
             scale={[s, -s, s]}
             position-y={-0.8}
           >
-            <planeGeometry args={[2, 2 * aspect]} />
+            <planeGeometry args={[4, 1]} />
             <GBufferMaterial
               transparent
               alphaToCoverage={true}
