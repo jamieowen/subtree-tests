@@ -59,6 +59,28 @@ export const CleaningSystemBottles = ({
     setBeltLocked(false);
   };
 
+  const onPointerDown = () => {
+    console.log('onPointerDown');
+    let belt = beltEntities.entities?.[0]?.belt;
+    for (const entity of uncleanEntities) {
+      if (belt == entity.idx) {
+        cleanBottle(entity);
+      }
+    }
+  };
+
+  useEffect(() => {
+    // let el = gl.domElement
+    let el = document.querySelector('.game-cleaning .btn-cta');
+    el.addEventListener('pointerdown', onPointerDown);
+
+    return () => {
+      let el = document.querySelector('.game-cleaning .btn-cta');
+      if (!el) return;
+      el.removeEventListener('pointerdown', onPointerDown);
+    };
+  }, []);
+
   useFrame((state, delta) => {
     let belt = beltEntities.entities?.[0]?.belt;
 
@@ -69,12 +91,12 @@ export const CleaningSystemBottles = ({
 
     if (!playing) return;
 
-    // UNCLEAN
-    for (const entity of uncleanEntities) {
-      if (belt == entity.idx) {
-        cleanBottle(entity);
-      }
-    }
+    // AUTO TRIGGER CLEAN
+    // for (const entity of uncleanEntities) {
+    //   if (belt == entity.idx) {
+    //     cleanBottle(entity);
+    //   }
+    // }
 
     // COUNT CLEANED
     let num = cleanedEntities.entities.length;

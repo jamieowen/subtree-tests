@@ -11,7 +11,7 @@ export const CleaningGame = forwardRef(({ visible, show, onEnded }, ref) => {
   const { t } = useTranslation();
   const count = useCleaningStore((state) => state.count);
   const points = useMemo(() => count, [count]);
-  const duration = 20 * 1;
+  const duration = 20 * 100000;
 
   const [started, setStarted] = useState(false);
 
@@ -111,12 +111,12 @@ export const CleaningGame = forwardRef(({ visible, show, onEnded }, ref) => {
           count={count}
         />
 
-        {/* <ButtonPrimary
+        <ButtonPrimary
           className="btn-cta"
           show={show && started}
         >
           {t('cleaning.game.cta')}
-        </ButtonPrimary> */}
+        </ButtonPrimary>
       </div>
 
       {show && started && (
