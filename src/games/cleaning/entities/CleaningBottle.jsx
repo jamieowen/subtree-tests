@@ -19,6 +19,12 @@ export const CleaningBottle = (entity) => {
     urls.t_hanger_front,
   ]);
 
+  useEffect(() => {
+    if (entity.cleaned) {
+      refSprite.current.progress = 1;
+    }
+  }, []);
+
   return (
     <>
       <CleaningECS.Entity entity={entity}>
