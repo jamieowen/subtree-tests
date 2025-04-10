@@ -57,7 +57,7 @@ export const Heading1 = ({ show = false, delay = 0, className, children }) => {
         y: 0,
         scale: 1,
         duration: 0.3,
-        stagger: 0.05,
+        stagger: 0.02,
         ease: 'back.out(3)',
       },
       'start'
