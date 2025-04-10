@@ -31,9 +31,9 @@ export const Loading = ({ ...props }) => {
       <LoadingBg />
       <div className="content">
         <LoadingPercent show={true} />
-        <div className="desc">
+        <div className="desc relative">
           {t('general.loading')}
-          <ReactAnimatedEllipsis className="ellipsis" />
+          <ReactAnimatedEllipsis className="ellipsis absolute left-full" />
         </div>
       </div>
     </div>
