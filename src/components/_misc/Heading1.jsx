@@ -23,9 +23,13 @@ export const Heading1 = ({ show = false, delay = 0, className, children }) => {
     };
   }, []);
 
+  const _tl = useRef(null);
+
   const animateIn = contextSafe(() => {
     // console.log('Heading1.animateIn', split.chars);
+    if (_tl.current) _tl.current.kill();
     let tl = gsap.timeline();
+    _tl.current = tl;
 
     tl.add('reset');
     tl.set(
@@ -62,7 +66,11 @@ export const Heading1 = ({ show = false, delay = 0, className, children }) => {
 
   const animateOut = contextSafe(() => {
     // console.log('Heading1.animateOut', split);
-    gsap.to(refRoot.current, {
+    if (_tl.current) _tl.current.kill();
+    let tl = gsap.timeline();
+    _tl.current = tl;
+
+    tl.to(refRoot.current, {
       opacity: 0,
       blur: '5px',
       duration: 0.6,

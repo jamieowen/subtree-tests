@@ -28,9 +28,14 @@ export const Paragraph1 = ({
     };
   }, []);
 
+  const _tl = useRef(null);
+
   const animateIn = contextSafe(() => {
     // console.log('Paragraph1.animateIn', split);
+    if (_tl.current) _tl.current.kill();
     let tl = gsap.timeline();
+    _tl.current = tl;
+
     tl.add('reset');
     tl.set(
       refRoot.current,
@@ -63,7 +68,11 @@ export const Paragraph1 = ({
 
   const animateOut = contextSafe(() => {
     // console.log('Paragraph1.animateOut', split);
-    gsap.to(refRoot.current, {
+    if (_tl.current) _tl.current.kill();
+    let tl = gsap.timeline();
+    _tl.current = tl;
+
+    tl.to(refRoot.current, {
       opacity: 0,
       duration: 0.6,
       ease: 'power2.out',
