@@ -17,7 +17,7 @@ export const Countdown = ({
   const refNum = useRef(null);
 
   useEffect(() => {
-    // if (!show) return;
+    if (!show) return;
 
     setTime(duration);
     animateNum();
