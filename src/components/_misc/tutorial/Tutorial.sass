@@ -60,10 +60,19 @@
     &__center
       position: relative
       flex: 1
-      
+      overflow: hidden
 
 
-    &__wrap
+    &__steps
+      +full
+      transition: transform 0.5s ease-in-out
+
+      &.active-1
+        transform: translateX(-100%)
+
+    
+
+    &__step
       +full
       padding: 2rem
       +flex-col(center, stretch)
@@ -79,6 +88,10 @@
       .panel__icon
         position: relative
         flex: 1
+
+      &:nth-child(2)
+        left: 100%
+
 
 
     

@@ -165,19 +165,26 @@ export const Tutorial = memo(({ id, show, steps = 2, onClick }) => {
           ref={refPanel}
           {...bind()}
         >
-          <div className="panel__wrap">
-            <p className="panel__text">
-              {t(`${id}.tutorial.instructions.${step}`)}
-            </p>
+          <div className={`panel__steps active-${step}`}>
+            {Array.from({ length: steps }).map((_, i) => (
+              <div
+                key={i}
+                className="panel__step"
+              >
+                <p className="panel__text">
+                  {t(`${id}.tutorial.instructions.${i}`)}
+                </p>
 
-            <div className="panel__icon">
-              {id == 'cleaning' && <TutorialCleaning0 />}
-              {/* {id == 'cleaning' && step == 1 && <TutorialCleaning1 />} */}
-              {id == 'filling' && step == 0 && <TutorialFilling0 />}
-              {id == 'filling' && step == 1 && <TutorialFilling1 />}
-              {id == 'grouping' && step == 0 && <TutorialGrouping0 />}
-              {id == 'grouping' && step == 1 && <TutorialGrouping1 />}
-            </div>
+                <div className="panel__icon">
+                  {id == 'cleaning' && <TutorialCleaning0 />}
+                  {/* {id == 'cleaning' && step == 1 && <TutorialCleaning1 />} */}
+                  {id == 'filling' && i == 0 && <TutorialFilling0 />}
+                  {id == 'filling' && i == 1 && <TutorialFilling1 />}
+                  {id == 'grouping' && i == 0 && <TutorialGrouping0 />}
+                  {id == 'grouping' && i == 1 && <TutorialGrouping1 />}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
         <div className="panel__bottom">
