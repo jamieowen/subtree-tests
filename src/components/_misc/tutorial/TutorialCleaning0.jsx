@@ -9,19 +9,27 @@ export const TutorialCleaning0 = () => {
       let tl = gsap.timeline({ repeat: -1 });
       tl.add('start');
       tl.set('.bottle-outline', { opacity: 1 });
-      tl.set('.bottle-solid-left', { y: '-50%' });
-      tl.set('.bottle-solid-right', { y: '-50%' });
-      tl.fromTo(
-        '.bottle-solid-left',
-        { x: '-100%' },
-        { x: '-50%', duration: 1, ease: 'power2.out' },
-        'start'
-      );
-      tl.fromTo(
-        '.bottle-solid-right',
-        { x: '50%' },
-        { x: '-50%', duration: 1, ease: 'power2.out' }
-      );
+
+      tl.to('.bottle-solid-container', {
+        x: `${-4.5 * 1}rem`,
+        duration: 0.8,
+        ease: 'power3.inOut',
+      });
+      tl.to('.bottle-solid-container', {
+        x: `${-4.5 * 2}rem`,
+        duration: 0.8,
+        ease: 'power3.inOut',
+      });
+      tl.to('.bottle-solid-container', {
+        x: `${-4.5 * 5}rem`,
+        duration: 0.8,
+        ease: 'power3.inOut',
+      });
+      tl.to('.bottle-solid-container', {
+        x: `${-4.5 * 3}rem`,
+        duration: 0.8,
+        ease: 'power3.inOut',
+      });
     },
     { scope: refRoot }
   );
@@ -35,14 +43,16 @@ export const TutorialCleaning0 = () => {
         src="/assets/images-next/cleaning-tutorial-outline.webp"
         className="bottle-outline"
       />
-      <img
-        src="/assets/images-next/cleaning-tutorial-solid.webp"
-        className="bottle-solid-left"
-      />
-      <img
-        src="/assets/images-next/cleaning-tutorial-solid.webp"
-        className="bottle-solid-right"
-      />
+
+      <div className="bottle-solid-container">
+        {Array.from({ length: 10 }).map((_, i) => (
+          <img
+            key={i}
+            src="/assets/images-next/cleaning-tutorial-solid.webp"
+            className="bottle-solid"
+          />
+        ))}
+      </div>
     </div>
   );
 };
