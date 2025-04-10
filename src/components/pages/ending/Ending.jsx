@@ -16,7 +16,9 @@ export const Ending = ({ show, ...props }) => {
   const showVideo = show && section == 'video';
   const showIntro = show && section == 'intro';
 
+  const emitter = useMitt();
   const onRestart = () => {
+    emitter.emit('restart');
     setPage('');
     // window.location.reload();
   };

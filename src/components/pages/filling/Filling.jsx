@@ -28,8 +28,13 @@ export const Filling = ({ show, ...props }) => {
   const onReplay = () => {
     setCount(0);
     setSection('game');
-    refGame.current.reset();
+    if (refGame.current) refGame.current.reset();
   };
+
+  const emitter = useMitt();
+  useEffect(() => {
+    emitter.on('restart', onReplay);
+  }, []);
 
   return (
     <div
