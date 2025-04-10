@@ -24,7 +24,7 @@ export const TheHeader = () => {
         onClick={() => toggleMuted()}
       >
         {!muted && <IconSoundOn />}
-        {/* {muted && <IconSoundOff />} */}
+        {muted && <IconSoundOff />}
       </button>
 
       <div className="center">
