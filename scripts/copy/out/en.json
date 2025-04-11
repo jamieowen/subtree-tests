@@ -45,7 +45,7 @@
     },
     "game": {
       "ready": "Get Ready!",
-      "cta": "Tap",
+      "cta": "Clean",
       "time": "Time Left",
       "points": "Points"
     },
