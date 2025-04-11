@@ -31,6 +31,8 @@ export const Ending = ({ show, ...props }) => {
     });
   };
 
+  const onLearnMore = () => {};
+
   return (
     <div className={classnames(['page', 'page-opacity', 'ending', { show }])}>
       {/* <img
@@ -91,7 +93,7 @@ export const Ending = ({ show, ...props }) => {
             show={showIntro}
             delay={0.9}
             color="white"
-            onClick={onShare}
+            onClick={onLearnMore}
           >
             {t('ending.cta')}
           </ButtonPrimary>

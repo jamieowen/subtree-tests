@@ -124,7 +124,7 @@
       "preheading": "Amazing job",
       "heading": "You're\r\na bottle-\r\nrefilling\r\nsuperstar",
       "restart": "Play Again",
-      "cta": "Share"
+      "cta": "Learn More"
     },
     "example": "Example"
   },
@@ -256,7 +256,7 @@
       "preheading": "trabajo increíble",
       "heading": "Estás\r\nuna botella-\r\nrellenando\r\nsuperestrella",
       "restart": "Jugar de nuevo",
-      "cta": "Compartir"
+      "cta": "Más información"
     },
     "example": "Ejemplo"
   },
@@ -388,7 +388,7 @@
       "preheading": "Travail incroyable",
       "heading": "Tu es\r\nune bouteille-\r\nremplissage\r\nsuperstar",
       "restart": "Rejouer",
-      "cta": "Partager"
+      "cta": "Apprendre encore plus"
     },
     "example": "Exemple"
   }
