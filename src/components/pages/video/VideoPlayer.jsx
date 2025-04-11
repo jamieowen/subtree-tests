@@ -77,6 +77,7 @@ export const VideoPlayer = forwardRef(
         <video
           ref={refVideo}
           src={src}
+          poster={poster}
           onEnded={onEnd}
           playsInline
           muted={muted}
