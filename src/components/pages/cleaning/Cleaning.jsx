@@ -59,8 +59,15 @@ export const Cleaning = ({ show, ...props }) => {
   // INTRO ANIMATED IN
   const [introAnimatedIn, setIntroAnimatedIn] = useState(false);
   const onIntroAnimatedIn = () => {
+    console.log('onIntroAnimatedIn');
     setIntroAnimatedIn(true);
   };
+
+  const showGame =
+    completed &&
+    show &&
+    section != 'video' &&
+    (introAnimatedIn || section != 'intro');
 
   return (
     <div className={classnames(['page', 'game', 'cleaning', { show }])}>
@@ -78,6 +85,7 @@ export const Cleaning = ({ show, ...props }) => {
         id="cleaning"
         show={show && section == 'intro'}
         onClick={nextSection}
+        animatedIn={introAnimatedIn}
         onAnimatedIn={onIntroAnimatedIn}
       />
 
@@ -88,7 +96,7 @@ export const Cleaning = ({ show, ...props }) => {
         steps={1}
       />
 
-      {completed && show && introAnimatedIn && (
+      {showGame && (
         <CleaningGame
           ref={refGame}
           visible={show && section != 'intro'}

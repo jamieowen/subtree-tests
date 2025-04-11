@@ -1,7 +1,7 @@
 import './Intro.sass';
 import classnames from 'classnames';
 
-export const Intro = ({ id, show, onClick, onAnimatedIn }) => {
+export const Intro = ({ id, show, onClick, animatedIn, onAnimatedIn }) => {
   const { t } = useTranslation();
 
   useEffect(() => {
@@ -12,6 +12,11 @@ export const Intro = ({ id, show, onClick, onAnimatedIn }) => {
       return () => clearTimeout(timeout);
     }
   }, [show]);
+
+  const _onClick = () => {
+    if (!animatedIn) return;
+    onClick?.();
+  };
 
   return (
     <section className={classnames(['page', 'intro', { show }])}>
@@ -35,7 +40,7 @@ export const Intro = ({ id, show, onClick, onAnimatedIn }) => {
       <ButtonPrimary
         show={show}
         delay={0.4}
-        onClick={onClick}
+        onClick={_onClick}
       >
         {t('cleaning.intro.cta')}
       </ButtonPrimary>
