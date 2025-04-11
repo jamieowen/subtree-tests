@@ -21,13 +21,14 @@ export const TheHeader = () => {
 
   return (
     <div className="the-header">
-      <button
+      {/* <button
         className="btn-audio"
         onClick={() => toggleMuted()}
       >
         {!muted && <IconSoundOn />}
         {muted && <IconSoundOff />}
-      </button>
+      </button> */}
+      <ButtonMute />
 
       <div className="center">
         <AnimatePresence>

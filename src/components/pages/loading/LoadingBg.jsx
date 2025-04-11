@@ -6,6 +6,7 @@ export const LoadingBg = () => {
 
   const refRoot = useRef(null);
   const refFill = useRef(null);
+  const refFillY = useRef(null);
   const [enableMask, setEnableMask] = useState(false);
 
   useEffect(() => {
@@ -44,7 +45,6 @@ export const LoadingBg = () => {
     );
   }, [completed]);
 
-  const refFillY = useRef(null);
   const tween = useRef(null);
   useEffect(() => {
     if (tween.current) tween.current.kill();
@@ -62,13 +62,29 @@ export const LoadingBg = () => {
       viewBox="0 0 390 844"
       preserveAspectRatio="xMinYMin slice"
     >
+      <defs>
+        <linearGradient
+          id="myGradient"
+          gradientTransform="rotate(90)"
+        >
+          <stop
+            offset="0%"
+            stopColor="#abd9b8"
+          />
+          <stop
+            offset="100%"
+            stopColor="#83a98e"
+          />
+        </linearGradient>
+      </defs>
+
       <rect
         className="color"
         x="0"
         y="0"
         width="390"
         height="844"
-        fill="#97D1A7"
+        fill="url(#myGradient)"
         mask={enableMask ? 'url(#bottleMaskInvert)' : null}
       />
 
