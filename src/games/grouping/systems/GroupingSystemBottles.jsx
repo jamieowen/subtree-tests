@@ -45,6 +45,10 @@ export const GroupingSystemBottles = forwardRef(
       return addTimeout.current;
     };
 
+    useEffect(() => {
+      addBottle([0, -10, 0]);
+    }, []);
+
     let addTimeout = useRef(null);
     useEffect(() => {
       if (playing) {

@@ -17,12 +17,12 @@ export const GroupingBottles = () => {
   );
 };
 
-export const addBottle = () => {
+export const addBottle = (position) => {
   GroupingECS.world.add({
     isBottle: true,
     notHit: true,
     opacity: 1,
-    position: [
+    position: position || [
       //
       randomInRange(-2, 2),
       8,

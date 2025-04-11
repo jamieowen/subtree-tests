@@ -8,12 +8,12 @@ import AssetService from '@/services/AssetService';
 import { randomIntRange } from '@/helpers/MathUtils';
 
 export const GroupingBox = () => {
+  const refSprite = useRef(null);
+  const refMesh = useRef(null);
+
   const texture = useAsset(urls.t_grouping_box);
 
   const count = useGroupingStore((state) => state.count);
-
-  const refSprite = useRef(null);
-  const refMesh = useRef(null);
 
   useEffect(() => {
     refSprite.current.frame = count % 21;
@@ -70,7 +70,11 @@ export const GroupingBox = () => {
         <group scale={[s, -s, s]}>
           <mesh ref={refMesh}>
             <planeGeometry args={[1, 1]} />
-            <GBufferMaterial transparent>
+            <GBufferMaterial
+              transparent
+              // depthTest={false}
+              // renderOrder={2}
+            >
               <MaterialModuleSpriteAnimated
                 ref={refSprite}
                 map={texture}
