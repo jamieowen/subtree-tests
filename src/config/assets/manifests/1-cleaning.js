@@ -34,7 +34,9 @@ export const sounds = {
   sfx_washbottle03: '/assets/sounds-o/1_cleaning/SFX_WashBottle03.aac',
 };
 
-const videos = {};
+const videos = {
+  v_cleaning_bg: `/assets/videos/BG1.mp4`,
+};
 
 export const urls = {
   ...fonts,

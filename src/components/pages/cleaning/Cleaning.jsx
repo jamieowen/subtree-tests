@@ -74,12 +74,15 @@ export const Cleaning = ({ show, ...props }) => {
       {/* TODO: Swap to looping video */}
       <img
         src={urls.i_cleaning_loop}
-        className={classnames(['game-bg', { blurBg }])}
+        className={classnames(['game-bg'])}
       />
-      {/* <img
-        src={'/assets/images/game-1-gameplay-1.png'}
-        className="artboard"
-      /> */}
+      <video
+        src={urls.v_cleaning_bg}
+        autoPlay
+        muted
+        loop
+        className={classnames(['game-bg', { blurBg: true }])}
+      />
 
       <Intro
         id="cleaning"

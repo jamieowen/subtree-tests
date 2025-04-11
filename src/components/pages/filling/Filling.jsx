@@ -53,7 +53,14 @@ export const Filling = ({ show, ...props }) => {
       {/* TODO: Video */}
       <img
         src={urls.i_filling_loop}
-        className={classnames(['game-bg', { blurBg }])}
+        className={classnames(['game-bg'])}
+      />
+      <video
+        src={urls.v_filling_bg}
+        autoPlay
+        muted
+        loop
+        className={classnames(['game-bg', { blurBg: true }])}
       />
 
       {/* <img

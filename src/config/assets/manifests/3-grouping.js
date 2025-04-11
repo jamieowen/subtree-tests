@@ -35,8 +35,9 @@ export const sounds = {
 };
 
 const videos = {
-  v_grouping: `/assets/videos/grouping-intro.mp4`,
-  v_ending: `/assets/videos/ending.mp4`,
+  v_grouping: `/assets/videos/Tran2.mp4`,
+  v_grouping_bg: `/assets/videos/BG3.mp4`,
+  v_ending: `/assets/videos/OutroV2.mp4`,
 };
 
 export const urls = {

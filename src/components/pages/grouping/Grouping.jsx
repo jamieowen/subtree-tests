@@ -46,7 +46,14 @@ export const Grouping = ({ show, ...props }) => {
       {/* TODO: Video */}
       <img
         src={urls.i_grouping_loop}
-        className={classnames(['game-bg', { blurBg }])}
+        className={classnames(['game-bg'])}
+      />
+      <video
+        src={urls.v_grouping_bg}
+        autoPlay
+        muted
+        loop
+        className={classnames(['game-bg', { blurBg: true }])}
       />
 
       <AnimatePresence>

@@ -48,7 +48,8 @@ export const sounds = {
 };
 
 const videos = {
-  v_filling: `/assets/videos/filling-intro.mp4`,
+  v_filling: `/assets/videos/Tran1.mp4`,
+  v_filling_bg: `/assets/videos/BG2.mp4`,
 };
 
 export const urls = {

@@ -33,7 +33,7 @@ export const sounds = {
 };
 
 const videos = {
-  v_cleaning: `/assets/videos/cleaning-intro.mp4`,
+  v_cleaning: `/assets/videos/intro_V7Start41frame.mp4`,
 };
 
 export const urls = {
