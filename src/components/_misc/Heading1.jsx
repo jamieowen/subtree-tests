@@ -44,7 +44,7 @@ export const Heading1 = ({ show = false, delay = 0, className, children }) => {
       split.chars,
       {
         opacity: 0,
-        y: 20,
+        y: 40,
       },
       'reset'
     );
