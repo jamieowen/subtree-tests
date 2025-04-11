@@ -34,12 +34,18 @@ export const sounds = {
   sfx_cratecatch05: '/assets/sounds-o/3_grouping/SFX_CrateCatch05.aac',
 };
 
+const videos = {
+  v_grouping: `/assets/videos/grouping-intro.mp4`,
+  v_ending: `/assets/videos/ending.mp4`,
+};
+
 export const urls = {
   ...fonts,
   ...images,
   ...models,
   ...textures,
   ...sounds,
+  ...videos,
 };
 
 // **********************************************************************
@@ -54,5 +60,6 @@ export const manifest = {
     ...Object.entries(textures).map(([id, url]) => ({ id, url })),
     ...Object.entries(sounds).map(([id, url]) => ({ id, url })),
     ...Object.entries(jsons).map(([id, url]) => ({ id, url })),
+    ...Object.entries(videos).map(([id, url]) => ({ id, url })),
   ],
 };

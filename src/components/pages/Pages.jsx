@@ -30,7 +30,7 @@ export const Pages = () => {
           <VideoPlayer
             ref={refVideo}
             key="cleaning-video"
-            src="/assets/videos/cleaning-intro.mp4"
+            src={urls.v_cleaning}
             poster={urls.i_cleaning_intro}
             onEnd={nextPage}
             autoPlay={false}

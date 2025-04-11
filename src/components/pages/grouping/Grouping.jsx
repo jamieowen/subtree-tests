@@ -53,7 +53,7 @@ export const Grouping = ({ show, ...props }) => {
         {showVideo && (
           <VideoPlayer
             key="grouping-video"
-            src="/assets/videos/grouping-intro.mp4"
+            src={urls.v_grouping}
             poster={urls.i_grouping_intro}
             onEnd={() => {
               nextSection();

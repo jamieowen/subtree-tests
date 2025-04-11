@@ -32,12 +32,17 @@ export const sounds = {
   sfx_showresult: '/assets/sounds-o/0_critical/SFX_ShowResult.aac',
 };
 
+const videos = {
+  v_cleaning: `/assets/videos/cleaning-intro.mp4`,
+};
+
 export const urls = {
   ...fonts,
   ...models,
   ...images,
   ...textures,
   ...sounds,
+  ...videos,
 };
 
 // **********************************************************************
@@ -51,5 +56,6 @@ export const manifest = {
     ...Object.entries(images).map(([id, url]) => ({ id, url })),
     ...Object.entries(textures).map(([id, url]) => ({ id, url })),
     ...Object.entries(sounds).map(([id, url]) => ({ id, url })),
+    ...Object.entries(videos).map(([id, url]) => ({ id, url })),
   ],
 };

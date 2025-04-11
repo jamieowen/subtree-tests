@@ -65,7 +65,7 @@ export const Filling = ({ show, ...props }) => {
         {showVideo && (
           <VideoPlayer
             key="filling-video"
-            src="/assets/videos/filling-intro.mp4"
+            src={urls.v_filling}
             poster={urls.i_filling_intro}
             onEnd={() => {
               nextSection();

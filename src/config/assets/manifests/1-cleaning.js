@@ -34,12 +34,15 @@ export const sounds = {
   sfx_washbottle03: '/assets/sounds-o/1_cleaning/SFX_WashBottle03.aac',
 };
 
+const videos = {};
+
 export const urls = {
   ...fonts,
   ...models,
   ...images,
   ...textures,
   ...sounds,
+  ...videos,
 };
 
 // **********************************************************************
@@ -54,5 +57,6 @@ export const manifest = {
     ...Object.entries(textures).map(([id, url]) => ({ id, url })),
     ...Object.entries(sounds).map(([id, url]) => ({ id, url })),
     ...Object.entries(jsons).map(([id, url]) => ({ id, url })),
+    ...Object.entries(videos).map(([id, url]) => ({ id, url })),
   ],
 };

@@ -40,7 +40,7 @@ export const Ending = ({ show, ...props }) => {
 
       <VideoPlayer
         key="ending-video"
-        src="/assets/videos/ending.mp4"
+        src={urls.v_ending}
         poster={urls.i_ending}
         onEnd={() => {
           nextSection();

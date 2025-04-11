@@ -47,12 +47,17 @@ export const sounds = {
   sfx_bottlecap: '/assets/sounds-o/2_filling/SFX_BottleCap.aac',
 };
 
+const videos = {
+  v_filling: `/assets/videos/filling-intro.mp4`,
+};
+
 export const urls = {
   ...fonts,
   ...models,
   ...images,
   ...textures,
   ...sounds,
+  ...videos,
 };
 
 // **********************************************************************
@@ -67,5 +72,6 @@ export const manifest = {
     ...Object.entries(textures).map(([id, url]) => ({ id, url })),
     ...Object.entries(sounds).map(([id, url]) => ({ id, url })),
     ...Object.entries(jsons).map(([id, url]) => ({ id, url })),
+    ...Object.entries(videos).map(([id, url]) => ({ id, url })),
   ],
 };
