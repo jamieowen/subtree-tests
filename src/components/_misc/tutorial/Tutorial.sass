@@ -5,6 +5,8 @@
   +flex-col(space-between, stretch)
   --border: 0.2rem solid rgba(255,255,255,0.2)
 
+  &.show .panel
+    pointer-events: auto
 
   .page__top
     flex: 0.5
@@ -22,7 +24,6 @@
     backdrop-filter: blur(7px)
     border-radius: 2rem
     border: var(--border)
-    pointer-events: auto
     opacity: 0
 
     >svg

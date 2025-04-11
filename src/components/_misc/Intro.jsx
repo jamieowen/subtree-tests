@@ -40,7 +40,7 @@ export const Intro = ({ id, show, onClick, animatedIn, onAnimatedIn }) => {
       <ButtonPrimary
         show={show}
         delay={0.4}
-        onClick={_onClick}
+        onClick={onClick}
       >
         {t('cleaning.intro.cta')}
       </ButtonPrimary>
