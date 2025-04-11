@@ -56,6 +56,12 @@ export const Cleaning = ({ show, ...props }) => {
     }
   }, [show]);
 
+  // INTRO ANIMATED IN
+  const [introAnimatedIn, setIntroAnimatedIn] = useState(false);
+  const onIntroAnimatedIn = () => {
+    setIntroAnimatedIn(true);
+  };
+
   return (
     <div className={classnames(['page', 'game', 'cleaning', { show }])}>
       {/* TODO: Swap to looping video */}
@@ -72,6 +78,7 @@ export const Cleaning = ({ show, ...props }) => {
         id="cleaning"
         show={show && section == 'intro'}
         onClick={nextSection}
+        onAnimatedIn={onIntroAnimatedIn}
       />
 
       <Tutorial
@@ -81,7 +88,7 @@ export const Cleaning = ({ show, ...props }) => {
         steps={1}
       />
 
-      {completed && show && (
+      {completed && show && introAnimatedIn && (
         <CleaningGame
           ref={refGame}
           visible={show && section != 'intro'}

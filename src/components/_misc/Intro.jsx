@@ -1,8 +1,17 @@
 import './Intro.sass';
 import classnames from 'classnames';
 
-export const Intro = ({ id, show, onClick }) => {
+export const Intro = ({ id, show, onClick, onAnimatedIn }) => {
   const { t } = useTranslation();
+
+  useEffect(() => {
+    if (show) {
+      let timeout = setTimeout(() => {
+        onAnimatedIn?.();
+      }, 1100);
+      return () => clearTimeout(timeout);
+    }
+  }, [show]);
 
   return (
     <section className={classnames(['page', 'intro', { show }])}>
