@@ -68,6 +68,7 @@ export const Grouping = ({ show, ...props }) => {
         id="grouping"
         show={show && section == 'intro'}
         onClick={nextSection}
+        animatedIn={true}
       />
 
       <Tutorial

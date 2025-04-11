@@ -80,6 +80,7 @@ export const Filling = ({ show, ...props }) => {
         id="filling"
         show={show && section == 'intro'}
         onClick={nextSection}
+        animatedIn={true}
       />
 
       <Tutorial
