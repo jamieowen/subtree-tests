@@ -20,7 +20,7 @@ export const CleaningBottle = (entity) => {
   ]);
 
   useEffect(() => {
-    if (entity.cleaned) {
+    if (entity.precleaned) {
       refSprite.current.progress = 1;
     }
   }, []);

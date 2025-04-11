@@ -18,7 +18,6 @@ export const CleaningBottles = () => {
 let idx = 0;
 export const addBottle = () => {
   const isClean = Math.random() > 0.65;
-  console.log('CleaningBottles.addBottle', isClean);
 
   const opts = {
     isBottle: true,
@@ -28,8 +27,9 @@ export const addBottle = () => {
   };
 
   if (isClean) {
-    opts.cleaned = true;
+    // opts.cleaned = true;
     opts.progress = 1;
+    opts.precleaned = true;
   } else {
     opts.unclean = true;
   }

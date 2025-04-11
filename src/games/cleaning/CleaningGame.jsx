@@ -11,7 +11,7 @@ export const CleaningGame = forwardRef(({ visible, show, onEnded }, ref) => {
   const { t } = useTranslation();
   const count = useCleaningStore((state) => state.count);
   const points = useMemo(() => count, [count]);
-  const duration = 20;
+  const duration = 20; // DEBUG
 
   const [started, setStarted] = useState(false);
 
