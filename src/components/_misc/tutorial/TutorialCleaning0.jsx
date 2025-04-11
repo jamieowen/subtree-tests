@@ -8,18 +8,30 @@ export const TutorialCleaning0 = () => {
     () => {
       let tl = gsap.timeline({ repeat: -1 });
       tl.add('start');
-      tl.set('.bottle-outline', { opacity: 1 });
+      // tl.set('.bottle-outline', { opacity: 1 });
 
-      tl.to('.bottle-solid-container', {
-        x: `${-4.5 * 1}rem`,
-        duration: 0.8,
-        ease: 'power3.inOut',
-      });
-      tl.to('.bottle-solid-container', {
+      // tl.to('.bottle-solid-container', {
+      //   x: `${-4.5 * 1}rem`,
+      //   duration: 0.8,
+      //   ease: 'power3.inOut',
+      // });
+
+      tl.set('.bottle-solid-container', {
         x: `${-4.5 * 2}rem`,
         duration: 0.8,
         ease: 'power3.inOut',
       });
+      tl.set('.bottle-solid-container', {
+        x: `${-4.5 * 3}rem`,
+        duration: 0.8,
+        ease: 'power3.inOut',
+      });
+
+      // tl.to('.bottle-solid-container', {
+      //   x: `${-4.5 * 2}rem`,
+      //   duration: 0.8,
+      //   ease: 'power3.inOut',
+      // });
       tl.to('.bottle-solid-container', {
         x: `${-4.5 * 5}rem`,
         duration: 0.8,
