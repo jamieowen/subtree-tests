@@ -47,7 +47,8 @@
       "ready": "Get Ready!",
       "cta": "Clean",
       "time": "Time Left",
-      "points": "Points"
+      "points": "Points",
+      "cleaned": "Clean!"
     },
     "results": {
       "heading": "Well Done!",

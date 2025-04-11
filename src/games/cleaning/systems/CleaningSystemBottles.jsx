@@ -59,12 +59,19 @@ export const CleaningSystemBottles = forwardRef(
       setBeltLocked(false);
     };
 
+    const emitter = useMitt();
     const onPointerDown = () => {
-      console.log('onPointerDown');
       let belt = beltEntities.entities?.[0]?.belt;
       for (const entity of uncleanEntities) {
         if (belt == entity.idx) {
           cleanBottle(entity);
+        }
+      }
+
+      for (const entity of cleanedEntities) {
+        console.log('onPointerDown', entity.idx, belt);
+        if (belt == entity.idx) {
+          emitter.emit('cleaning-cleaned');
         }
       }
     };
@@ -86,7 +93,7 @@ export const CleaningSystemBottles = forwardRef(
     useEffect(initBottles, []);
 
     const resetBottles = () => {
-      console.log('resetBottles');
+      // console.log('resetBottles');
       bottleEntities.entities.forEach((entity) => {
         CleaningECS.world.remove(entity);
       });
@@ -108,7 +115,7 @@ export const CleaningSystemBottles = forwardRef(
       const maxIdx = Math.max(...bottleIndices);
       const minIdx = Math.min(...bottleIndices);
 
-      console.log(Math.round(beltPosition), minIdx, maxIdx);
+      // console.log(Math.round(beltPosition), minIdx, maxIdx);
 
       // Check if we need more bottles in the positive direction
       if (maxIdx < beltPosition + minBottles) {
@@ -138,7 +145,7 @@ export const CleaningSystemBottles = forwardRef(
 
     useFrame((state, delta) => {
       let belt = beltEntities.entities?.[0]?.belt;
-      console.log('belt', belt);
+      // console.log('belt', belt);
 
       if (!playing) return;
 

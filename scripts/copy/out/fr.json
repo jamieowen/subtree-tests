@@ -50,7 +50,8 @@
       "ready": "Se préparer!",
       "cta": "Faire le ménage",
       "time": "Temps restant",
-      "points": "Points"
+      "points": "Points",
+      "cleaned": "Faire le ménage!"
     },
     "results": {
       "heading": "Bien joué!",

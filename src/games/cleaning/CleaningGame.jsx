@@ -26,7 +26,7 @@ export const CleaningGame = forwardRef(({ visible, show, onEnded }, ref) => {
 
   const playing = show && started;
 
-  console.log(show, started, playing);
+  // console.log(show, started, playing);
 
   const refBottles = useRef(null);
   const refControls = useRef(null);
@@ -116,6 +116,7 @@ export const CleaningGame = forwardRef(({ visible, show, onEnded }, ref) => {
           point={10}
           count={count}
         />
+        <CleanPopup />
 
         <ButtonPrimary
           className="btn-cta"

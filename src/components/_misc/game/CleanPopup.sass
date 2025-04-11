@@ -1,0 +1,25 @@
+@import '@/styles/shared.sass'
+
+.clean-popup
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+  pointer-events: none
+
+  .wrap
+    background: linear-gradient(to bottom, #ffffff, #919191)
+    box-shadow: 0 0 2rem 0.5rem rgba(0,0,0,0.1)
+    border-radius: 1rem
+    padding-inline: 1rem
+    +flex-row
+    height: 4.2rem
+    width: 6.6rem
+    font-family: $font-tccc-cond
+    font-size: 2.12rem
+    font-weight: 500
+    letter-spacing: 0em
+    opacity: 0
+
+  span
+    margin-top: -0.1em
