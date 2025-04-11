@@ -69,6 +69,8 @@ export const VideoPlayer = forwardRef(
       }
     }, [documentVisible]);
 
+    const showPoster = !playing && !played;
+
     return (
       <div
         className="video-player"
@@ -81,8 +83,19 @@ export const VideoPlayer = forwardRef(
           onEnded={onEnd}
           playsInline
           muted={muted}
+          preload
         />
-        {!playing && !played && <img src={poster} />}
+        <AnimatePresence>
+          {showPoster && (
+            <motion.img
+              src={poster}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: showPoster ? 1 : 0 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2, ease: 'easeIn' }}
+            />
+          )}
+        </AnimatePresence>
         <AnimatePresence>
           {showSkip && played && (
             <button
