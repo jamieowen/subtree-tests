@@ -18,7 +18,8 @@ export const CleaningBottles = () => {
 // let idx = 0;
 // let negative idx = 0;
 export const addBottle = (i) => {
-  const isClean = Math.random() > 0.65;
+  // const isClean = Math.random() > 0.65;
+  const isClean = false;
 
   const opts = {
     isBottle: true,
