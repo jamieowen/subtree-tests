@@ -1,0 +1,42 @@
+@import "@/styles/shared.sass"
+
+.tutorial-cleaning1
+  +full
+  width: auto
+  aspect-ratio: 1
+  right: 0
+  margin: 0 auto
+
+  img
+    width: 3rem
+    filter: brightness(0.9)
+
+  .circle
+    position: absolute
+    left: 0
+    right: 0
+    margin: 0 auto
+    top: 80%
+    width: 7.2rem
+    height: 7.2rem
+
+    .inner0
+      +full
+      border: 1px solid rgba(255, 255, 255, 0.1)
+      border-radius: 50%
+
+    .inner1
+      +center-img()      
+      width: 5.6rem
+      height: 5.6rem
+      border-radius: 50%
+      background: rgba(255, 255, 255, 0.2)
+
+    .inner2
+      +center-img()      
+      width: 4rem
+      height: 4rem
+      border-radius: 50%
+      background: #fff
+      
+

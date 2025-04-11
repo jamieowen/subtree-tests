@@ -183,8 +183,8 @@ export const Tutorial = memo(({ id, show, steps = 2, onClick }) => {
                 </p>
 
                 <div className="panel__icon">
-                  {id == 'cleaning' && <TutorialCleaning0 />}
-                  {/* {id == 'cleaning' && step == 1 && <TutorialCleaning1 />} */}
+                  {id == 'cleaning' && i == 0 && <TutorialCleaning0 />}
+                  {id == 'cleaning' && i == 1 && <TutorialCleaning1 />}
                   {id == 'filling' && i == 0 && <TutorialFilling0 />}
                   {id == 'filling' && i == 1 && <TutorialFilling1 />}
                   {id == 'grouping' && i == 0 && <TutorialGrouping0 />}

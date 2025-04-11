@@ -39,8 +39,8 @@
         "preheading": "How many can you wash?",
         "heading": "How to Play",
         "instructions": [
-          "Drag and\r\nalign bottles",
-          "Press\r\nto spray water"
+          "Drag dirty bottles\r\nand align to nozzle",
+          "Tap the button\r\nto clean bottles"
         ],
         "cta": "Start"
       },
@@ -171,8 +171,8 @@
         "preheading": "¿Cuantos puedes lavar?",
         "heading": "Cómo jugar",
         "instructions": [
-          "Arrastra y\r\nalinear botellas",
-          "Prensa\r\nrociar agua"
+          "Arrastra botellas sucias\r\ny alinear con la boquilla",
+          "Toca el botón\r\npara limpiar botellas"
         ],
         "cta": "Comenzar"
       },
@@ -303,8 +303,8 @@
         "preheading": "Combien pouvez-vous en laver ?",
         "heading": "Comment jouer",
         "instructions": [
-          "Faites glisser et\r\naligner les bouteilles",
-          "Presse\r\npulvériser de l'eau"
+          "Faites glisser les bouteilles sales\r\net alignez-le sur la buse",
+          "Appuyez sur le bouton\r\nnettoyer les bouteilles"
         ],
         "cta": "Commencer"
       },
