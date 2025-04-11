@@ -149,6 +149,13 @@ export const Tutorial = memo(({ id, show, steps = 2, onClick }) => {
       className={classnames(['page', 'tutorial', { show }])}
       ref={refRoot}
     >
+      <motion.div
+        className="full backdrop-blur-5"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: show ? 1 : 0 }}
+        transition={{ duration: 0.3 }}
+      />
+
       <div className="page__top">
         <div className="tutorial__preheading">
           {t(`${id}.tutorial.preheading`)}
