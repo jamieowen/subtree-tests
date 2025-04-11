@@ -26,11 +26,15 @@ export const CleaningGame = forwardRef(({ visible, show, onEnded }, ref) => {
 
   const playing = show && started;
 
+  console.log(show, started, playing);
+
+  const refBottles = useRef(null);
   const refControls = useRef(null);
 
   useImperativeHandle(ref, () => ({
     reset: () => {
       setStarted(false);
+      refBottles.current.resetBottles();
       refControls.current.reset();
     },
   }));
@@ -81,7 +85,10 @@ export const CleaningGame = forwardRef(({ visible, show, onEnded }, ref) => {
             ref={refControls}
             playing={playing}
           />
-          <CleaningSystemBottles playing={playing} />
+          <CleaningSystemBottles
+            ref={refBottles}
+            playing={playing}
+          />
           <CleaningSystemGraphics />
         </group>
 

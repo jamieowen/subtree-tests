@@ -15,13 +15,14 @@ export const CleaningBottles = () => {
   );
 };
 
-let idx = 0;
-export const addBottle = () => {
+// let idx = 0;
+// let negative idx = 0;
+export const addBottle = (i) => {
   const isClean = Math.random() > 0.65;
 
   const opts = {
     isBottle: true,
-    idx,
+    idx: i != undefined ? i : 0,
     position: { x: 0, y: 0 },
     progress: 0,
   };
@@ -35,5 +36,5 @@ export const addBottle = () => {
   }
 
   CleaningECS.world.add(opts);
-  idx = idx + 1;
+  // idx = idx + 1;
 };

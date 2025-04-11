@@ -45,12 +45,17 @@ export const CleaningSystemControls = forwardRef(
       if (timeout) clearTimeout(timeout);
       timeout = setTimeout(() => {
         let remainder = Math.abs(to.current) % 1;
+        let isNegative = to.current < 0;
 
         if (remainder >= 1 - within) {
-          to.current = Math.ceil(to.current);
+          to.current = isNegative
+            ? Math.floor(to.current)
+            : Math.ceil(to.current);
         }
         if (remainder <= within) {
-          to.current = Math.floor(to.current);
+          to.current = isNegative
+            ? Math.ceil(to.current)
+            : Math.floor(to.current);
         }
       }, 200);
     };
@@ -69,7 +74,7 @@ export const CleaningSystemControls = forwardRef(
         if (isLocked()) return;
         if (!playing) return;
 
-        if (to.current < 0) {
+        if (oneDirection && to.current < 0) {
           to.current = 0;
           return;
         }
@@ -83,7 +88,7 @@ export const CleaningSystemControls = forwardRef(
           onDown();
         }
 
-        if (oneDirection && state.delta[0] < 0) return;
+        // if (oneDirection && state.delta[0] < 0) return; // ONE DIRECTION ONLY
         to.current += state.delta[0] * multiplier;
       },
       { target: window }
@@ -99,7 +104,7 @@ export const CleaningSystemControls = forwardRef(
       ];
 
       damp(current, 'current', to.current, ...opts);
-      if (current.current < 0) {
+      if (oneDirection && current.current < 0) {
         current.current = 0;
       }
 
