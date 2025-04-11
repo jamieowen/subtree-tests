@@ -9,7 +9,7 @@ const lockedTargets = FillingECS.world.with('locked');
 export const FillingConveyorBelt = ({ playing = false, children }) => {
   const refBelt = useRef(null);
   const refSprite = useRef(null);
-  const s = 1;
+  const s = 1.3;
 
   const aspect = 256 / 512;
 
@@ -18,7 +18,7 @@ export const FillingConveyorBelt = ({ playing = false, children }) => {
 
   const [locked] = useEntities(lockedTargets);
 
-  let fps = 24;
+  let fps = 48 * 2 * 0.59;
   let frame = useRef(0);
 
   useFrame((state, delta) => {
