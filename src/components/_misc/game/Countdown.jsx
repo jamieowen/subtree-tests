@@ -89,7 +89,7 @@ export const Countdown = ({
           className="preheading type-body1"
           initial={{ opacity: 0 }}
           animate={{ opacity: show ? 1 : 0 }}
-          transition={{ duration: 0.3, delay: 1 }}
+          transition={{ duration: 0.3, delay: show ? 1 : 0 }}
         >
           {t(`${id}.game.ready`)}
         </motion.div>

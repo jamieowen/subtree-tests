@@ -17,6 +17,8 @@ export const TheHeader = () => {
   const muted = useAppStore((state) => state.muted);
   const toggleMuted = useAppStore((state) => state.toggleMuted);
 
+  const showHeading = !showLogo && !isVideo;
+
   return (
     <div className="the-header">
       <button
@@ -38,17 +40,38 @@ export const TheHeader = () => {
           )}
         </AnimatePresence>
 
-        <AnimatePresence>
-          {!showLogo && !isVideo && (
-            <span
+        {/* <AnimatePresence>
+          {showHeading && (
+            <Heading1
               className="type-caption"
               key={page}
-              exit={{ opacity: 0 }}
+              show={showHeading}
             >
               {t(`${page}.name`)}
-            </span>
+            </Heading1>
           )}
-        </AnimatePresence>
+        </AnimatePresence> */}
+
+        <Heading1
+          className="type-caption"
+          show={page == 'cleaning'}
+        >
+          {t(`cleaning.name`)}
+        </Heading1>
+
+        <Heading1
+          className="type-caption"
+          show={page == 'filling'}
+        >
+          {t(`filling.name`)}
+        </Heading1>
+
+        <Heading1
+          className="type-caption"
+          show={page == 'grouping'}
+        >
+          {t(`grouping.name`)}
+        </Heading1>
       </div>
       <button
         className="btn-quit"

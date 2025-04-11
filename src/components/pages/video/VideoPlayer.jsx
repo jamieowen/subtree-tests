@@ -83,7 +83,7 @@ export const VideoPlayer = forwardRef(
           onEnded={onEnd}
           playsInline
           muted={muted}
-          preload
+          preload="auto"
         />
         <AnimatePresence>
           {showPoster && (

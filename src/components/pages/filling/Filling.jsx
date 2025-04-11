@@ -56,10 +56,10 @@ export const Filling = ({ show, ...props }) => {
         className={classnames(['game-bg', { blurBg }])}
       />
 
-      <img
+      {/* <img
         src={'/assets/images/filling-game-artboard.png'}
         className={classnames(['artboard'])}
-      />
+      /> */}
 
       <AnimatePresence>
         {showVideo && (
