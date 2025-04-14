@@ -29,12 +29,28 @@ export const Pages = () => {
         {showCleaningIntroVideo && (
           <VideoPlayer
             ref={refVideo}
-            key="cleaning-video"
-            src={urls.v_cleaning}
-            poster={urls.i_cleaning_intro}
+            key="video-intro"
+            src={urls.v_intro}
+            poster={urls.i_intro}
             onEnd={nextPage}
             autoPlay={false}
+            muted={false}
             exit={{ opacity: 0 }}
+          />
+        )}
+
+        {page == '' && (
+          <motion.video
+            key={'video-landing'}
+            src={urls.v_landing}
+            poster={urls.i_landing}
+            autoPlay={true}
+            loop={true}
+            muted={true}
+            className="full object-cover"
+            playsInline={true}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 41 / 30, ease: 'linear' }}
           />
         )}
       </AnimatePresence>

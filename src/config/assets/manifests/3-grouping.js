@@ -10,10 +10,10 @@ export const fonts = {};
 export const models = {};
 
 export const images = {
-  i_grouping_intro: `/assets/images-next/grouping-intro.webp`,
-  i_grouping_loop: `/assets/images-next/grouping-loop.webp`,
+  i_grouping_intro: `/assets/images-next/posters/Tran2.webp`,
+  i_grouping_loop: `/assets/images-next/posters/BG3.webp`,
   i_grouping_result: `/assets/images-next/grouping-result.webp`,
-  i_ending: `/assets/images-next/ending.webp`,
+  i_ending: `/assets/images-next/posters/Outro.webp`,
 };
 
 export const textures = {
@@ -37,7 +37,7 @@ export const sounds = {
 const videos = {
   v_grouping: `/assets/videos/Tran2.mp4`,
   v_grouping_bg: `/assets/videos/BG3.mp4`,
-  v_ending: `/assets/videos/OutroV2.mp4`,
+  v_ending: `/assets/videos/Outro.mp4`,
 };
 
 export const urls = {

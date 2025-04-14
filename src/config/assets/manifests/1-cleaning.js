@@ -10,7 +10,7 @@ export const fonts = {};
 export const models = {};
 
 export const images = {
-  i_cleaning_loop: `/assets/images-next/cleaning-loop.webp`,
+  i_cleaning_loop: `/assets/images-next/posters/BG1.webp`,
   i_cleaning_result: `/assets/images-next/cleaning-result2.webp`,
 };
 

@@ -2,6 +2,7 @@ import './Landing.sass';
 import { useAppStore } from '@/stores/app';
 import classnames from 'classnames';
 import AssetService from '@/services/AssetService';
+import { urls } from '@/config/assets';
 
 export const Landing = ({ show, ...props }) => {
   const { t } = useTranslation();
@@ -9,12 +10,22 @@ export const Landing = ({ show, ...props }) => {
 
   const onClick = () => {
     nextPage();
-    AssetService.getAsset('sfx_introvideo').play(); // TODO: Remove
+    // AssetService.getAsset('sfx_introvideo').play(); // TODO: Remove
     AssetService.getAsset('mx_introvideo').play();
   };
 
   return (
     <div className={classnames(['page', 'Landing', { show }])}>
+      {/* <video
+        src={urls.v_landing}
+        poster={urls.i_landing}
+        autoPlay={true}
+        loop={true}
+        muted={true}
+        className="full object-cover"
+        playsInline={true}
+      /> */}
+
       <div className="wrap">
         <div className="top">
           <Heading1

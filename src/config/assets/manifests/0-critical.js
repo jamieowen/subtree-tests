@@ -9,7 +9,8 @@ export const fonts = {};
 export const models = {};
 
 export const images = {
-  i_cleaning_intro: `/assets/images-next/cleaning-intro.webp`,
+  i_landing: `/assets/images-next/posters/Landing.webp`,
+  i_intro: `/assets/images-next/posters/Intro.webp`,
 };
 
 export const textures = {
@@ -33,7 +34,8 @@ export const sounds = {
 };
 
 const videos = {
-  v_cleaning: `/assets/videos/intro_V7Start41frame.mp4`,
+  v_landing: `/assets/videos/Landing.mp4`,
+  v_intro: `/assets/videos/Intro.mp4`,
 };
 
 export const urls = {

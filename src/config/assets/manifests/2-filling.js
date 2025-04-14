@@ -12,8 +12,8 @@ export const models = {
 };
 
 export const images = {
-  i_filling_intro: `/assets/images-next/filling-intro.webp`,
-  i_filling_loop: `/assets/images-next/filling-loop.webp`,
+  i_filling_intro: `/assets/images-next/posters/Tran1.webp`,
+  i_filling_loop: `/assets/images-next/posters/BG2.webp`,
   i_filling_result0: `/assets/images-next/filling-result/cap0.webp`,
   i_filling_result1: `/assets/images-next/filling-result/cap1.webp`,
   i_filling_result2: `/assets/images-next/filling-result/cap2.webp`,
