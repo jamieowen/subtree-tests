@@ -1,7 +1,7 @@
 import './Ending.sass';
 import { useAppStore } from '@/stores/app';
 import classnames from 'classnames';
-
+import AssetService from '@/services/AssetService';
 import { urls } from '@/config/assets';
 
 // import IconBottlePattern from '@/assets/bg-pattern.svg?react';
@@ -20,6 +20,8 @@ export const Ending = ({ show, ...props }) => {
   const onRestart = () => {
     emitter.emit('reset');
     setPage('');
+    let gameloop = AssetService.getAsset('mx_gameloop');
+    gameloop.stop();
     // window.location.reload();
   };
 
@@ -32,6 +34,20 @@ export const Ending = ({ show, ...props }) => {
   };
 
   const onLearnMore = () => {};
+
+  useEffect(() => {
+    let gameloop = AssetService.getAsset('mx_gameloop');
+    gameloop.stop();
+  }, [show]);
+
+  useEffect(() => {
+    let gameloop = AssetService.getAsset('mx_gameloop');
+    if (section == 'video') {
+      gameloop.stop();
+    } else {
+      gameloop.play();
+    }
+  }, [section]);
 
   return (
     <div className={classnames(['page', 'page-opacity', 'ending', { show }])}>

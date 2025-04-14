@@ -142,7 +142,7 @@ export const Results = ({ id, show, count = 0, onReplay, onNext }) => {
         onClick={onNext}
         show={show}
         delay={show ? 1 : 0}
-        // auto={show ? 8 : 0}
+        auto={show ? 8 : 0}
       >
         {t(`${id}.results.next`)}
       </ButtonPrimary>

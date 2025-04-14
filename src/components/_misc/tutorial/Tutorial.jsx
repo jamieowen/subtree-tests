@@ -211,7 +211,7 @@ export const Tutorial = memo(({ id, show, steps = 2, onClick }) => {
           show={show}
           delay={show ? 0.4 : 0}
           onClick={onClick}
-          // auto={show ? stepTime * steps : 0} // DEBUG
+          auto={show ? stepTime * steps : 0}
         >
           {t(`${id}.tutorial.cta`)}
         </ButtonPrimary>

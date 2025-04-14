@@ -17,7 +17,7 @@ export const images = {
 };
 
 export const textures = {
-  t_grouping_bottle: `/assets/textures-o/3_grouping/bottle.ktx2`, // TODO: Remove
+  // t_grouping_bottle: `/assets/textures-o/3_grouping/bottle.ktx2`, // TODO: Remove
   t_grouping_bottle_c: `/assets/textures-o/3_grouping/bottle-c.ktx2`,
   t_grouping_bottle_cc: `/assets/textures-o/3_grouping/bottle-cc.ktx2`,
   t_grouping_box: `/assets/textures-o/3_grouping/box.ktx2`,
