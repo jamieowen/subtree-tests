@@ -12,6 +12,9 @@ export const Landing = ({ show, ...props }) => {
     nextPage();
     // AssetService.getAsset('sfx_introvideo').play(); // TODO: Remove
     AssetService.getAsset('mx_introvideo').play();
+
+    // let gameloop = AssetService.getAsset('mx_gameloop');
+    // gameloop.stop();
   };
 
   return (
