@@ -2,7 +2,17 @@ import { randomIntRange } from '@/helpers/MathUtils';
 
 export const MaterialModuleSpriteAnimated = forwardRef(
   (
-    { map, rows = 1, cols = 1, frames = 1, fps = 12, frame = 0, auto = false },
+    {
+      map,
+      rows = 1,
+      cols = 1,
+      frames = 1,
+      fps = 12,
+      frame = 0,
+      auto = false,
+      hardLight = false,
+      blend = `pc_fragColor.rgb = frameColor.rgb;`,
+    },
     ref
   ) => {
     const { material } = useMaterialModule({
@@ -113,9 +123,12 @@ export const MaterialModuleSpriteAnimated = forwardRef(
           );
 
           pc_fragColor.a = frameColor.a;
-          // pc_fragColor.rgb = blendHardLight(vec3(1.0, 0.0, 0.0), frameColor.rgb);
+
+          // pc_fragColor.rgb = blendHardLight(vec3(132. / 255., 183. / 255., 146. / 255.), frameColor.rgb, frameColor.a);
+          // pc_fragColor.rgb = blendHardLight(vec3(1.0,1.0,1.0), frameColor.rgb, frameColor.a);
           // pc_fragColor.rgb = blendLinearLight(vec3(1.0, 0.0, 0.0), frameColor.rgb);
-          pc_fragColor.rgb = frameColor.rgb;
+          // pc_fragColor.rgb = frameColor.rgb;
+          ${blend}
         `,
       },
     });

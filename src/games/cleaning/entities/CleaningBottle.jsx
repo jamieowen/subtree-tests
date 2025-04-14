@@ -73,6 +73,7 @@ export const CleaningBottle = (entity) => {
                       cols={4096 / 256}
                       frames={48}
                       fps={12}
+                      blend="pc_fragColor.rgb = blendHardLight(vec3(132. / 255., 183. / 255., 146. / 255.), frameColor.rgb, frameColor.a);"
                     />
                   </GBufferMaterial>
                 </mesh>
