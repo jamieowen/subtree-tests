@@ -53,6 +53,7 @@ export const Grouping = ({ show, ...props }) => {
         autoPlay
         muted
         loop
+        playsInline={true}
         className={classnames(['game-bg', { blurBg: true }])}
       />
 

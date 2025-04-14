@@ -250,6 +250,7 @@ export default defineConfig(async () => {
           './src/contexts/**',
           './src/webgl/**',
           './src/config/**',
+          './src/stores/**',
           //
         ],
         eslintrc: {

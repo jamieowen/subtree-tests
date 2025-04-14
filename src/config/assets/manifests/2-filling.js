@@ -14,6 +14,12 @@ export const models = {
 export const images = {
   i_filling_intro: `/assets/images-next/filling-intro.webp`,
   i_filling_loop: `/assets/images-next/filling-loop.webp`,
+  i_filling_result0: `/assets/images-next/filling-result/cap0.webp`,
+  i_filling_result1: `/assets/images-next/filling-result/cap1.webp`,
+  i_filling_result2: `/assets/images-next/filling-result/cap2.webp`,
+  i_filling_result3: `/assets/images-next/filling-result/cap3.webp`,
+  i_filling_result4: `/assets/images-next/filling-result/cap4.webp`,
+  i_filling_result5: `/assets/images-next/filling-result/cap5.webp`,
 };
 
 export const textures = {

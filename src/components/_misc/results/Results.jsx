@@ -3,19 +3,15 @@ import classnames from 'classnames';
 import AssetService from '@/services/AssetService';
 import gsap from 'gsap';
 
-export const Results = ({
-  id,
-  show,
-  count = 0,
-  points = 0,
-  onReplay,
-  onNext,
-}) => {
+export const Results = ({ id, show, count = 0, onReplay, onNext }) => {
   const { t } = useTranslation();
 
   useEffect(() => {
     if (!show) return;
-    AssetService.getAsset('sfx_showresult').play();
+    let sfx = AssetService.getAsset('sfx_showresult');
+    if (sfx) {
+      sfx.play();
+    }
   }, [show]);
 
   // ANIMATE IN
@@ -112,14 +108,16 @@ export const Results = ({
     }
   }, [show]);
 
-  console.log('Results', show);
-
   return (
     <section
       className={classnames(['page', 'results', { show }])}
       ref={refRoot}
     >
       <BottleBg show={show} />
+
+      {id == 'cleaning' && <ResultCleaning show={show} />}
+      {id == 'filling' && <ResultFilling show={show} />}
+      {id == 'grouping' && <ResultGrouping show={show} />}
 
       <div className="wrap">
         <Heading1 show={show}>{t(`${id}.results.heading`)}</Heading1>
@@ -144,7 +142,7 @@ export const Results = ({
         onClick={onNext}
         show={show}
         delay={show ? 1 : 0}
-        auto={show ? 8 : 0}
+        // auto={show ? 8 : 0}
       >
         {t(`${id}.results.next`)}
       </ButtonPrimary>

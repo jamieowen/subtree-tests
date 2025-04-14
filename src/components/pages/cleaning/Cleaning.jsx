@@ -2,25 +2,25 @@ import './Cleaning.sass';
 import classnames from 'classnames';
 import { useAppStore } from '@/stores/app';
 import { useCleaningStore } from '@/stores/cleaning';
-import { Results } from '../../_misc/Results';
+// import { Results } from '../../_misc/Results';
 import AssetService from '@/services/AssetService';
 import { urls } from '@/config/assets';
 // import * as config from '@/config/games/cleaning';
 
 export const Cleaning = ({ show, ...props }) => {
   const { t } = useTranslation();
-  const setPage = useAppStore((state) => state.setPage);
+  const setPage = useAppStore((state) => state?.setPage);
 
   // const duration = useCleaningStore((state) => state.config.duration);
-  const count = useCleaningStore((state) => state.count);
-  const setCount = useCleaningStore((state) => state.setCount);
+  const count = useCleaningStore((state) => state?.count);
+  const setCount = useCleaningStore((state) => state?.setCount);
   // const resetCount = useCleaningStore((state) => state.resetCount);
 
-  const section = useCleaningStore((state) => state.section);
-  const setSection = useCleaningStore((state) => state.setSection);
-  const nextSection = useCleaningStore((state) => state.nextSection);
+  const section = useCleaningStore((state) => state?.section);
+  const setSection = useCleaningStore((state) => state?.setSection);
+  const nextSection = useCleaningStore((state) => state?.nextSection);
 
-  const replay = useCleaningStore((state) => state.replay);
+  const replay = useCleaningStore((state) => state?.replay);
 
   const { completed } = useAssetProgress();
 
@@ -82,6 +82,7 @@ export const Cleaning = ({ show, ...props }) => {
         autoPlay
         muted
         loop
+        playsInline={true}
         className={classnames(['game-bg', { blurBg: true }])}
       />
 
@@ -114,7 +115,6 @@ export const Cleaning = ({ show, ...props }) => {
         show={show && section == 'results'}
         onReplay={onReplay}
         count={count}
-        points={count}
         onNext={() => setPage('filling')}
       />
     </div>

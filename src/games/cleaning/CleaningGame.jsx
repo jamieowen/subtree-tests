@@ -16,12 +16,13 @@ export const CleaningGame = forwardRef(({ visible, show, onEnded }, ref) => {
   const [started, setStarted] = useState(false);
 
   const onCountdownEnded = () => {
+    // if (!show || !visible) return;
     setStarted(true);
   };
 
   const onTimeLeftEnded = () => {
-    if (!show) return;
-    onEnded();
+    if (!show || !visible) return;
+    onEnded?.();
   };
 
   const playing = show && started;

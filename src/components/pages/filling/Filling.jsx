@@ -60,6 +60,7 @@ export const Filling = ({ show, ...props }) => {
         autoPlay
         muted
         loop
+        playsInline={true}
         className={classnames(['game-bg', { blurBg: true }])}
       />
 

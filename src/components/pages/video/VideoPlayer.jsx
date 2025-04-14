@@ -81,7 +81,8 @@ export const VideoPlayer = forwardRef(
           src={src}
           poster={poster}
           onEnded={onEnd}
-          playsInline
+          webkitPlaysInline={true}
+          playsInline={true}
           muted={muted}
           preload="auto"
         />

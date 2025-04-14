@@ -50,7 +50,6 @@ export const BottleBg = ({ show }) => {
   // });
 
   useEffect(() => {
-    console.log('BottleBg', show);
     if (show) {
       animateIn();
     }
