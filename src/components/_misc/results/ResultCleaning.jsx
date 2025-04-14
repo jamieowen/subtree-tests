@@ -45,6 +45,8 @@ export const ResultCleaning = ({ show }) => {
     }
   }, [show, count]);
 
+  const aspect = 1 / 4;
+
   return (
     <div
       className="result-cleaning full"
@@ -55,6 +57,9 @@ export const ResultCleaning = ({ show }) => {
           src={urls.i_cleaning_result}
           key={i}
           className="result-cleaning-item absolute top-0 left-0 w-[8rem] origin-center"
+          style={{
+            aspectRatio: aspect,
+          }}
         />
       ))}
     </div>

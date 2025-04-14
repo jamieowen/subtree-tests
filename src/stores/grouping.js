@@ -7,7 +7,7 @@ import {
   getUrlFloat,
 } from '@/helpers/UrlParam';
 
-import * as config from '@/config/games/cleaning';
+import * as config from '@/config/games/grouping';
 import { number } from 'prop-types';
 
 export const useGroupingStore = create((set) => ({
