@@ -76,27 +76,30 @@ export const VideoPlayer = forwardRef(
         className="video-player"
         onClick={onClick}
       >
-        <video
-          ref={refVideo}
-          src={src}
-          poster={poster}
-          onEnded={onEnd}
-          webkitPlaysInline={true}
-          playsInline={true}
-          muted={muted}
-          preload="auto"
-        />
-        <AnimatePresence>
-          {showPoster && (
-            <motion.img
-              src={poster}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: showPoster ? 1 : 0 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.1, ease: 'easeIn' }}
-            />
-          )}
-        </AnimatePresence>
+        <div className="wrap">
+          <video
+            ref={refVideo}
+            src={src}
+            poster={poster}
+            onEnded={onEnd}
+            webkitPlaysInline={true}
+            playsInline={true}
+            muted={muted}
+            preload="auto"
+          />
+          <AnimatePresence>
+            {showPoster && (
+              <motion.img
+                src={poster}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: showPoster ? 1 : 0 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.1, ease: 'easeIn' }}
+              />
+            )}
+          </AnimatePresence>
+        </div>
+
         <AnimatePresence>
           {showSkip && played && (
             <button
