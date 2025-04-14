@@ -12,6 +12,7 @@ export const BottleBg = ({ show }) => {
   const loop = useRef(null);
 
   const animateIn = contextSafe(() => {
+    console.log('BottleBg', 'animateIn');
     if (_tl.current) _tl.current.kill();
     if (loop.current) loop.current.kill();
     let tl = gsap.timeline();
@@ -49,6 +50,7 @@ export const BottleBg = ({ show }) => {
   // });
 
   useEffect(() => {
+    console.log('BottleBg', show);
     if (show) {
       animateIn();
     }
@@ -71,8 +73,8 @@ export const BottleBg = ({ show }) => {
             key={i}
             className="contents"
           >
-            <IconPattern className="bottle red" />
-            <IconPattern className="bottle green" />
+            <IconPattern className="bottleBg__bottle red" />
+            <IconPattern className="bottleBg__bottle green" />
           </div>
         ))}
       </div>

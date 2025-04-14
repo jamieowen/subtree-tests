@@ -11,7 +11,7 @@ export const GroupingGame = forwardRef(({ visible, show, onEnded }, ref) => {
   const { t } = useTranslation();
   const count = useGroupingStore((state) => state.count);
   const points = useMemo(() => count, [count]);
-  const duration = 30;
+  const duration = useGroupingStore((state) => state.config.duration);
 
   const [started, setStarted] = useState(false);
 

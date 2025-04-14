@@ -112,6 +112,8 @@ export const Results = ({
     }
   }, [show]);
 
+  console.log('Results', show);
+
   return (
     <section
       className={classnames(['page', 'results', { show }])}
@@ -142,7 +144,7 @@ export const Results = ({
         onClick={onNext}
         show={show}
         delay={show ? 1 : 0}
-        auto={show ? 8 : 0}
+        // auto={show ? 8 : 0}
       >
         {t(`${id}.results.next`)}
       </ButtonPrimary>

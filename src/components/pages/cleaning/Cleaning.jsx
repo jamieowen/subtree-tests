@@ -5,15 +5,16 @@ import { useCleaningStore } from '@/stores/cleaning';
 import { Results } from '../../_misc/Results';
 import AssetService from '@/services/AssetService';
 import { urls } from '@/config/assets';
+// import * as config from '@/config/games/cleaning';
 
 export const Cleaning = ({ show, ...props }) => {
   const { t } = useTranslation();
   const setPage = useAppStore((state) => state.setPage);
 
-  const duration = useCleaningStore((state) => state.config.duration);
+  // const duration = useCleaningStore((state) => state.config.duration);
   const count = useCleaningStore((state) => state.count);
   const setCount = useCleaningStore((state) => state.setCount);
-  const resetCount = useCleaningStore((state) => state.resetCount);
+  // const resetCount = useCleaningStore((state) => state.resetCount);
 
   const section = useCleaningStore((state) => state.section);
   const setSection = useCleaningStore((state) => state.setSection);
