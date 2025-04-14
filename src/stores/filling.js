@@ -39,7 +39,10 @@ export const useFillingStore = create((set) => ({
   // ****************************************
   // SECTION
   // ****************************************
-  section: getUrlString('section', 'video'),
+  section:
+    getUrlString('page', '') == 'filling'
+      ? getUrlString('section', 'video')
+      : '',
   setSection: (val) =>
     set((state) => {
       return { section: val };
