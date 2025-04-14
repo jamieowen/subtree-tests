@@ -6,6 +6,8 @@ import AssetService from '@/services/AssetService';
 
 const lockedTargets = FillingECS.world.with('locked');
 
+const numFrames = 64;
+
 export const FillingConveyorBelt = ({ playing = false, children }) => {
   const refBelt = useRef(null);
   const refSprite = useRef(null);
@@ -18,14 +20,14 @@ export const FillingConveyorBelt = ({ playing = false, children }) => {
 
   const [locked] = useEntities(lockedTargets);
 
-  let fps = 48 * 2 * 0.59;
+  let fps = numFrames * 2 * 0.59;
   let frame = useRef(0);
 
   useFrame((state, delta) => {
     if (!playing) return;
     if (!refBelt.current.locked) {
       frame.current += delta * fps * refBelt.current.speed;
-      refSprite.current.frame = Math.floor(frame.current) % 47;
+      refSprite.current.frame = Math.floor(frame.current) % (numFrames - 1);
     }
   });
 
@@ -72,7 +74,7 @@ export const FillingConveyorBelt = ({ playing = false, children }) => {
                 map={t_belt}
                 rows={4096 / 256}
                 cols={2048 / 512}
-                frames={47}
+                frames={numFrames - 1}
               />
             </GBufferMaterial>
           </mesh>
