@@ -3,8 +3,8 @@ import gsap from 'gsap';
 import { randomInRange } from '@/helpers/MathUtils';
 
 export const ResultFilling = ({ show }) => {
-  // const count = useFillingStore((state) => state.count);
-  const count = 10;
+  const count = useFillingStore((state) => state.count);
+  // const count = 10;
 
   const refRoot = useRef(null);
   const tween = useRef(null);
