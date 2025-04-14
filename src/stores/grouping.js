@@ -42,7 +42,7 @@ export const useGroupingStore = create((set) => ({
   section:
     getUrlString('page', '') == 'grouping'
       ? getUrlString('section', 'video')
-      : '',
+      : 'video',
   setSection: (val) =>
     set((state) => {
       return { section: val };

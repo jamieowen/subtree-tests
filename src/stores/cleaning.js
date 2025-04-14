@@ -42,7 +42,7 @@ export const useCleaningStore = create((set) => ({
   section:
     getUrlString('page', '') == 'cleaning'
       ? getUrlString('section', 'intro')
-      : '',
+      : 'intro',
   setSection: (val) =>
     set((state) => {
       return { section: val };
