@@ -23,10 +23,14 @@
   },
   "landing": {
     "heading": "Join us the\r\nRefillable Way",
-    "desc": "Our refillable glass bottles\r\nare designed to be refilled\r\nat least 25 times",
+    "desc": "Play the game and refill as many bottles as you can. ",
     "cta": "Start Experience"
   },
   "cleaning": {
+    "video": {
+      "super": "Once empty, our bottles are collected and sent to our factories to be cleaned and refilled.",
+      "disclaimer": "The factory portrayed in this game is fictional"
+    },
     "name": "Washing",
     "step": "Station 1/3",
     "intro": {
@@ -44,6 +48,7 @@
       "cta": "Start"
     },
     "game": {
+      "disclaimer": "The process is crafted for entertainment and does not reflect reality 100%",
       "ready": "Get Ready!",
       "cta": "Clean",
       "time": "Time Left",
@@ -62,7 +67,7 @@
     "step": "Station 2/3",
     "intro": {
       "heading": "Ready. Set.\r\nRefill!",
-      "desc": "An exact amount of beverage\r\nis dispensed into each bottle. \r\nBe careful not to overfill!",
+      "desc": "Fill each bottle past the line - anything less doesn‘t count!",
       "cta": "Play Game"
     },
     "tutorial": {
@@ -95,12 +100,12 @@
     "name": "Crating",
     "step": "Station 3/3",
     "intro": {
-      "heading": "Final Step.",
+      "heading": "FINAL STEP!​",
       "desc": "Your fast reflexes are needed to \r\ngroup the bottles into crates",
       "cta": "Play Game"
     },
     "tutorial": {
-      "preheading": "How many bottles\r\ncan you catch?",
+      "preheading": "​How many can you get?​",
       "heading": "How to Play",
       "instructions": [
         "Drag the crate\r\nleft / right",
@@ -121,10 +126,13 @@
     }
   },
   "ending": {
+    "video": {
+      "super": "And voilà — the bottles are ready for a fresh serve!"
+    },
     "preheading": "Amazing job",
     "heading": "You're\r\na bottle-\r\nrefilling\r\nsuperstar",
     "restart": "Play Again",
-    "cta": "Learn More"
+    "cta": "Let‘s connect?"
   },
   "example": "Example"
 }

@@ -81,18 +81,18 @@ export const GroupingGame = forwardRef(({ visible, show, onEnded }, ref) => {
 
       <div className="contents">
         <TimeLeft
-          id="cleaning"
+          id="grouping"
           duration={duration}
           onEnded={onTimeLeftEnded}
           show={started}
         />
         <Points
-          id="cleaning"
+          id="grouping"
           points={points}
           show={started}
         />
         <Countdown
-          id="cleaning"
+          id="grouping"
           onEnded={onCountdownEnded}
           show={show && !started}
         />

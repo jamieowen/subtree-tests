@@ -24,10 +24,14 @@
     },
     "landing": {
       "heading": "Join us the\r\nRefillable Way",
-      "desc": "Our refillable glass bottles\r\nare designed to be refilled\r\nat least 25 times",
+      "desc": "Play the game and refill as many bottles as you can. ",
       "cta": "Start Experience"
     },
     "cleaning": {
+      "video": {
+        "super": "Once empty, our bottles are collected and sent to our factories to be cleaned and refilled.",
+        "disclaimer": "The factory portrayed in this game is fictional"
+      },
       "name": "Washing",
       "step": "Station 1/3",
       "intro": {
@@ -45,6 +49,7 @@
         "cta": "Start"
       },
       "game": {
+        "disclaimer": "The process is crafted for entertainment and does not reflect reality 100%",
         "ready": "Get Ready!",
         "cta": "Clean",
         "time": "Time Left",
@@ -63,7 +68,7 @@
       "step": "Station 2/3",
       "intro": {
         "heading": "Ready. Set.\r\nRefill!",
-        "desc": "An exact amount of beverage\r\nis dispensed into each bottle. \r\nBe careful not to overfill!",
+        "desc": "Fill each bottle past the line - anything less doesn‘t count!",
         "cta": "Play Game"
       },
       "tutorial": {
@@ -96,12 +101,12 @@
       "name": "Crating",
       "step": "Station 3/3",
       "intro": {
-        "heading": "Final Step.",
+        "heading": "FINAL STEP!​",
         "desc": "Your fast reflexes are needed to \r\ngroup the bottles into crates",
         "cta": "Play Game"
       },
       "tutorial": {
-        "preheading": "How many bottles\r\ncan you catch?",
+        "preheading": "​How many can you get?​",
         "heading": "How to Play",
         "instructions": [
           "Drag the crate\r\nleft / right",
@@ -122,10 +127,13 @@
       }
     },
     "ending": {
+      "video": {
+        "super": "And voilà — the bottles are ready for a fresh serve!"
+      },
       "preheading": "Amazing job",
       "heading": "You're\r\na bottle-\r\nrefilling\r\nsuperstar",
       "restart": "Play Again",
-      "cta": "Learn More"
+      "cta": "Let‘s connect?"
     },
     "example": "Example"
   },
@@ -156,20 +164,24 @@
       "no": "No"
     },
     "landing": {
-      "heading": "Únase a nosotros el\r\nManera recargable",
-      "desc": "Nuestras botellas de vidrio recargables\r\nestán diseñados para ser recargados\r\nal menos 25 veces",
-      "cta": "Iniciar experiencia"
+      "heading": "Súmate al \r\nmovimiento del \r\nvidrio retornable",
+      "desc": "Juega y rellena tantas botellas como puedas.",
+      "cta": "Ayúdanos a rellenar"
     },
     "cleaning": {
+      "video": {
+        "super": "Una vez vacías, nuestras botellas son recogidas y enviadas a nuestras fábricas a ser limpiadas y rellenadas.",
+        "disclaimer": "La fábrica mostrada no es una representación real "
+      },
       "name": "Lavado",
       "step": "Estación 1/3",
       "intro": {
-        "heading": "tiempo para un\r\nLavar",
-        "desc": "Primero, todas las botellas deben ser \r\nlimpiado a fondo",
+        "heading": "¡ES MOMENTO DE \r\nLIMPIAR!",
+        "desc": "Antes de su nueva vida, las botellas necesitan un lavado a fondo.",
         "cta": "jugar juego"
       },
       "tutorial": {
-        "preheading": "¿Cuantos puedes lavar?",
+        "preheading": "¿Cuántas puedes dejar impecables?",
         "heading": "Cómo jugar",
         "instructions": [
           "Arrastra botellas sucias\r\ny alinear con la boquilla",
@@ -178,6 +190,7 @@
         "cta": "Comenzar"
       },
       "game": {
+        "disclaimer": "Este proceso ha sido diseñado con fines de entretenimiento y no representa la realidad al 100%",
         "ready": "¡Prepararse!",
         "cta": "Limpio",
         "time": "Tiempo restante",
@@ -195,8 +208,8 @@
       "name": "Llenado y tapado",
       "step": "Estación 2/3",
       "intro": {
-        "heading": "Listo. Colocar.\r\n¡Rellenar!",
-        "desc": "Una cantidad exacta de bebida.\r\nse dispensa en cada botella. \r\n¡Tenga cuidado de no llenar demasiado!",
+        "heading": "¡LISTOS, PREPARADOS, \r\nA RELLENAR!",
+        "desc": "Llena cada botella por encima de la línea - por debajo no cuenta!",
         "cta": "jugar juego"
       },
       "tutorial": {
@@ -211,9 +224,9 @@
       "game": {
         "ready": "¡Prepararse!",
         "cta": {
-          "press": "Mantenga presionado",
-          "hold": "Sigue sosteniendo",
-          "release": "Liberar"
+          "press": "Presiona & Sostén",
+          "hold": "Sigue sosteniendo ",
+          "release": "Suelta"
         },
         "time": "Tiempo restante",
         "points": "Agujas"
@@ -229,12 +242,12 @@
       "name": "embalaje",
       "step": "Estación 3/3",
       "intro": {
-        "heading": "Paso final.",
-        "desc": "Tus reflejos rápidos son necesarios para \r\nagrupar las botellas en cajas",
+        "heading": "¡ÚLTIMO PASO!",
+        "desc": "Tus reflejos rápidos son clave para agrupar las botellas en las cajas.",
         "cta": "jugar juego"
       },
       "tutorial": {
-        "preheading": "cuantas botellas\r\n¿puedes atrapar?",
+        "preheading": "¿Cuántas puedes colocar?",
         "heading": "Cómo jugar",
         "instructions": [
           "Arrastra la caja\r\nizquierda / derecha",
@@ -255,10 +268,13 @@
       }
     },
     "ending": {
-      "preheading": "trabajo increíble",
-      "heading": "Estás\r\nuna botella-\r\nrellenando\r\nsuperestrella",
+      "video": {
+        "super": "Y listo - Las botellas están listas para servir de nuevo!"
+      },
+      "preheading": "¡Espectacular!",
+      "heading": "Has dominado el arte de rellenar botellas.",
       "restart": "Jugar de nuevo",
-      "cta": "Más información"
+      "cta": "Conectamos?"
     },
     "example": "Ejemplo"
   },
@@ -290,10 +306,14 @@
     },
     "landing": {
       "heading": "Rejoignez-nous le\r\nManière rechargeable",
-      "desc": "Nos bouteilles en verre rechargeables\r\nsont conçus pour être rechargés\r\nau moins 25 fois",
+      "desc": "Jouez au jeu et remplissez autant de bouteilles que possible. ",
       "cta": "Commencer l'expérience"
     },
     "cleaning": {
+      "video": {
+        "super": "Une fois vides, nos bouteilles sont collectées et envoyées vers nos usines pour être nettoyées et remplies à nouveau.",
+        "disclaimer": "L'usine représentée dans ce jeu est fictive"
+      },
       "name": "Lavage",
       "step": "Gare 1/3",
       "intro": {
@@ -311,6 +331,7 @@
         "cta": "Commencer"
       },
       "game": {
+        "disclaimer": "Le processus est conçu pour le divertissement et ne reflète pas la réalité à 100 %",
         "ready": "Se préparer!",
         "cta": "Faire le ménage",
         "time": "Temps restant",
@@ -329,7 +350,7 @@
       "step": "Gare 2/3",
       "intro": {
         "heading": "Prêt. Ensemble.\r\nRecharge!",
-        "desc": "Une quantité exacte de boisson\r\nest distribué dans chaque bouteille. \r\nAttention à ne pas trop remplir !",
+        "desc": "Remplissez chaque bouteille au-delà de la ligne - rien de moins ne compte !",
         "cta": "Jouer au jeu"
       },
       "tutorial": {
@@ -362,12 +383,12 @@
       "name": "Mise en caisse",
       "step": "Gare 3/3",
       "intro": {
-        "heading": "Dernière étape.",
+        "heading": "DERNIÈRE ÉTAPE !​",
         "desc": "Vos réflexes rapides sont nécessaires pour \r\nregrouper les bouteilles dans des caisses",
         "cta": "Jouer au jeu"
       },
       "tutorial": {
-        "preheading": "Combien de bouteilles\r\npeux-tu attraper ?",
+        "preheading": "​Combien pouvez-vous en obtenir ?​",
         "heading": "Comment jouer",
         "instructions": [
           "Faites glisser la caisse\r\ngauche / droite",
@@ -388,10 +409,13 @@
       }
     },
     "ending": {
+      "video": {
+        "super": "Et voilà, les bouteilles sont prêtes à être servies fraîchement !"
+      },
       "preheading": "Travail incroyable",
       "heading": "Tu es\r\nune bouteille-\r\nremplissage\r\nsuperstar",
       "restart": "Rejouer",
-      "cta": "Apprendre encore plus"
+      "cta": "Connectons-nous ?"
     },
     "example": "Exemple"
   }

@@ -26,10 +26,14 @@
   },
   "landing": {
     "heading": "Rejoignez-nous le\r\nManière rechargeable",
-    "desc": "Nos bouteilles en verre rechargeables\r\nsont conçus pour être rechargés\r\nau moins 25 fois",
+    "desc": "Jouez au jeu et remplissez autant de bouteilles que possible. ",
     "cta": "Commencer l'expérience"
   },
   "cleaning": {
+    "video": {
+      "super": "Une fois vides, nos bouteilles sont collectées et envoyées vers nos usines pour être nettoyées et remplies à nouveau.",
+      "disclaimer": "L'usine représentée dans ce jeu est fictive"
+    },
     "name": "Lavage",
     "step": "Gare 1/3",
     "intro": {
@@ -47,6 +51,7 @@
       "cta": "Commencer"
     },
     "game": {
+      "disclaimer": "Le processus est conçu pour le divertissement et ne reflète pas la réalité à 100 %",
       "ready": "Se préparer!",
       "cta": "Faire le ménage",
       "time": "Temps restant",
@@ -65,7 +70,7 @@
     "step": "Gare 2/3",
     "intro": {
       "heading": "Prêt. Ensemble.\r\nRecharge!",
-      "desc": "Une quantité exacte de boisson\r\nest distribué dans chaque bouteille. \r\nAttention à ne pas trop remplir !",
+      "desc": "Remplissez chaque bouteille au-delà de la ligne - rien de moins ne compte !",
       "cta": "Jouer au jeu"
     },
     "tutorial": {
@@ -98,12 +103,12 @@
     "name": "Mise en caisse",
     "step": "Gare 3/3",
     "intro": {
-      "heading": "Dernière étape.",
+      "heading": "DERNIÈRE ÉTAPE !​",
       "desc": "Vos réflexes rapides sont nécessaires pour \r\nregrouper les bouteilles dans des caisses",
       "cta": "Jouer au jeu"
     },
     "tutorial": {
-      "preheading": "Combien de bouteilles\r\npeux-tu attraper ?",
+      "preheading": "​Combien pouvez-vous en obtenir ?​",
       "heading": "Comment jouer",
       "instructions": [
         "Faites glisser la caisse\r\ngauche / droite",
@@ -124,10 +129,13 @@
     }
   },
   "ending": {
+    "video": {
+      "super": "Et voilà, les bouteilles sont prêtes à être servies fraîchement !"
+    },
     "preheading": "Travail incroyable",
     "heading": "Tu es\r\nune bouteille-\r\nremplissage\r\nsuperstar",
     "restart": "Rejouer",
-    "cta": "Apprendre encore plus"
+    "cta": "Connectons-nous ?"
   },
   "example": "Exemple"
 }

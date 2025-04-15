@@ -122,18 +122,18 @@ export const FillingGame = forwardRef(({ visible, show, onEnded }, ref) => {
 
       <div className="contents">
         <TimeLeft
-          id="cleaning"
+          id="filling"
           duration={duration}
           onEnded={onTimeLeftEnded}
           show={started}
         />
         <Points
-          id="cleaning"
+          id="filling"
           points={points}
           show={started}
         />
         <Countdown
-          id="cleaning"
+          id="filling"
           onEnded={onCountdownEnded}
           show={show && !started}
         />

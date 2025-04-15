@@ -20,16 +20,21 @@
     +flex-col(space-between, center)
 
     >.top
-      flex: 1
+      // flex: 1
       +flex-col()
+      width: 100%
+
+      .heading1
+        width: 200%
+        white-space: pre-line
 
     >.center
-      width: 100%
-      aspect-ratio: 1
+      display: none
+      
 
     >.bottom
       position: relative
-      flex: 1
+      // flex: 1
       width: 100%
 
       +flex-col()
@@ -41,7 +46,7 @@
           position: absolute
           bottom: 100%
           width: 100%
-          // margin-bottom: 2rem
+          margin-bottom: 2rem
 
   // .btn
   //   position: relative
