@@ -35,6 +35,7 @@ export const Filling = ({ show, ...props }) => {
   const onReset = () => {
     setCount(0);
     setSection('intro');
+    refGame.current.reset();
   };
   useEffect(() => {
     emitter.on('reset', onReset);
