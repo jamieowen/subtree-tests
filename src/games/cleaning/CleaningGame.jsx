@@ -34,8 +34,8 @@ export const CleaningGame = forwardRef(({ visible, show, onEnded }, ref) => {
 
   const reset = () => {
     setStarted(false);
-    refBottles.current.resetBottles();
     refControls.current.reset();
+    refBottles.current.resetBottles();
   };
   useImperativeHandle(ref, () => ({
     reset,

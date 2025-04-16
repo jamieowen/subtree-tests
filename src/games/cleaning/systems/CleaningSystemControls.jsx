@@ -19,15 +19,16 @@ export const CleaningSystemControls = forwardRef(
     const [wasDown, setWasDown] = useState(false);
 
     const reset = () => {
+      console.log('CleaningSystemControls.reset');
       to.current = 0;
       current.current = 0.5;
 
-      for (const entity of bottleEntities) {
-        entity.progress = 0;
-        CleaningECS.world.addComponent(entity, 'unclean', true);
-        CleaningECS.world.removeComponent(entity, 'cleaning', true);
-        CleaningECS.world.removeComponent(entity, 'cleaned', true);
-      }
+      // for (const entity of bottleEntities) {
+      //   entity.progress = 0;
+      //   CleaningECS.world.addComponent(entity, 'unclean', true);
+      //   CleaningECS.world.removeComponent(entity, 'cleaning', true);
+      //   CleaningECS.world.removeComponent(entity, 'cleaned', true);
+      // }
 
       for (const entity of beltEntities) {
         entity.belt = current.current;
