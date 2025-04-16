@@ -42,6 +42,7 @@ export const CleaningSystemControls = forwardRef(
     let timeout;
 
     const onUp = async () => {
+      if (!playing) return;
       if (timeout) clearTimeout(timeout);
       timeout = setTimeout(() => {
         let remainder = Math.abs(to.current) % 1;
@@ -61,6 +62,7 @@ export const CleaningSystemControls = forwardRef(
     };
 
     const onDown = () => {
+      if (!playing) return;
       if (timeout) clearTimeout(timeout);
       AssetService.getAsset('sfx_dragscreen').play();
     };

@@ -60,7 +60,10 @@ export const CleaningSystemBottles = forwardRef(
     };
 
     const emitter = useMitt();
-    const onPointerDown = () => {
+    console.log('CleaningSystemBottles.playing', playing);
+    const onPointerDown = useCallback(() => {
+      console.log('onPointerDown', playing);
+      if (!playing) return;
       let belt = beltEntities.entities?.[0]?.belt;
       for (const entity of uncleanEntities) {
         if (belt == entity.idx) {
@@ -74,7 +77,7 @@ export const CleaningSystemBottles = forwardRef(
           emitter.emit('cleaning-cleaned');
         }
       }
-    };
+    }, [playing]);
 
     // Initialize bottles when component mounts
 
@@ -141,7 +144,7 @@ export const CleaningSystemBottles = forwardRef(
         if (!el) return;
         el.removeEventListener('pointerdown', onPointerDown);
       };
-    }, []);
+    }, [onPointerDown]);
 
     useFrame((state, delta) => {
       let belt = beltEntities.entities?.[0]?.belt;
