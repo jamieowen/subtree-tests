@@ -30,13 +30,13 @@ export const FillingSystemControls = forwardRef(
     ref
   ) => {
     const current = useRef(0);
-    const speed = useRef(0.5);
-    const timeToFill = useRef(0.5);
+    const speed = useRef(config.initialSpeed);
+    const timeToFill = useRef(config.initialTimeToFill);
 
     const reset = () => {
       current.current = 0;
-      speed.current = 0.5;
-      timeToFill.current = 0.5;
+      speed.current = config.initialSpeed;
+      timeToFill.current = config.initialTimeToFill;
 
       for (const entity of bottleEntities) {
         FillingECS.world.removeComponent(entity, 'filling', true);
@@ -111,7 +111,7 @@ export const FillingSystemControls = forwardRef(
       if (distance > 0) {
         tween.current = gsap.to(current, {
           current: pos,
-          duration: distance * 2 * speed.current,
+          duration: (distance * 1) / speed.current,
           ease: 'none',
         });
         await tween.current.then();
@@ -191,7 +191,10 @@ export const FillingSystemControls = forwardRef(
       // MOVE BELT
       const count = filledEntities.entities.length;
       if (!isLocked()) {
-        speed.current = Math.min(0.5 + count * 0.1, 1);
+        speed.current = Math.min(
+          config.initialSpeed + count * config.speedIncrease,
+          config.maxSpeed
+        );
         current.current += delta * speed.current; // DEBUG
       }
       for (const entity of beltEntities) {
@@ -200,7 +203,10 @@ export const FillingSystemControls = forwardRef(
       }
 
       // FILL
-      timeToFill.current = Math.max(0.5, 3 - count * 0.5);
+      timeToFill.current = Math.max(
+        config.fillTimeMin,
+        config.initialTimeToFill - count * config.fillTimeDecrease
+      );
 
       let complete = false;
       for (const entity of fillingEntities) {
