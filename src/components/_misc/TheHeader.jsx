@@ -10,7 +10,7 @@ export const TheHeader = () => {
   const page = useAppStore((state) => state.page);
 
   const showLogo = page == '' || page == 'ending';
-  const isVideo = page.includes('video') || page == 'cleaning-intro';
+  const isVideo = page.includes('video') || page == 'intro';
 
   const showQuit = useAppStore((state) => state.showQuit);
   const setShowQuit = useAppStore((state) => state.setShowQuit);

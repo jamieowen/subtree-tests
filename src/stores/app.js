@@ -83,14 +83,7 @@ export const useAppStore = create((set) => ({
     }),
   nextPage: () =>
     set((state) => {
-      let pages = [
-        '',
-        'cleaning-intro',
-        'cleaning',
-        'filling',
-        'grouping',
-        'ending',
-      ];
+      let pages = ['', 'intro', 'cleaning', 'filling', 'grouping', 'ending'];
       let idx = pages.indexOf(state.page);
       idx++;
       if (idx >= pages.length) return {};

@@ -1,5 +1,6 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
+import { getUrlString } from '@/helpers/UrlParam';
 
 import copy from '@/../scripts/copy/out/index.json';
 
@@ -11,7 +12,8 @@ for (const lang in copy) {
   };
 }
 
-const lng = window.location.pathname.split('/')[1];
+// const lng = window.location.pathname.split('/')[1];
+const lng = getUrlString('language', 'es');
 
 i18n
   .use(initReactI18next) // passes i18n down to react-i18next

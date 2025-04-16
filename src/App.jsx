@@ -42,6 +42,8 @@ export function App() {
           <TheGuidelines />
           <Quit />
         </div>
+
+        <AnalyticsHelper />
       </MittProvider>
     </div>
   );

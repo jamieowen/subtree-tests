@@ -10,7 +10,7 @@ export const Pages = () => {
   // CLEANING INTRO VIDEO
   const refVideo = useRef(null);
   useEffect(() => {
-    if (page == 'cleaning-intro') {
+    if (page == 'intro') {
       refVideo.current.play();
     }
     return () => {
@@ -18,7 +18,7 @@ export const Pages = () => {
       refVideo.current.pause();
     };
   }, [page]);
-  const showCleaningIntroVideo = page == '' || page == 'cleaning-intro';
+  const showCleaningIntroVideo = page == '' || page == 'intro';
 
   // const completed = useAssetProgress();
   const ready = useAppStore((state) => state.ready);
