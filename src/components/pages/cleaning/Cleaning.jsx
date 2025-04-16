@@ -35,16 +35,6 @@ export const Cleaning = ({ show, ...props }) => {
     refGame.current.reset();
   };
 
-  const emitter = useMitt();
-  const onReset = () => {
-    setCount(0);
-    setSection('intro');
-    refGame.current.reset();
-  };
-  useEffect(() => {
-    emitter.on('reset', onReset);
-  }, []);
-
   useEffect(() => {
     if (!show) return;
     // AssetService.getAsset('sfx_introvideo')?.stop(); // TODO: Remove
@@ -70,6 +60,17 @@ export const Cleaning = ({ show, ...props }) => {
     show &&
     section != 'video' &&
     (introAnimatedIn || section != 'intro');
+
+  const emitter = useMitt();
+  const onReset = () => {
+    setCount(0);
+    setSection('intro');
+    // refGame.current?.reset();
+  };
+  useEffect(() => {
+    emitter.on('reset', onReset);
+  }, []);
+  // useEffect(onReplay, [showGame]);
 
   return (
     <div className={classnames(['page', 'game', 'cleaning', { show }])}>

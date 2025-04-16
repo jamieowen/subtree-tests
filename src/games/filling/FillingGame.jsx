@@ -67,12 +67,18 @@ export const FillingGame = forwardRef(({ visible, show, onEnded }, ref) => {
 
   const refControls = useRef(null);
 
+  const reset = () => {
+    setStarted(false);
+    refControls.current.reset();
+  };
   useImperativeHandle(ref, () => ({
-    reset: () => {
-      setStarted(false);
-      refControls.current.reset();
-    },
+    reset,
   }));
+  useEffect(() => {
+    if (show) {
+      reset();
+    }
+  }, [show]);
 
   return (
     <section className={classnames(['page', 'game', 'game-filling', { show }])}>

@@ -32,13 +32,19 @@ export const CleaningGame = forwardRef(({ visible, show, onEnded }, ref) => {
   const refBottles = useRef(null);
   const refControls = useRef(null);
 
+  const reset = () => {
+    setStarted(false);
+    refBottles.current.resetBottles();
+    refControls.current.reset();
+  };
   useImperativeHandle(ref, () => ({
-    reset: () => {
-      setStarted(false);
-      refBottles.current.resetBottles();
-      refControls.current.reset();
-    },
+    reset,
   }));
+  useEffect(() => {
+    if (show) {
+      reset();
+    }
+  }, [show]);
 
   const [t_hanger_back, t_hanger_front] = useAsset([
     urls.t_hanger_back,

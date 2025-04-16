@@ -21,6 +21,7 @@ export const Filling = ({ show, ...props }) => {
   const { completed } = useAssetProgress();
 
   const showVideo = show && section == 'video';
+  const showGame = completed && show;
 
   const blurBg = !showVideo && section != 'intro';
 
@@ -35,11 +36,12 @@ export const Filling = ({ show, ...props }) => {
   const onReset = () => {
     setCount(0);
     setSection('intro');
-    refGame.current.reset();
+    // refGame.current?.reset();
   };
   useEffect(() => {
     emitter.on('reset', onReset);
   }, []);
+  // useEffect(onReplay, [showGame]);
 
   return (
     <div
@@ -98,7 +100,7 @@ export const Filling = ({ show, ...props }) => {
         onClick={nextSection}
       />
 
-      {completed && show && (
+      {showGame && (
         <FillingGame
           ref={refGame}
           visible={show && section != 'intro'}

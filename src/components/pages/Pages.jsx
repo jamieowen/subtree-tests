@@ -47,7 +47,7 @@ export const Pages = () => {
             autoPlay={true}
             loop={true}
             muted={true}
-            className="full object-cover"
+            className="full object-cover pointer-events-none"
             playsInline={true}
             exit={{ opacity: 0 }}
             transition={{ duration: 41 / 30, ease: 'linear' }}

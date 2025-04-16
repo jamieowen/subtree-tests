@@ -22,7 +22,7 @@ export const Grouping = ({ show, ...props }) => {
   const { completed } = useAssetProgress();
 
   const showVideo = show && section == 'video';
-
+  const showGame = completed && show;
   const blurBg = !showVideo && section != 'intro';
 
   const refGame = useRef(null);
@@ -36,11 +36,12 @@ export const Grouping = ({ show, ...props }) => {
   const onReset = () => {
     setCount(0);
     setSection('intro');
-    refGame.current.reset();
+    // refGame.current?.reset();
   };
   useEffect(() => {
     emitter.on('reset', onReset);
   }, []);
+  // useEffect(onReplay, [showGame]);
 
   return (
     <div className={classnames(['page', 'game', 'Grouping', { show }])}>
@@ -86,7 +87,7 @@ export const Grouping = ({ show, ...props }) => {
         onClick={nextSection}
       />
 
-      {completed && show && (
+      {showGame && (
         <GroupingGame
           ref={refGame}
           visible={show && section != 'intro'}

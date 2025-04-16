@@ -28,12 +28,18 @@ export const GroupingGame = forwardRef(({ visible, show, onEnded }, ref) => {
 
   const refSystemBottles = useRef(null);
 
+  const reset = () => {
+    setStarted(false);
+    refSystemBottles.current.reset();
+  };
   useImperativeHandle(ref, () => ({
-    reset: () => {
-      setStarted(false);
-      refSystemBottles.current.reset();
-    },
+    reset,
   }));
+  useEffect(() => {
+    if (show) {
+      reset();
+    }
+  }, [show]);
 
   return (
     <section
