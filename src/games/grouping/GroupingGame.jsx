@@ -6,6 +6,8 @@ import { useGroupingStore } from '@/stores/grouping';
 import { Box } from '@react-three/drei';
 import { GroupingECS } from './state';
 import { PerspectiveCamera, Grid } from '@react-three/drei';
+import { getUrlBoolean } from '@/helpers/UrlParam';
+const debug = getUrlBoolean('debug');
 
 export const GroupingGame = forwardRef(({ visible, show, onEnded }, ref) => {
   const { t } = useTranslation();
@@ -106,9 +108,18 @@ export const GroupingGame = forwardRef(({ visible, show, onEnded }, ref) => {
           point={10}
           count={count}
         />
+
+        {/* <motion.div
+          className="absolute bottom-4 left-0 right-0 text-sm text-center px-3 opacity-30"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: show ? 1 : 0 }}
+          exit={{ opacity: 0 }}
+        >
+          {t('grouping.game.disclaimer')}
+        </motion.div> */}
       </div>
 
-      {show && started && (
+      {show && started && debug && (
         <button
           className="btn-skip-game"
           onClick={onEnded}

@@ -7,7 +7,8 @@ import { useFillingStore } from '@/stores/filling';
 import { Box } from '@react-three/drei';
 import { FillingECS } from './state';
 import { PerspectiveCamera, Grid } from '@react-three/drei';
-
+import { getUrlBoolean } from '@/helpers/UrlParam';
+const debug = getUrlBoolean('debug');
 // export const FillingGameContext = createContext();
 // export const useFillingGameContext = () => useContext(FillingGameContext);
 
@@ -154,9 +155,18 @@ export const FillingGame = forwardRef(({ visible, show, onEnded }, ref) => {
         >
           {t('filling.game.cta.press')}
         </ButtonPrimary>
+
+        {/* <motion.div
+          className="absolute bottom-4 left-0 right-0 text-sm text-center px-3 opacity-30"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: show ? 1 : 0 }}
+          exit={{ opacity: 0 }}
+        >
+          {t('filling.game.disclaimer')}
+        </motion.div> */}
       </div>
 
-      {show && started && (
+      {show && started && debug && (
         <button
           className="btn-skip-game"
           onClick={onEnded}

@@ -3,7 +3,19 @@ import { useAppStore } from '@/stores/app';
 import { useVisibilityChange } from '@uidotdev/usehooks';
 
 export const VideoPlayer = forwardRef(
-  ({ src, poster, autoPlay = true, onEnd, showSkip = true, ...props }, ref) => {
+  (
+    {
+      src,
+      poster,
+      autoPlay = true,
+      onEnd,
+      showSkip = true,
+      sup,
+      disclaimer,
+      ...props
+    },
+    ref
+  ) => {
     const { t } = useTranslation();
     const muted = useAppStore((state) => state.muted);
 
@@ -81,7 +93,7 @@ export const VideoPlayer = forwardRef(
             ref={refVideo}
             src={src}
             poster={poster}
-            onEnded={onEnd}
+            // onEnded={onEnd}
             webkitPlaysInline={true}
             playsInline={true}
             muted={muted}
@@ -99,6 +111,28 @@ export const VideoPlayer = forwardRef(
             )}
           </AnimatePresence>
         </div>
+
+        {sup && (
+          <Paragraph1
+            className="absolute bottom-[10%] left-0 right-0 text-md text-center px-3 w-full"
+            show={playing}
+            // initial={{ opacity: 0 }}
+            // animate={{ opacity: playing ? 1 : 0 }}
+            // exit={{ opacity: 0 }}
+          >
+            {sup}
+          </Paragraph1>
+        )}
+        {disclaimer && (
+          <motion.div
+            className="absolute bottom-[5%] left-0 right-0 text-sm text-center px-3 opacity-50"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: playing ? 1 : 0 }}
+            exit={{ opacity: 0 }}
+          >
+            {disclaimer}
+          </motion.div>
+        )}
 
         <AnimatePresence>
           {showSkip && played && (

@@ -83,6 +83,8 @@ export const Filling = ({ show, ...props }) => {
             }}
             exit={{ opacity: 0 }}
             showSkip={section == 'video'}
+            // sup={t('filling.video.super')}
+            // disclaimer={t('filling.game.disclaimer')}
           />
         )}
       </AnimatePresence>

@@ -70,6 +70,8 @@ export const Grouping = ({ show, ...props }) => {
             }}
             exit={{ opacity: 0 }}
             showSkip={section == 'video'}
+            // sup={t('grouping.video.super')}
+            // disclaimer={t('grouping.game.disclaimer')}
           />
         )}
       </AnimatePresence>

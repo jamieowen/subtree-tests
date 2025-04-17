@@ -6,6 +6,8 @@ import { useCleaningStore } from '@/stores/cleaning';
 import { Box } from '@react-three/drei';
 import { CleaningECS } from './state';
 import { PerspectiveCamera, Grid } from '@react-three/drei';
+import { getUrlBoolean } from '@/helpers/UrlParam';
+const debug = getUrlBoolean('debug');
 
 export const CleaningGame = forwardRef(({ visible, show, onEnded }, ref) => {
   const { t } = useTranslation();
@@ -124,16 +126,24 @@ export const CleaningGame = forwardRef(({ visible, show, onEnded }, ref) => {
           count={count}
         />
         <CleanPopup />
-
         <ButtonPrimary
           className="btn-cta"
           show={show && started}
         >
           {t('cleaning.game.cta')}
         </ButtonPrimary>
+
+        <motion.div
+          className="absolute bottom-4 left-0 right-0 text-sm text-center px-3 opacity-30"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: show ? 1 : 0 }}
+          exit={{ opacity: 0 }}
+        >
+          {t('cleaning.game.disclaimer')}
+        </motion.div>
       </div>
 
-      {show && started && (
+      {show && started && debug && (
         <button
           className="btn-skip-game"
           onClick={onEnded}

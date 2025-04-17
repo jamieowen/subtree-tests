@@ -3,6 +3,7 @@ import './Pages.sass';
 import { urls } from '@/config/assets';
 
 export const Pages = () => {
+  const { t } = useTranslation();
   const page = useAppStore((state) => state.page);
   const setPage = useAppStore((state) => state.setPage);
   const nextPage = useAppStore((state) => state.nextPage);
@@ -35,6 +36,8 @@ export const Pages = () => {
             onEnd={nextPage}
             autoPlay={false}
             muted={false}
+            sup={t('cleaning.video.super')}
+            disclaimer={t('cleaning.video.disclaimer')}
             exit={{ opacity: 0 }}
           />
         )}
