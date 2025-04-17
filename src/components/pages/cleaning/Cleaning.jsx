@@ -38,7 +38,7 @@ export const Cleaning = ({ show, ...props }) => {
   useEffect(() => {
     if (!show) return;
     // AssetService.getAsset('sfx_introvideo')?.stop(); // TODO: Remove
-    AssetService.getAsset('mx_introvideo')?.stop();
+    // AssetService.getAsset('mx_introvideo')?.stop();
     let gameloop = AssetService.getAsset('mx_gameloop');
     if (gameloop) {
       gameloop.stop();
