@@ -125,7 +125,7 @@ export const VideoPlayer = forwardRef(
         )}
         {disclaimer && (
           <motion.div
-            className="absolute bottom-[5%] left-0 right-0 text-sm text-center px-3 opacity-50"
+            className="absolute bottom-[5%] left-0 right-0 text-sm text-center px-3 opacity-30"
             initial={{ opacity: 0 }}
             animate={{ opacity: playing ? 1 : 0 }}
             exit={{ opacity: 0 }}
