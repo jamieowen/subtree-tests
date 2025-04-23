@@ -21,11 +21,11 @@ export const textures = {
 };
 
 export const sounds = {
-  mx_introvideo: '/assets/sounds-o/0_critical/MX_IntroVideo.aac',
-  sfx_introvideo: '/assets/sounds-o/0_critical/SFX_IntroVideo.aac',
+  // mx_introvideo: '/assets/sounds-o/0_critical/MX_IntroVideo.aac',
+  // sfx_introvideo: '/assets/sounds-o/0_critical/SFX_IntroVideo.aac',
   sfx_buttonclick: '/assets/sounds-o/0_critical/SFX_ButtonClick.aac',
 
-  mx_gameloop: '/assets/sounds-o/0_critical/MX_GameLoop.aac',
+  mx_gameloop: '/assets/sounds-o/0_critical/MX_GameLoop_V2.aac',
   sfx_countdown: '/assets/sounds-o/0_critical/SFX_Countdown.aac',
   sfx_start: '/assets/sounds-o/0_critical/SFX_Start.aac',
 
